@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class HTPPharmacy
+    partial class frmHTPPharmacy
     {
         /// <summary>
         /// Required designer variable.
@@ -313,7 +313,7 @@ namespace medical_management
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // HTPPharmacy
+            // frmHTPPharmacy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,7 +322,7 @@ namespace medical_management
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "HTPPharmacy";
+            this.Name = "frmHTPPharmacy";
             this.Text = "MDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class HTPPharmacy : Form
+    public partial class frmHTPPharmacy : Form
     {
-        public HTPPharmacy()
+        public frmHTPPharmacy()
         {
             InitializeComponent();
         }

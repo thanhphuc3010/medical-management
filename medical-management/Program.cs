@@ -16,7 +16,7 @@ namespace medical_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HTPPharmacy());
+            Application.Run(new frmHTPPharmacy());
         }
     }
 }
