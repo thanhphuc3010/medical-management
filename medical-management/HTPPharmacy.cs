@@ -17,6 +17,10 @@ namespace medical_management
             InitializeComponent();
         }
 
-       
+        private void mItemReLogin_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+        }
     }
 }
