@@ -15,7 +15,7 @@ namespace medical_management
         public Form1()
         {
             InitializeComponent();
-            string demo = "Conflict demo string";
+            string demo = "demo to conflict";
         }
     }
 }
