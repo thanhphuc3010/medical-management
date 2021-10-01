@@ -14,5 +14,10 @@
             string insert = "INSERT INTO tbl_CTHD (SoHD, MaThuoc, SoLuong, DonGia) VALUES (@SoHD , @MaThuoc , @SoLuong , @DonGia)";
             int count = Database.Instance.excuteNonQuery(insert, new object[] { demo, pull, 1, 10000 });
         }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
