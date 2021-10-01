@@ -10,7 +10,6 @@ namespace medical_management
 {
     class Database
     {
-
         private static Database instance;
         public static Database Instance
         {

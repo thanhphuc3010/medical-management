@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace medical_management
+﻿namespace medical_management
 {
+    using System.Data;
+    using System.Windows.Forms;
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
             string demo = "demo to conflict";
             string pull = "demo pull code";
+
+            string insert = "INSERT INTO tbl_CTHD (SoHD, MaThuoc, SoLuong, DonGia) VALUES (@SoHD , @MaThuoc , @SoLuong , @DonGia)";
+            int count = Database.Instance.excuteNonQuery(insert, new object[] { demo, pull, 1, 10000 });
         }
     }
 }
