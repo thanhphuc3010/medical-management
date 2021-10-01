@@ -16,6 +16,7 @@ namespace medical_management
         {
             InitializeComponent();
             string demo = "demo to conflict";
+            string pull = "demo pull code";
         }
     }
 }
