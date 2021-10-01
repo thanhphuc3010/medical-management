@@ -17,7 +17,7 @@
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            string demo = "demo pull github
+            string demo = "phucpt change file to get conflict";
         }
     }
 }
