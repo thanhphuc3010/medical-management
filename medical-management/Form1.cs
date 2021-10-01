@@ -14,8 +14,8 @@ namespace medical_management
     {
         public Form1()
         {
-            InitializeComponent(); 
-     
+            InitializeComponent();
+    
         }
     }
 }
