@@ -15,6 +15,7 @@ namespace medical_management
         public frmKhachhang()
         {
             InitializeComponent();
+            Console.WriteLine("Demo merge bracnh in git and github");
         }
     }
 }
