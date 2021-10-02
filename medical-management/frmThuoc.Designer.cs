@@ -47,6 +47,17 @@ namespace medical_management
             this.lblHsd = new System.Windows.Forms.Label();
             this.lblGhichu = new System.Windows.Forms.Label();
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
+            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhasanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hamluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donggoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhphan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMathuoc = new System.Windows.Forms.TextBox();
             this.txtManhasanxuat = new System.Windows.Forms.TextBox();
             this.txtTenthuoc = new System.Windows.Forms.TextBox();
@@ -62,17 +73,6 @@ namespace medical_management
             this.btnCuoi = new System.Windows.Forms.Button();
             this.btnSau = new System.Windows.Forms.Button();
             this.btnTruoc = new System.Windows.Forms.Button();
-            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNhasanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hamluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donggoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhphan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongsothuoc = new System.Windows.Forms.Label();
             this.txtTongsothuoc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
@@ -254,6 +254,72 @@ namespace medical_management
             this.dgvThuoc.Size = new System.Drawing.Size(1049, 240);
             this.dgvThuoc.TabIndex = 10;
             // 
+            // Mathuoc
+            // 
+            this.Mathuoc.DataPropertyName = "Mathuoc";
+            this.Mathuoc.HeaderText = "Mã thuốc";
+            this.Mathuoc.Name = "Mathuoc";
+            // 
+            // MaNhasanxuat
+            // 
+            this.MaNhasanxuat.DataPropertyName = "MaNhasanxuat";
+            this.MaNhasanxuat.HeaderText = "Mã Nhà sản xuất";
+            this.MaNhasanxuat.Name = "MaNhasanxuat";
+            // 
+            // Tenthuoc
+            // 
+            this.Tenthuoc.DataPropertyName = "Tenthuoc";
+            this.Tenthuoc.HeaderText = "Tên thuốc";
+            this.Tenthuoc.Name = "Tenthuoc";
+            // 
+            // Donvi
+            // 
+            this.Donvi.DataPropertyName = "Donvi";
+            this.Donvi.HeaderText = "Đơn vị";
+            this.Donvi.Name = "Donvi";
+            // 
+            // Hamluong
+            // 
+            this.Hamluong.DataPropertyName = "Hamluong";
+            this.Hamluong.HeaderText = "Hàm Lượng";
+            this.Hamluong.Name = "Hamluong";
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
+            // 
+            // Donggoi
+            // 
+            this.Donggoi.DataPropertyName = "Donggoi";
+            this.Donggoi.HeaderText = "Đóng gói";
+            this.Donggoi.Name = "Donggoi";
+            // 
+            // Thanhphan
+            // 
+            this.Thanhphan.DataPropertyName = "Thanhphan";
+            this.Thanhphan.HeaderText = "Thành phần";
+            this.Thanhphan.Name = "Thanhphan";
+            // 
+            // Ngaysanxuat
+            // 
+            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
+            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
+            this.Ngaysanxuat.Name = "Ngaysanxuat";
+            // 
+            // Hansudung
+            // 
+            this.Hansudung.DataPropertyName = "Hansudung";
+            this.Hansudung.HeaderText = "Hạn sử dụng";
+            this.Hansudung.Name = "Hansudung";
+            // 
+            // Ghichu
+            // 
+            this.Ghichu.DataPropertyName = "Ghichu";
+            this.Ghichu.HeaderText = "Ghi chú";
+            this.Ghichu.Name = "Ghichu";
+            // 
             // txtMathuoc
             // 
             this.txtMathuoc.Location = new System.Drawing.Point(109, 112);
@@ -367,72 +433,6 @@ namespace medical_management
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
             // 
-            // Mathuoc
-            // 
-            this.Mathuoc.DataPropertyName = "Mathuoc";
-            this.Mathuoc.HeaderText = "Mã thuốc";
-            this.Mathuoc.Name = "Mathuoc";
-            // 
-            // MaNhasanxuat
-            // 
-            this.MaNhasanxuat.DataPropertyName = "MaNhasanxuat";
-            this.MaNhasanxuat.HeaderText = "Mã Nhà sản xuất";
-            this.MaNhasanxuat.Name = "MaNhasanxuat";
-            // 
-            // Tenthuoc
-            // 
-            this.Tenthuoc.DataPropertyName = "Tenthuoc";
-            this.Tenthuoc.HeaderText = "Tên thuốc";
-            this.Tenthuoc.Name = "Tenthuoc";
-            // 
-            // Donvi
-            // 
-            this.Donvi.DataPropertyName = "Donvi";
-            this.Donvi.HeaderText = "Đơn vị";
-            this.Donvi.Name = "Donvi";
-            // 
-            // Hamluong
-            // 
-            this.Hamluong.DataPropertyName = "Hamluong";
-            this.Hamluong.HeaderText = "Hàm Lượng";
-            this.Hamluong.Name = "Hamluong";
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.Name = "Soluong";
-            // 
-            // Donggoi
-            // 
-            this.Donggoi.DataPropertyName = "Donggoi";
-            this.Donggoi.HeaderText = "Đóng gói";
-            this.Donggoi.Name = "Donggoi";
-            // 
-            // Thanhphan
-            // 
-            this.Thanhphan.DataPropertyName = "Thanhphan";
-            this.Thanhphan.HeaderText = "Thành phần";
-            this.Thanhphan.Name = "Thanhphan";
-            // 
-            // Ngaysanxuat
-            // 
-            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
-            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
-            this.Ngaysanxuat.Name = "Ngaysanxuat";
-            // 
-            // Hansudung
-            // 
-            this.Hansudung.DataPropertyName = "Hansudung";
-            this.Hansudung.HeaderText = "Hạn sử dụng";
-            this.Hansudung.Name = "Hansudung";
-            // 
-            // Ghichu
-            // 
-            this.Ghichu.DataPropertyName = "Ghichu";
-            this.Ghichu.HeaderText = "Ghi chú";
-            this.Ghichu.Name = "Ghichu";
-            // 
             // lblTongsothuoc
             // 
             this.lblTongsothuoc.AutoSize = true;
@@ -453,6 +453,7 @@ namespace medical_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::medical_management.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1049, 586);
             this.Controls.Add(this.txtTongsothuoc);
             this.Controls.Add(this.lblTongsothuoc);
