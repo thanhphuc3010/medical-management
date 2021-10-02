@@ -15,6 +15,7 @@ namespace medical_management
         public frmThuoc()
         {
             InitializeComponent();
+            string demo = "demo code";
         }
     }
 }
