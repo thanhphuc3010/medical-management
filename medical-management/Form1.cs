@@ -18,6 +18,7 @@
         private void Form1_Load(object sender, System.EventArgs e)
         {
             loadData();
+            btnDemo.disable();
             btnDemo.gone();
             lblDemo.gone();
             txtDemo.gone();
