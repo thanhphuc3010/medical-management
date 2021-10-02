@@ -15,6 +15,7 @@ namespace medical_management
         public frmNhanvien()
         {
             InitializeComponent();
+            string staff = "Staff infor";
         }
     }
 }
