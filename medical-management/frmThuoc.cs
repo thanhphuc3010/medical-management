@@ -17,5 +17,19 @@ namespace medical_management
             InitializeComponent();
             string demo = "demo code";
         }
+
+        private void frmThuoc_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        // chữ đầu tiên của từ đầu tiên viết thường, các chữ đầu tiên của các từ tiếp theo viết hoa, các từ viết liền không dấu
+
+        private void loadData()
+        {
+            string query = "SELECT * FROM tbl_Item";
+            DataTable data = Database.Instance.excuteQuery(query);
+            dgvThuoc.DataSource = data;
+        }
     }
 }

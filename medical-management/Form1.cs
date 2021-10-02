@@ -17,7 +17,30 @@
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            string demo = "ggk,jhjg";
+            loadData();
+            btnDemo.gone();
+            lblDemo.gone();
+            txtDemo.gone();
+            
+        }
+
+        private void loadData()
+        {
+            string query = "SELECT * FROM tbl_Thuoc WHERE MaThuoc = @MaThuoc";
+            string medicalId = "2020BD13";
+            DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
+            dgvMedical.DataSource = data;
+        }
+
+        private void btnDemo_Click(object sender, System.EventArgs e)
+        {
+            
+        }
+
+        private void btnShow_Click(object sender, System.EventArgs e)
+        {
+            bool isVisible = txtDemo.isVisible();
+            txtDemo.visibleOrGone(isVisible);
         }
     }
 }
