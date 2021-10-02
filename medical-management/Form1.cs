@@ -42,6 +42,7 @@
         {
             bool isVisible = txtDemo.isVisible();
             txtDemo.visibleOrGone(isVisible);
+            lblDemo.visibleOrGone(isVisible);
         }
     }
 }
