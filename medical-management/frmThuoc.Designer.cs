@@ -36,7 +36,7 @@ namespace medical_management
             this.btnPrint = new System.Windows.Forms.Button();
             this.lblThuoc = new System.Windows.Forms.Label();
             this.lblMathuoc = new System.Windows.Forms.Label();
-            this.lblMaNhasanxuat = new System.Windows.Forms.Label();
+            this.lblManhasanxuat = new System.Windows.Forms.Label();
             this.lblTenthuoc = new System.Windows.Forms.Label();
             this.lblHamluong = new System.Windows.Forms.Label();
             this.lblDonvi = new System.Windows.Forms.Label();
@@ -45,31 +45,37 @@ namespace medical_management
             this.lbkThanhphan = new System.Windows.Forms.Label();
             this.lbkNgaysanxuat = new System.Windows.Forms.Label();
             this.lblHsd = new System.Windows.Forms.Label();
-            this.lblNote = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenkhachhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loaidoituong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sodienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.lblGhichu = new System.Windows.Forms.Label();
+            this.dgvThuoc = new System.Windows.Forms.DataGridView();
+            this.txtMathuoc = new System.Windows.Forms.TextBox();
+            this.txtManhasanxuat = new System.Windows.Forms.TextBox();
+            this.txtTenthuoc = new System.Windows.Forms.TextBox();
+            this.txtDonvi = new System.Windows.Forms.TextBox();
+            this.txtHamluong = new System.Windows.Forms.TextBox();
+            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.txtDonggoi = new System.Windows.Forms.TextBox();
+            this.txtThanhphan = new System.Windows.Forms.TextBox();
+            this.txtNgaysanxuat = new System.Windows.Forms.TextBox();
+            this.txtHsd = new System.Windows.Forms.TextBox();
+            this.txtGhichu = new System.Windows.Forms.TextBox();
             this.btnDau = new System.Windows.Forms.Button();
             this.btnCuoi = new System.Windows.Forms.Button();
             this.btnSau = new System.Windows.Forms.Button();
             this.btnTruoc = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhasanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hamluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donggoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhphan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongsothuoc = new System.Windows.Forms.Label();
+            this.txtTongsothuoc = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -136,14 +142,14 @@ namespace medical_management
             this.lblMathuoc.TabIndex = 6;
             this.lblMathuoc.Text = "Mã Thuốc";
             // 
-            // lblMaNhasanxuat
+            // lblManhasanxuat
             // 
-            this.lblMaNhasanxuat.AutoSize = true;
-            this.lblMaNhasanxuat.Location = new System.Drawing.Point(14, 141);
-            this.lblMaNhasanxuat.Name = "lblMaNhasanxuat";
-            this.lblMaNhasanxuat.Size = new System.Drawing.Size(88, 13);
-            this.lblMaNhasanxuat.TabIndex = 7;
-            this.lblMaNhasanxuat.Text = "Mã Nhà sản xuất";
+            this.lblManhasanxuat.AutoSize = true;
+            this.lblManhasanxuat.Location = new System.Drawing.Point(14, 141);
+            this.lblManhasanxuat.Name = "lblManhasanxuat";
+            this.lblManhasanxuat.Size = new System.Drawing.Size(88, 13);
+            this.lblManhasanxuat.TabIndex = 7;
+            this.lblManhasanxuat.Text = "Mã Nhà sản xuất";
             // 
             // lblTenthuoc
             // 
@@ -217,149 +223,113 @@ namespace medical_management
             this.lblHsd.TabIndex = 15;
             this.lblHsd.Text = "Hạn sử dụng";
             // 
-            // lblNote
+            // lblGhichu
             // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.Location = new System.Drawing.Point(435, 227);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(44, 13);
-            this.lblNote.TabIndex = 16;
-            this.lblNote.Text = "Ghi chú";
+            this.lblGhichu.AutoSize = true;
+            this.lblGhichu.Location = new System.Drawing.Point(435, 227);
+            this.lblGhichu.Name = "lblGhichu";
+            this.lblGhichu.Size = new System.Drawing.Size(44, 13);
+            this.lblGhichu.TabIndex = 16;
+            this.lblGhichu.Text = "Ghi chú";
             // 
-            // dataGridView1
+            // dgvThuoc
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvThuoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mathuoc,
-            this.Tenkhachhang,
-            this.Loaidoituong,
-            this.Diachi,
-            this.Sodienthoai,
-            this.Email,
+            this.MaNhasanxuat,
+            this.Tenthuoc,
+            this.Donvi,
+            this.Hamluong,
+            this.Soluong,
+            this.Donggoi,
+            this.Thanhphan,
+            this.Ngaysanxuat,
+            this.Hansudung,
             this.Ghichu});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 334);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(747, 240);
-            this.dataGridView1.TabIndex = 17;
+            this.dgvThuoc.Location = new System.Drawing.Point(1, 334);
+            this.dgvThuoc.Name = "dgvThuoc";
+            this.dgvThuoc.RowHeadersWidth = 20;
+            this.dgvThuoc.Size = new System.Drawing.Size(1049, 240);
+            this.dgvThuoc.TabIndex = 10;
             // 
-            // Mathuoc
+            // txtMathuoc
             // 
-            this.Mathuoc.DataPropertyName = "Mathuoc";
-            this.Mathuoc.HeaderText = "Mã thuốc";
-            this.Mathuoc.Name = "Mathuoc";
+            this.txtMathuoc.Location = new System.Drawing.Point(109, 112);
+            this.txtMathuoc.Name = "txtMathuoc";
+            this.txtMathuoc.Size = new System.Drawing.Size(188, 20);
+            this.txtMathuoc.TabIndex = 18;
             // 
-            // Tenkhachhang
+            // txtManhasanxuat
             // 
-            this.Tenkhachhang.DataPropertyName = "Tenkhachhang";
-            this.Tenkhachhang.HeaderText = "Tên khách hàng";
-            this.Tenkhachhang.Name = "Tenkhachhang";
+            this.txtManhasanxuat.Location = new System.Drawing.Point(109, 138);
+            this.txtManhasanxuat.Name = "txtManhasanxuat";
+            this.txtManhasanxuat.Size = new System.Drawing.Size(188, 20);
+            this.txtManhasanxuat.TabIndex = 19;
             // 
-            // Loaidoituong
+            // txtTenthuoc
             // 
-            this.Loaidoituong.DataPropertyName = "Loaidoituong";
-            this.Loaidoituong.HeaderText = "Loại đối tượng";
-            this.Loaidoituong.Name = "Loaidoituong";
+            this.txtTenthuoc.Location = new System.Drawing.Point(109, 164);
+            this.txtTenthuoc.Name = "txtTenthuoc";
+            this.txtTenthuoc.Size = new System.Drawing.Size(188, 20);
+            this.txtTenthuoc.TabIndex = 20;
             // 
-            // Diachi
+            // txtDonvi
             // 
-            this.Diachi.DataPropertyName = "Diachi";
-            this.Diachi.HeaderText = "Địa chỉ";
-            this.Diachi.Name = "Diachi";
+            this.txtDonvi.Location = new System.Drawing.Point(109, 190);
+            this.txtDonvi.Name = "txtDonvi";
+            this.txtDonvi.Size = new System.Drawing.Size(188, 20);
+            this.txtDonvi.TabIndex = 21;
             // 
-            // Sodienthoai
+            // txtHamluong
             // 
-            this.Sodienthoai.DataPropertyName = "Sodienthoai";
-            this.Sodienthoai.HeaderText = "Số điện thoại";
-            this.Sodienthoai.Name = "Sodienthoai";
+            this.txtHamluong.Location = new System.Drawing.Point(109, 216);
+            this.txtHamluong.Name = "txtHamluong";
+            this.txtHamluong.Size = new System.Drawing.Size(188, 20);
+            this.txtHamluong.TabIndex = 22;
             // 
-            // Email
+            // txtSoluong
             // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
+            this.txtSoluong.Location = new System.Drawing.Point(109, 242);
+            this.txtSoluong.Name = "txtSoluong";
+            this.txtSoluong.Size = new System.Drawing.Size(188, 20);
+            this.txtSoluong.TabIndex = 23;
             // 
-            // Ghichu
+            // txtDonggoi
             // 
-            this.Ghichu.DataPropertyName = "Ghichu";
-            this.Ghichu.HeaderText = "Ghi chú";
-            this.Ghichu.Name = "Ghichu";
+            this.txtDonggoi.Location = new System.Drawing.Point(518, 116);
+            this.txtDonggoi.Name = "txtDonggoi";
+            this.txtDonggoi.Size = new System.Drawing.Size(188, 20);
+            this.txtDonggoi.TabIndex = 24;
             // 
-            // textBox1
+            // txtThanhphan
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtThanhphan.Location = new System.Drawing.Point(518, 142);
+            this.txtThanhphan.Name = "txtThanhphan";
+            this.txtThanhphan.Size = new System.Drawing.Size(188, 20);
+            this.txtThanhphan.TabIndex = 25;
             // 
-            // textBox2
+            // txtNgaysanxuat
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 19;
+            this.txtNgaysanxuat.Location = new System.Drawing.Point(518, 168);
+            this.txtNgaysanxuat.Name = "txtNgaysanxuat";
+            this.txtNgaysanxuat.Size = new System.Drawing.Size(188, 20);
+            this.txtNgaysanxuat.TabIndex = 26;
             // 
-            // textBox3
+            // txtHsd
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 20);
-            this.textBox3.TabIndex = 20;
+            this.txtHsd.Location = new System.Drawing.Point(518, 194);
+            this.txtHsd.Name = "txtHsd";
+            this.txtHsd.Size = new System.Drawing.Size(188, 20);
+            this.txtHsd.TabIndex = 27;
             // 
-            // textBox4
+            // txtGhichu
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(188, 20);
-            this.textBox4.TabIndex = 21;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(109, 216);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(188, 20);
-            this.textBox5.TabIndex = 22;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(109, 242);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(188, 20);
-            this.textBox6.TabIndex = 23;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(518, 116);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(188, 20);
-            this.textBox7.TabIndex = 24;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(518, 142);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(188, 20);
-            this.textBox8.TabIndex = 25;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(518, 168);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(188, 20);
-            this.textBox9.TabIndex = 26;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(518, 194);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(188, 20);
-            this.textBox10.TabIndex = 27;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(518, 220);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(188, 20);
-            this.textBox11.TabIndex = 28;
+            this.txtGhichu.Location = new System.Drawing.Point(518, 220);
+            this.txtGhichu.Name = "txtGhichu";
+            this.txtGhichu.Size = new System.Drawing.Size(188, 20);
+            this.txtGhichu.TabIndex = 28;
             // 
             // btnDau
             // 
@@ -397,28 +367,112 @@ namespace medical_management
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
             // 
+            // Mathuoc
+            // 
+            this.Mathuoc.DataPropertyName = "Mathuoc";
+            this.Mathuoc.HeaderText = "Mã thuốc";
+            this.Mathuoc.Name = "Mathuoc";
+            // 
+            // MaNhasanxuat
+            // 
+            this.MaNhasanxuat.DataPropertyName = "MaNhasanxuat";
+            this.MaNhasanxuat.HeaderText = "Mã Nhà sản xuất";
+            this.MaNhasanxuat.Name = "MaNhasanxuat";
+            // 
+            // Tenthuoc
+            // 
+            this.Tenthuoc.DataPropertyName = "Tenthuoc";
+            this.Tenthuoc.HeaderText = "Tên thuốc";
+            this.Tenthuoc.Name = "Tenthuoc";
+            // 
+            // Donvi
+            // 
+            this.Donvi.DataPropertyName = "Donvi";
+            this.Donvi.HeaderText = "Đơn vị";
+            this.Donvi.Name = "Donvi";
+            // 
+            // Hamluong
+            // 
+            this.Hamluong.DataPropertyName = "Hamluong";
+            this.Hamluong.HeaderText = "Hàm Lượng";
+            this.Hamluong.Name = "Hamluong";
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
+            // 
+            // Donggoi
+            // 
+            this.Donggoi.DataPropertyName = "Donggoi";
+            this.Donggoi.HeaderText = "Đóng gói";
+            this.Donggoi.Name = "Donggoi";
+            // 
+            // Thanhphan
+            // 
+            this.Thanhphan.DataPropertyName = "Thanhphan";
+            this.Thanhphan.HeaderText = "Thành phần";
+            this.Thanhphan.Name = "Thanhphan";
+            // 
+            // Ngaysanxuat
+            // 
+            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
+            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
+            this.Ngaysanxuat.Name = "Ngaysanxuat";
+            // 
+            // Hansudung
+            // 
+            this.Hansudung.DataPropertyName = "Hansudung";
+            this.Hansudung.HeaderText = "Hạn sử dụng";
+            this.Hansudung.Name = "Hansudung";
+            // 
+            // Ghichu
+            // 
+            this.Ghichu.DataPropertyName = "Ghichu";
+            this.Ghichu.HeaderText = "Ghi chú";
+            this.Ghichu.Name = "Ghichu";
+            // 
+            // lblTongsothuoc
+            // 
+            this.lblTongsothuoc.AutoSize = true;
+            this.lblTongsothuoc.Location = new System.Drawing.Point(813, 315);
+            this.lblTongsothuoc.Name = "lblTongsothuoc";
+            this.lblTongsothuoc.Size = new System.Drawing.Size(76, 13);
+            this.lblTongsothuoc.TabIndex = 33;
+            this.lblTongsothuoc.Text = "Tổng số thuốc";
+            // 
+            // txtTongsothuoc
+            // 
+            this.txtTongsothuoc.Location = new System.Drawing.Point(906, 308);
+            this.txtTongsothuoc.Name = "txtTongsothuoc";
+            this.txtTongsothuoc.Size = new System.Drawing.Size(106, 20);
+            this.txtTongsothuoc.TabIndex = 34;
+            // 
             // frmThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 586);
+            this.ClientSize = new System.Drawing.Size(1049, 586);
+            this.Controls.Add(this.txtTongsothuoc);
+            this.Controls.Add(this.lblTongsothuoc);
             this.Controls.Add(this.btnTruoc);
             this.Controls.Add(this.btnSau);
             this.Controls.Add(this.btnCuoi);
             this.Controls.Add(this.btnDau);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblNote);
+            this.Controls.Add(this.txtGhichu);
+            this.Controls.Add(this.txtHsd);
+            this.Controls.Add(this.txtNgaysanxuat);
+            this.Controls.Add(this.txtThanhphan);
+            this.Controls.Add(this.txtDonggoi);
+            this.Controls.Add(this.txtSoluong);
+            this.Controls.Add(this.txtHamluong);
+            this.Controls.Add(this.txtDonvi);
+            this.Controls.Add(this.txtTenthuoc);
+            this.Controls.Add(this.txtManhasanxuat);
+            this.Controls.Add(this.txtMathuoc);
+            this.Controls.Add(this.dgvThuoc);
+            this.Controls.Add(this.lblGhichu);
             this.Controls.Add(this.lblHsd);
             this.Controls.Add(this.lbkNgaysanxuat);
             this.Controls.Add(this.lbkThanhphan);
@@ -427,7 +481,7 @@ namespace medical_management
             this.Controls.Add(this.lblDonvi);
             this.Controls.Add(this.lblHamluong);
             this.Controls.Add(this.lblTenthuoc);
-            this.Controls.Add(this.lblMaNhasanxuat);
+            this.Controls.Add(this.lblManhasanxuat);
             this.Controls.Add(this.lblMathuoc);
             this.Controls.Add(this.lblThuoc);
             this.Controls.Add(this.btnPrint);
@@ -438,7 +492,7 @@ namespace medical_management
             this.Name = "frmThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThuoc";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,7 +507,7 @@ namespace medical_management
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label lblThuoc;
         private System.Windows.Forms.Label lblMathuoc;
-        private System.Windows.Forms.Label lblMaNhasanxuat;
+        private System.Windows.Forms.Label lblManhasanxuat;
         private System.Windows.Forms.Label lblTenthuoc;
         private System.Windows.Forms.Label lblHamluong;
         private System.Windows.Forms.Label lblDonvi;
@@ -462,29 +516,35 @@ namespace medical_management
         private System.Windows.Forms.Label lbkThanhphan;
         private System.Windows.Forms.Label lbkNgaysanxuat;
         private System.Windows.Forms.Label lblHsd;
-        private System.Windows.Forms.Label lblNote;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tenkhachhang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Loaidoituong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sodienthoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label lblGhichu;
+        private System.Windows.Forms.DataGridView dgvThuoc;
+        private System.Windows.Forms.TextBox txtMathuoc;
+        private System.Windows.Forms.TextBox txtManhasanxuat;
+        private System.Windows.Forms.TextBox txtTenthuoc;
+        private System.Windows.Forms.TextBox txtDonvi;
+        private System.Windows.Forms.TextBox txtHamluong;
+        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.TextBox txtDonggoi;
+        private System.Windows.Forms.TextBox txtThanhphan;
+        private System.Windows.Forms.TextBox txtNgaysanxuat;
+        private System.Windows.Forms.TextBox txtHsd;
+        private System.Windows.Forms.TextBox txtGhichu;
         private System.Windows.Forms.Button btnDau;
         private System.Windows.Forms.Button btnCuoi;
         private System.Windows.Forms.Button btnSau;
         private System.Windows.Forms.Button btnTruoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhasanxuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tenthuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Donvi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hamluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Donggoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thanhphan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysanxuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hansudung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
+        private System.Windows.Forms.Label lblTongsothuoc;
+        private System.Windows.Forms.TextBox txtTongsothuoc;
     }
 }
