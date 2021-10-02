@@ -85,12 +85,6 @@
     <Compile Include="frmThuoc.Designer.cs">
       <DependentUpon>frmThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="HTPPharmacy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HTPPharmacy.Designer.cs">
-      <DependentUpon>HTPPharmacy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -110,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuoc.resx">
       <DependentUpon>frmThuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HTPPharmacy.resx">
-      <DependentUpon>HTPPharmacy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
