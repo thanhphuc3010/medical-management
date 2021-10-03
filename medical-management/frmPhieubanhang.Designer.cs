@@ -69,13 +69,13 @@ namespace medical_management
             this.btnThanhtoanvaInhoadon = new System.Windows.Forms.Button();
             this.cbHinhthucthanhtoan = new System.Windows.Forms.ComboBox();
             this.dgvHoadonchitiet = new System.Windows.Forms.DataGridView();
-            this.lblHoadonchitiet = new System.Windows.Forms.Label();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHoadonchitiet = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnHoanthanh = new System.Windows.Forms.Button();
             this.btnLuuhoadon = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@ namespace medical_management
             // 
             this.lblPhieubanhang.AutoSize = true;
             this.lblPhieubanhang.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhieubanhang.Location = new System.Drawing.Point(309, 9);
+            this.lblPhieubanhang.Location = new System.Drawing.Point(410, 9);
             this.lblPhieubanhang.Name = "lblPhieubanhang";
             this.lblPhieubanhang.Size = new System.Drawing.Size(129, 19);
             this.lblPhieubanhang.TabIndex = 0;
@@ -421,16 +421,6 @@ namespace medical_management
             this.dgvHoadonchitiet.Size = new System.Drawing.Size(592, 282);
             this.dgvHoadonchitiet.TabIndex = 42;
             // 
-            // lblHoadonchitiet
-            // 
-            this.lblHoadonchitiet.AutoSize = true;
-            this.lblHoadonchitiet.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoadonchitiet.Location = new System.Drawing.Point(12, 178);
-            this.lblHoadonchitiet.Name = "lblHoadonchitiet";
-            this.lblHoadonchitiet.Size = new System.Drawing.Size(119, 19);
-            this.lblHoadonchitiet.TabIndex = 43;
-            this.lblHoadonchitiet.Text = "Hóa đơn chi tiết";
-            // 
             // Mathuoc
             // 
             this.Mathuoc.DataPropertyName = "Mathuoc";
@@ -466,6 +456,16 @@ namespace medical_management
             this.Tongtien.DataPropertyName = "Tongtien";
             this.Tongtien.HeaderText = "Tổng tiền";
             this.Tongtien.Name = "Tongtien";
+            // 
+            // lblHoadonchitiet
+            // 
+            this.lblHoadonchitiet.AutoSize = true;
+            this.lblHoadonchitiet.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoadonchitiet.Location = new System.Drawing.Point(12, 178);
+            this.lblHoadonchitiet.Name = "lblHoadonchitiet";
+            this.lblHoadonchitiet.Size = new System.Drawing.Size(119, 19);
+            this.lblHoadonchitiet.TabIndex = 43;
+            this.lblHoadonchitiet.Text = "Hóa đơn chi tiết";
             // 
             // button1
             // 

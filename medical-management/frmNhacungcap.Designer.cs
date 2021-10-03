@@ -39,22 +39,22 @@ namespace medical_management
             this.btnSau = new System.Windows.Forms.Button();
             this.btnTruoc = new System.Windows.Forms.Button();
             this.lblNhacungcap = new System.Windows.Forms.Label();
-            this.lblMasothue = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSdt = new System.Windows.Forms.Label();
             this.lblTenNCC = new System.Windows.Forms.Label();
             this.lblMaNCC = new System.Windows.Forms.Label();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
-            this.txtMasothue = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.dgvNhacungcap = new System.Windows.Forms.DataGridView();
+            this.txtDiachi = new System.Windows.Forms.TextBox();
+            this.lblDiachi = new System.Windows.Forms.Label();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Masothue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacungcap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,19 +149,10 @@ namespace medical_management
             this.lblNhacungcap.TabIndex = 9;
             this.lblNhacungcap.Text = "Nhà cung cấp";
             // 
-            // lblMasothue
-            // 
-            this.lblMasothue.AutoSize = true;
-            this.lblMasothue.Location = new System.Drawing.Point(438, 155);
-            this.lblMasothue.Name = "lblMasothue";
-            this.lblMasothue.Size = new System.Drawing.Size(60, 13);
-            this.lblMasothue.TabIndex = 12;
-            this.lblMasothue.Text = "Mã số thuế";
-            // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(438, 130);
+            this.lblEmail.Location = new System.Drawing.Point(446, 158);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 13;
@@ -170,7 +161,7 @@ namespace medical_management
             // lblSdt
             // 
             this.lblSdt.AutoSize = true;
-            this.lblSdt.Location = new System.Drawing.Point(35, 182);
+            this.lblSdt.Location = new System.Drawing.Point(446, 129);
             this.lblSdt.Name = "lblSdt";
             this.lblSdt.Size = new System.Drawing.Size(70, 13);
             this.lblSdt.TabIndex = 14;
@@ -201,23 +192,16 @@ namespace medical_management
             this.txtMaNCC.Size = new System.Drawing.Size(123, 20);
             this.txtMaNCC.TabIndex = 17;
             // 
-            // txtMasothue
-            // 
-            this.txtMasothue.Location = new System.Drawing.Point(530, 152);
-            this.txtMasothue.Name = "txtMasothue";
-            this.txtMasothue.Size = new System.Drawing.Size(123, 20);
-            this.txtMasothue.TabIndex = 18;
-            // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(530, 127);
+            this.txtEmail.Location = new System.Drawing.Point(577, 155);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
             this.txtEmail.TabIndex = 19;
             // 
             // txtSdt
             // 
-            this.txtSdt.Location = new System.Drawing.Point(166, 179);
+            this.txtSdt.Location = new System.Drawing.Point(577, 129);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(123, 20);
             this.txtSdt.TabIndex = 20;
@@ -236,13 +220,29 @@ namespace medical_management
             this.dgvNhacungcap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNCC,
             this.TenNCC,
+            this.Diachi,
             this.Sdt,
-            this.Email,
-            this.Masothue});
+            this.Email});
             this.dgvNhacungcap.Location = new System.Drawing.Point(1, 268);
             this.dgvNhacungcap.Name = "dgvNhacungcap";
             this.dgvNhacungcap.Size = new System.Drawing.Size(787, 171);
             this.dgvNhacungcap.TabIndex = 22;
+            // 
+            // txtDiachi
+            // 
+            this.txtDiachi.Location = new System.Drawing.Point(166, 179);
+            this.txtDiachi.Name = "txtDiachi";
+            this.txtDiachi.Size = new System.Drawing.Size(123, 20);
+            this.txtDiachi.TabIndex = 24;
+            // 
+            // lblDiachi
+            // 
+            this.lblDiachi.AutoSize = true;
+            this.lblDiachi.Location = new System.Drawing.Point(35, 186);
+            this.lblDiachi.Name = "lblDiachi";
+            this.lblDiachi.Size = new System.Drawing.Size(40, 13);
+            this.lblDiachi.TabIndex = 23;
+            this.lblDiachi.Text = "Địa chỉ";
             // 
             // MaNCC
             // 
@@ -256,6 +256,12 @@ namespace medical_management
             this.TenNCC.HeaderText = "Tên Nhà cung cấp";
             this.TenNCC.Name = "TenNCC";
             // 
+            // Diachi
+            // 
+            this.Diachi.DataPropertyName = "Diachi";
+            this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.Name = "Diachi";
+            // 
             // Sdt
             // 
             this.Sdt.DataPropertyName = "Sdt";
@@ -268,29 +274,23 @@ namespace medical_management
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
-            // Masothue
-            // 
-            this.Masothue.DataPropertyName = "Masothue";
-            this.Masothue.HeaderText = "Mã số thuế";
-            this.Masothue.Name = "Masothue";
-            // 
             // frmNhacungcap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtDiachi);
+            this.Controls.Add(this.lblDiachi);
             this.Controls.Add(this.dgvNhacungcap);
             this.Controls.Add(this.txtTenNCC);
             this.Controls.Add(this.txtSdt);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtMasothue);
             this.Controls.Add(this.txtMaNCC);
             this.Controls.Add(this.lblMaNCC);
             this.Controls.Add(this.lblTenNCC);
             this.Controls.Add(this.lblSdt);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblMasothue);
             this.Controls.Add(this.lblNhacungcap);
             this.Controls.Add(this.btnTruoc);
             this.Controls.Add(this.btnSau);
@@ -321,21 +321,21 @@ namespace medical_management
         private System.Windows.Forms.Button btnSau;
         private System.Windows.Forms.Button btnTruoc;
         private System.Windows.Forms.Label lblNhacungcap;
-        private System.Windows.Forms.Label lblMasothue;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSdt;
         private System.Windows.Forms.Label lblTenNCC;
         private System.Windows.Forms.Label lblMaNCC;
         private System.Windows.Forms.TextBox txtMaNCC;
-        private System.Windows.Forms.TextBox txtMasothue;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.DataGridView dgvNhacungcap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Masothue;
+        private System.Windows.Forms.TextBox txtDiachi;
+        private System.Windows.Forms.Label lblDiachi;
     }
 }

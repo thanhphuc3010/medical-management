@@ -319,7 +319,7 @@ namespace medical_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BackgroundImage = global::medical_management.Properties.Resources.background_main;
+            this.BackgroundImage = global::medical_management.Properties.Resources.background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(963, 644);
             this.Controls.Add(this.menuStrip1);
