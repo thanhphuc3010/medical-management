@@ -39,18 +39,14 @@ namespace medical_management
         private void bindingData()
         {
             object dataSoure = dgvKhachhang.DataSource;
-            List<TextBox> listTxt = new List<TextBox> { txtMaKH, txtTenKH, txtLoaidoituong, txtDiachi, txtSdt, txtEmail, txtGhichu };
-            List<string> fields = new List<string> { "MaKH", "TenKH", "Loaidoituong", "Diachi", "Sdt", "Email", "Ghichu", "ABC" };
 
-            Helper.superBinding(listTxt, fields, dataSoure);
-
-            //txtMaKH.binding(dataSoure, "MaKH");
-            //txtTenKH.binding(dataSoure, "TenKH");
-            //txtLoaidoituong.binding(dataSoure, "Loaidoituong");
-            //txtDiachi.binding(dataSoure, "Diachi");
-            //txtSdt.binding(dataSoure, "Sdt");
-            //txtEmail.binding(dataSoure, "Email");
-            //txtGhichu.binding(dataSoure, "Ghichu");
+            txtMaKH.binding(dataSoure, "MaKH");
+            txtTenKH.binding(dataSoure, "TenKH");
+            txtLoaidoituong.binding(dataSoure, "Loaidoituong");
+            txtDiachi.binding(dataSoure, "Diachi");
+            txtSdt.binding(dataSoure, "Sdt");
+            txtEmail.binding(dataSoure, "Email");
+            txtGhichu.binding(dataSoure, "Ghichu");
 
             //txtTenKH.DataBindings.Clear();
             //txtTenKH.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "TenKH"));
