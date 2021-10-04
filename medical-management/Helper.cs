@@ -69,6 +69,24 @@ namespace medical_management
             }
         }
 
+
+        public static void binding(this TextBox textBox, object dataSoure, string field)
+        {
+            textBox.DataBindings.Clear();
+            textBox.DataBindings.Add(new Binding("Text", dataSoure, field));
+        }
+
+        public static void superBinding(List<TextBox> list, List<String> fields, object dataSoure)
+        {
+            if (list.Count != fields.Count) return;
+            foreach (TextBox txt in list)
+            {
+                int index = list.IndexOf(txt);
+                string field = fields[index];
+                txt.binding(dataSoure, field);
+            }
+        }
+
         public static void showMessage(string message)
         {
             MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
