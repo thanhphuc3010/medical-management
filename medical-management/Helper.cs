@@ -68,5 +68,15 @@ namespace medical_management
                 control.Visible = true;
             }
         }
+
+        public static void showMessage(string message)
+        {
+            MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void showMessageRole()
+        {
+            MessageBox.Show("Bạn không có quyền sử dụng chức năng này", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.lblDemo = new System.Windows.Forms.Label();
             this.txtDemo = new System.Windows.Forms.TextBox();
             this.btnShow = new System.Windows.Forms.Button();
+            this.btnRole = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedical)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,11 +84,22 @@
             this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
+            // btnRole
+            // 
+            this.btnRole.Location = new System.Drawing.Point(49, 48);
+            this.btnRole.Name = "btnRole";
+            this.btnRole.Size = new System.Drawing.Size(243, 23);
+            this.btnRole.TabIndex = 5;
+            this.btnRole.Text = "Role Required";
+            this.btnRole.UseVisualStyleBackColor = true;
+            this.btnRole.Click += new System.EventHandler(this.btnRole_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnRole);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.txtDemo);
             this.Controls.Add(this.lblDemo);
@@ -110,6 +122,7 @@
         private System.Windows.Forms.Label lblDemo;
         private System.Windows.Forms.TextBox txtDemo;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnRole;
     }
 }
 
