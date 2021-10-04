@@ -8,7 +8,7 @@ namespace medical_management
 {
     class Role
     {
-        public static bool ROLE_MANAGE = true;
-        public static bool ROLE_STAFF = false;
+        public const bool ROLE_MANAGE = true;
+        public const bool ROLE_STAFF = false;
     }
 }
