@@ -55,7 +55,7 @@ namespace medical_management
 
         /**
          * <summary>Hide or show control following visible state of control</summary>
-         * <param name="isVisible">A bool value if isVisible = true then hide control, othewise show control</param>
+         * <param name="isVisible">state of control: true if control is visible else false</param>
          */
         public static void visibleOrGone(this Control control, bool isVisible)
         {
