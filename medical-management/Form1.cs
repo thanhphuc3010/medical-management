@@ -1,6 +1,5 @@
 ﻿namespace medical_management
 {
-    using System.Data;
     using System.Windows.Forms;
     public partial class Form1 : Form
     {
@@ -29,21 +28,28 @@
             //lblDemo.gone();
             //txtDemo.gone();
 
-            
+
 
         }
 
         private void loadData()
         {
-            string query = "SELECT * FROM tbl_Thuoc WHERE MaThuoc = @MaThuoc";
-            string medicalId = "2020BD13";
-            DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
-            dgvMedical.DataSource = data;
+            //string query = "SELECT * FROM tbl_Thuoc WHERE MaThuoc = @MaThuoc";
+            //string medicalId = "2020BD13";
+            //DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
+            //dgvMedical.DataSource = data;
+
+            // Comment selection code => Ctrl K + Ctrl C
+            // Uncomment selection code => Ctrl K + Ctrl U
+            // Format code => Ctrl K + Ctrl D
         }
 
         private void btnDemo_Click(object sender, System.EventArgs e)
         {
-
+            if (role != true)
+            {
+                string name = "Phúc";
+            }
         }
 
         private void btnShow_Click(object sender, System.EventArgs e)
