@@ -138,5 +138,46 @@ namespace medical_management
                 loadData();
             }
         }
+       
+
+        private void btnDau_Click_1(object sender, EventArgs e)
+        {
+            dgvKhachhang.ClearSelection();
+            dgvKhachhang.CurrentCell = dgvKhachhang[0, 0];
+            bindingData();
+        }
+
+        private void btnTruoc_Click_1(object sender, EventArgs e)
+        {
+            int i = Convert.ToInt16(dgvKhachhang.CurrentRow.Index.ToString());
+            if (i > 0)
+            {
+                dgvKhachhang.CurrentCell = dgvKhachhang[0, i - 1];
+                bindingData();
+            }
+        }
+
+        private void btnSau_Click_1(object sender, EventArgs e)
+        {
+            int i = Convert.ToInt16(dgvKhachhang.CurrentRow.Index.ToString());
+            if (i < dgvKhachhang.RowCount - 1)
+            {
+                dgvKhachhang.CurrentCell = dgvKhachhang[0, i + 1];
+                bindingData();
+
+            }
+        }
+
+        private void btnCuoi_Click_1(object sender, EventArgs e)
+        {
+            dgvKhachhang.CurrentCell = dgvKhachhang[0, dgvKhachhang.RowCount - 1];
+            bindingData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+
