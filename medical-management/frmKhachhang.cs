@@ -38,15 +38,15 @@ namespace medical_management
 
         private void bindingData()
         {
+            object dataSoure = dgvKhachhang.DataSource;
 
-
-            //txtMaKH.binding(dataSoure, "MaKH");
-            //txtTenKH.binding(dataSoure, "TenKH");
-            //txtLoaidoituong.binding(dataSoure, "Loaidoituong");
-            //txtDiachi.binding(dataSoure, "Diachi");
-            //txtSdt.binding(dataSoure, "Sdt");
-            //txtEmail.binding(dataSoure, "Email");
-            //txtGhichu.binding(dataSoure, "Ghichu");
+            txtMaKH.binding(dataSoure, "MaKH");
+            txtTenKH.binding(dataSoure, "TenKH");
+            txtLoaidoituong.binding(dataSoure, "Loaidoituong");
+            txtDiachi.binding(dataSoure, "Diachi");
+            txtSdt.binding(dataSoure, "Sdt");
+            txtEmail.binding(dataSoure, "Email");
+            txtGhichu.binding(dataSoure, "Ghichu");
 
             txtMaKH.DataBindings.Clear();
             txtMaKH.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "MaKH"));
