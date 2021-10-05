@@ -35,47 +35,47 @@ namespace medical_management
         }
         private void bindingData()
         {
-            //object dataSource = dgvThuoc.DataSource;
-            //txtMathuoc.binding(dataSource, "MaThuoc");
-            //txtManhasanxuat.binding(dataSource, "MaNSX");
-            //txtTenthuoc.binding(dataSource, "Tenthuoc");
-            //txtDonvi.binding(dataSource, "Donvi");
-            //txtHamluong.binding(dataSource, "Hamluong");
-            //txtSoluong.binding(dataSource, "Soluong");
-            //txtDonggoi.binding(dataSource, "Donggoi");
-            //txtThanhphan.binding(dataSource, "Thanhphan");
-            //txtDongia.binding(dataSource, "Dongia");
-            //txtGianhap.binding(dataSource, "Gianhap");
-            //txtNgaysanxuat.binding(dataSource, "Ngaysanxuat");
-            //txtHsd.binding(dataSource, "Hsd");
-            //txtGhichu.binding(dataSource, "Ghichu");
+            object dataSource = dgvThuoc.DataSource;
+            txtMathuoc.binding(dataSource, "MaThuoc");
+            txtManhasanxuat.binding(dataSource, "MaNSX");
+            txtTenthuoc.binding(dataSource, "Tenthuoc");
+            txtDonvi.binding(dataSource, "Donvi");
+            txtHamluong.binding(dataSource, "Hamluong");
+            txtSoluong.binding(dataSource, "Soluong");
+            txtDonggoi.binding(dataSource, "Donggoi");
+            txtThanhphan.binding(dataSource, "Thanhphan");
+            txtDongia.binding(dataSource, "Dongia");
+            txtGianhap.binding(dataSource, "Gianhap");
+            txtNgaysanxuat.binding(dataSource, "Ngaysanxuat");
+            txtHsd.binding(dataSource, "Hansudung");
+            txtGhichu.binding(dataSource, "Ghichu");
 
-            txtMathuoc.DataBindings.Clear();
-            txtMathuoc.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Mathuoc"));
-            txtManhasanxuat.DataBindings.Clear();
-            txtManhasanxuat.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "MaNSX"));
-            txtTenthuoc.DataBindings.Clear();
-            txtTenthuoc.DataBindings.Add(new Binding("Text",dgvThuoc.DataSource, "Tenthuoc"));
-            txtDonvi.DataBindings.Clear();
-            txtDonvi.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Donvi"));
-            txtHamluong.DataBindings.Clear();
-            txtHamluong.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Hamluong"));
-            txtSoluong.DataBindings.Clear();
-            txtSoluong.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Soluong"));
-            txtDonggoi.DataBindings.Clear();
-            txtDonggoi.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Donggoi"));
-            txtThanhphan.DataBindings.Clear();
-            txtThanhphan.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Thanhphan"));
-            txtDongia.DataBindings.Clear();
-            txtDongia.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Dongia"));
-            txtGianhap.DataBindings.Clear();
-            txtGianhap.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Gianhap"));
-            txtNgaysanxuat.DataBindings.Clear();
-            txtNgaysanxuat.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Ngaysanxuat"));
-            txtHsd.DataBindings.Clear();
-            txtHsd.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Hansudung"));
-            txtGhichu.DataBindings.Clear();
-            txtGhichu.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Ghichu"));
+            //txtMathuoc.DataBindings.Clear();
+            //txtMathuoc.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Mathuoc"));
+            //txtManhasanxuat.DataBindings.Clear();
+            //txtManhasanxuat.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "MaNSX"));
+            //txtTenthuoc.DataBindings.Clear();
+            //txtTenthuoc.DataBindings.Add(new Binding("Text",dgvThuoc.DataSource, "Tenthuoc"));
+            //txtDonvi.DataBindings.Clear();
+            //txtDonvi.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Donvi"));
+            //txtHamluong.DataBindings.Clear();
+            //txtHamluong.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Hamluong"));
+            //txtSoluong.DataBindings.Clear();
+            //txtSoluong.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Soluong"));
+            //txtDonggoi.DataBindings.Clear();
+            //txtDonggoi.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Donggoi"));
+            //txtThanhphan.DataBindings.Clear();
+            //txtThanhphan.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Thanhphan"));
+            //txtDongia.DataBindings.Clear();
+            //txtDongia.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Dongia"));
+            //txtGianhap.DataBindings.Clear();
+            //txtGianhap.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Gianhap"));
+            //txtNgaysanxuat.DataBindings.Clear();
+            //txtNgaysanxuat.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Ngaysanxuat"));
+            //txtHsd.DataBindings.Clear();
+            //txtHsd.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Hansudung"));
+            //txtGhichu.DataBindings.Clear();
+            //txtGhichu.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Ghichu"));
 
         }
         private void addItem()
