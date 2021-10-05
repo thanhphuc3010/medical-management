@@ -38,11 +38,7 @@ namespace medical_management
 
         private void bindingData()
         {
-            object dataSoure = dgvKhachhang.DataSource;
-            List<TextBox> listTxt = new List<TextBox> { txtMaKH, txtTenKH, txtLoaidoituong, txtDiachi, txtSdt, txtEmail, txtGhichu };
-            List<string> fields = new List<string> { "MaKH", "TenKH", "Loaidoituong", "Diachi", "Sdt", "Email", "Ghichu", "ABC" };
 
-            Helper.superBinding(listTxt, fields, dataSoure);
 
             //txtMaKH.binding(dataSoure, "MaKH");
             //txtTenKH.binding(dataSoure, "TenKH");
@@ -52,18 +48,20 @@ namespace medical_management
             //txtEmail.binding(dataSoure, "Email");
             //txtGhichu.binding(dataSoure, "Ghichu");
 
-            //txtTenKH.DataBindings.Clear();
-            //txtTenKH.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "TenKH"));
-            //txtLoaidoituong.DataBindings.Clear();
-            //txtLoaidoituong.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Loaidoituong"));
-            //txtDiachi.DataBindings.Clear();
-            //txtDiachi.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Diachi"));
-            //txtSdt.DataBindings.Clear();
-            //txtSdt.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Sdt"));
-            //txtEmail.DataBindings.Clear();
-            //txtEmail.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Email"));
-            //txtGhichu.DataBindings.Clear();
-            //txtGhichu.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Ghichu"));
+            txtMaKH.DataBindings.Clear();
+            txtMaKH.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "MaKH"));
+            txtTenKH.DataBindings.Clear();
+            txtTenKH.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "TenKH"));
+            txtLoaidoituong.DataBindings.Clear();
+            txtLoaidoituong.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Loaidoituong"));
+            txtDiachi.DataBindings.Clear();
+            txtDiachi.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Diachi"));
+            txtSdt.DataBindings.Clear();
+            txtSdt.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Sdt"));
+            txtEmail.DataBindings.Clear();
+            txtEmail.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Email"));
+            txtGhichu.DataBindings.Clear();
+            txtGhichu.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Ghichu"));
         }
 
         private void addCustomer()
@@ -141,6 +139,45 @@ namespace medical_management
             {
                 loadData();
             }
+        }
+
+        private void btnDau_Click(object sender, EventArgs e)
+        {
+            dgvKhachhang.ClearSelection();
+            dgvKhachhang.CurrentCell = dgvKhachhang[0, 0];
+            bindingData();
+        }
+
+        private void btnTruoc_Click(object sender, EventArgs e)
+        {
+            int i = Convert.ToInt16(dgvKhachhang.CurrentRow.Index.ToString());
+            if(i>0)
+            {
+                dgvKhachhang.CurrentCell = dgvKhachhang[0, i - 1];
+                bindingData();
+            }
+        }
+
+        private void btnSau_Click(object sender, EventArgs e)
+        {
+            int i = Convert.ToInt16(dgvKhachhang.CurrentRow.Index.ToString());
+            if(i<dgvKhachhang.RowCount-1)
+            {
+                dgvKhachhang.CurrentCell = dgvKhachhang[0, i + 1];
+                bindingData();
+
+            }
+        }
+
+        private void btnCuoi_Click(object sender, EventArgs e)
+        {
+            dgvKhachhang.CurrentCell = dgvKhachhang[0, dgvKhachhang.RowCount - 1];
+            bindingData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
