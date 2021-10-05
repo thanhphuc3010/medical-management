@@ -139,7 +139,6 @@ namespace medical_management
             }
         }
        
-
         private void btnDau_Click_1(object sender, EventArgs e)
         {
             dgvKhachhang.ClearSelection();
