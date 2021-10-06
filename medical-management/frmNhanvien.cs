@@ -15,8 +15,12 @@ namespace medical_management
         public frmNhanvien()
         {
             InitializeComponent();
-          
+            initializeControl();
 
+        }
+        private void initializeControl()
+        {
+            btnSave.disable();
         }
         private void loadData()
         {
