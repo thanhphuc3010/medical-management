@@ -59,7 +59,7 @@ namespace medical_management
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.dgvNhanvien = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Chucvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,7 @@ namespace medical_management
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@ namespace medical_management
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
@@ -87,6 +89,7 @@ namespace medical_management
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDel
             // 
@@ -96,6 +99,7 @@ namespace medical_management
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEdit
             // 
@@ -105,6 +109,7 @@ namespace medical_management
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnPrint
             // 
@@ -123,6 +128,7 @@ namespace medical_management
             this.btnDau.TabIndex = 5;
             this.btnDau.Text = "Đầu";
             this.btnDau.UseVisualStyleBackColor = true;
+            this.btnDau.Click += new System.EventHandler(this.btnDau_Click);
             // 
             // btnCuoi
             // 
@@ -132,6 +138,7 @@ namespace medical_management
             this.btnCuoi.TabIndex = 6;
             this.btnCuoi.Text = "Cuối";
             this.btnCuoi.UseVisualStyleBackColor = true;
+            this.btnCuoi.Click += new System.EventHandler(this.btnCuoi_Click);
             // 
             // btnSau
             // 
@@ -141,6 +148,7 @@ namespace medical_management
             this.btnSau.TabIndex = 7;
             this.btnSau.Text = "Sau";
             this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
             // btnTruoc
             // 
@@ -150,6 +158,7 @@ namespace medical_management
             this.btnTruoc.TabIndex = 8;
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
             // lblNhanvien
             // 
@@ -247,14 +256,14 @@ namespace medical_management
             this.txtMaNV.Location = new System.Drawing.Point(167, 117);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(191, 20);
-            this.txtMaNV.TabIndex = 19;
+            this.txtMaNV.TabIndex = 1;
             // 
             // txtGioitinh
             // 
             this.txtGioitinh.Location = new System.Drawing.Point(167, 221);
             this.txtGioitinh.Name = "txtGioitinh";
             this.txtGioitinh.Size = new System.Drawing.Size(191, 20);
-            this.txtGioitinh.TabIndex = 20;
+            this.txtGioitinh.TabIndex = 5;
             // 
             // txtEmail
             // 
@@ -289,29 +298,32 @@ namespace medical_management
             this.txtNgaysinh.Location = new System.Drawing.Point(167, 195);
             this.txtNgaysinh.Name = "txtNgaysinh";
             this.txtNgaysinh.Size = new System.Drawing.Size(191, 20);
-            this.txtNgaysinh.TabIndex = 25;
+            this.txtNgaysinh.TabIndex = 4;
             // 
             // txtChucvu
             // 
             this.txtChucvu.Location = new System.Drawing.Point(167, 169);
             this.txtChucvu.Name = "txtChucvu";
             this.txtChucvu.Size = new System.Drawing.Size(191, 20);
-            this.txtChucvu.TabIndex = 26;
+            this.txtChucvu.TabIndex = 3;
             // 
             // txtTenNV
             // 
             this.txtTenNV.Location = new System.Drawing.Point(167, 143);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(191, 20);
-            this.txtTenNV.TabIndex = 27;
+            this.txtTenNV.TabIndex = 2;
             // 
             // dgvNhanvien
             // 
+            this.dgvNhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
-            this.TenNhanvien,
+            this.TenNV,
             this.Chucvu,
             this.Ngaysinh,
             this.Gioitinh,
@@ -330,11 +342,11 @@ namespace medical_management
             this.MaNV.HeaderText = "Mã Nhân viên";
             this.MaNV.Name = "MaNV";
             // 
-            // TenNhanvien
+            // TenNV
             // 
-            this.TenNhanvien.DataPropertyName = "TenNhanvien";
-            this.TenNhanvien.HeaderText = "Tên Nhân viên";
-            this.TenNhanvien.Name = "TenNhanvien";
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Tên Nhân viên";
+            this.TenNV.Name = "TenNV";
             // 
             // Chucvu
             // 
@@ -378,12 +390,24 @@ namespace medical_management
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Location = new System.Drawing.Point(699, 470);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(89, 28);
+            this.btnExit.TabIndex = 29;
+            this.btnExit.Text = "Kết thúc";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmNhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 510);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dgvNhanvien);
             this.Controls.Add(this.txtTenNV);
             this.Controls.Add(this.txtChucvu);
@@ -415,6 +439,7 @@ namespace medical_management
             this.Controls.Add(this.btnAdd);
             this.Name = "frmNhanvien";
             this.Text = "frmNhanvien";
+            this.Load += new System.EventHandler(this.frmNhanvien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -452,8 +477,9 @@ namespace medical_management
         private System.Windows.Forms.TextBox txtChucvu;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.DataGridView dgvNhanvien;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNhanvien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Chucvu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
