@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,17 @@ namespace medical_management
 {
     public static class Helper
     {
+
+        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
+        {
+
+            DataTable data = Database.Instance.excuteQuery(sql);
+            cbo.DisplayMember = ten; //Trường hiển thị
+            cbo.ValueMember = ma; //Trường giá trị
+            cbo.DataSource = data;
+        }
+
+
         /**
          * <summary>Disable a control like: button, textbox, label,...</summary>
          */
