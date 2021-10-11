@@ -49,6 +49,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="frmDSHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSHD.Designer.cs">
+      <DependentUpon>frmDSHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSPN.Designer.cs">
+      <DependentUpon>frmDSPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLothuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLothuoc.Designer.cs">
+      <DependentUpon>frmLothuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -119,6 +137,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDSHD.resx">
+      <DependentUpon>frmDSHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSPN.resx">
+      <DependentUpon>frmDSPN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHTPPharmacy.resx">
       <DependentUpon>frmHTPPharmacy.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLothuoc.resx">
+      <DependentUpon>frmLothuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhacungcap.resx">
       <DependentUpon>frmNhacungcap.cs</DependentUpon>
