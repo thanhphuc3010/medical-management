@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,33 +51,6 @@ namespace medical_management
             txtHsd.binding(dataSource, "Hansudung");
             txtGhichu.binding(dataSource, "Ghichu");
 
-            //txtMathuoc.DataBindings.Clear();
-            //txtMathuoc.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Mathuoc"));
-            //txtManhasanxuat.DataBindings.Clear();
-            //txtManhasanxuat.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "MaNSX"));
-            //txtTenthuoc.DataBindings.Clear();
-            //txtTenthuoc.DataBindings.Add(new Binding("Text",dgvThuoc.DataSource, "Tenthuoc"));
-            //txtDonvi.DataBindings.Clear();
-            //txtDonvi.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Donvi"));
-            //txtHamluong.DataBindings.Clear();
-            //txtHamluong.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Hamluong"));
-            //txtSoluong.DataBindings.Clear();
-            //txtSoluong.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Soluong"));
-            //txtDonggoi.DataBindings.Clear();
-            //txtDonggoi.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Donggoi"));
-            //txtThanhphan.DataBindings.Clear();
-            //txtThanhphan.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Thanhphan"));
-            //txtDongia.DataBindings.Clear();
-            //txtDongia.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Dongia"));
-            //txtGianhap.DataBindings.Clear();
-            //txtGianhap.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Gianhap"));
-            //txtNgaysanxuat.DataBindings.Clear();
-            //txtNgaysanxuat.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Ngaysanxuat"));
-            //txtHsd.DataBindings.Clear();
-            //txtHsd.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Hansudung"));
-            //txtGhichu.DataBindings.Clear();
-            //txtGhichu.DataBindings.Add(new Binding("Text", dgvThuoc.DataSource, "Ghichu"));
-
         }
         private void addItem()
         {
@@ -94,9 +68,9 @@ namespace medical_management
             string hsd = txtHsd.Text.ToString().Trim();
             string ghichu = txtGhichu.Text.ToString().Trim();
 
-            string insert = "INSERT INTO tbl_Item (MaThuoc, Manhasanxuat, Tenthuoc, Don vi, Ham luong, So luong, Donggoi, Thanhphan, Dongia, Gianhap, Ngaysanxuat, Hsd, Ghi chu)" + "" + "" +
-                "VALUES ( @Mathuoc, @MaNSX, @Tenthuoc, @Donvi, @Hamluong, @Soluong, @Donggoi, @Thanhphan, @Dongia, @Gianhap, @Ngaysanxuat, @Hansudung, @Ghichu )";
-            int result = Database.Instance.excuteNonQuery(insert, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, ngaysanxuat, hsd, ghichu });
+            string insert = "INSERT INTO tbl_Item (MaThuoc, MaNSX, Tenthuoc, Donvi, Hamluong, Soluong, Donggoi, Thanhphan, Dongia, Gianhap, Ngaysanxuat, Hansudung, Ghichu)" + "" + "" +
+                "VALUES ( @Mathuoc , @MaNSX , @Tenthuoc , @Donvi , @Hamluong , @Soluong , @Donggoi , @Thanhphan , @Dongia , @Gianhap , @Ngaysanxuat , @Hansudung , @Ghichu )";
+            int result = Database.Instance.excuteNonQuery(insert, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ngaysanxuat, hsd, ghichu });
             if (result > 0)
             {
                 loadData();
@@ -130,12 +104,28 @@ namespace medical_management
 
         private void btnDel_Click_1(object sender, EventArgs e)
         {
+            deleteMedicine();
+        }
+
+        private void deleteMedicine()
+        {
             string id = txtMathuoc.Text.ToString().Trim();
-            string del = "Delete from tbl_Item Where Mathuoc=@Mathuoc";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { id });
-            if (result > 0)
+            string del = "Delete from tbl_Item Where Mathuoc = @Mathuoc";
+            try
             {
-                loadData();
+                int result = Database.Instance.excuteNonQuery(del, new object[] { id });
+                if (result > 0)
+                {
+                    loadData();
+                }
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
+                }
+                else throw;
             }
         }
 

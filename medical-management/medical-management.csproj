@@ -55,6 +55,12 @@
     <Compile Include="frmSelectCustomer.Designer.cs">
       <DependentUpon>frmSelectCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSelectMedical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectMedical.Designer.cs">
+      <DependentUpon>frmSelectMedical.cs</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelectCustomer.resx">
       <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectMedical.resx">
+      <DependentUpon>frmSelectMedical.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuoc.resx">
       <DependentUpon>frmThuoc.cs</DependentUpon>
