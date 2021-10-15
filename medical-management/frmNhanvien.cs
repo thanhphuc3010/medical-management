@@ -46,7 +46,7 @@ namespace medical_management
             txtDiachi.binding(dataSource, "Diachi");
             txtSodienthoai.binding(dataSource, "Sdt");
             txtEmail.binding(dataSource, "Email");
-        } 
+        }
 
         private void addStaff()
         {
@@ -64,7 +64,7 @@ namespace medical_management
                 "Values ( @MaNV , @TenNV , @Chucvu , @Ngaysinh , @Gioitinh , @Chungchihanhnghe , @Diachi , @Sdt , @Email)";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, Email });
-            if(result>0)
+            if (result > 0)
             {
                 loadData();
             }
@@ -76,7 +76,7 @@ namespace medical_management
             string id = txtMaNV.Text.ToString().Trim();
             string del = "Delete From tbl_Staff Where MaNV = @MaNV ";
             int result = Database.Instance.excuteNonQuery(del, new object[] { id });
-            if(result>0)
+            if (result > 0)
             {
                 loadData();
             }
@@ -126,7 +126,7 @@ namespace medical_management
                 "Set TenNV = @TenNV , Chucvu = @Chucvu , Ngaysinh = @Ngaysinh , Gioitinh = @Gioitinh , Chungchihanhnghe = @Chungchihanhnghe , Diachi = @Diachi , Sdt = @Sdt , Email = @Email" + "" +
                 " Where MaNV =@MaNV ";
             int result = Database.Instance.excuteNonQuery(del, new object[] { tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, email });
-            if(result>0)
+            if (result > 0)
             {
                 loadData();
             }
@@ -137,12 +137,13 @@ namespace medical_management
         {
             dgvNhanvien.ClearSelection();
             dgvNhanvien.CurrentCell = dgvNhanvien[0, 0];
-            bindingData();        }
+            bindingData();
+        }
 
         private void btnTruoc_Click(object sender, EventArgs e)
         {
             int i = Convert.ToInt16(dgvNhanvien.CurrentRow.Index.ToString());
-            if(i>0)
+            if (i > 0)
             {
                 dgvNhanvien.CurrentCell = dgvNhanvien[0, i - 1];
                 bindingData();
@@ -152,7 +153,7 @@ namespace medical_management
         private void btnSau_Click(object sender, EventArgs e)
         {
             int i = Convert.ToInt16(dgvNhanvien.CurrentRow.Index.ToString());
-            if (i<dgvNhanvien.RowCount-1)
+            if (i < dgvNhanvien.RowCount - 1)
             {
                 dgvNhanvien.CurrentCell = dgvNhanvien[0, i + 1];
                 bindingData();

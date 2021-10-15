@@ -54,9 +54,10 @@ namespace medical_management
             this.btnSau = new System.Windows.Forms.Button();
             this.btnTruoc = new System.Windows.Forms.Button();
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
+            this.btnExit = new System.Windows.Forms.Button();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loaidoituong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loaidoituong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +68,7 @@ namespace medical_management
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(29, 41);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(61, 43);
             this.btnAdd.TabIndex = 0;
@@ -78,7 +79,7 @@ namespace medical_management
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(307, 41);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(61, 43);
             this.btnPrint.TabIndex = 1;
@@ -88,7 +89,7 @@ namespace medical_management
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(237, 41);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(61, 43);
             this.btnSave.TabIndex = 2;
@@ -99,7 +100,7 @@ namespace medical_management
             // btnDel
             // 
             this.btnDel.Location = new System.Drawing.Point(168, 41);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(61, 43);
             this.btnDel.TabIndex = 3;
@@ -110,7 +111,7 @@ namespace medical_management
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(99, 41);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(61, 43);
             this.btnEdit.TabIndex = 4;
@@ -142,7 +143,7 @@ namespace medical_management
             // lblGhichu
             // 
             this.lblGhichu.AutoSize = true;
-            this.lblGhichu.Location = new System.Drawing.Point(569, 223);
+            this.lblGhichu.Location = new System.Drawing.Point(567, 223);
             this.lblGhichu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGhichu.Name = "lblGhichu";
             this.lblGhichu.Size = new System.Drawing.Size(57, 17);
@@ -152,7 +153,7 @@ namespace medical_management
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(569, 192);
+            this.lblEmail.Location = new System.Drawing.Point(567, 192);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(42, 17);
@@ -202,7 +203,7 @@ namespace medical_management
             // txtMaKH
             // 
             this.txtMaKH.Location = new System.Drawing.Point(168, 156);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(199, 22);
             this.txtMaKH.TabIndex = 13;
@@ -210,7 +211,7 @@ namespace medical_management
             // txtGhichu
             // 
             this.txtGhichu.Location = new System.Drawing.Point(693, 219);
-            this.txtGhichu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGhichu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGhichu.Name = "txtGhichu";
             this.txtGhichu.Size = new System.Drawing.Size(199, 22);
             this.txtGhichu.TabIndex = 15;
@@ -218,7 +219,7 @@ namespace medical_management
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(693, 188);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(199, 22);
             this.txtEmail.TabIndex = 16;
@@ -226,7 +227,7 @@ namespace medical_management
             // txtSdt
             // 
             this.txtSdt.Location = new System.Drawing.Point(693, 156);
-            this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(199, 22);
             this.txtSdt.TabIndex = 17;
@@ -234,7 +235,7 @@ namespace medical_management
             // txtDiachi
             // 
             this.txtDiachi.Location = new System.Drawing.Point(168, 252);
-            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(199, 22);
             this.txtDiachi.TabIndex = 18;
@@ -242,7 +243,7 @@ namespace medical_management
             // txtLoaidoituong
             // 
             this.txtLoaidoituong.Location = new System.Drawing.Point(168, 220);
-            this.txtLoaidoituong.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLoaidoituong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLoaidoituong.Name = "txtLoaidoituong";
             this.txtLoaidoituong.Size = new System.Drawing.Size(199, 22);
             this.txtLoaidoituong.TabIndex = 19;
@@ -250,7 +251,7 @@ namespace medical_management
             // txtTenKH
             // 
             this.txtTenKH.Location = new System.Drawing.Point(168, 188);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(199, 22);
             this.txtTenKH.TabIndex = 20;
@@ -258,42 +259,46 @@ namespace medical_management
             // btnDau
             // 
             this.btnDau.Location = new System.Drawing.Point(29, 325);
-            this.btnDau.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDau.Name = "btnDau";
             this.btnDau.Size = new System.Drawing.Size(101, 37);
             this.btnDau.TabIndex = 21;
             this.btnDau.Text = "Đầu";
             this.btnDau.UseVisualStyleBackColor = true;
+            this.btnDau.Click += new System.EventHandler(this.btnDau_Click_1);
             // 
             // btnCuoi
             // 
             this.btnCuoi.Location = new System.Drawing.Point(357, 325);
-            this.btnCuoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCuoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCuoi.Name = "btnCuoi";
             this.btnCuoi.Size = new System.Drawing.Size(101, 37);
             this.btnCuoi.TabIndex = 22;
             this.btnCuoi.Text = "Cuối";
             this.btnCuoi.UseVisualStyleBackColor = true;
+            this.btnCuoi.Click += new System.EventHandler(this.btnCuoi_Click_1);
             // 
             // btnSau
             // 
             this.btnSau.Location = new System.Drawing.Point(248, 325);
-            this.btnSau.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSau.Name = "btnSau";
             this.btnSau.Size = new System.Drawing.Size(101, 37);
             this.btnSau.TabIndex = 23;
             this.btnSau.Text = "Sau";
             this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click_1);
             // 
             // btnTruoc
             // 
             this.btnTruoc.Location = new System.Drawing.Point(139, 325);
-            this.btnTruoc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTruoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTruoc.Name = "btnTruoc";
             this.btnTruoc.Size = new System.Drawing.Size(101, 37);
             this.btnTruoc.TabIndex = 24;
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click_1);
             // 
             // dgvKhachhang
             // 
@@ -308,11 +313,22 @@ namespace medical_management
             this.Email,
             this.Ghichu});
             this.dgvKhachhang.Location = new System.Drawing.Point(0, 378);
-            this.dgvKhachhang.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvKhachhang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvKhachhang.Name = "dgvKhachhang";
             this.dgvKhachhang.RowHeadersWidth = 51;
             this.dgvKhachhang.Size = new System.Drawing.Size(1069, 244);
             this.dgvKhachhang.TabIndex = 25;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(904, 635);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(124, 37);
+            this.btnExit.TabIndex = 26;
+            this.btnExit.Text = "Kết thúc";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MaKH
             // 
@@ -334,6 +350,8 @@ namespace medical_management
             this.Loaidoituong.HeaderText = "Loại đối tượng";
             this.Loaidoituong.MinimumWidth = 6;
             this.Loaidoituong.Name = "Loaidoituong";
+            this.Loaidoituong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Loaidoituong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Diachi
             // 
@@ -368,7 +386,8 @@ namespace medical_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1067, 622);
+            this.ClientSize = new System.Drawing.Size(1067, 687);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dgvKhachhang);
             this.Controls.Add(this.btnTruoc);
             this.Controls.Add(this.btnSau);
@@ -394,7 +413,7 @@ namespace medical_management
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmKhachhang";
             this.Text = "frmKhachhang";
             this.Load += new System.EventHandler(this.frmKhachhang_Load);
@@ -431,9 +450,10 @@ namespace medical_management
         private System.Windows.Forms.Button btnSau;
         private System.Windows.Forms.Button btnTruoc;
         private System.Windows.Forms.DataGridView dgvKhachhang;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Loaidoituong;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Loaidoituong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;

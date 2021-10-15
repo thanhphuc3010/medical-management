@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,16 @@ namespace medical_management
 {
     public static class Helper
     {
+        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
+        {
+
+            DataTable data = Database.Instance.excuteQuery(sql);
+            cbo.DisplayMember = ten; //Trường hiển thị
+            cbo.ValueMember = ma; //Trường giá trị
+            cbo.DataSource = data;
+        }
+
+
         /**
          * <summary>Disable a control like: button, textbox, label,...</summary>
          */
@@ -69,6 +80,42 @@ namespace medical_management
             }
         }
 
+        public static void setHint(this TextBox textBox, string hint)
+        {
+            string placeHolder = hint;
+            System.Drawing.Color DefaultColor;
+            // get default color of text
+            DefaultColor = textBox.ForeColor;
+            // Add event handler for when the control gets focus
+            textBox.GotFocus += (object sender, EventArgs e) =>
+            {
+                textBox.Text = String.Empty;
+                textBox.ForeColor = DefaultColor;
+            };
+
+            // add event handling when focus is lost
+            textBox.LostFocus += (Object sender, EventArgs e) =>
+            {
+                if (String.IsNullOrEmpty(textBox.Text) || textBox.Text == placeHolder)
+                {
+                    textBox.ForeColor = System.Drawing.Color.Gray;
+                    textBox.Text = hint;
+                }
+                else
+                {
+                    textBox.ForeColor = DefaultColor;
+                }
+            };
+
+            if (!string.IsNullOrEmpty(placeHolder))
+            {
+                // change style   
+                textBox.ForeColor = System.Drawing.Color.Gray;
+                // Add text
+                placeHolder = hint;
+                textBox.Text = placeHolder;
+            }
+        }
 
         public static void binding(this TextBox textBox, object dataSoure, string field)
         {
