@@ -102,46 +102,46 @@ namespace medical_management
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // mItemReLogin
             // 
             this.mItemReLogin.Name = "mItemReLogin";
-            this.mItemReLogin.Size = new System.Drawing.Size(147, 22);
+            this.mItemReLogin.Size = new System.Drawing.Size(180, 22);
             this.mItemReLogin.Text = "Đăng nhập lại";
             this.mItemReLogin.Click += new System.EventHandler(this.mItemReLogin_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // mItemChangePassword
             // 
             this.mItemChangePassword.Name = "mItemChangePassword";
-            this.mItemChangePassword.Size = new System.Drawing.Size(147, 22);
+            this.mItemChangePassword.Size = new System.Drawing.Size(180, 22);
             this.mItemChangePassword.Text = "Đổi mật khẩu";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // mItemHelp
             // 
             this.mItemHelp.Name = "mItemHelp";
-            this.mItemHelp.Size = new System.Drawing.Size(147, 22);
+            this.mItemHelp.Size = new System.Drawing.Size(180, 22);
             this.mItemHelp.Text = "Trợ giúp";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // mItemExit
             // 
             this.mItemExit.Name = "mItemExit";
-            this.mItemExit.Size = new System.Drawing.Size(147, 22);
+            this.mItemExit.Size = new System.Drawing.Size(180, 22);
             this.mItemExit.Text = "Thoát";
             // 
             // tsCategory
@@ -171,6 +171,7 @@ namespace medical_management
             this.mItemThuoc.Name = "mItemThuoc";
             this.mItemThuoc.Size = new System.Drawing.Size(206, 22);
             this.mItemThuoc.Text = "Danh mục Thuốc";
+            this.mItemThuoc.Click += new System.EventHandler(this.mItemThuoc_Click);
             // 
             // toolStripSeparator17
             // 
@@ -182,6 +183,7 @@ namespace medical_management
             this.mItemKH.Name = "mItemKH";
             this.mItemKH.Size = new System.Drawing.Size(206, 22);
             this.mItemKH.Text = "Danh mục Khách hàng";
+            this.mItemKH.Click += new System.EventHandler(this.mItemKH_Click);
             // 
             // toolStripSeparator18
             // 

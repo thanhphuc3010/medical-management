@@ -22,5 +22,19 @@ namespace medical_management
             Form1 f = new Form1();
             f.Show();
         }
+
+        private void mItemThuoc_Click(object sender, EventArgs e)
+        {
+            frmThuoc f = new frmThuoc();
+            f.Show();
+           
+
+        }
+
+        private void mItemKH_Click(object sender, EventArgs e)
+        {
+            frmKhachhang f = new frmKhachhang();
+            f.Show();
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace medical_management
         {
             InitializeComponent();
         }
+
+        private void lblPhieunhap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

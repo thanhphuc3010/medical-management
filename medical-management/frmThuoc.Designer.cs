@@ -43,20 +43,16 @@ namespace medical_management
             this.lblSoluong = new System.Windows.Forms.Label();
             this.lblDonggoi = new System.Windows.Forms.Label();
             this.lblThanhphan = new System.Windows.Forms.Label();
-            this.lblNgaysanxuat = new System.Windows.Forms.Label();
-            this.lblHsd = new System.Windows.Forms.Label();
             this.lblGhichu = new System.Windows.Forms.Label();
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
             this.txtMathuoc = new System.Windows.Forms.TextBox();
-            this.txtManhasanxuat = new System.Windows.Forms.TextBox();
+            this.txtMaNSX = new System.Windows.Forms.TextBox();
             this.txtTenthuoc = new System.Windows.Forms.TextBox();
             this.txtDonvi = new System.Windows.Forms.TextBox();
             this.txtHamluong = new System.Windows.Forms.TextBox();
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.txtDonggoi = new System.Windows.Forms.TextBox();
             this.txtThanhphan = new System.Windows.Forms.TextBox();
-            this.txtNgaysanxuat = new System.Windows.Forms.TextBox();
-            this.txtHsd = new System.Windows.Forms.TextBox();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.btnDau = new System.Windows.Forms.Button();
             this.btnCuoi = new System.Windows.Forms.Button();
@@ -79,8 +75,6 @@ namespace medical_management
             this.Thanhphan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
@@ -216,28 +210,10 @@ namespace medical_management
             this.lblThanhphan.TabIndex = 13;
             this.lblThanhphan.Text = "Thành phần";
             // 
-            // lblNgaysanxuat
-            // 
-            this.lblNgaysanxuat.AutoSize = true;
-            this.lblNgaysanxuat.Location = new System.Drawing.Point(451, 205);
-            this.lblNgaysanxuat.Name = "lblNgaysanxuat";
-            this.lblNgaysanxuat.Size = new System.Drawing.Size(75, 13);
-            this.lblNgaysanxuat.TabIndex = 14;
-            this.lblNgaysanxuat.Text = "Ngày sản xuất";
-            // 
-            // lblHsd
-            // 
-            this.lblHsd.AutoSize = true;
-            this.lblHsd.Location = new System.Drawing.Point(451, 231);
-            this.lblHsd.Name = "lblHsd";
-            this.lblHsd.Size = new System.Drawing.Size(68, 13);
-            this.lblHsd.TabIndex = 15;
-            this.lblHsd.Text = "Hạn sử dụng";
-            // 
             // lblGhichu
             // 
             this.lblGhichu.AutoSize = true;
-            this.lblGhichu.Location = new System.Drawing.Point(451, 261);
+            this.lblGhichu.Location = new System.Drawing.Point(451, 209);
             this.lblGhichu.Name = "lblGhichu";
             this.lblGhichu.Size = new System.Drawing.Size(44, 13);
             this.lblGhichu.TabIndex = 16;
@@ -261,8 +237,6 @@ namespace medical_management
             this.Thanhphan,
             this.Dongia,
             this.Gianhap,
-            this.Ngaysanxuat,
-            this.Hansudung,
             this.Ghichu});
             this.dgvThuoc.Location = new System.Drawing.Point(12, 334);
             this.dgvThuoc.Name = "dgvThuoc";
@@ -277,12 +251,12 @@ namespace medical_management
             this.txtMathuoc.Size = new System.Drawing.Size(188, 20);
             this.txtMathuoc.TabIndex = 18;
             // 
-            // txtManhasanxuat
+            // txtMaNSX
             // 
-            this.txtManhasanxuat.Location = new System.Drawing.Point(125, 120);
-            this.txtManhasanxuat.Name = "txtManhasanxuat";
-            this.txtManhasanxuat.Size = new System.Drawing.Size(188, 20);
-            this.txtManhasanxuat.TabIndex = 19;
+            this.txtMaNSX.Location = new System.Drawing.Point(125, 120);
+            this.txtMaNSX.Name = "txtMaNSX";
+            this.txtMaNSX.Size = new System.Drawing.Size(188, 20);
+            this.txtMaNSX.TabIndex = 19;
             // 
             // txtTenthuoc
             // 
@@ -326,23 +300,9 @@ namespace medical_management
             this.txtThanhphan.Size = new System.Drawing.Size(188, 20);
             this.txtThanhphan.TabIndex = 25;
             // 
-            // txtNgaysanxuat
-            // 
-            this.txtNgaysanxuat.Location = new System.Drawing.Point(534, 202);
-            this.txtNgaysanxuat.Name = "txtNgaysanxuat";
-            this.txtNgaysanxuat.Size = new System.Drawing.Size(188, 20);
-            this.txtNgaysanxuat.TabIndex = 26;
-            // 
-            // txtHsd
-            // 
-            this.txtHsd.Location = new System.Drawing.Point(534, 228);
-            this.txtHsd.Name = "txtHsd";
-            this.txtHsd.Size = new System.Drawing.Size(188, 20);
-            this.txtHsd.TabIndex = 27;
-            // 
             // txtGhichu
             // 
-            this.txtGhichu.Location = new System.Drawing.Point(534, 254);
+            this.txtGhichu.Location = new System.Drawing.Point(534, 202);
             this.txtGhichu.Name = "txtGhichu";
             this.txtGhichu.Size = new System.Drawing.Size(188, 20);
             this.txtGhichu.TabIndex = 28;
@@ -515,20 +475,6 @@ namespace medical_management
             this.Gianhap.HeaderText = "Giá nhập";
             this.Gianhap.Name = "Gianhap";
             // 
-            // Ngaysanxuat
-            // 
-            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
-            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
-            this.Ngaysanxuat.MinimumWidth = 6;
-            this.Ngaysanxuat.Name = "Ngaysanxuat";
-            // 
-            // Hansudung
-            // 
-            this.Hansudung.DataPropertyName = "Hansudung";
-            this.Hansudung.HeaderText = "Hạn sử dụng";
-            this.Hansudung.MinimumWidth = 6;
-            this.Hansudung.Name = "Hansudung";
-            // 
             // Ghichu
             // 
             this.Ghichu.DataPropertyName = "Ghichu";
@@ -554,20 +500,16 @@ namespace medical_management
             this.Controls.Add(this.btnCuoi);
             this.Controls.Add(this.btnDau);
             this.Controls.Add(this.txtGhichu);
-            this.Controls.Add(this.txtHsd);
-            this.Controls.Add(this.txtNgaysanxuat);
             this.Controls.Add(this.txtThanhphan);
             this.Controls.Add(this.txtDonggoi);
             this.Controls.Add(this.txtSoluong);
             this.Controls.Add(this.txtHamluong);
             this.Controls.Add(this.txtDonvi);
             this.Controls.Add(this.txtTenthuoc);
-            this.Controls.Add(this.txtManhasanxuat);
+            this.Controls.Add(this.txtMaNSX);
             this.Controls.Add(this.txtMathuoc);
             this.Controls.Add(this.dgvThuoc);
             this.Controls.Add(this.lblGhichu);
-            this.Controls.Add(this.lblHsd);
-            this.Controls.Add(this.lblNgaysanxuat);
             this.Controls.Add(this.lblThanhphan);
             this.Controls.Add(this.lblDonggoi);
             this.Controls.Add(this.lblSoluong);
@@ -608,20 +550,16 @@ namespace medical_management
         private System.Windows.Forms.Label lblSoluong;
         private System.Windows.Forms.Label lblDonggoi;
         private System.Windows.Forms.Label lblThanhphan;
-        private System.Windows.Forms.Label lblNgaysanxuat;
-        private System.Windows.Forms.Label lblHsd;
         private System.Windows.Forms.Label lblGhichu;
         private System.Windows.Forms.DataGridView dgvThuoc;
         private System.Windows.Forms.TextBox txtMathuoc;
-        private System.Windows.Forms.TextBox txtManhasanxuat;
+        private System.Windows.Forms.TextBox txtMaNSX;
         private System.Windows.Forms.TextBox txtTenthuoc;
         private System.Windows.Forms.TextBox txtDonvi;
         private System.Windows.Forms.TextBox txtHamluong;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.TextBox txtDonggoi;
         private System.Windows.Forms.TextBox txtThanhphan;
-        private System.Windows.Forms.TextBox txtNgaysanxuat;
-        private System.Windows.Forms.TextBox txtHsd;
         private System.Windows.Forms.TextBox txtGhichu;
         private System.Windows.Forms.Button btnDau;
         private System.Windows.Forms.Button btnCuoi;
@@ -644,8 +582,6 @@ namespace medical_management
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhphan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gianhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysanxuat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hansudung;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
     }
 }

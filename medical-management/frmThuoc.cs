@@ -38,7 +38,7 @@ namespace medical_management
         {
             object dataSource = dgvThuoc.DataSource;
             txtMathuoc.binding(dataSource, "MaThuoc");
-            txtManhasanxuat.binding(dataSource, "MaNSX");
+            txtMaNSX.binding(dataSource, "MaNSX");
             txtTenthuoc.binding(dataSource, "Tenthuoc");
             txtDonvi.binding(dataSource, "Donvi");
             txtHamluong.binding(dataSource, "Hamluong");
@@ -47,15 +47,13 @@ namespace medical_management
             txtThanhphan.binding(dataSource, "Thanhphan");
             txtDongia.binding(dataSource, "Dongia");
             txtGianhap.binding(dataSource, "Gianhap");
-            txtNgaysanxuat.binding(dataSource, "Ngaysanxuat");
-            txtHsd.binding(dataSource, "Hansudung");
             txtGhichu.binding(dataSource, "Ghichu");
 
         }
         private void addItem()
         {
             string id = txtMathuoc.Text.ToString().Trim();
-            string manhasanxuat = txtManhasanxuat.Text.ToString().Trim();
+            string manhasanxuat = txtMaNSX.Text.ToString().Trim();
             string tenthuoc = txtTenthuoc.Text.ToString().Trim();
             string donvi = txtDonvi.Text.ToString().Trim();
             string hamluong = txtHamluong.Text.ToString().Trim();
@@ -64,13 +62,11 @@ namespace medical_management
             string thanhphan = txtThanhphan.Text.ToString().Trim();
             string dongia = txtDongia.Text.ToString().Trim();
             string gianhap = txtGianhap.Text.ToString().Trim();
-            string ngaysanxuat = txtNgaysanxuat.Text.ToString().Trim();
-            string hsd = txtHsd.Text.ToString().Trim();
             string ghichu = txtGhichu.Text.ToString().Trim();
 
-            string insert = "INSERT INTO tbl_Item (MaThuoc, MaNSX, Tenthuoc, Donvi, Hamluong, Soluong, Donggoi, Thanhphan, Dongia, Gianhap, Ngaysanxuat, Hansudung, Ghichu)" + "" + "" +
-                "VALUES ( @Mathuoc , @MaNSX , @Tenthuoc , @Donvi , @Hamluong , @Soluong , @Donggoi , @Thanhphan , @Dongia , @Gianhap , @Ngaysanxuat , @Hansudung , @Ghichu )";
-            int result = Database.Instance.excuteNonQuery(insert, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ngaysanxuat, hsd, ghichu });
+            string insert = "INSERT INTO tbl_Item (MaThuoc, MaNSX, Tenthuoc, Donvi, Hamluong, Soluong, Donggoi, Thanhphan, Dongia, Gianhap, Ghichu)" + "" + "" +
+                "VALUES ( @Mathuoc , @MaNSX , @Tenthuoc , @Donvi , @Hamluong , @Soluong , @Donggoi , @Thanhphan , @Dongia , @Gianhap , @Ghichu )";
+            int result = Database.Instance.excuteNonQuery(insert, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu });
             if (result > 0)
             {
                 loadData();
@@ -80,15 +76,15 @@ namespace medical_management
         private void resetFields()
         {
             txtMathuoc.Text = "";
-            txtManhasanxuat.Text = "";
+            txtMaNSX.Text = "";
             txtTenthuoc.Text = "";
             txtDonvi.Text = "";
             txtHamluong.Text = "";
             txtSoluong.Text = "";
             txtDonggoi.Text = "";
+            txtDongia.Text = "";
+            txtGianhap.Text = "";
             txtThanhphan.Text = "";
-            txtNgaysanxuat.Text = "";
-            txtHsd.Text = "";
             txtGhichu.Text = "";
         }
 
@@ -132,7 +128,7 @@ namespace medical_management
         private void btnEdit_Click_1(object sender, EventArgs e)
         {
             string id = txtMathuoc.Text.ToString().Trim();
-            string manhasanxuat = txtManhasanxuat.Text.ToString().Trim();
+            string manhasanxuat = txtMaNSX.Text.ToString().Trim();
             string tenthuoc = txtTenthuoc.Text.ToString().Trim();
             string donvi = txtDonvi.Text.ToString().Trim();
             string hamluong = txtHamluong.Text.ToString().Trim();
@@ -141,13 +137,11 @@ namespace medical_management
             string thanhphan = txtThanhphan.Text.ToString().Trim();
             string dongia = txtDongia.Text.ToString().Trim();
             string gianhap = txtGianhap.Text.ToString().Trim();
-            string ngaysanxuat = txtNgaysanxuat.Text.ToString().Trim();
-            string hsd = txtHsd.Text.ToString().Trim();
             string ghichu = txtGhichu.Text.ToString().Trim();
             string del = "Update tbl_Item" + "" +
-                " Set Manhasanxuat = @MaNSX , Tenthuoc = @Tenthuoc, Don vi = @Donvi , Ham luong = @Hamluong , So luong = @Soluong , Donggoi = @Donggoi , Thanhphan = @Thanhphan , Ngaysanxuat = @Ngaysanxuat, Dongia = @Dongia , Gianhap = @Gianhap , Hsd = @Hansudung , Ghi chu = @Ghichu )" + "" +
+                " Set MaNSX = @MaNSX , Tenthuoc = @Tenthuoc, Don vi = @Donvi , Ham luong = @Hamluong , So luong = @Soluong , Donggoi = @Donggoi , Thanhphan = @Thanhphan , Dongia = @Dongia , Gianhap = @Gianhap , Ghi chu = @Ghichu )" + "" +
                 " Where Mathuoc = @Mathuoc";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ngaysanxuat, hsd, ghichu });
+            int result = Database.Instance.excuteNonQuery(del, new object[] { manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu });
             if (result > 0)
             {
                 loadData();
