@@ -16,11 +16,13 @@ namespace medical_management
         {
             InitializeComponent();
             initializeControl();
-            Console.WriteLine("Demo merge bracnh in git and github");
+  
         }
 
         private void frmKhachhang_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLHTDataSet.tbl_Customer' table. You can move, or remove it, as needed.
+            this.tbl_CustomerTableAdapter.Fill(this.qLHTDataSet.tbl_Customer);
             loadData();
         }
 
@@ -61,6 +63,13 @@ namespace medical_management
             //txtGhichu.DataBindings.Clear();
             //txtGhichu.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Ghichu"));
         }
+        //private void Fillcombo()
+        //{
+        //    string query = "Select Loaidoituong From tbl_Customer";
+        //    DataTable data = Database.Instance.excuteQuery(query);
+        //    cboLoaidoituong = 'True';
+        //    cboLoaidoituong = 'False';
+        //}
 
         private void addCustomer()
         {
@@ -137,6 +146,8 @@ namespace medical_management
             {
                 loadData();
             }
+            btnEdit.disable();
+            btnSave.enable();
         }
        
         private void btnDau_Click_1(object sender, EventArgs e)
@@ -176,6 +187,11 @@ namespace medical_management
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

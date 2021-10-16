@@ -79,6 +79,11 @@
     <Compile Include="frmLothuoc.Designer.cs">
       <DependentUpon>frmLothuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLHTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHTDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -215,6 +220,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLHTDataSet.xsc">
+      <DependentUpon>QLHTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHTDataSet.xss">
+      <DependentUpon>QLHTDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\btn Thêm.png" />
   </ItemGroup>
   <ItemGroup>

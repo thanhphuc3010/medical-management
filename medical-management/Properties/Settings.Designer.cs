@@ -33,5 +33,15 @@ namespace medical_management.Properties {
                 return ((string)(this["QLHTConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=QLHT;Integrated Security=True")]
+        public string QLHTConnectionString1 {
+            get {
+                return ((string)(this["QLHTConnectionString1"]));
+            }
+        }
     }
 }

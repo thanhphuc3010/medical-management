@@ -36,5 +36,23 @@ namespace medical_management
             frmKhachhang f = new frmKhachhang();
             f.Show();
         }
+
+        private void mItemNCC_Click(object sender, EventArgs e)
+        {
+            frmNhacungcap f = new frmNhacungcap();
+            f.Show();
+        }
+
+        private void mItemNSX_Click(object sender, EventArgs e)
+        {
+            frmNhasanxuat f = new frmNhasanxuat();
+            f.Show();
+        }
+
+        private void mItemNV_Click(object sender, EventArgs e)
+        {
+            frmNhanvien f = new frmNhanvien();
+            f.Show();
+        }
     }
 }

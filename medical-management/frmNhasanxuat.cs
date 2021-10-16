@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,7 @@ namespace medical_management
             string email = txtEmail.Text.ToString().Trim();
 
             string insert = "Insert into tbl_make ( MaNSX, TenNSX, Diachi, Sdt, Email)" + "" +
-                "Values ( @MaNSX, @TenNSX , @Diachi , @Sdt , @Email)";
+                "Values ( @MaNSX , @TenNSX , @Diachi , @Sdt , @Email )";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tennsx, diachi, sdt, email });
             if(result>0)
@@ -66,14 +67,29 @@ namespace medical_management
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            string id = txtMaNSX.Text.ToString().Trim();
-            string del = "Delete From tbl_make Where MaNSX = @MaNSX";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { id });
-            if (result > 0)
-            {
-                loadData();
-            }
+            deleteMake();
         
+        }
+        private void deleteMake()
+        {
+            string id = txtMaNSX.Text.ToString().Trim();
+            string del = "Delete from tbl_make Where MaNSX = @MaNSX ";
+            try
+            {
+                int result = Database.Instance.excuteNonQuery(del, new object[] { id });
+                if (result > 0)
+                {
+                    loadData();
+                }
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
+                }
+                else throw;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -115,6 +131,7 @@ namespace medical_management
             {
                 loadData();
             }
+            MessageBox.Show("Đã cập nhật thành công!");
         }
 
         private void btnDau_Click(object sender, EventArgs e)
