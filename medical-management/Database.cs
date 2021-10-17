@@ -59,8 +59,11 @@ namespace medical_management
                 SqlCommand command = new SqlCommand(query, conn);
                 if (parameter != null)
                 {
-                    string[] listPara = query.Split(' ');
+                    var listPara = query.Split(' ').Where(x => {
+                        return x.Contains("@") ;
+                    }).ToList();
                     int i = 0;
+
                     foreach (string item in listPara)
                     {
                         if (item.Contains('@'))

@@ -37,7 +37,7 @@ namespace medical_management
         private void bindingData()
         {
             object dataSource = dgvThuoc.DataSource;
-            txtMathuoc.binding(dataSource, "MaThuoc");
+            txtMathuoc.binding(dataSource, "Mathuoc");
             txtMaNSX.binding(dataSource, "MaNSX");
             txtTenthuoc.binding(dataSource, "Tenthuoc");
             txtDonvi.binding(dataSource, "Donvi");
@@ -64,7 +64,7 @@ namespace medical_management
             string gianhap = txtGianhap.Text.ToString().Trim();
             string ghichu = txtGhichu.Text.ToString().Trim();
 
-            string insert = "INSERT INTO tbl_Item (MaThuoc, MaNSX, Tenthuoc, Donvi, Hamluong, Soluong, Donggoi, Thanhphan, Dongia, Gianhap, Ghichu)" + "" + "" +
+            string insert = "INSERT INTO tbl_Item (Mathuoc, MaNSX, Tenthuoc, Donvi, Hamluong, Soluong, Donggoi, Thanhphan, Dongia, Gianhap, Ghichu)" + "" +
                 "VALUES ( @Mathuoc , @MaNSX , @Tenthuoc , @Donvi , @Hamluong , @Soluong , @Donggoi , @Thanhphan , @Dongia , @Gianhap , @Ghichu )";
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu });
             if (result > 0)
@@ -139,9 +139,9 @@ namespace medical_management
             string gianhap = txtGianhap.Text.ToString().Trim();
             string ghichu = txtGhichu.Text.ToString().Trim();
             string del = "Update tbl_Item" + "" +
-                " Set MaNSX = @MaNSX , Tenthuoc = @Tenthuoc, Don vi = @Donvi , Ham luong = @Hamluong , So luong = @Soluong , Donggoi = @Donggoi , Thanhphan = @Thanhphan , Dongia = @Dongia , Gianhap = @Gianhap , Ghi chu = @Ghichu )" + "" +
+                " Set MaNSX = @MaNSX , Tenthuoc = @Tenthuoc, Don vi = @Donvi , Ham luong = @Hamluong , So luong = @Soluong , Donggoi = @Donggoi , Thanhphan = @Thanhphan, Dongia = @Dongia , Gianhap = @Gianhap, Ghi chu = @Ghichu " + "" +
                 " Where Mathuoc = @Mathuoc";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu });
+            int result = Database.Instance.excuteNonQuery(del, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu });
             if (result > 0)
             {
                 loadData();
