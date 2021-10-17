@@ -100,7 +100,14 @@ namespace medical_management
 
         private void btnDel_Click_1(object sender, EventArgs e)
         {
-            deleteMedicine();
+            deleteMedicineWithConfirm();
+        }
+
+        private void deleteMedicineWithConfirm()
+        {
+            string message = "Bạn có chắc chắn muốn xóa thuốc này không?";
+            Helper.showDialogConfirmDelete(message, deleteMedicine);
+
         }
 
         private void deleteMedicine()
