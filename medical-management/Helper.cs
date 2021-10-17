@@ -120,7 +120,11 @@ namespace medical_management
         public static void binding(this TextBox textBox, object dataSoure, string field)
         {
             textBox.DataBindings.Clear();
-            textBox.DataBindings.Add(new Binding("Text", dataSoure, field));
+            textBox.DataBindings.Add(new Binding("Text", dataSoure, field)
+            {
+                DataSourceUpdateMode = DataSourceUpdateMode.Never,
+                //ControlUpdateMode = ControlUpdateMode.Never
+            });
         }
 
         public static void superBinding(List<TextBox> list, List<String> fields, object dataSoure)
