@@ -61,6 +61,7 @@ namespace medical_management
                 {
                     string[] listPara = query.Split(' ');
                     int i = 0;
+
                     foreach (string item in listPara)
                     {
                         if (item.Contains('@'))
