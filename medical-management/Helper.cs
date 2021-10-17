@@ -138,6 +138,19 @@ namespace medical_management
             }
         }
 
+        public static void showDialogConfirmDelete(string message, Action callback)
+        {
+            DialogResult dialogResult = MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (dialogResult == DialogResult.Yes)
+            {
+                callback();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public static void showMessage(string message)
         {
             MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
