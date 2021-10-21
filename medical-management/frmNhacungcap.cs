@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace medical_management
             string email = txtEmail.Text.ToString().Trim();
 
             string insert = "Insert into tbl_Supplier ( MaNCC, TenNCC, Diachi, Sdt, Email)" + "" +
-                "Values ( @MaNCC , @TenNCC , @Diachi , @ Sdt , @Email )";
+                "Values ( @MaNCC , @TenNCC , @Diachi , @Sdt , @Email )";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tenncc, diachi, sdt, email });
             if(result>0)
@@ -62,12 +63,42 @@ namespace medical_management
 
         private void btnDel_Click(object sender, EventArgs e)
         {
+            deleteMedicineWithConfirm();
+        }
+        private void deleteMedicineWithConfirm()
+        {
+            string message = "Bạn có chắc chắn muốn xóa thuốc này không?";
+            Helper.showDialogConfirmDelete(message, deleteMedicine);
+
+        }
+
+        private void deleteMedicine()
+        {
+            //string id = txtMathuoc.Text.ToString().Trim();
+            //string del = "Delete from tbl_Item Where Mathuoc = @Mathuoc";
+            //string message = "Bạn có chắc chắn muốn xóa bản ghi hiện thời?";
+            //string title = "Xác nhận yêu cầu";
+            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            //DialogResult results = MessageBox.Show(message, title, buttons);
+
             string id = txtMaNCC.Text.ToString().Trim();
-            string del = "Delete From tbl_Supplier Where MaNCC = @MaNCC";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { id });
-            if(result>0)
+            string del = "Delete from tbl_Item Where Mathuoc = @Mathuoc";
+
+
+            try
             {
-                loadData();
+                int result = Database.Instance.excuteNonQuery(del, new object[] { id });
+                if (result > 0)
+                {
+                    loadData();
+                }
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
+                }
             }
         }
 

@@ -111,13 +111,11 @@ namespace medical_management
         }
 
         private void deleteMedicine()
-        {
+        {       
             string id = txtMathuoc.Text.ToString().Trim();
             string del = "Delete from tbl_Item Where Mathuoc = @Mathuoc";
-            string message = "Bạn có chắc chắn muốn xóa bản ghi hiện thời?";
-            string title = "Xác nhận yêu cầu";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult results = MessageBox.Show(message, title, buttons);
+
+
             try
             {
                int result = Database.Instance.excuteNonQuery(del, new object[] { id });
@@ -149,7 +147,7 @@ namespace medical_management
             string gianhap = txtGianhap.Text.ToString().Trim();
             string ghichu = txtGhichu.Text.ToString().Trim();
             string del = "Update tbl_Item" + "" +
-                //" Set MaNSX = @MaNSX , Tenthuoc = @Tenthuoc , Donvi = @Donvi , Hamluong = @Hamluong , Soluong = @Soluong , Donggoi = @Donggoi , Thanhphan = @Thanhphan , Dongia = @Dongia , Gianhap = @Gianhap , Ghichu = @Ghichu " + "" +
+                " Set MaNSX = @MaNSX , Tenthuoc = @Tenthuoc , Donvi = @Donvi , Hamluong = @Hamluong , Soluong = @Soluong , Donggoi = @Donggoi , Thanhphan = @Thanhphan , Dongia = @Dongia , Gianhap = @Gianhap , Ghichu = @Ghichu " + "" +
                 " Where Mathuoc = @Mathuoc";
             int result = Database.Instance.excuteNonQuery(del, new object[] { manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu , id });
             if (result > 0)
@@ -203,6 +201,11 @@ namespace medical_management
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
 
 
