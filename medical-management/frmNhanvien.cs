@@ -61,7 +61,7 @@ namespace medical_management
             string sdt = txtSodienthoai.Text.ToString().Trim();
             string email = txtEmail.Text.ToString().Trim();
 
-            string insert = "Insert into tbl_Staff (MaNV, TenNV, Chucvu, Ngaysinh, Gioitinh, Chungchihanhnghe, Diachi, Sdt, Email)" + "" +
+            string insert = "Insert into tbl_Staff ( MaNV, TenNV, Chucvu, Ngaysinh, Gioitinh, Chungchihanhnghe, Diachi, Sdt, Email )" + "" +
                 " Values ( @MaNV , @TenNV , @Chucvu , @Ngaysinh , @Gioitinh , @Chungchihanhnghe , @Diachi , @Sdt , @Email )";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, email });

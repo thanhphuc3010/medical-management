@@ -16,7 +16,7 @@ namespace medical_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNhanvien());
+            Application.Run(new frmKhachhang());
         }
     }
 }
