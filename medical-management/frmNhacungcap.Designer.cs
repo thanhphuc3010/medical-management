@@ -61,7 +61,6 @@ namespace medical_management
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAdd.Location = new System.Drawing.Point(30, 221);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(51, 41);
@@ -83,7 +82,6 @@ namespace medical_management
             // 
             // btnPrint
             // 
-            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnPrint.Location = new System.Drawing.Point(258, 221);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(51, 41);
@@ -93,7 +91,6 @@ namespace medical_management
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSave.Location = new System.Drawing.Point(201, 221);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(51, 41);
@@ -104,7 +101,6 @@ namespace medical_management
             // 
             // btnDel
             // 
-            this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnDel.Location = new System.Drawing.Point(144, 221);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(51, 41);
@@ -115,7 +111,6 @@ namespace medical_management
             // 
             // btnEdit
             // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnEdit.Location = new System.Drawing.Point(87, 221);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(51, 41);
@@ -159,9 +154,10 @@ namespace medical_management
             // 
             // lblNhacungcap
             // 
+            this.lblNhacungcap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblNhacungcap.AutoSize = true;
             this.lblNhacungcap.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhacungcap.Location = new System.Drawing.Point(331, 33);
+            this.lblNhacungcap.Location = new System.Drawing.Point(344, 21);
             this.lblNhacungcap.Name = "lblNhacungcap";
             this.lblNhacungcap.Size = new System.Drawing.Size(146, 29);
             this.lblNhacungcap.TabIndex = 9;
@@ -170,8 +166,9 @@ namespace medical_management
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(491, 142);
+            this.lblEmail.Location = new System.Drawing.Point(503, 127);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 13;
@@ -179,8 +176,9 @@ namespace medical_management
             // 
             // lblSdt
             // 
+            this.lblSdt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSdt.AutoSize = true;
-            this.lblSdt.Location = new System.Drawing.Point(491, 113);
+            this.lblSdt.Location = new System.Drawing.Point(503, 101);
             this.lblSdt.Name = "lblSdt";
             this.lblSdt.Size = new System.Drawing.Size(70, 13);
             this.lblSdt.TabIndex = 14;
@@ -188,11 +186,9 @@ namespace medical_management
             // 
             // lblTenNCC
             // 
-            this.lblTenNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTenNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTenNCC.AutoSize = true;
-            this.lblTenNCC.Location = new System.Drawing.Point(80, 139);
+            this.lblTenNCC.Location = new System.Drawing.Point(92, 126);
             this.lblTenNCC.Name = "lblTenNCC";
             this.lblTenNCC.Size = new System.Drawing.Size(97, 13);
             this.lblTenNCC.TabIndex = 15;
@@ -200,11 +196,9 @@ namespace medical_management
             // 
             // lblMaNCC
             // 
-            this.lblMaNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMaNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMaNCC.AutoSize = true;
-            this.lblMaNCC.Location = new System.Drawing.Point(80, 114);
+            this.lblMaNCC.Location = new System.Drawing.Point(92, 101);
             this.lblMaNCC.Name = "lblMaNCC";
             this.lblMaNCC.Size = new System.Drawing.Size(93, 13);
             this.lblMaNCC.TabIndex = 16;
@@ -212,28 +206,32 @@ namespace medical_management
             // 
             // txtMaNCC
             // 
-            this.txtMaNCC.Location = new System.Drawing.Point(211, 111);
+            this.txtMaNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaNCC.Location = new System.Drawing.Point(223, 98);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(123, 20);
             this.txtMaNCC.TabIndex = 17;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(622, 139);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.Location = new System.Drawing.Point(634, 126);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
             this.txtEmail.TabIndex = 19;
             // 
             // txtSdt
             // 
-            this.txtSdt.Location = new System.Drawing.Point(622, 113);
+            this.txtSdt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSdt.Location = new System.Drawing.Point(634, 100);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(123, 20);
             this.txtSdt.TabIndex = 20;
             // 
             // txtTenNCC
             // 
-            this.txtTenNCC.Location = new System.Drawing.Point(211, 137);
+            this.txtTenNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTenNCC.Location = new System.Drawing.Point(223, 124);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(123, 20);
             this.txtTenNCC.TabIndex = 21;
@@ -244,6 +242,7 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhacungcap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhacungcap.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvNhacungcap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhacungcap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNCC,
@@ -288,18 +287,17 @@ namespace medical_management
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(211, 163);
+            this.txtDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDiachi.Location = new System.Drawing.Point(223, 150);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(123, 20);
             this.txtDiachi.TabIndex = 24;
             // 
             // lblDiachi
             // 
-            this.lblDiachi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDiachi.AutoSize = true;
-            this.lblDiachi.Location = new System.Drawing.Point(80, 170);
+            this.lblDiachi.Location = new System.Drawing.Point(92, 157);
             this.lblDiachi.Name = "lblDiachi";
             this.lblDiachi.Size = new System.Drawing.Size(40, 13);
             this.lblDiachi.TabIndex = 23;
@@ -345,7 +343,7 @@ namespace medical_management
             this.Controls.Add(this.btnDau);
             this.Controls.Add(this.btnAdd);
             this.Name = "frmNhacungcap";
-            this.Text = "frmNhacungcap";
+            this.Text = "Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmNhacungcap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacungcap)).EndInit();
             this.ResumeLayout(false);

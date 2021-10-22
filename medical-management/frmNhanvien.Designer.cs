@@ -73,8 +73,7 @@ namespace medical_management
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnAdd.Location = new System.Drawing.Point(14, 236);
+            this.btnAdd.Location = new System.Drawing.Point(27, 207);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(51, 40);
             this.btnAdd.TabIndex = 0;
@@ -84,8 +83,7 @@ namespace medical_management
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSave.Location = new System.Drawing.Point(185, 236);
+            this.btnSave.Location = new System.Drawing.Point(198, 207);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(51, 40);
             this.btnSave.TabIndex = 1;
@@ -95,8 +93,7 @@ namespace medical_management
             // 
             // btnDel
             // 
-            this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnDel.Location = new System.Drawing.Point(128, 236);
+            this.btnDel.Location = new System.Drawing.Point(141, 207);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(51, 40);
             this.btnDel.TabIndex = 2;
@@ -106,8 +103,7 @@ namespace medical_management
             // 
             // btnEdit
             // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnEdit.Location = new System.Drawing.Point(71, 236);
+            this.btnEdit.Location = new System.Drawing.Point(84, 207);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(51, 40);
             this.btnEdit.TabIndex = 3;
@@ -117,8 +113,7 @@ namespace medical_management
             // 
             // btnPrint
             // 
-            this.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnPrint.Location = new System.Drawing.Point(242, 236);
+            this.btnPrint.Location = new System.Drawing.Point(255, 207);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(51, 40);
             this.btnPrint.TabIndex = 4;
@@ -128,7 +123,7 @@ namespace medical_management
             // btnDau
             // 
             this.btnDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDau.Location = new System.Drawing.Point(12, 458);
+            this.btnDau.Location = new System.Drawing.Point(12, 470);
             this.btnDau.Name = "btnDau";
             this.btnDau.Size = new System.Drawing.Size(75, 28);
             this.btnDau.TabIndex = 5;
@@ -139,7 +134,7 @@ namespace medical_management
             // btnCuoi
             // 
             this.btnCuoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCuoi.Location = new System.Drawing.Point(255, 458);
+            this.btnCuoi.Location = new System.Drawing.Point(255, 470);
             this.btnCuoi.Name = "btnCuoi";
             this.btnCuoi.Size = new System.Drawing.Size(75, 28);
             this.btnCuoi.TabIndex = 6;
@@ -150,7 +145,7 @@ namespace medical_management
             // btnSau
             // 
             this.btnSau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSau.Location = new System.Drawing.Point(174, 458);
+            this.btnSau.Location = new System.Drawing.Point(174, 470);
             this.btnSau.Name = "btnSau";
             this.btnSau.Size = new System.Drawing.Size(75, 28);
             this.btnSau.TabIndex = 7;
@@ -161,7 +156,7 @@ namespace medical_management
             // btnTruoc
             // 
             this.btnTruoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTruoc.Location = new System.Drawing.Point(93, 458);
+            this.btnTruoc.Location = new System.Drawing.Point(93, 470);
             this.btnTruoc.Name = "btnTruoc";
             this.btnTruoc.Size = new System.Drawing.Size(75, 28);
             this.btnTruoc.TabIndex = 8;
@@ -171,9 +166,10 @@ namespace medical_management
             // 
             // lblNhanvien
             // 
+            this.lblNhanvien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNhanvien.AutoSize = true;
             this.lblNhanvien.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhanvien.Location = new System.Drawing.Point(308, 25);
+            this.lblNhanvien.Location = new System.Drawing.Point(430, 30);
             this.lblNhanvien.Name = "lblNhanvien";
             this.lblNhanvien.Size = new System.Drawing.Size(164, 23);
             this.lblNhanvien.TabIndex = 9;
@@ -181,8 +177,9 @@ namespace medical_management
             // 
             // lblDiachi
             // 
+            this.lblDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDiachi.AutoSize = true;
-            this.lblDiachi.Location = new System.Drawing.Point(415, 115);
+            this.lblDiachi.Location = new System.Drawing.Point(689, 89);
             this.lblDiachi.Name = "lblDiachi";
             this.lblDiachi.Size = new System.Drawing.Size(40, 13);
             this.lblDiachi.TabIndex = 10;
@@ -190,8 +187,9 @@ namespace medical_management
             // 
             // lblSdt
             // 
+            this.lblSdt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSdt.AutoSize = true;
-            this.lblSdt.Location = new System.Drawing.Point(415, 145);
+            this.lblSdt.Location = new System.Drawing.Point(689, 119);
             this.lblSdt.Name = "lblSdt";
             this.lblSdt.Size = new System.Drawing.Size(70, 13);
             this.lblSdt.TabIndex = 11;
@@ -199,8 +197,9 @@ namespace medical_management
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(415, 171);
+            this.lblEmail.Location = new System.Drawing.Point(689, 145);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 12;
@@ -208,8 +207,9 @@ namespace medical_management
             // 
             // lblGioitinh
             // 
+            this.lblGioitinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGioitinh.AutoSize = true;
-            this.lblGioitinh.Location = new System.Drawing.Point(37, 197);
+            this.lblGioitinh.Location = new System.Drawing.Point(353, 145);
             this.lblGioitinh.Name = "lblGioitinh";
             this.lblGioitinh.Size = new System.Drawing.Size(47, 13);
             this.lblGioitinh.TabIndex = 13;
@@ -217,8 +217,9 @@ namespace medical_management
             // 
             // lblNgaysinh
             // 
+            this.lblNgaysinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNgaysinh.AutoSize = true;
-            this.lblNgaysinh.Location = new System.Drawing.Point(37, 171);
+            this.lblNgaysinh.Location = new System.Drawing.Point(353, 119);
             this.lblNgaysinh.Name = "lblNgaysinh";
             this.lblNgaysinh.Size = new System.Drawing.Size(54, 13);
             this.lblNgaysinh.TabIndex = 14;
@@ -226,6 +227,7 @@ namespace medical_management
             // 
             // lblChucvu
             // 
+            this.lblChucvu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblChucvu.AutoSize = true;
             this.lblChucvu.Location = new System.Drawing.Point(37, 145);
             this.lblChucvu.Name = "lblChucvu";
@@ -235,6 +237,7 @@ namespace medical_management
             // 
             // lblTenNV
             // 
+            this.lblTenNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTenNV.AutoSize = true;
             this.lblTenNV.Location = new System.Drawing.Point(37, 121);
             this.lblTenNV.Name = "lblTenNV";
@@ -244,6 +247,7 @@ namespace medical_management
             // 
             // lblMaNV
             // 
+            this.lblMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Location = new System.Drawing.Point(37, 93);
             this.lblMaNV.Name = "lblMaNV";
@@ -253,8 +257,9 @@ namespace medical_management
             // 
             // lblChungchihanhnghe
             // 
+            this.lblChungchihanhnghe.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblChungchihanhnghe.AutoSize = true;
-            this.lblChungchihanhnghe.Location = new System.Drawing.Point(415, 89);
+            this.lblChungchihanhnghe.Location = new System.Drawing.Point(353, 90);
             this.lblChungchihanhnghe.Name = "lblChungchihanhnghe";
             this.lblChungchihanhnghe.Size = new System.Drawing.Size(109, 13);
             this.lblChungchihanhnghe.TabIndex = 18;
@@ -262,65 +267,74 @@ namespace medical_management
             // 
             // txtMaNV
             // 
+            this.txtMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaNV.Location = new System.Drawing.Point(162, 90);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(191, 20);
+            this.txtMaNV.Size = new System.Drawing.Size(145, 20);
             this.txtMaNV.TabIndex = 1;
             // 
             // txtGioitinh
             // 
-            this.txtGioitinh.Location = new System.Drawing.Point(162, 194);
+            this.txtGioitinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGioitinh.Location = new System.Drawing.Point(492, 142);
             this.txtGioitinh.Name = "txtGioitinh";
-            this.txtGioitinh.Size = new System.Drawing.Size(191, 20);
+            this.txtGioitinh.Size = new System.Drawing.Size(145, 20);
             this.txtGioitinh.TabIndex = 5;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(555, 164);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.Location = new System.Drawing.Point(794, 138);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(191, 20);
+            this.txtEmail.Size = new System.Drawing.Size(146, 20);
             this.txtEmail.TabIndex = 21;
             // 
             // txtSodienthoai
             // 
-            this.txtSodienthoai.Location = new System.Drawing.Point(555, 138);
+            this.txtSodienthoai.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSodienthoai.Location = new System.Drawing.Point(794, 112);
             this.txtSodienthoai.Name = "txtSodienthoai";
-            this.txtSodienthoai.Size = new System.Drawing.Size(191, 20);
+            this.txtSodienthoai.Size = new System.Drawing.Size(146, 20);
             this.txtSodienthoai.TabIndex = 22;
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(555, 112);
+            this.txtDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDiachi.Location = new System.Drawing.Point(794, 86);
             this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(191, 20);
+            this.txtDiachi.Size = new System.Drawing.Size(146, 20);
             this.txtDiachi.TabIndex = 23;
             // 
             // txtChungchihanhnghe
             // 
-            this.txtChungchihanhnghe.Location = new System.Drawing.Point(555, 86);
+            this.txtChungchihanhnghe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtChungchihanhnghe.Location = new System.Drawing.Point(492, 90);
             this.txtChungchihanhnghe.Name = "txtChungchihanhnghe";
-            this.txtChungchihanhnghe.Size = new System.Drawing.Size(191, 20);
+            this.txtChungchihanhnghe.Size = new System.Drawing.Size(146, 20);
             this.txtChungchihanhnghe.TabIndex = 24;
             // 
             // txtNgaysinh
             // 
-            this.txtNgaysinh.Location = new System.Drawing.Point(162, 168);
+            this.txtNgaysinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNgaysinh.Location = new System.Drawing.Point(492, 116);
             this.txtNgaysinh.Name = "txtNgaysinh";
-            this.txtNgaysinh.Size = new System.Drawing.Size(191, 20);
+            this.txtNgaysinh.Size = new System.Drawing.Size(145, 20);
             this.txtNgaysinh.TabIndex = 4;
             // 
             // txtChucvu
             // 
+            this.txtChucvu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtChucvu.Location = new System.Drawing.Point(162, 142);
             this.txtChucvu.Name = "txtChucvu";
-            this.txtChucvu.Size = new System.Drawing.Size(191, 20);
+            this.txtChucvu.Size = new System.Drawing.Size(145, 20);
             this.txtChucvu.TabIndex = 3;
             // 
             // txtTenNV
             // 
+            this.txtTenNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenNV.Location = new System.Drawing.Point(162, 116);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(191, 20);
+            this.txtTenNV.Size = new System.Drawing.Size(145, 20);
             this.txtTenNV.TabIndex = 2;
             // 
             // dgvNhanvien
@@ -329,6 +343,7 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhanvien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
@@ -340,9 +355,9 @@ namespace medical_management
             this.Diachi,
             this.Sdt,
             this.Email});
-            this.dgvNhanvien.Location = new System.Drawing.Point(12, 291);
+            this.dgvNhanvien.Location = new System.Drawing.Point(12, 263);
             this.dgvNhanvien.Name = "dgvNhanvien";
-            this.dgvNhanvien.Size = new System.Drawing.Size(776, 150);
+            this.dgvNhanvien.Size = new System.Drawing.Size(949, 189);
             this.dgvNhanvien.TabIndex = 28;
             // 
             // MaNV
@@ -402,7 +417,7 @@ namespace medical_management
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(699, 458);
+            this.btnExit.Location = new System.Drawing.Point(872, 470);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(89, 28);
             this.btnExit.TabIndex = 29;
@@ -415,7 +430,7 @@ namespace medical_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(800, 510);
+            this.ClientSize = new System.Drawing.Size(973, 510);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dgvNhanvien);
             this.Controls.Add(this.txtTenNV);

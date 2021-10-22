@@ -51,7 +51,7 @@ namespace medical_management
             string sdt = txtSdt.Text.ToString().Trim();
             string email = txtEmail.Text.ToString().Trim();
 
-            string insert = "Insert into tbl_Supplier ( MaNCC, TenNCC, Diachi, Sdt, Email)" + "" +
+            string insert = "Insert into tbl_Supplier ( MaNCC, TenNCC, Diachi, Sdt, Email )" + "" +
                 "Values ( @MaNCC , @TenNCC , @Diachi , @Sdt , @Email )";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tenncc, diachi, sdt, email });
@@ -63,26 +63,20 @@ namespace medical_management
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            deleteMedicineWithConfirm();
+            deleteSupplierWithConfirm();
         }
-        private void deleteMedicineWithConfirm()
+        private void deleteSupplierWithConfirm()
         {
-            string message = "Bạn có chắc chắn muốn xóa thuốc này không?";
-            Helper.showDialogConfirmDelete(message, deleteMedicine);
+            string message = "Bạn có chắc chắn muốn xóa nhà cung cấp này không?";
+            Helper.showDialogConfirmDelete(message, deleteSupplier);
 
         }
 
-        private void deleteMedicine()
+        private void deleteSupplier()
         {
-            //string id = txtMathuoc.Text.ToString().Trim();
-            //string del = "Delete from tbl_Item Where Mathuoc = @Mathuoc";
-            //string message = "Bạn có chắc chắn muốn xóa bản ghi hiện thời?";
-            //string title = "Xác nhận yêu cầu";
-            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            //DialogResult results = MessageBox.Show(message, title, buttons);
 
             string id = txtMaNCC.Text.ToString().Trim();
-            string del = "Delete from tbl_Item Where Mathuoc = @Mathuoc";
+            string del = "Delete from tbl_Supplier Where MaNCC = @MaNCC";
 
 
             try
@@ -100,6 +94,7 @@ namespace medical_management
                     Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
                 }
             }
+            MessageBox.Show("Đã xóa thành công!", "Thông báo");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -107,6 +102,7 @@ namespace medical_management
             addSupplier();
             btnAdd.enable();
             btnSave.disable();
+            MessageBox.Show("Đã cập nhật thành công!", "Thông báo");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -135,14 +131,15 @@ namespace medical_management
             string sdt = txtSdt.Text.ToString().Trim();
             string email = txtEmail.Text.ToString().Trim();
 
-            string del = "Update tbl_Suppiler" + "" +
-                "Set MaNCC = @MaNCC , TenNCC = @TenNCC , Diachi = @Diachi , Sdt = @Sdt , Email = @Email" + "" +
-                "Where MaNCC = @MaNCC ";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { tenncc, diachi, sdt, email });
+            string del = "Update tbl_Supplier" + "" +
+                " Set TenNCC = @TenNCC , Diachi = @Diachi , Sdt = @Sdt , Email = @Email" + "" +
+                " Where MaNCC = @MaNCC ";
+            int result = Database.Instance.excuteNonQuery(del, new object[] { tenncc, diachi, sdt, email, id });
             if(result>0)
             {
                 loadData();
             }
+            MessageBox.Show("Đã sửa thành công!", "Thông báo");
         }
 
         private void btnDau_Click(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -61,9 +62,9 @@ namespace medical_management
             string email = txtEmail.Text.ToString().Trim();
 
             string insert = "Insert into tbl_Staff (MaNV, TenNV, Chucvu, Ngaysinh, Gioitinh, Chungchihanhnghe, Diachi, Sdt, Email)" + "" +
-                "Values ( @MaNV , @TenNV , @Chucvu , @Ngaysinh , @Gioitinh , @Chungchihanhnghe , @Diachi , @Sdt , @Email)";
+                " Values ( @MaNV , @TenNV , @Chucvu , @Ngaysinh , @Gioitinh , @Chungchihanhnghe , @Diachi , @Sdt , @Email )";
 
-            int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, Email });
+            int result = Database.Instance.excuteNonQuery(insert, new object[] { id, tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, email });
             if (result > 0)
             {
                 loadData();
@@ -81,12 +82,43 @@ namespace medical_management
                 loadData();
             }
         }
+        private void deleteMakeWithConfirm()
+        {
+            string message = "Bạn có chắc chắn muốn xóa nhân viên này không?";
+            Helper.showDialogConfirmDelete(message, deleteStaff);
+
+        }
+
+
+        private void deleteStaff()
+        {
+            string id = txtMaNV.Text.ToString().Trim();
+            string del = "Delete from tbl_Staff Where MaNV = @MaNV ";
+            try
+            {
+                int result = Database.Instance.excuteNonQuery(del, new object[] { id });
+                if (result > 0)
+                {
+                    loadData();
+                }
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showMessage("Nhân viên này đã thực hiện giao dịch. Không thể xóa!");
+                }
+                else throw;
+            }
+            MessageBox.Show("Đã xóa thành công!", "Thông báo");
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             addStaff();
             btnAdd.enable();
             btnSave.disable();
+            MessageBox.Show("Đã lưu thành công!", "Thông báo");
 
         }
 
@@ -96,6 +128,7 @@ namespace medical_management
             resetFields();
             btnSave.enable();
             txtMaNV.Focus();
+
         }
         private void resetFields()
         {
@@ -121,15 +154,15 @@ namespace medical_management
             string diachi = txtDiachi.Text.ToString().Trim();
             string sdt = txtSodienthoai.Text.ToString().Trim();
             string email = txtEmail.Text.ToString().Trim();
-
             string del = "Update tbl_Staff" + "" +
-                "Set TenNV = @TenNV , Chucvu = @Chucvu , Ngaysinh = @Ngaysinh , Gioitinh = @Gioitinh , Chungchihanhnghe = @Chungchihanhnghe , Diachi = @Diachi , Sdt = @Sdt , Email = @Email" + "" +
-                " Where MaNV =@MaNV ";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, email });
+                " Set TenNV = @TenNV , Chucvu = @Chucvu , Ngaysinh = @Ngaysinh , Gioitinh = @Gioitinh , Chungchihanhnghe = @Chungchihanhnghe , Diachi = @Diachi , Sdt = @Sdt , Email = @Email " + "" +
+                " Where MaNV = @MaNV ";
+            int result = Database.Instance.excuteNonQuery(del, new object[] { tennv, chucvu, ngaysinh, gioitinh, chungchihanhnghe, diachi, sdt, email, id });
             if (result > 0)
             {
                 loadData();
             }
+            MessageBox.Show("Đã cập nhật thành công!", "Thông báo");
 
         }
 

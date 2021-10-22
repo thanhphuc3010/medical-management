@@ -131,6 +131,7 @@ namespace medical_management
                     Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
                 }
             }
+            MessageBox.Show("Đã xóa thành công!", "Thông báo");
         }
 
         private void btnEdit_Click_1(object sender, EventArgs e)
@@ -154,6 +155,7 @@ namespace medical_management
             {
                 loadData();
             }
+            MessageBox.Show("Đã sửa thành công!", "Thông báo");
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)

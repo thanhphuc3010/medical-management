@@ -10,13 +10,13 @@ namespace medical_management
     {
         /// <summary>
         /// The main entry point for the application.
-        /// </summary>
+        ///// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNhacungcap());
+            Application.Run(new frmNhanvien());
         }
     }
 }
