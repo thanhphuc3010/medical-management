@@ -53,6 +53,7 @@ namespace medical_management
             txtMaHD.Text = this.invoiceId;
             txtTongcong.BackColor = txtTongcong.BackColor;
             txtTongtienhang.BackColor = txtTongtienhang.BackColor;
+            txtDongia.BackColor = txtDongia.BackColor;
         }
 
         private void loadConsignment(string medicalId)
@@ -110,7 +111,9 @@ namespace medical_management
             txtMaThuoc.Text = medical["MaThuoc"].ToString();
             txtTenthuoc.Text = medical["TenThuoc"].ToString();
             txtDonvitinh.Text = medical["Donvi"].ToString();
-            txtDongia.Text = medical["Dongia"].ToString();
+            CultureInfo culture = new CultureInfo("vi-VN");
+            decimal price = Convert.ToDecimal(medical["Dongia"]);
+            txtDongia.Text = price.ToString();
             txtTotalInventory.Text = medical["Soluong"].ToString();
             loadConsignment(id);
             btnAdd.enable();
@@ -449,6 +452,8 @@ namespace medical_management
             txtDonvitinh.binding(dataSoure, "Donvi");
             txtDongia.binding(dataSoure, "Dongia");
             txtSoLuong.binding(dataSoure, "Soluong");
+            string query = "SELECT Soluong FROM tbl_Item WHERE Mathuoc = @Mathuoc";
+            txtTotalInventory.Text = Database.Instance.ExecuteScalar(query, new object[] { id }).ToString();
             loadConsignment(id);
             cbLoThuoc.disable();
         }
