@@ -197,9 +197,14 @@ namespace medical_management
             }
         }
 
-        public static void showMessage(string message)
+        public static void showErrorMessage(string message)
         {
             MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void showSuccessMessage(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void showMessageRole()

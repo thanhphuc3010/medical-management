@@ -23,6 +23,7 @@ namespace medical_management
         private string invoiceId;
         private string staffId = "NV01";
         private bool isSelectCompleteInvoice = false;
+        string selectedMedicalId;
         private List<Consignment> consignments = new List<Consignment>();
         public frmPhieubanhang()
         {
@@ -57,9 +58,11 @@ namespace medical_management
                            "AND Daban < Soluong";
             DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
             cbLoThuoc.FillCombo("Malo", "Malo", data);
-            cbLoThuoc.SelectedIndex = 0;
-            txtInventory.Text = data.Rows[0]["Tonkho"].ToString();
-
+            if (data.Rows.Count > 0)
+            {
+                cbLoThuoc.SelectedIndex = 0;
+                txtInventory.Text = data.Rows[0]["Tonkho"].ToString();
+            }
             foreach (DataRow item in data.Rows)
             {
                 string consignmentId = item["Malo"].ToString();
@@ -126,13 +129,13 @@ namespace medical_management
 
             if (String.IsNullOrWhiteSpace(txtSoLuong.Text))
             {
-                Helper.showMessage("Vui lòng nhập số lượng");
+                Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
             }
 
             if (isDuplicateMedicineInDetail(medicalId))
             {
-                Helper.showMessage("Mặt hàng này đã tồn tại trong đơn thuốc!");
+                Helper.showErrorMessage("Mặt hàng này đã tồn tại trong đơn thuốc!");
                 return;
             }
 
@@ -187,8 +190,9 @@ namespace medical_management
             txtDongia.Text = "";
             txtSoLuong.Text = "";
             lblSoluong.Text = "Số lượng";
+            cbLoThuoc.SelectedIndex = -1;
+            txtInventory.Text = "";
         }
-
 
         private void loadInvoiceDetail()
         {
@@ -210,7 +214,7 @@ namespace medical_management
 
             if (isSelectCompleteInvoice)
             {
-                Helper.showMessage("Thêm hóa đơn thành công");
+                Helper.showSuccessMessage("Thêm hóa đơn thành công");
             }
             else
             {
@@ -243,13 +247,13 @@ namespace medical_management
             return subtotal * (1 - (discount / 100));
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHoanthanh_Click(object sender, EventArgs e)
         {
+            if (!isFullyPayment())
+            {
+                Helper.showErrorMessage("Hóa đơn chưa thanh toán đầy đủ, không thể hoàn thành");
+                return;
+            }
             foreach (DataGridViewRow row in dgvHoadonchitiet.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -264,8 +268,9 @@ namespace medical_management
                     {
                         string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @SoLuong";
                         Database.Instance.excuteNonQuery(proUpdateQuantity, new object[] { medicineId, consignmentId, quantity });
-                        break; 
-                    } else
+                        break;
+                    }
+                    else
                     {
                         string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @SoLuong";
                         Database.Instance.excuteNonQuery(proUpdateQuantity, new object[] { medicineId, consignmentId, inventory });
@@ -281,6 +286,26 @@ namespace medical_management
             doSaveTotalPayment();
             isSelectCompleteInvoice = true;
             this.Close();
+        }
+
+        private bool isFullyPayment()
+        {
+            decimal totalPayment = getInvoiceTotalPayment();
+            return totalPayment == total;
+        }
+
+        private decimal getInvoiceTotalPayment()
+        {
+            string query = "SELECT SUM(SoTienTT) FROM dbo.tbl_Payment WHERE MaHD = @MaHD";
+            var result = Database.Instance.ExecuteScalar(query, new object[] { invoiceId });
+            if (result != DBNull.Value)
+            {
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                return 0M;
+            }
         }
 
         private void doSaveTotalPayment()
@@ -348,6 +373,57 @@ namespace medical_management
                 string consignmentId = comboBox.SelectedValue.ToString();
                 int inventory = (int)Database.Instance.ExecuteScalar(query, new object[] { consignmentId });
                 txtInventory.Text = inventory.ToString();
+            }
+        }
+
+        private void dgvHoadonchitiet_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    dgvHoadonchitiet.CurrentCell = dgvHoadonchitiet.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    // Can leave these here - doesn't hurt
+                    dgvHoadonchitiet.Rows[e.RowIndex].Selected = true;
+                    dgvHoadonchitiet.Focus();
+                    if (dgvHoadonchitiet.Rows[e.RowIndex].IsNewRow)
+                    {
+                        selectedMedicalId = null;
+                    }
+                    else
+                    {
+                        selectedMedicalId = Convert.ToString(dgvHoadonchitiet.Rows[e.RowIndex].Cells[1].Value);
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
+
+        private void dgvHoadonchitiet_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                cmnuInvoiceDetail.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void editMenuItem_Click(object sender, EventArgs e)
+        {
+            if (selectedMedicalId != null)
+            {
+                Helper.showSuccessMessage(selectedMedicalId);
+            }
+        }
+
+        private void deleteMenuItem_Click(object sender, EventArgs e)
+        {
+            if (selectedMedicalId != null)
+            {
+                Helper.showSuccessMessage(selectedMedicalId);
             }
         }
     }

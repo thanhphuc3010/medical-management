@@ -94,10 +94,14 @@ namespace medical_management
             this.cbLoThuoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtInventory = new System.Windows.Forms.TextBox();
+            this.cmnuInvoiceDetail = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoadonchitiet)).BeginInit();
             this.cmnuKH.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).BeginInit();
+            this.cmnuInvoiceDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPhieubanhang
@@ -315,6 +319,8 @@ namespace medical_management
             this.dgvHoadonchitiet.RowHeadersWidth = 51;
             this.dgvHoadonchitiet.Size = new System.Drawing.Size(1197, 295);
             this.dgvHoadonchitiet.TabIndex = 42;
+            this.dgvHoadonchitiet.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHoadonchitiet_CellMouseDown);
+            this.dgvHoadonchitiet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvHoadonchitiet_MouseClick);
             // 
             // Mathuoc
             // 
@@ -734,6 +740,29 @@ namespace medical_management
             this.txtInventory.Size = new System.Drawing.Size(82, 22);
             this.txtInventory.TabIndex = 22;
             // 
+            // cmnuInvoiceDetail
+            // 
+            this.cmnuInvoiceDetail.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnuInvoiceDetail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editMenuItem,
+            this.deleteMenuItem});
+            this.cmnuInvoiceDetail.Name = "cmnuInvoiceDetail";
+            this.cmnuInvoiceDetail.Size = new System.Drawing.Size(211, 80);
+            // 
+            // editMenuItem
+            // 
+            this.editMenuItem.Name = "editMenuItem";
+            this.editMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editMenuItem.Text = "Sửa";
+            this.editMenuItem.Click += new System.EventHandler(this.editMenuItem_Click);
+            // 
+            // deleteMenuItem
+            // 
+            this.deleteMenuItem.Name = "deleteMenuItem";
+            this.deleteMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteMenuItem.Text = "Xóa";
+            this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
+            // 
             // frmPhieubanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -784,6 +813,7 @@ namespace medical_management
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).EndInit();
+            this.cmnuInvoiceDetail.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -847,5 +877,8 @@ namespace medical_management
         private System.Windows.Forms.ComboBox cbLoThuoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtInventory;
+        private System.Windows.Forms.ContextMenuStrip cmnuInvoiceDetail;
+        private System.Windows.Forms.ToolStripMenuItem editMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteMenuItem;
     }
 }
