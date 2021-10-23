@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace medical_management
         private string invoiceId;
         private string staffId = "NV01";
         private bool isSelectCompleteInvoice = false;
+        private bool isEdit = false;
         string selectedMedicalId;
         private List<Consignment> consignments = new List<Consignment>();
         public frmPhieubanhang()
@@ -392,7 +394,7 @@ namespace medical_management
                     }
                     else
                     {
-                        selectedMedicalId = Convert.ToString(dgvHoadonchitiet.Rows[e.RowIndex].Cells[1].Value);
+                        selectedMedicalId = Convert.ToString(dgvHoadonchitiet.Rows[e.RowIndex].Cells[0].Value);
                     }
 
                 }
@@ -403,11 +405,31 @@ namespace medical_management
             }
         }
 
+        private void bindingEditMode(string id)
+        {
+            object dataSoure = dgvHoadonchitiet.DataSource;
+
+            txtMaThuoc.binding(dataSoure, "Mathuoc");
+            txtTenthuoc.binding(dataSoure, "Tenthuoc");
+            txtDonvitinh.binding(dataSoure, "Donvi");
+            txtDongia.binding(dataSoure, "Dongia");
+            txtSoLuong.binding(dataSoure, "Soluong");
+            loadConsignment(id);
+            cbLoThuoc.disable();
+        }
+
         private void dgvHoadonchitiet_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
                 cmnuInvoiceDetail.Show(Cursor.Position.X, Cursor.Position.Y);
+                if (isEdit)
+                {
+                    cmnuInvoiceDetail.disable();
+                } else
+                {
+                    cmnuInvoiceDetail.enable();
+                }
             }
         }
 
@@ -415,7 +437,11 @@ namespace medical_management
         {
             if (selectedMedicalId != null)
             {
-                Helper.showSuccessMessage(selectedMedicalId);
+                bindingEditMode(selectedMedicalId);
+                isEdit = true;
+                btnAdd.gone();
+                btnUpdate.visible();
+                btnCancle.visible();
             }
         }
 
@@ -423,8 +449,61 @@ namespace medical_management
         {
             if (selectedMedicalId != null)
             {
-                Helper.showSuccessMessage(selectedMedicalId);
+                Helper.showDialogConfirmDelete("Bạn có chắn chắn muốn xóa sản phẩm này?", delMedicalFromInvoice);
+
             }
+        }
+
+        private void delMedicalFromInvoice()
+        {
+            string del = "DELETE FROM dbo.tbl_InvoiceDetail WHERE MaHD = @MaHD AND Mathuoc = @Mathuoc";
+            try
+            {
+                int result = Database.Instance.excuteNonQuery(del, new object[] { invoiceId, selectedMedicalId });
+                if (result > 0)
+                {
+                    loadInvoiceDetail();
+                    resetMedical();
+                }
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showErrorMessage(e.Message);
+                }
+            }
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            resetEditMode();
+        }
+
+        private void resetEditMode()
+        {
+            resetMedical();
+            isEdit = false;
+            btnAdd.visible();
+            btnUpdate.gone();
+            btnCancle.gone();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string update = "UPDATE dbo.tbl_InvoiceDetail SET Soluong = @Soluong WHERE MaHD = @MaHD AND Mathuoc = @Mathuoc ";
+            int quantity;
+
+            if (String.IsNullOrWhiteSpace(txtSoLuong.Text))
+            {
+                Helper.showErrorMessage("Vui lòng nhập số lượng");
+                return;
+            }
+
+            quantity = Convert.ToInt32(txtSoLuong.Text);
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, invoiceId, txtMaThuoc.Text });
+            loadInvoiceDetail();
+            resetEditMode();
         }
     }
 }

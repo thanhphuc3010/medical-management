@@ -55,8 +55,7 @@ namespace medical_management
             this.lblDongia = new System.Windows.Forms.Label();
             this.lblSoluong = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvHoadonchitiet = new System.Windows.Forms.DataGridView();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,13 +89,13 @@ namespace medical_management
             this.SoTienTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoidungTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbLoThuoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtInventory = new System.Windows.Forms.TextBox();
             this.cmnuInvoiceDetail = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCancle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoadonchitiet)).BeginInit();
             this.cmnuKH.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -270,25 +269,17 @@ namespace medical_management
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDel
+            // btnUpdate
             // 
-            this.btnDel.Location = new System.Drawing.Point(1123, 184);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 41);
-            this.btnDel.TabIndex = 37;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(1123, 130);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 41);
-            this.btnEdit.TabIndex = 38;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(1123, 130);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 41);
+            this.btnUpdate.TabIndex = 38;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgvHoadonchitiet
             // 
@@ -508,7 +499,7 @@ namespace medical_management
             this.panel1.Controls.Add(this.lblTongtienhang);
             this.panel1.Location = new System.Drawing.Point(658, 592);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(553, 186);
+            this.panel1.Size = new System.Drawing.Size(553, 192);
             this.panel1.TabIndex = 50;
             // 
             // btnLuuhoadon
@@ -627,9 +618,7 @@ namespace medical_management
             // 
             // dgvPayment
             // 
-            this.dgvPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvPayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPayment.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -704,14 +693,6 @@ namespace medical_management
             this.label1.TabIndex = 20;
             this.label1.Text = "Lô thuốc";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(583, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 22);
-            this.textBox1.TabIndex = 22;
-            // 
             // cbLoThuoc
             // 
             this.cbLoThuoc.FormattingEnabled = true;
@@ -747,21 +728,33 @@ namespace medical_management
             this.editMenuItem,
             this.deleteMenuItem});
             this.cmnuInvoiceDetail.Name = "cmnuInvoiceDetail";
-            this.cmnuInvoiceDetail.Size = new System.Drawing.Size(211, 80);
+            this.cmnuInvoiceDetail.Size = new System.Drawing.Size(105, 52);
             // 
             // editMenuItem
             // 
             this.editMenuItem.Name = "editMenuItem";
-            this.editMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editMenuItem.Size = new System.Drawing.Size(104, 24);
             this.editMenuItem.Text = "Sửa";
             this.editMenuItem.Click += new System.EventHandler(this.editMenuItem_Click);
             // 
             // deleteMenuItem
             // 
             this.deleteMenuItem.Name = "deleteMenuItem";
-            this.deleteMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteMenuItem.Size = new System.Drawing.Size(104, 24);
             this.deleteMenuItem.Text = "Xóa";
             this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
+            // 
+            // btnCancle
+            // 
+            this.btnCancle.Location = new System.Drawing.Point(1123, 179);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(75, 41);
+            this.btnCancle.TabIndex = 38;
+            this.btnCancle.Text = "Hủy";
+            this.btnCancle.UseVisualStyleBackColor = true;
+            this.btnCancle.Visible = false;
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // frmPhieubanhang
             // 
@@ -778,10 +771,9 @@ namespace medical_management
             this.Controls.Add(this.btnSelectCustomer);
             this.Controls.Add(this.lblHoadonchitiet);
             this.Controls.Add(this.dgvHoadonchitiet);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnCancle);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtInventory);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtDongia);
@@ -838,8 +830,7 @@ namespace medical_management
         private System.Windows.Forms.Label lblDongia;
         private System.Windows.Forms.Label lblSoluong;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvHoadonchitiet;
         private System.Windows.Forms.Label lblHoadonchitiet;
         private System.Windows.Forms.Button btnSelectCustomer;
@@ -873,12 +864,12 @@ namespace medical_management
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoidungTT;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbLoThuoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtInventory;
         private System.Windows.Forms.ContextMenuStrip cmnuInvoiceDetail;
         private System.Windows.Forms.ToolStripMenuItem editMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteMenuItem;
+        private System.Windows.Forms.Button btnCancle;
     }
 }
