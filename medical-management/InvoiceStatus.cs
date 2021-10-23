@@ -8,8 +8,8 @@ namespace medical_management
 {
     class InvoiceStatus
     {
-        public const string PENDING = "Đang treo";
-        public const string RESERVE = "Đã thanh toán";
+        public const string PENDING = "Lưu tạm";
+        public const string RESERVE = "Còn nợ";
         public const string COMPLETE = "Đã hoàn thành";
 
     }

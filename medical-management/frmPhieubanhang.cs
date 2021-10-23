@@ -17,7 +17,7 @@ namespace medical_management
 {
     public partial class frmPhieubanhang : Form
     {
-        private string customerId;
+        private string customerId = "WALKINGUEST";
         private decimal subtotal = 0M;
         private decimal total = 0M;
         private decimal discount = 0M;
@@ -35,6 +35,7 @@ namespace medical_management
         private void frmPhieubanhang_Load(object sender, EventArgs e)
         {
             loadData();
+            insertInvoice();
         }
 
         private void insertInvoice()
@@ -85,7 +86,6 @@ namespace medical_management
             this.customerId = id;
             btnSelectCustomer.gone();
             lblKhachHang.visible();
-            insertInvoice();
         }
 
         private void btnSelectCustomer_Click(object sender, EventArgs e)
@@ -113,8 +113,7 @@ namespace medical_management
             txtDongia.Text = medical["Dongia"].ToString();
             string quantity = medical["Soluong"].ToString();
             loadConsignment(id);
-            //lblSoluong.Text += "(TK: " + quantity + ")";
-            //txtSoLuong.setHint("Hiện có: " + quantity);
+            btnAdd.enable();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -142,12 +141,20 @@ namespace medical_management
             }
 
             quantity = Convert.ToInt32(txtSoLuong.Text);
-
-            string insert = "INSERT INTO dbo.tbl_InvoiceDetail(MaHD, Mathuoc, Soluong, Dongia) " +
+            try
+            {
+                string insert = "INSERT INTO dbo.tbl_InvoiceDetail(MaHD, Mathuoc, Soluong, Dongia) " +
                             "VALUES( @MaHD , @MaThuoc , @Soluong , @Dongia ) ";
-            Database.Instance.excuteNonQuery(insert, new object[] { invoiceId, medicalId, quantity, price });
-            loadInvoiceDetail();
-            resetMedical();
+                Database.Instance.excuteNonQuery(insert, new object[] { invoiceId, medicalId, quantity, price });
+                loadInvoiceDetail();
+                resetMedical();
+                btnAdd.disable();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
         private bool isDuplicateMedicineInDetail(string medicalId)
@@ -251,10 +258,22 @@ namespace medical_management
 
         private void btnHoanthanh_Click(object sender, EventArgs e)
         {
+            string invoiceStatus = InvoiceStatus.PENDING;
             if (!isFullyPayment())
             {
-                Helper.showErrorMessage("Hóa đơn chưa thanh toán đầy đủ, không thể hoàn thành");
-                return;
+                DialogResult result = MessageBox.Show("Hóa đơn chưa thanh toán hoặc thanh toán chưa đủ, chọn CÓ nếu bạn muốn BÁN NỢ hóa đơn này!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if (result == DialogResult.Yes)
+                {
+                    invoiceStatus = InvoiceStatus.RESERVE;
+                }
+                else
+                {
+                    return;
+                }
+            } else
+            {
+                invoiceStatus = InvoiceStatus.COMPLETE;
             }
             foreach (DataGridViewRow row in dgvHoadonchitiet.Rows)
             {
@@ -284,7 +303,7 @@ namespace medical_management
 
             string update = "UPDATE dbo.tbl_Invoice SET Trangthaihoadon = @Trangthaihoadon , Tongtien = @Tongtien " +
                             "WHERE MaHD = @MaHD";
-            Database.Instance.excuteNonQuery(update, new object[] { InvoiceStatus.COMPLETE, total, invoiceId });
+            Database.Instance.excuteNonQuery(update, new object[] { invoiceStatus, total, invoiceId });
             doSaveTotalPayment();
             isSelectCompleteInvoice = true;
             this.Close();
@@ -504,6 +523,16 @@ namespace medical_management
             Database.Instance.excuteNonQuery(update, new object[] { quantity, invoiceId, txtMaThuoc.Text });
             loadInvoiceDetail();
             resetEditMode();
+        }
+
+        private void btnLuuhoadon_Click(object sender, EventArgs e)
+        {
+            string invoiceStatus = InvoiceStatus.PENDING;
+            string update = "UPDATE dbo.tbl_Invoice SET Trangthaihoadon = @Trangthaihoadon , Tongtien = @Tongtien " +
+                            "WHERE MaHD = @MaHD";
+            Database.Instance.excuteNonQuery(update, new object[] { invoiceStatus, total, invoiceId });
+            isSelectCompleteInvoice = true;
+            this.Close();
         }
     }
 }

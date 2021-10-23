@@ -57,7 +57,6 @@ namespace medical_management
             this.isChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Trangthaihoadon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -105,7 +104,7 @@ namespace medical_management
             this.Dienthoai,
             this.Tennhanvien});
             this.dgvDMHD.Location = new System.Drawing.Point(284, 69);
-            this.dgvDMHD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDMHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDMHD.Name = "dgvDMHD";
             this.dgvDMHD.RowHeadersWidth = 51;
             this.dgvDMHD.Size = new System.Drawing.Size(1010, 296);
@@ -315,12 +314,6 @@ namespace medical_management
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(8, 499);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 48;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
@@ -461,12 +454,11 @@ namespace medical_management
             this.ClientSize = new System.Drawing.Size(1307, 724);
             this.Controls.Add(this.btnAddInvoice);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgvHoadonchitiet);
             this.Controls.Add(this.dgvDMHD);
             this.Controls.Add(this.lblDMHD);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDSHD";
             this.Text = "frmDMHD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -503,7 +495,6 @@ namespace medical_management
         private System.Windows.Forms.DataGridViewCheckBoxColumn isChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn Trangthaihoadon;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
