@@ -111,7 +111,7 @@ namespace medical_management
             txtTenthuoc.Text = medical["TenThuoc"].ToString();
             txtDonvitinh.Text = medical["Donvi"].ToString();
             txtDongia.Text = medical["Dongia"].ToString();
-            string quantity = medical["Soluong"].ToString();
+            txtTotalInventory.Text = medical["Soluong"].ToString();
             loadConsignment(id);
             btnAdd.enable();
         }
@@ -140,7 +140,17 @@ namespace medical_management
                 return;
             }
 
+            int inventory = Convert.ToInt32(txtTotalInventory.Text);
             quantity = Convert.ToInt32(txtSoLuong.Text);
+
+            if (quantity > inventory)
+            {
+                Helper.showErrorMessage("Không đủ sản phẩm, tồn kho hiện có là: " + inventory.ToString());
+                txtSoLuong.Text = "";
+                txtSoLuong.Focus();
+                return;
+            }
+
             try
             {
                 string insert = "INSERT INTO dbo.tbl_InvoiceDetail(MaHD, Mathuoc, Soluong, Dongia) " +
@@ -201,6 +211,7 @@ namespace medical_management
             lblSoluong.Text = "Số lượng";
             cbLoThuoc.SelectedIndex = -1;
             txtInventory.Text = "";
+            txtTotalInventory.Text = "";
         }
 
         private void loadInvoiceDetail()
@@ -343,6 +354,11 @@ namespace medical_management
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            if (isFullyPayment())
+            {
+                Helper.showSuccessMessage("Khách hàng đã thanh toán đủ giá trị đơn hàng");
+                return;
+            }
             frmPayment f = new frmPayment(customerId, invoiceId, total);
             f.publisher = new frmPayment.handlePaymented(doHandlePayment);
             f.ShowDialog();
@@ -533,6 +549,19 @@ namespace medical_management
             Database.Instance.excuteNonQuery(update, new object[] { invoiceStatus, total, invoiceId });
             isSelectCompleteInvoice = true;
             this.Close();
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

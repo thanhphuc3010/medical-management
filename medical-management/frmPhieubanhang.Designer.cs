@@ -95,6 +95,7 @@ namespace medical_management
             this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCancle = new System.Windows.Forms.Button();
+            this.txtTotalInventory = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoadonchitiet)).BeginInit();
             this.cmnuKH.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -470,6 +471,7 @@ namespace medical_management
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(253, 22);
             this.txtSoLuong.TabIndex = 22;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // dtpNgayHD
             // 
@@ -679,37 +681,40 @@ namespace medical_management
             this.label1.Location = new System.Drawing.Point(776, 206);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Lô thuốc";
+            this.label1.Text = "Tồn kho";
             // 
             // cbLoThuoc
             // 
             this.cbLoThuoc.FormattingEnabled = true;
-            this.cbLoThuoc.Location = new System.Drawing.Point(853, 202);
+            this.cbLoThuoc.Location = new System.Drawing.Point(454, 231);
             this.cbLoThuoc.Name = "cbLoThuoc";
             this.cbLoThuoc.Size = new System.Drawing.Size(109, 24);
             this.cbLoThuoc.TabIndex = 52;
+            this.cbLoThuoc.Visible = false;
             this.cbLoThuoc.SelectedIndexChanged += new System.EventHandler(this.cbLoThuoc_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(970, 206);
+            this.label2.Location = new System.Drawing.Point(571, 235);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 20;
             this.label2.Text = "Tồn/lô:";
+            this.label2.Visible = false;
             // 
             // txtInventory
             // 
-            this.txtInventory.Location = new System.Drawing.Point(1024, 203);
+            this.txtInventory.Location = new System.Drawing.Point(625, 232);
             this.txtInventory.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInventory.Name = "txtInventory";
             this.txtInventory.ReadOnly = true;
             this.txtInventory.Size = new System.Drawing.Size(82, 22);
             this.txtInventory.TabIndex = 22;
+            this.txtInventory.Visible = false;
             // 
             // cmnuInvoiceDetail
             // 
@@ -746,6 +751,16 @@ namespace medical_management
             this.btnCancle.Visible = false;
             this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
+            // txtTotalInventory
+            // 
+            this.txtTotalInventory.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalInventory.Location = new System.Drawing.Point(853, 201);
+            this.txtTotalInventory.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtTotalInventory.Name = "txtTotalInventory";
+            this.txtTotalInventory.ReadOnly = true;
+            this.txtTotalInventory.Size = new System.Drawing.Size(253, 26);
+            this.txtTotalInventory.TabIndex = 22;
+            // 
             // frmPhieubanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -765,6 +780,7 @@ namespace medical_management
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtInventory);
+            this.Controls.Add(this.txtTotalInventory);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.txtDongia);
             this.Controls.Add(this.label1);
@@ -787,6 +803,7 @@ namespace medical_management
             this.Controls.Add(this.lblPhieubanhang);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmPhieubanhang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPhieubanhang";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPhieubanhang_FormClosing);
             this.Load += new System.EventHandler(this.frmPhieubanhang_Load);
@@ -860,5 +877,6 @@ namespace medical_management
         private System.Windows.Forms.ToolStripMenuItem editMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteMenuItem;
         private System.Windows.Forms.Button btnCancle;
+        private System.Windows.Forms.TextBox txtTotalInventory;
     }
 }
