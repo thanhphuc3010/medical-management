@@ -21,5 +21,11 @@ namespace medical_management
         {
 
         }
+
+        private void btnAddInvoice_Click(object sender, EventArgs e)
+        {
+            frmPhieubanhang f = new frmPhieubanhang();
+            f.ShowDialog();
+        }
     }
 }

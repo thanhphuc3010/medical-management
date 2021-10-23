@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -48,7 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\InvoiceBUS.cs" />
+    <Compile Include="DTO\Consignment.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="DTO\Invoice.cs" />
+    <Compile Include="DTO\InvoiceDetail.cs" />
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelectCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +90,7 @@
     <Compile Include="frmLothuoc.Designer.cs">
       <DependentUpon>frmLothuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceStatus.cs" />
     <Compile Include="QLHTDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhasanxuat.resx">
       <DependentUpon>frmNhasanxuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieubanhang.resx">
       <DependentUpon>frmPhieubanhang.cs</DependentUpon>
