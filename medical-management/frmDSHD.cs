@@ -38,6 +38,31 @@ namespace medical_management
             loadReceivable();
         }
 
+        private void initializeUI()
+        {
+            foreach (DataGridViewRow row in dgvDSHD.Rows)
+            {
+                string status = row.Cells["Trangthai"].Value.ToString();
+
+                switch (status)
+                {
+                    case InvoiceStatus.COMPLETE:
+                        row.Cells["Trangthai"].Style.ForeColor = Color.FromArgb(6, 189, 109);
+                        break;
+
+                    case InvoiceStatus.RESERVE:
+                        row.Cells["Trangthai"].Style.ForeColor = Color.FromArgb(255, 0, 0);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                row.Cells["MaHD"].Style.ForeColor = Color.FromArgb(16, 68, 115);
+
+            }
+        }
+
         private void loadListInvoice()
         {
             string query = "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
@@ -47,6 +72,8 @@ namespace medical_management
             DataTable data = Database.Instance.excuteQuery(query);
 
             dgvDSHD.DataSource = data;
+
+            initializeUI();
 
             if (!dgvDSHD.Rows[0].IsNewRow)
             {
@@ -117,8 +144,10 @@ namespace medical_management
                 string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
 
                 loadInvoiceDetailById(invoiceId);
+            } else
+            {
+                initializeUI();
             }
-            else return;
             
         }
 
@@ -266,6 +295,11 @@ namespace medical_management
             {
                 dgvInvoiceSummary.EndEdit();
             }
+        }
+
+        private void dgvDSHD_Sorted(object sender, EventArgs e)
+        {
+            initializeUI();
         }
     }
 }
