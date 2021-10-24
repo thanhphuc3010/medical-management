@@ -28,6 +28,8 @@ namespace medical_management
 
         private void frmDSHD_Load(object sender, EventArgs e)
         {
+            dtpFromDate.Value = getEarliestDate();
+            dtpToDate.Value = getLatestDate();
             loadListInvoice();
             loadInvoiceSummary();
             loadInvoiceCount();
@@ -96,11 +98,28 @@ namespace medical_management
             lblReceivable.Text = total.ToString("c", culture);
         }
 
+        private DateTime getEarliestDate()
+        {
+            string query = "SELECT TOP 1 NgayHD FROM dbo.tbl_Invoice ORDER BY NgayHD ASC";
+            return Convert.ToDateTime(Database.Instance.ExecuteScalar(query));
+        }
+        private DateTime getLatestDate()
+        {
+            string query = "SELECT TOP 1 NgayHD FROM dbo.tbl_Invoice ORDER BY NgayHD DESC";
+            return Convert.ToDateTime(Database.Instance.ExecuteScalar(query));
+        }
+
+
         private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
+            if (e.RowIndex != -1)
+            {
+                string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
 
-            loadInvoiceDetailById(invoiceId);
+                loadInvoiceDetailById(invoiceId);
+            }
+            else return;
+            
         }
 
         private void loadInvoiceDetailById(string invoiceId)
@@ -119,11 +138,49 @@ namespace medical_management
         {
             DateTime fromDate = dtpFromDate.Value;
             DateTime toDate = dtpToDate.Value;
+
+            List<string> statusFilter = getListStatusFilter();
+
+            string querySummary =
+                "SELECT DISTINCT Trangthaihoadon, COUNT(Trangthaihoadon) AS Soluong " +
+                "FROM dbo.tbl_Invoice " +
+                "WHERE NgayHD BETWEEN @FromDate AND @ToDate " +
+                "GROUP BY Trangthaihoadon";
+
+            DataTable dataSummary = Database.Instance.excuteQuery(querySummary, new object[] { fromDate, toDate });
+            dgvInvoiceSummary.DataSource = dataSummary;
+
             string query =
-                "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
-                "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
-                "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
-                "AND NgayHD BETWEEN @FromDate AND @ToDate";
+                    "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
+                    "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
+                    "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
+                    "AND NgayHD BETWEEN @FromDate AND @ToDate " +
+                    "AND Trangthaihoadon IN (";
+
+            if (statusFilter.Count == 0)
+            {
+                query = "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
+                    "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
+                    "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
+                    "AND NgayHD BETWEEN @FromDate AND @ToDate ";
+            }
+            else
+            {
+                var lastItem = statusFilter.Last();
+
+                foreach (string status in statusFilter)
+                {
+                    if (!status.Equals(lastItem))
+                    {
+                        query += "N'" + status + "', ";
+                    }
+                    else
+                    {
+                        query += "N'" + status + "')";
+                    }
+
+                }
+            }
 
             DataTable data = Database.Instance.excuteQuery(query, new object[] { fromDate, toDate });
 
@@ -135,17 +192,70 @@ namespace medical_management
             }
         }
 
+        private List<string> getListStatusFilter()
+        {
+            List<string> statusFilter = new List<string>();
+
+            foreach (DataGridViewRow row in dgvInvoiceSummary.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[isChecked.Index].Value))
+                {
+                    statusFilter.Add(row.Cells["Trangthaihoadon"].Value.ToString());
+                }
+                else
+                {
+                    statusFilter.Remove(row.Cells["Trangthaihoadon"].Value.ToString());
+                }
+            }
+            return statusFilter;
+        }
+
         private void dgvInvoiceSummary_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == isChecked.Index && e.RowIndex != -1)
             {
-                if (Convert.ToBoolean(dgvInvoiceSummary.Rows[e.RowIndex].Cells[isChecked.Index].Value))
-                {
 
-                    Helper.showSuccessMessage(dgvInvoiceSummary.Rows[e.RowIndex].Cells["Trangthaihoadon"].Value.ToString());
+                List<string> statusFilter = getListStatusFilter();
+
+                DateTime fromDate = dtpFromDate.Value;
+                DateTime toDate = dtpToDate.Value;
+
+                string query = 
+                        "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
+                        "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
+                        "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
+                        "AND NgayHD BETWEEN @FromDate AND @ToDate " +
+                        "AND Trangthaihoadon IN (";
+
+                if (statusFilter.Count == 0)
+                {
+                    loadListInvoice();
+                    return;
+                }
+                var lastItem = statusFilter.Last();
+
+                foreach (string status in statusFilter)
+                {
+                    if(!status.Equals(lastItem))
+                    {
+                        query += "N'" + status + "', ";
+                    } else
+                    {
+                        query += "N'" + status + "')";
+                    }
+                    
+                }
+
+                DataTable data = Database.Instance.excuteQuery(query, new object[] { fromDate, toDate });
+
+                dgvDSHD.DataSource = data;
+
+                if (dgvDSHD.Rows.Count > 0 && data.Rows.Count != 0)
+                {
+                    loadInvoiceDetailById(dgvDSHD.Rows[0].Cells["MaHD"].Value.ToString());
                 } else
                 {
-                    Helper.showSuccessMessage(dgvInvoiceSummary.Rows[e.RowIndex].Cells["Trangthaihoadon"].Value.ToString());
+                    dgvHoadonchitiet.DataSource = null;
                 }
             }
         }
