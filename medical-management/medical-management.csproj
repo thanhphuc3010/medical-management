@@ -260,5 +260,14 @@
   <ItemGroup>
     <None Include="Resources\plus_circle_outline.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_cart.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

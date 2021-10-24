@@ -37,15 +37,7 @@ namespace medical_management
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDMHD = new System.Windows.Forms.Label();
-            this.dgvDMHD = new System.Windows.Forms.DataGridView();
-            this.Sohoadon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngayhoadon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Conthieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tennhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDSHD = new System.Windows.Forms.DataGridView();
             this.dgvHoadonchitiet = new System.Windows.Forms.DataGridView();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,25 +45,34 @@ namespace medical_management
             this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvInvoiceSummary = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblReceivable = new System.Windows.Forms.Label();
+            this.lblTotalPayment = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.btnAddInvoice = new System.Windows.Forms.Button();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Conthieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Trangthaihoadon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnAddInvoice = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDMHD)).BeginInit();
+            this.lblInvoiceCount = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoadonchitiet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceSummary)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,86 +86,30 @@ namespace medical_management
             this.lblDMHD.Size = new System.Drawing.Size(228, 33);
             this.lblDMHD.TabIndex = 0;
             this.lblDMHD.Text = "Danh sách hóa đơn";
-            this.lblDMHD.Click += new System.EventHandler(this.lblDMHD_Click);
             // 
-            // dgvDMHD
+            // dgvDSHD
             // 
-            this.dgvDMHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDSHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDMHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDMHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDMHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sohoadon,
-            this.Ngayhoadon,
+            this.dgvDSHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHD,
+            this.NgayHD,
             this.Tongtien,
             this.Conthieu,
             this.Trangthai,
             this.TenKH,
-            this.Dienthoai,
-            this.Tennhanvien});
-            this.dgvDMHD.Location = new System.Drawing.Point(284, 69);
-            this.dgvDMHD.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvDMHD.Name = "dgvDMHD";
-            this.dgvDMHD.RowHeadersWidth = 51;
-            this.dgvDMHD.Size = new System.Drawing.Size(1010, 296);
-            this.dgvDMHD.TabIndex = 1;
-            // 
-            // Sohoadon
-            // 
-            this.Sohoadon.DataPropertyName = "Sohoadon";
-            this.Sohoadon.HeaderText = "Số hóa đơn";
-            this.Sohoadon.MinimumWidth = 6;
-            this.Sohoadon.Name = "Sohoadon";
-            // 
-            // Ngayhoadon
-            // 
-            this.Ngayhoadon.DataPropertyName = "Ngayhoadon";
-            this.Ngayhoadon.HeaderText = "Ngày hóa đơn";
-            this.Ngayhoadon.MinimumWidth = 6;
-            this.Ngayhoadon.Name = "Ngayhoadon";
-            // 
-            // Tongtien
-            // 
-            this.Tongtien.DataPropertyName = "Tongtien";
-            this.Tongtien.HeaderText = "Tổng tiền";
-            this.Tongtien.MinimumWidth = 6;
-            this.Tongtien.Name = "Tongtien";
-            // 
-            // Conthieu
-            // 
-            this.Conthieu.DataPropertyName = "Conthieu";
-            this.Conthieu.HeaderText = "Còn thiếu";
-            this.Conthieu.MinimumWidth = 6;
-            this.Conthieu.Name = "Conthieu";
-            // 
-            // Trangthai
-            // 
-            this.Trangthai.DataPropertyName = "Trangthai";
-            this.Trangthai.HeaderText = "Trạng thái";
-            this.Trangthai.MinimumWidth = 6;
-            this.Trangthai.Name = "Trangthai";
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên Khách hàng";
-            this.TenKH.MinimumWidth = 6;
-            this.TenKH.Name = "TenKH";
-            // 
-            // Dienthoai
-            // 
-            this.Dienthoai.DataPropertyName = "Dienthoai";
-            this.Dienthoai.HeaderText = "Điện thoại";
-            this.Dienthoai.MinimumWidth = 6;
-            this.Dienthoai.Name = "Dienthoai";
-            // 
-            // Tennhanvien
-            // 
-            this.Tennhanvien.DataPropertyName = "Tennhanvien";
-            this.Tennhanvien.HeaderText = "Tên nhân viên";
-            this.Tennhanvien.MinimumWidth = 6;
-            this.Tennhanvien.Name = "Tennhanvien";
+            this.Sdt,
+            this.TenNV});
+            this.dgvDSHD.Location = new System.Drawing.Point(284, 69);
+            this.dgvDSHD.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDSHD.Name = "dgvDSHD";
+            this.dgvDSHD.RowHeadersWidth = 51;
+            this.dgvDSHD.Size = new System.Drawing.Size(1010, 296);
+            this.dgvDSHD.TabIndex = 4;
+            this.dgvDSHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellClick);
             // 
             // dgvHoadonchitiet
             // 
@@ -193,7 +138,7 @@ namespace medical_management
             this.dgvHoadonchitiet.Name = "dgvHoadonchitiet";
             this.dgvHoadonchitiet.RowHeadersWidth = 51;
             this.dgvHoadonchitiet.Size = new System.Drawing.Size(1010, 338);
-            this.dgvHoadonchitiet.TabIndex = 43;
+            this.dgvHoadonchitiet.TabIndex = 3;
             // 
             // Mathuoc
             // 
@@ -260,10 +205,11 @@ namespace medical_management
             this.Thanhtien.MinimumWidth = 6;
             this.Thanhtien.Name = "Thanhtien";
             // 
-            // dataGridView1
+            // dgvInvoiceSummary
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvInvoiceSummary.AllowUserToAddRows = false;
+            this.dgvInvoiceSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInvoiceSummary.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -271,19 +217,215 @@ namespace medical_management
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInvoiceSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvInvoiceSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvoiceSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.isChecked,
             this.Trangthaihoadon,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 69);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(262, 254);
-            this.dataGridView1.TabIndex = 43;
+            this.dgvInvoiceSummary.Location = new System.Drawing.Point(8, 69);
+            this.dgvInvoiceSummary.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.dgvInvoiceSummary.Name = "dgvInvoiceSummary";
+            this.dgvInvoiceSummary.RowHeadersVisible = false;
+            this.dgvInvoiceSummary.RowHeadersWidth = 51;
+            this.dgvInvoiceSummary.Size = new System.Drawing.Size(262, 254);
+            this.dgvInvoiceSummary.TabIndex = 2;
+            this.dgvInvoiceSummary.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInvoiceSummary_CellMouseUp);
+            this.dgvInvoiceSummary.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvoiceSummary_CellValueChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblReceivable);
+            this.panel1.Controls.Add(this.lblTotalPayment);
+            this.panel1.Controls.Add(this.lblInvoiceCount);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnFilter);
+            this.panel1.Controls.Add(this.dtpToDate);
+            this.panel1.Controls.Add(this.dtpFromDate);
+            this.panel1.Location = new System.Drawing.Point(8, 330);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(262, 179);
+            this.panel1.TabIndex = 5;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(13, 137);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(76, 18);
+            this.label.TabIndex = 52;
+            this.label.Text = "Còn thiếu:";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 18);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Đã trả:";
+            // 
+            // lblReceivable
+            // 
+            this.lblReceivable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblReceivable.AutoSize = true;
+            this.lblReceivable.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReceivable.Location = new System.Drawing.Point(151, 137);
+            this.lblReceivable.Name = "lblReceivable";
+            this.lblReceivable.Size = new System.Drawing.Size(60, 18);
+            this.lblReceivable.TabIndex = 54;
+            this.lblReceivable.Text = "500.000";
+            this.lblReceivable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTotalPayment
+            // 
+            this.lblTotalPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalPayment.AutoSize = true;
+            this.lblTotalPayment.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPayment.Location = new System.Drawing.Point(139, 107);
+            this.lblTotalPayment.Name = "lblTotalPayment";
+            this.lblTotalPayment.Size = new System.Drawing.Size(72, 18);
+            this.lblTotalPayment.TabIndex = 55;
+            this.lblTotalPayment.Text = "1.500.000";
+            this.lblTotalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(139, 77);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(72, 18);
+            this.lblTotal.TabIndex = 56;
+            this.lblTotal.Text = "2.500.000";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 18);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Tổng tiền:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 18);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Số hóa đơn: ";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(225, 1);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(30, 23);
+            this.btnFilter.TabIndex = 4;
+            this.btnFilter.Text = "button1";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(121, 1);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(87, 22);
+            this.dtpToDate.TabIndex = 48;
+            // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromDate.Location = new System.Drawing.Point(8, 1);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(87, 22);
+            this.dtpFromDate.TabIndex = 3;
+            // 
+            // btnAddInvoice
+            // 
+            this.btnAddInvoice.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddInvoice.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddInvoice.Image = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnAddInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddInvoice.Location = new System.Drawing.Point(284, 12);
+            this.btnAddInvoice.Name = "btnAddInvoice";
+            this.btnAddInvoice.Size = new System.Drawing.Size(118, 43);
+            this.btnAddInvoice.TabIndex = 1;
+            this.btnAddInvoice.Text = "Thêm mới";
+            this.btnAddInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddInvoice.UseVisualStyleBackColor = false;
+            this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
+            // 
+            // MaHD
+            // 
+            this.MaHD.DataPropertyName = "MaHD";
+            this.MaHD.HeaderText = "Số hóa đơn";
+            this.MaHD.MinimumWidth = 6;
+            this.MaHD.Name = "MaHD";
+            // 
+            // NgayHD
+            // 
+            this.NgayHD.DataPropertyName = "NgayHD";
+            this.NgayHD.HeaderText = "Ngày hóa đơn";
+            this.NgayHD.MinimumWidth = 6;
+            this.NgayHD.Name = "NgayHD";
+            // 
+            // Tongtien
+            // 
+            this.Tongtien.DataPropertyName = "Tongtien";
+            this.Tongtien.HeaderText = "Tổng tiền";
+            this.Tongtien.MinimumWidth = 6;
+            this.Tongtien.Name = "Tongtien";
+            // 
+            // Conthieu
+            // 
+            this.Conthieu.DataPropertyName = "Conthieu";
+            this.Conthieu.HeaderText = "Còn thiếu";
+            this.Conthieu.MinimumWidth = 6;
+            this.Conthieu.Name = "Conthieu";
+            // 
+            // Trangthai
+            // 
+            this.Trangthai.DataPropertyName = "Trangthaihoadon";
+            this.Trangthai.HeaderText = "Trạng thái";
+            this.Trangthai.MinimumWidth = 6;
+            this.Trangthai.Name = "Trangthai";
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên Khách hàng";
+            this.TenKH.MinimumWidth = 6;
+            this.TenKH.Name = "TenKH";
+            // 
+            // Sdt
+            // 
+            this.Sdt.DataPropertyName = "Sdt";
+            this.Sdt.HeaderText = "Điện thoại";
+            this.Sdt.MinimumWidth = 6;
+            this.Sdt.Name = "Sdt";
+            // 
+            // TenNV
+            // 
+            this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.HeaderText = "Người bán";
+            this.TenNV.MinimumWidth = 6;
+            this.TenNV.Name = "TenNV";
             // 
             // isChecked
             // 
@@ -306,7 +448,7 @@ namespace medical_management
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Soluong";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.Format = "N0";
             dataGridViewCellStyle7.NullValue = null;
             this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn5.FillWeight = 144.3871F;
@@ -314,138 +456,18 @@ namespace medical_management
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // panel1
+            // lblInvoiceCount
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Location = new System.Drawing.Point(8, 331);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 156);
-            this.panel1.TabIndex = 49;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 18);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "Còn thiếu:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 18);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Đã trả:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(157, 137);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 18);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "500.000";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(145, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 18);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "1.500.000";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(145, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 18);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "2.500.000";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 18);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "Tổng tiền:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 18);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Số hóa đơn: 24";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(225, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 23);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(121, 1);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(87, 22);
-            this.dateTimePicker2.TabIndex = 48;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(8, 1);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(87, 22);
-            this.dateTimePicker1.TabIndex = 49;
-            // 
-            // btnAddInvoice
-            // 
-            this.btnAddInvoice.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddInvoice.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddInvoice.Image = global::medical_management.Properties.Resources.plus_circle_outline;
-            this.btnAddInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddInvoice.Location = new System.Drawing.Point(284, 12);
-            this.btnAddInvoice.Name = "btnAddInvoice";
-            this.btnAddInvoice.Size = new System.Drawing.Size(118, 43);
-            this.btnAddInvoice.TabIndex = 50;
-            this.btnAddInvoice.Text = "Thêm mới";
-            this.btnAddInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddInvoice.UseVisualStyleBackColor = false;
-            this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
+            this.lblInvoiceCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInvoiceCount.AutoSize = true;
+            this.lblInvoiceCount.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoiceCount.ForeColor = System.Drawing.Color.Navy;
+            this.lblInvoiceCount.Location = new System.Drawing.Point(221, 41);
+            this.lblInvoiceCount.Name = "lblInvoiceCount";
+            this.lblInvoiceCount.Size = new System.Drawing.Size(29, 20);
+            this.lblInvoiceCount.TabIndex = 56;
+            this.lblInvoiceCount.Text = "20";
+            this.lblInvoiceCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmDSHD
             // 
@@ -454,17 +476,18 @@ namespace medical_management
             this.ClientSize = new System.Drawing.Size(1307, 724);
             this.Controls.Add(this.btnAddInvoice);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvInvoiceSummary);
             this.Controls.Add(this.dgvHoadonchitiet);
-            this.Controls.Add(this.dgvDMHD);
+            this.Controls.Add(this.dgvDSHD);
             this.Controls.Add(this.lblDMHD);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDSHD";
             this.Text = "frmDMHD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDMHD)).EndInit();
+            this.Load += new System.EventHandler(this.frmDSHD_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoadonchitiet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceSummary)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -475,15 +498,7 @@ namespace medical_management
         #endregion
 
         private System.Windows.Forms.Label lblDMHD;
-        private System.Windows.Forms.DataGridView dgvDMHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sohoadon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngayhoadon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Conthieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Trangthai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dienthoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tennhanvien;
+        private System.Windows.Forms.DataGridView dgvDSHD;
         private System.Windows.Forms.DataGridView dgvHoadonchitiet;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tenthuoc;
@@ -491,21 +506,30 @@ namespace medical_management
         private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvInvoiceSummary;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblReceivable;
+        private System.Windows.Forms.Label lblTotalPayment;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.Button btnAddInvoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Conthieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Trangthai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn Trangthaihoadon;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button btnAddInvoice;
+        private System.Windows.Forms.Label lblInvoiceCount;
     }
 }

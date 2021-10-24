@@ -30,14 +30,14 @@ namespace medical_management
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPhieubanhang = new System.Windows.Forms.Label();
             this.lblThongtinchung = new System.Windows.Forms.Label();
             this.lblKH = new System.Windows.Forms.Label();
@@ -263,12 +263,15 @@ namespace medical_management
             // btnAdd
             // 
             this.btnAdd.Enabled = false;
+            this.btnAdd.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::medical_management.Properties.Resources.ic_cart;
             this.btnAdd.Location = new System.Drawing.Point(1123, 77);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 41);
+            this.btnAdd.Size = new System.Drawing.Size(86, 41);
             this.btnAdd.TabIndex = 35;
             this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -277,7 +280,7 @@ namespace medical_management
             this.btnUpdate.Location = new System.Drawing.Point(1123, 130);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(86, 41);
             this.btnUpdate.TabIndex = 38;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -291,14 +294,14 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHoadonchitiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoadonchitiet.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHoadonchitiet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHoadonchitiet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvHoadonchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoadonchitiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mathuoc,
@@ -310,6 +313,7 @@ namespace medical_management
             this.dgvHoadonchitiet.Location = new System.Drawing.Point(13, 289);
             this.dgvHoadonchitiet.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvHoadonchitiet.Name = "dgvHoadonchitiet";
+            this.dgvHoadonchitiet.ReadOnly = true;
             this.dgvHoadonchitiet.RowHeadersWidth = 51;
             this.dgvHoadonchitiet.Size = new System.Drawing.Size(1197, 295);
             this.dgvHoadonchitiet.TabIndex = 42;
@@ -323,6 +327,7 @@ namespace medical_management
             this.Mathuoc.HeaderText = "Mã thuốc";
             this.Mathuoc.MinimumWidth = 6;
             this.Mathuoc.Name = "Mathuoc";
+            this.Mathuoc.ReadOnly = true;
             // 
             // Tenthuoc
             // 
@@ -331,55 +336,60 @@ namespace medical_management
             this.Tenthuoc.HeaderText = "Tên thuốc";
             this.Tenthuoc.MinimumWidth = 6;
             this.Tenthuoc.Name = "Tenthuoc";
+            this.Tenthuoc.ReadOnly = true;
             // 
             // Donvi
             // 
             this.Donvi.DataPropertyName = "Donvi";
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Donvi.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Donvi.DefaultCellStyle = dataGridViewCellStyle10;
             this.Donvi.FillWeight = 48.12834F;
             this.Donvi.HeaderText = "ĐVT";
             this.Donvi.MinimumWidth = 10;
             this.Donvi.Name = "Donvi";
+            this.Donvi.ReadOnly = true;
             this.Donvi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Dongia
             // 
             this.Dongia.DataPropertyName = "Dongia";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle43.Format = "N2";
-            dataGridViewCellStyle43.NullValue = null;
-            this.Dongia.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Dongia.DefaultCellStyle = dataGridViewCellStyle11;
             this.Dongia.FillWeight = 66.82219F;
             this.Dongia.HeaderText = "Đơn giá";
             this.Dongia.MinimumWidth = 6;
             this.Dongia.Name = "Dongia";
+            this.Dongia.ReadOnly = true;
             // 
             // Soluong
             // 
             this.Soluong.DataPropertyName = "Soluong";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.Format = "N2";
-            dataGridViewCellStyle44.NullValue = null;
-            this.Soluong.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Soluong.DefaultCellStyle = dataGridViewCellStyle12;
             this.Soluong.FillWeight = 66.43012F;
             this.Soluong.HeaderText = "Số lượng";
             this.Soluong.MinimumWidth = 6;
             this.Soluong.Name = "Soluong";
+            this.Soluong.ReadOnly = true;
             // 
             // Thanhtien
             // 
             this.Thanhtien.DataPropertyName = "Thanhtien";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle45.Format = "N2";
-            dataGridViewCellStyle45.NullValue = null;
-            this.Thanhtien.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.Thanhtien.DefaultCellStyle = dataGridViewCellStyle13;
             this.Thanhtien.FillWeight = 99.32957F;
             this.Thanhtien.HeaderText = "Thành tiền";
             this.Thanhtien.MinimumWidth = 6;
             this.Thanhtien.Name = "Thanhtien";
+            this.Thanhtien.ReadOnly = true;
             // 
             // lblHoadonchitiet
             // 
@@ -615,14 +625,14 @@ namespace medical_management
             this.dgvPayment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvPayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPayment.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PhuongThucTT,
@@ -656,8 +666,8 @@ namespace medical_management
             // SoTienTT
             // 
             this.SoTienTT.DataPropertyName = "SoTienTT";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SoTienTT.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SoTienTT.DefaultCellStyle = dataGridViewCellStyle15;
             this.SoTienTT.FillWeight = 116.754F;
             this.SoTienTT.HeaderText = "Thanh toán";
             this.SoTienTT.MinimumWidth = 10;
@@ -667,11 +677,11 @@ namespace medical_management
             // NoidungTT
             // 
             this.NoidungTT.DataPropertyName = "NoidungTT";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle48.Format = "N2";
-            dataGridViewCellStyle48.NullValue = null;
-            this.NoidungTT.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle16.Format = "N2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.NoidungTT.DefaultCellStyle = dataGridViewCellStyle16;
             this.NoidungTT.FillWeight = 93.83424F;
             this.NoidungTT.HeaderText = "Ghi chú";
             this.NoidungTT.MinimumWidth = 6;
@@ -725,30 +735,34 @@ namespace medical_management
             this.editMenuItem,
             this.deleteMenuItem});
             this.cmnuInvoiceDetail.Name = "cmnuInvoiceDetail";
-            this.cmnuInvoiceDetail.Size = new System.Drawing.Size(105, 52);
+            this.cmnuInvoiceDetail.Size = new System.Drawing.Size(109, 56);
             // 
             // editMenuItem
             // 
+            this.editMenuItem.Image = global::medical_management.Properties.Resources.ic_edit;
             this.editMenuItem.Name = "editMenuItem";
-            this.editMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.editMenuItem.Size = new System.Drawing.Size(108, 26);
             this.editMenuItem.Text = "Sửa";
             this.editMenuItem.Click += new System.EventHandler(this.editMenuItem_Click);
             // 
             // deleteMenuItem
             // 
+            this.deleteMenuItem.Image = global::medical_management.Properties.Resources.ic_close;
             this.deleteMenuItem.Name = "deleteMenuItem";
-            this.deleteMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.deleteMenuItem.Size = new System.Drawing.Size(108, 26);
             this.deleteMenuItem.Text = "Xóa";
             this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
             // 
             // btnCancle
             // 
+            this.btnCancle.Image = global::medical_management.Properties.Resources.ic_close;
             this.btnCancle.Location = new System.Drawing.Point(1123, 179);
             this.btnCancle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(75, 41);
+            this.btnCancle.Size = new System.Drawing.Size(86, 41);
             this.btnCancle.TabIndex = 38;
             this.btnCancle.Text = "Hủy";
+            this.btnCancle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancle.UseVisualStyleBackColor = true;
             this.btnCancle.Visible = false;
             this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);

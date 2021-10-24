@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace medical_management.BUS
         {
             string delete = "DELETE FROM tbl_Invoice WHERE MaHD = @MaHD";
             Database.Instance.excuteNonQuery(delete, new object[] { id });
+        }
+
+        public static void loadListInvoice(string query, object[] param)
+        {
+            
         }
     }
 }
