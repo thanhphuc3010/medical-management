@@ -67,9 +67,18 @@ namespace medical_management
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            deleteMake();
+            deleteMakeWithConfirm();
         
         }
+
+        private void deleteMakeWithConfirm()
+        {
+            string message = "Bạn có chắc chắn muốn xóa nhà sản xuất này không?";
+            Helper.showDialogConfirmDelete(message, deleteMake);
+
+        }
+
+        
         private void deleteMake()
         {
             string id = txtMaNSX.Text.ToString().Trim();
@@ -86,10 +95,11 @@ namespace medical_management
             {
                 if (e.Number == 547)
                 {
-                    Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
+                    Helper.showMessage("Nhà sản xuất này có sản phẩm đã phát sinh giao dịch. Không thể xóa!");
                 }
                 else throw;
             }
+            MessageBox.Show("Đã xóa thành công!", "Thông báo");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -97,6 +107,7 @@ namespace medical_management
             addMake();
             btnAdd.enable();
             btnSave.disable();
+            MessageBox.Show("Đã lưu thành công!", "Thông báo");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -126,7 +137,7 @@ namespace medical_management
             string del = "Update tbl_make" + "" +
                 " Set TenNSX = @TenNSX , Diachi = @Diachi , Sdt = @Sdt , Email = @Email" + "" +
                 " Where MaNSX = @MaNSX";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { tennsx, diachi, sdt, email });
+            int result = Database.Instance.excuteNonQuery(del, new object[] { tennsx, diachi, sdt, email, id });
             if(result>0)
             {
                 loadData();

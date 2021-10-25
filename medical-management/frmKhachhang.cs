@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -63,13 +64,7 @@ namespace medical_management
             //txtGhichu.DataBindings.Clear();
             //txtGhichu.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Ghichu"));
         }
-        //private void Fillcombo()
-        //{
-        //    string query = "Select Loaidoituong From tbl_Customer";
-        //    DataTable data = Database.Instance.excuteQuery(query);
-        //    cboLoaidoituong = 'True';
-        //    cboLoaidoituong = 'False';
-        //}
+      
 
         private void addCustomer()
         {
@@ -81,7 +76,7 @@ namespace medical_management
             string email = txtEmail.Text.ToString().Trim();
             string note = txtGhichu.Text.ToString().Trim();
 
-            string insert = "INSERT INTO tbl_Customer (MaKH, TenKH, Loaidoituong, Diachi, Sdt, Email, Ghichu)" + "" +
+            string insert = "INSERT INTO tbl_Customer ( MaKH, TenKH, Loaidoituong, Diachi, Sdt, Email, Ghichu)" + "" +
                 " VALUES ( @MaKH , @TenKH , @Loaidoituong , @Diachi , @Sdt , @Email , @Ghichu )";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, name, type, address, phone, email, note });
@@ -93,13 +88,38 @@ namespace medical_management
 
         private void btnDel_Click(object sender, EventArgs e)
         {
+            deleteCustomerWithConfirm();
+        }
+
+        private void deleteCustomerWithConfirm()
+        {
+            string message = "Bạn có chắc chắn muốn xóa khách hàng này không?";
+            Helper.showDialogConfirmDelete(message, deleteCustomer);
+
+        }
+
+
+        private void deleteCustomer()
+        {
             string id = txtMaKH.Text.ToString().Trim();
-            string del = "DELETE FROM tbl_Customer WHERE MaKH = @MaKH";
-            int result = Database.Instance.excuteNonQuery(del, new object[] { id });
-            if (result > 0)
+            string del = "Delete from tbl_Customer Where MaKH = @MaKH ";
+            try
             {
-                loadData();
+                int result = Database.Instance.excuteNonQuery(del, new object[] { id });
+                if (result > 0)
+                {
+                    loadData();
+                }
             }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showMessage("Khách hàng này đã có giao dịch. Không thể xóa!");
+                }
+                else throw;
+            }
+            MessageBox.Show("Đã xóa thành công!", "Thông báo");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -107,6 +127,7 @@ namespace medical_management
             addCustomer();
             btnAdd.enable();
             btnSave.disable();
+            MessageBox.Show("Đã lưu thành công!", "Thông báo");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -146,8 +167,7 @@ namespace medical_management
             {
                 loadData();
             }
-            btnEdit.disable();
-            btnSave.enable();
+            MessageBox.Show("Đã cập nhật thành công!", "Thông báo");
         }
        
         private void btnDau_Click_1(object sender, EventArgs e)
