@@ -19,9 +19,7 @@ namespace medical_management
 
         private void mItemReLogin_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
-            f.MdiParent = this;
-            f.Show();
+            
         }
 
         private void mItemThuoc_Click(object sender, EventArgs e)

@@ -51,164 +51,152 @@
   <ItemGroup>
     <Compile Include="BUS\InvoiceBUS.cs" />
     <Compile Include="DTO\Consignment.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="Source\SQLConnection\Database.cs" />
     <Compile Include="DTO\Invoice.cs" />
     <Compile Include="DTO\InvoiceDetail.cs" />
-    <Compile Include="frmPayment.cs">
+    <Compile Include="Forms\SalesInvoice\frmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPayment.Designer.cs">
+    <Compile Include="Forms\SalesInvoice\frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSelectCustomer.cs">
+    <Compile Include="Forms\SalesInvoice\frmSelectCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSelectCustomer.Designer.cs">
+    <Compile Include="Forms\SalesInvoice\frmSelectCustomer.Designer.cs">
       <DependentUpon>frmSelectCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSelectMedical.cs">
+    <Compile Include="Forms\SalesInvoice\frmSelectMedical.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSelectMedical.Designer.cs">
+    <Compile Include="Forms\SalesInvoice\frmSelectMedical.Designer.cs">
       <DependentUpon>frmSelectMedical.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDSHD.cs">
+    <Compile Include="Forms\SalesInvoice\frmDSHD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSHD.Designer.cs">
+    <Compile Include="Forms\SalesInvoice\frmDSHD.Designer.cs">
       <DependentUpon>frmDSHD.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDSPN.cs">
+    <Compile Include="Forms\PO\frmDSPN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDSPN.Designer.cs">
+    <Compile Include="Forms\PO\frmDSPN.Designer.cs">
       <DependentUpon>frmDSPN.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLothuoc.cs">
+    <Compile Include="Forms\Category\frmLothuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLothuoc.Designer.cs">
+    <Compile Include="Forms\Category\frmLothuoc.Designer.cs">
       <DependentUpon>frmLothuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceStatus.cs" />
+    <Compile Include="DTO\InvoiceStatus.cs" />
     <Compile Include="QLHTDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLHTDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Role.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DTO\Role.cs" />
+    <Compile Include="Forms\Main\frmHTPPharmacy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHTPPharmacy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHTPPharmacy.Designer.cs">
+    <Compile Include="Forms\Main\frmHTPPharmacy.Designer.cs">
       <DependentUpon>frmHTPPharmacy.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKhachhang.cs">
+    <Compile Include="Forms\Category\frmKhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKhachhang.Designer.cs">
+    <Compile Include="Forms\Category\frmKhachhang.Designer.cs">
       <DependentUpon>frmKhachhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Forms\Authentication\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Forms\Authentication\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhacungcap.cs">
+    <Compile Include="Forms\Category\frmNhacungcap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhacungcap.Designer.cs">
+    <Compile Include="Forms\Category\frmNhacungcap.Designer.cs">
       <DependentUpon>frmNhacungcap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanvien.cs">
+    <Compile Include="Forms\Category\frmNhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhanvien.Designer.cs">
+    <Compile Include="Forms\Category\frmNhanvien.Designer.cs">
       <DependentUpon>frmNhanvien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhasanxuat.cs">
+    <Compile Include="Forms\Category\frmNhasanxuat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhasanxuat.Designer.cs">
+    <Compile Include="Forms\Category\frmNhasanxuat.Designer.cs">
       <DependentUpon>frmNhasanxuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieubanhang.cs">
+    <Compile Include="Forms\SalesInvoice\frmPhieubanhang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieubanhang.Designer.cs">
+    <Compile Include="Forms\SalesInvoice\frmPhieubanhang.Designer.cs">
       <DependentUpon>frmPhieubanhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieunhap.cs">
+    <Compile Include="Forms\PO\frmPhieunhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieunhap.Designer.cs">
+    <Compile Include="Forms\PO\frmPhieunhap.Designer.cs">
       <DependentUpon>frmPhieunhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThuoc.cs">
+    <Compile Include="Forms\Category\frmThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThuoc.Designer.cs">
+    <Compile Include="Forms\Category\frmThuoc.Designer.cs">
       <DependentUpon>frmThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper.cs" />
-    <Compile Include="MyControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Source\Utils\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDSHD.resx">
+    <EmbeddedResource Include="Forms\SalesInvoice\frmDSHD.resx">
       <DependentUpon>frmDSHD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDSPN.resx">
+    <EmbeddedResource Include="Forms\PO\frmDSPN.resx">
       <DependentUpon>frmDSPN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHTPPharmacy.resx">
+    <EmbeddedResource Include="Forms\Main\frmHTPPharmacy.resx">
       <DependentUpon>frmHTPPharmacy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachhang.resx">
+    <EmbeddedResource Include="Forms\Category\frmKhachhang.resx">
       <DependentUpon>frmKhachhang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Forms\Authentication\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLothuoc.resx">
+    <EmbeddedResource Include="Forms\Category\frmLothuoc.resx">
       <DependentUpon>frmLothuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhacungcap.resx">
+    <EmbeddedResource Include="Forms\Category\frmNhacungcap.resx">
       <DependentUpon>frmNhacungcap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhanvien.resx">
+    <EmbeddedResource Include="Forms\Category\frmNhanvien.resx">
       <DependentUpon>frmNhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhasanxuat.resx">
+    <EmbeddedResource Include="Forms\Category\frmNhasanxuat.resx">
       <DependentUpon>frmNhasanxuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPayment.resx">
+    <EmbeddedResource Include="Forms\SalesInvoice\frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieubanhang.resx">
+    <EmbeddedResource Include="Forms\SalesInvoice\frmPhieubanhang.resx">
       <DependentUpon>frmPhieubanhang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieunhap.resx">
+    <EmbeddedResource Include="Forms\PO\frmPhieunhap.resx">
       <DependentUpon>frmPhieunhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSelectCustomer.resx">
+    <EmbeddedResource Include="Forms\SalesInvoice\frmSelectCustomer.resx">
       <DependentUpon>frmSelectCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSelectMedical.resx">
+    <EmbeddedResource Include="Forms\SalesInvoice\frmSelectMedical.resx">
       <DependentUpon>frmSelectMedical.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThuoc.resx">
+    <EmbeddedResource Include="Forms\Category\frmThuoc.resx">
       <DependentUpon>frmThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -249,7 +237,7 @@
     <None Include="Resources\btn Thêm.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add.png" />
+    <None Include="Resources\ic_add.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btn add.png" />
