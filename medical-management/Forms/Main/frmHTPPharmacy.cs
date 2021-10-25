@@ -20,6 +20,7 @@ namespace medical_management
         private void mItemReLogin_Click(object sender, EventArgs e)
         {
             // DEMO GIT & GITHUB
+            // Change source from github website
         }
 
         private void mItemThuoc_Click(object sender, EventArgs e)
