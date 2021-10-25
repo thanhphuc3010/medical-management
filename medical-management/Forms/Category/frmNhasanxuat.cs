@@ -95,7 +95,7 @@ namespace medical_management
             {
                 if (e.Number == 547)
                 {
-                    Helper.showMessage("Nhà sản xuất này có sản phẩm đã phát sinh giao dịch. Không thể xóa!");
+                    Helper.showErrorMessage("Nhà sản xuất này có sản phẩm đã phát sinh giao dịch. Không thể xóa!");
                 }
                 else throw;
             }

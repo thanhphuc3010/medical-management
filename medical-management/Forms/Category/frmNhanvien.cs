@@ -106,7 +106,7 @@ namespace medical_management
             {
                 if (e.Number == 547)
                 {
-                    Helper.showMessage("Nhân viên này đã thực hiện giao dịch. Không thể xóa!");
+                    Helper.showErrorMessage("Nhân viên này đã thực hiện giao dịch. Không thể xóa!");
                 }
                 else throw;
             }

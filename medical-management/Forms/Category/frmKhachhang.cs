@@ -115,7 +115,7 @@ namespace medical_management
             {
                 if (e.Number == 547)
                 {
-                    Helper.showMessage("Khách hàng này đã có giao dịch. Không thể xóa!");
+                    Helper.showErrorMessage("Khách hàng này đã có giao dịch. Không thể xóa!");
                 }
                 else throw;
             }
