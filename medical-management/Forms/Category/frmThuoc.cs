@@ -128,7 +128,7 @@ namespace medical_management
             {
                 if (e.Number == 547)
                 {
-                    Helper.showMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
+                    Helper.showErrorMessage("Sản phẩm này đã phát sinh giao dịch. Không thể xóa!");
                 }
             }
             MessageBox.Show("Đã xóa thành công!", "Thông báo");

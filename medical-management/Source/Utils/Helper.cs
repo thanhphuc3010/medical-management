@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,19 @@ namespace medical_management
 {
     public static class Helper
     {
-        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
+        public static void FillCombo(this ComboBox cbo, string sql, string value, string display, object[] param)
         {
-
-            DataTable data = Database.Instance.excuteQuery(sql);
-            cbo.DisplayMember = ten; //Trường hiển thị
-            cbo.ValueMember = ma; //Trường giá trị
+            DataTable data = Database.Instance.excuteQuery(sql, param);
+            cbo.DisplayMember = display; //Trường hiển thị
+            cbo.ValueMember = value; //Trường giá trị
             cbo.DataSource = data;
+        }
+
+        public static void FillCombo(this ComboBox cbo, string value, string display, DataTable dataSource)
+        {
+            cbo.DisplayMember = display; //Trường hiển thị
+            cbo.ValueMember = value; //Trường giá trị
+            cbo.DataSource = dataSource;
         }
 
 
@@ -34,6 +41,12 @@ namespace medical_management
         public static void enable(this Control control)
         {
             control.Enabled = true;
+        }
+
+        public static void formatCurrency(this Control control, decimal value)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            control.Text = value.ToString("c", culture);
         }
 
         /**
@@ -79,6 +92,39 @@ namespace medical_management
                 control.Visible = true;
             }
         }
+
+        public static string createId(string prefix, string query, string field)
+        {
+            DataTable data = Database.Instance.excuteQuery(query);
+            string lastID = data.Rows[0][field].ToString();
+            string index = lastID.Substring(prefix.Length);
+            int key = Convert.ToInt16(index) + 1;
+            return formatStringNumber(key, prefix);
+        }
+
+        public static string formatStringNumber(int i, string prefix)
+        {
+            string result;
+            if (i < 10)
+            {
+                result = prefix + "0000" + i.ToString().Trim();
+            }
+            else if (i < 100)
+            {
+                result = prefix + "000" + i.ToString().Trim();
+            }
+            else if (i < 1000)
+            {
+                result = prefix + "00" + i.ToString().Trim();
+            }
+            else if (i < 10000)
+            {
+                result = prefix + "0" + i.ToString().Trim();
+            }
+            else result = prefix + i.ToString().Trim();
+            return result;
+        }
+
 
         public static void setHint(this TextBox textBox, string hint)
         {
@@ -151,9 +197,14 @@ namespace medical_management
             }
         }
 
-        public static void showMessage(string message)
+        public static void showErrorMessage(string message)
         {
             MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void showSuccessMessage(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void showMessageRole()

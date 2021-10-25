@@ -29,8 +29,7 @@ namespace medical_management
             if (count == 1)
             {
                 bool role = Convert.ToBoolean(data.Rows[0]["Loaidoituong"]);
-                Form1 f = new Form1(role);
-                f.Show();
+                
             }
         }
     }
