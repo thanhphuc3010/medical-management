@@ -19,7 +19,7 @@ namespace medical_management
 
         private void mItemReLogin_Click(object sender, EventArgs e)
         {
-            
+            // DEMO GIT & GITHUB
         }
 
         private void mItemThuoc_Click(object sender, EventArgs e)
