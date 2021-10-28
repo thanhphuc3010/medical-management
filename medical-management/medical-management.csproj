@@ -51,10 +51,10 @@
   <ItemGroup>
     <Compile Include="BUS\InvoiceBUS.cs" />
     <Compile Include="DTO\Consignment.cs" />
-    <Compile Include="Forms\Category\frmSelectSupplier.cs">
+    <Compile Include="frmSelectSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmSelectSupplier.Designer.cs">
+    <Compile Include="frmSelectSupplier.Designer.cs">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\SQLConnection\Database.cs" />
@@ -160,7 +160,7 @@
     <Compile Include="Source\Utils\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Category\frmSelectSupplier.resx">
+    <EmbeddedResource Include="frmSelectSupplier.resx">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesInvoice\frmDSHD.resx">

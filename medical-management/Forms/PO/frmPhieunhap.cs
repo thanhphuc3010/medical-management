@@ -21,5 +21,10 @@ namespace medical_management
         {
 
         }
+
+        private void dgvPhieunhaphang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 }

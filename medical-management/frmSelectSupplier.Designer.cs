@@ -1,5 +1,5 @@
 ﻿
-namespace medical_management.Forms.Category
+namespace medical_management
 {
     partial class frmSelectSupplier
     {
@@ -42,7 +42,7 @@ namespace medical_management.Forms.Category
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(52, 26);
+            this.lblSearch.Location = new System.Drawing.Point(144, 29);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(49, 13);
             this.lblSearch.TabIndex = 0;
@@ -50,9 +50,9 @@ namespace medical_management.Forms.Category
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 23);
+            this.textBox1.Location = new System.Drawing.Point(251, 26);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(352, 20);
+            this.textBox1.Size = new System.Drawing.Size(310, 20);
             this.textBox1.TabIndex = 1;
             // 
             // dgvSupplier
@@ -61,16 +61,16 @@ namespace medical_management.Forms.Category
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSupplier.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvSupplier.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNCC,
             this.TenNCC,
             this.Diachi,
             this.Sdt});
-            this.dgvSupplier.Location = new System.Drawing.Point(12, 78);
+            this.dgvSupplier.Location = new System.Drawing.Point(12, 108);
             this.dgvSupplier.Name = "dgvSupplier";
-            this.dgvSupplier.Size = new System.Drawing.Size(776, 360);
+            this.dgvSupplier.Size = new System.Drawing.Size(776, 318);
             this.dgvSupplier.TabIndex = 2;
             // 
             // MaNCC
@@ -97,7 +97,7 @@ namespace medical_management.Forms.Category
             this.Sdt.HeaderText = "Số điện thoại";
             this.Sdt.Name = "Sdt";
             // 
-            // frmSelectSupplier
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,9 +105,9 @@ namespace medical_management.Forms.Category
             this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblSearch);
-            this.Name = "frmSelectSupplier";
-            this.Text = "frmSelectSupplier";
-            this.Load += new System.EventHandler(this.frmSelectSupplier_Load);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

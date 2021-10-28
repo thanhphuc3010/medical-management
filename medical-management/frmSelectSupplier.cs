@@ -8,23 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace medical_management.Forms.Category
+namespace medical_management
 {
     public partial class frmSelectSupplier : Form
     {
-        public delegate void passSupplierId(string id, string name);
-        public passSupplierId publisher;
+        public delegate void passCustomerId(string id, string name);
+        public passCustomerId publisher;
 
         public frmSelectSupplier()
         {
             InitializeComponent();
         }
 
-        private void frmSelectSupplier_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             loadData();
         }
-
         private void initializeUI()
         {
             foreach (DataGridViewRow row in dgvSupplier.Rows)
@@ -41,7 +40,7 @@ namespace medical_management.Forms.Category
         }
         private void loadData()
         {
-            string query = "SELECT * FROM tbl_Customer";
+            string query = "SELECT * FROM tbl_Supplier";
             DataTable data = Database.Instance.excuteQuery(query);
             dgvSupplier.DataSource = data;
             initializeUI();
@@ -52,7 +51,7 @@ namespace medical_management.Forms.Category
             int index = dgvSupplier.CurrentRow.Index;
             string supplierId = dgvSupplier.Rows[index].Cells["MaNCC"].Value.ToString();
             string supplierName = dgvSupplier.Rows[index].Cells["TenNCC"].Value.ToString();
-            publisher?.Invoke( supplierId, supplierName);
+            publisher?.Invoke(supplierId, supplierName);
             this.Close();
         }
     }
