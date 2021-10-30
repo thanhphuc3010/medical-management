@@ -93,6 +93,13 @@ namespace medical_management
             }
         }
 
+        public static string formatCurrencyVN(decimal value)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            string result = value.ToString("c", culture);
+            return result;
+        }
+
         public static string createId(string prefix, string query, string field)
         {
             DataTable data = Database.Instance.excuteQuery(query);
