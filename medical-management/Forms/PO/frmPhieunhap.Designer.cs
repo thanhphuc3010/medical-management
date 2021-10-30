@@ -41,13 +41,11 @@ namespace medical_management
             this.lblDongia = new System.Windows.Forms.Label();
             this.txtManhap = new System.Windows.Forms.TextBox();
             this.txtNhanviennhap = new System.Windows.Forms.TextBox();
-            this.txtNgaynhap = new System.Windows.Forms.TextBox();
             this.txtMathuoc = new System.Windows.Forms.TextBox();
-            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.txtSoluonglo = new System.Windows.Forms.TextBox();
             this.txtDongia = new System.Windows.Forms.TextBox();
-            this.txtHsd = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblTongcong = new System.Windows.Forms.Label();
             this.lblTongtienthanhtoan = new System.Windows.Forms.Label();
@@ -58,28 +56,32 @@ namespace medical_management
             this.txtTongcong = new System.Windows.Forms.TextBox();
             this.txtThue = new System.Windows.Forms.TextBox();
             this.btnThanhtoan = new System.Windows.Forms.Button();
-            this.dgvPhieunhaphang = new System.Windows.Forms.DataGridView();
+            this.dgvPhieunhapchitiet = new System.Windows.Forms.DataGridView();
             this.lblChitietphieunhap = new System.Windows.Forms.Label();
             this.btnGhinhan = new System.Windows.Forms.Button();
             this.lblDonvitinh = new System.Windows.Forms.Label();
             this.txtDonvitinh = new System.Windows.Forms.TextBox();
             this.lblTenthuoc = new System.Windows.Forms.Label();
-            this.btnTenthuoc = new System.Windows.Forms.TextBox();
+            this.txtTenthuoc = new System.Windows.Forms.TextBox();
             this.lblNCC = new System.Windows.Forms.Label();
             this.btnSelectSupplier = new System.Windows.Forms.Button();
-            this.Malo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvThanhtoan = new System.Windows.Forms.DataGridView();
             this.Phuongthucthanhtoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngaythanhtoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanhtoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhaphang)).BeginInit();
+            this.btnSelectMedical = new System.Windows.Forms.Button();
+            this.dtpNgaynhap = new System.Windows.Forms.DateTimePicker();
+            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMalo = new System.Windows.Forms.TextBox();
+            this.lblMalo = new System.Windows.Forms.Label();
+            this.dtpHsd = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhapchitiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhtoan)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +114,7 @@ namespace medical_management
             // 
             this.lblMaNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMaNCC.AutoSize = true;
-            this.lblMaNCC.Location = new System.Drawing.Point(339, 76);
+            this.lblMaNCC.Location = new System.Drawing.Point(330, 102);
             this.lblMaNCC.Name = "lblMaNCC";
             this.lblMaNCC.Size = new System.Drawing.Size(93, 13);
             this.lblMaNCC.TabIndex = 4;
@@ -152,7 +154,7 @@ namespace medical_management
             // 
             this.lblHsd.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblHsd.AutoSize = true;
-            this.lblHsd.Location = new System.Drawing.Point(695, 203);
+            this.lblHsd.Location = new System.Drawing.Point(676, 210);
             this.lblHsd.Name = "lblHsd";
             this.lblHsd.Size = new System.Drawing.Size(68, 13);
             this.lblHsd.TabIndex = 9;
@@ -162,7 +164,7 @@ namespace medical_management
             // 
             this.lblMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblMathuoc.AutoSize = true;
-            this.lblMathuoc.Location = new System.Drawing.Point(695, 73);
+            this.lblMathuoc.Location = new System.Drawing.Point(676, 80);
             this.lblMathuoc.Name = "lblMathuoc";
             this.lblMathuoc.Size = new System.Drawing.Size(52, 13);
             this.lblMathuoc.TabIndex = 11;
@@ -172,17 +174,17 @@ namespace medical_management
             // 
             this.lblSoluong.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSoluong.AutoSize = true;
-            this.lblSoluong.Location = new System.Drawing.Point(695, 177);
+            this.lblSoluong.Location = new System.Drawing.Point(676, 184);
             this.lblSoluong.Name = "lblSoluong";
-            this.lblSoluong.Size = new System.Drawing.Size(49, 13);
+            this.lblSoluong.Size = new System.Drawing.Size(60, 13);
             this.lblSoluong.TabIndex = 13;
-            this.lblSoluong.Text = "Số lượng";
+            this.lblSoluong.Text = "Số lượng lô";
             // 
             // lblDongia
             // 
             this.lblDongia.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblDongia.AutoSize = true;
-            this.lblDongia.Location = new System.Drawing.Point(695, 151);
+            this.lblDongia.Location = new System.Drawing.Point(676, 158);
             this.lblDongia.Name = "lblDongia";
             this.lblDongia.Size = new System.Drawing.Size(44, 13);
             this.lblDongia.TabIndex = 14;
@@ -204,74 +206,65 @@ namespace medical_management
             this.txtNhanviennhap.Size = new System.Drawing.Size(156, 20);
             this.txtNhanviennhap.TabIndex = 17;
             // 
-            // txtNgaynhap
-            // 
-            this.txtNgaynhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNgaynhap.Location = new System.Drawing.Point(126, 99);
-            this.txtNgaynhap.Name = "txtNgaynhap";
-            this.txtNgaynhap.Size = new System.Drawing.Size(156, 20);
-            this.txtNgaynhap.TabIndex = 18;
-            // 
             // txtMathuoc
             // 
             this.txtMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtMathuoc.Location = new System.Drawing.Point(785, 70);
+            this.txtMathuoc.Location = new System.Drawing.Point(766, 77);
             this.txtMathuoc.Name = "txtMathuoc";
-            this.txtMathuoc.Size = new System.Drawing.Size(156, 20);
+            this.txtMathuoc.Size = new System.Drawing.Size(125, 20);
             this.txtMathuoc.TabIndex = 20;
             // 
-            // txtSoluong
+            // txtSoluonglo
             // 
-            this.txtSoluong.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtSoluong.Location = new System.Drawing.Point(785, 174);
-            this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(156, 20);
-            this.txtSoluong.TabIndex = 22;
+            this.txtSoluonglo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSoluonglo.Location = new System.Drawing.Point(766, 181);
+            this.txtSoluonglo.Name = "txtSoluonglo";
+            this.txtSoluonglo.Size = new System.Drawing.Size(156, 20);
+            this.txtSoluonglo.TabIndex = 22;
             // 
             // txtDongia
             // 
             this.txtDongia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtDongia.Location = new System.Drawing.Point(785, 148);
+            this.txtDongia.Location = new System.Drawing.Point(766, 155);
             this.txtDongia.Name = "txtDongia";
             this.txtDongia.Size = new System.Drawing.Size(156, 20);
             this.txtDongia.TabIndex = 23;
             // 
-            // txtHsd
-            // 
-            this.txtHsd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtHsd.Location = new System.Drawing.Point(785, 200);
-            this.txtHsd.Name = "txtHsd";
-            this.txtHsd.Size = new System.Drawing.Size(156, 20);
-            this.txtHsd.TabIndex = 25;
-            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(790, 251);
+            this.btnAdd.Image = global::medical_management.Properties.Resources.ic_cart;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(945, 102);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(54, 30);
+            this.btnAdd.Size = new System.Drawing.Size(64, 30);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDel
+            // btnCancel
             // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(907, 251);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(60, 30);
-            this.btnDel.TabIndex = 30;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Image = global::medical_management.Properties.Resources.ic_close;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(945, 184);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 30);
+            this.btnCancel.TabIndex = 30;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(850, 251);
+            this.btnEdit.Location = new System.Drawing.Point(945, 142);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(51, 29);
+            this.btnEdit.Size = new System.Drawing.Size(64, 29);
             this.btnEdit.TabIndex = 31;
-            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Text = "Cập nhật";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // lblTongcong
@@ -360,26 +353,25 @@ namespace medical_management
             this.btnThanhtoan.Text = "Thanh toán";
             this.btnThanhtoan.UseVisualStyleBackColor = true;
             // 
-            // dgvPhieunhaphang
+            // dgvPhieunhapchitiet
             // 
-            this.dgvPhieunhaphang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPhieunhapchitiet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPhieunhaphang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhieunhaphang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvPhieunhaphang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhieunhaphang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Malo,
+            this.dgvPhieunhapchitiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhieunhapchitiet.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPhieunhapchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhieunhapchitiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mathuoc,
             this.Soluong,
             this.Donvitinh,
             this.Dongia,
             this.Thanhtien});
-            this.dgvPhieunhaphang.Location = new System.Drawing.Point(19, 293);
-            this.dgvPhieunhaphang.Name = "dgvPhieunhaphang";
-            this.dgvPhieunhaphang.Size = new System.Drawing.Size(948, 215);
-            this.dgvPhieunhaphang.TabIndex = 48;
-            this.dgvPhieunhaphang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieunhaphang_CellContentClick);
+            this.dgvPhieunhapchitiet.Location = new System.Drawing.Point(19, 293);
+            this.dgvPhieunhapchitiet.Name = "dgvPhieunhapchitiet";
+            this.dgvPhieunhapchitiet.Size = new System.Drawing.Size(980, 215);
+            this.dgvPhieunhapchitiet.TabIndex = 48;
+            this.dgvPhieunhapchitiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieunhaphang_CellContentClick);
             // 
             // lblChitietphieunhap
             // 
@@ -405,7 +397,7 @@ namespace medical_management
             // 
             this.lblDonvitinh.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblDonvitinh.AutoSize = true;
-            this.lblDonvitinh.Location = new System.Drawing.Point(695, 125);
+            this.lblDonvitinh.Location = new System.Drawing.Point(676, 132);
             this.lblDonvitinh.Name = "lblDonvitinh";
             this.lblDonvitinh.Size = new System.Drawing.Size(60, 13);
             this.lblDonvitinh.TabIndex = 8;
@@ -414,7 +406,7 @@ namespace medical_management
             // txtDonvitinh
             // 
             this.txtDonvitinh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtDonvitinh.Location = new System.Drawing.Point(785, 122);
+            this.txtDonvitinh.Location = new System.Drawing.Point(766, 129);
             this.txtDonvitinh.Name = "txtDonvitinh";
             this.txtDonvitinh.Size = new System.Drawing.Size(156, 20);
             this.txtDonvitinh.TabIndex = 24;
@@ -423,19 +415,19 @@ namespace medical_management
             // 
             this.lblTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTenthuoc.AutoSize = true;
-            this.lblTenthuoc.Location = new System.Drawing.Point(695, 99);
+            this.lblTenthuoc.Location = new System.Drawing.Point(676, 106);
             this.lblTenthuoc.Name = "lblTenthuoc";
             this.lblTenthuoc.Size = new System.Drawing.Size(56, 13);
             this.lblTenthuoc.TabIndex = 10;
             this.lblTenthuoc.Text = "Tên thuốc";
             // 
-            // btnTenthuoc
+            // txtTenthuoc
             // 
-            this.btnTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnTenthuoc.Location = new System.Drawing.Point(785, 96);
-            this.btnTenthuoc.Name = "btnTenthuoc";
-            this.btnTenthuoc.Size = new System.Drawing.Size(156, 20);
-            this.btnTenthuoc.TabIndex = 19;
+            this.txtTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtTenthuoc.Location = new System.Drawing.Point(766, 103);
+            this.txtTenthuoc.Name = "txtTenthuoc";
+            this.txtTenthuoc.Size = new System.Drawing.Size(156, 20);
+            this.txtTenthuoc.TabIndex = 19;
             // 
             // lblNCC
             // 
@@ -443,7 +435,7 @@ namespace medical_management
             this.lblNCC.BackColor = System.Drawing.Color.Transparent;
             this.lblNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNCC.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblNCC.Location = new System.Drawing.Point(450, 77);
+            this.lblNCC.Location = new System.Drawing.Point(425, 103);
             this.lblNCC.Name = "lblNCC";
             this.lblNCC.Size = new System.Drawing.Size(134, 16);
             this.lblNCC.TabIndex = 53;
@@ -453,52 +445,18 @@ namespace medical_management
             // btnSelectSupplier
             // 
             this.btnSelectSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelectSupplier.BackgroundImage = global::medical_management.Properties.Resources.plus_circle_outline;
             this.btnSelectSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSelectSupplier.Image = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnSelectSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectSupplier.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.btnSelectSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelectSupplier.Location = new System.Drawing.Point(483, 63);
+            this.btnSelectSupplier.Location = new System.Drawing.Point(554, 92);
             this.btnSelectSupplier.Name = "btnSelectSupplier";
-            this.btnSelectSupplier.Size = new System.Drawing.Size(149, 38);
+            this.btnSelectSupplier.Size = new System.Drawing.Size(39, 38);
             this.btnSelectSupplier.TabIndex = 54;
-            this.btnSelectSupplier.Text = "Nhà cung cấp";
             this.btnSelectSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSelectSupplier.UseVisualStyleBackColor = false;
-            // 
-            // Malo
-            // 
-            this.Malo.DataPropertyName = "Malo";
-            this.Malo.HeaderText = "Mã lô";
-            this.Malo.Name = "Malo";
-            // 
-            // Mathuoc
-            // 
-            this.Mathuoc.DataPropertyName = "Mathuoc";
-            this.Mathuoc.HeaderText = "Mã thuốc";
-            this.Mathuoc.Name = "Mathuoc";
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.Name = "Soluong";
-            // 
-            // Donvitinh
-            // 
-            this.Donvitinh.DataPropertyName = "Donvitinh";
-            this.Donvitinh.HeaderText = "Đơn vị tính";
-            this.Donvitinh.Name = "Donvitinh";
-            // 
-            // Dongia
-            // 
-            this.Dongia.DataPropertyName = "Dongia";
-            this.Dongia.HeaderText = "Đơn giá";
-            this.Dongia.Name = "Dongia";
-            // 
-            // Thanhtien
-            // 
-            this.Thanhtien.DataPropertyName = "Thanhtien";
-            this.Thanhtien.HeaderText = "Thành tiền";
-            this.Thanhtien.Name = "Thanhtien";
+            this.btnSelectSupplier.Click += new System.EventHandler(this.btnSelectSupplier_Click);
             // 
             // dgvThanhtoan
             // 
@@ -558,28 +516,113 @@ namespace medical_management
             this.panel1.Size = new System.Drawing.Size(448, 185);
             this.panel1.TabIndex = 56;
             // 
+            // btnSelectMedical
+            // 
+            this.btnSelectMedical.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelectMedical.BackgroundImage = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnSelectMedical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSelectMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectMedical.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnSelectMedical.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectMedical.Location = new System.Drawing.Point(865, 62);
+            this.btnSelectMedical.Name = "btnSelectMedical";
+            this.btnSelectMedical.Size = new System.Drawing.Size(39, 38);
+            this.btnSelectMedical.TabIndex = 57;
+            this.btnSelectMedical.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSelectMedical.UseVisualStyleBackColor = false;
+            this.btnSelectMedical.Click += new System.EventHandler(this.btnSelectMedical_Click);
+            // 
+            // dtpNgaynhap
+            // 
+            this.dtpNgaynhap.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaynhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaynhap.Location = new System.Drawing.Point(126, 102);
+            this.dtpNgaynhap.Name = "dtpNgaynhap";
+            this.dtpNgaynhap.Size = new System.Drawing.Size(156, 20);
+            this.dtpNgaynhap.TabIndex = 58;
+            // 
+            // Mathuoc
+            // 
+            this.Mathuoc.DataPropertyName = "Mathuoc";
+            this.Mathuoc.HeaderText = "Mã thuốc";
+            this.Mathuoc.Name = "Mathuoc";
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
+            // 
+            // Donvitinh
+            // 
+            this.Donvitinh.DataPropertyName = "Donvitinh";
+            this.Donvitinh.HeaderText = "Đơn vị tính";
+            this.Donvitinh.Name = "Donvitinh";
+            // 
+            // Dongia
+            // 
+            this.Dongia.DataPropertyName = "Dongia";
+            this.Dongia.HeaderText = "Đơn giá";
+            this.Dongia.Name = "Dongia";
+            // 
+            // Thanhtien
+            // 
+            this.Thanhtien.DataPropertyName = "Thanhtien";
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.Name = "Thanhtien";
+            // 
+            // txtMalo
+            // 
+            this.txtMalo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtMalo.Location = new System.Drawing.Point(418, 69);
+            this.txtMalo.Name = "txtMalo";
+            this.txtMalo.Size = new System.Drawing.Size(156, 20);
+            this.txtMalo.TabIndex = 60;
+            // 
+            // lblMalo
+            // 
+            this.lblMalo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMalo.AutoSize = true;
+            this.lblMalo.Location = new System.Drawing.Point(329, 72);
+            this.lblMalo.Name = "lblMalo";
+            this.lblMalo.Size = new System.Drawing.Size(33, 13);
+            this.lblMalo.TabIndex = 59;
+            this.lblMalo.Text = "Mã lô";
+            // 
+            // dtpHsd
+            // 
+            this.dtpHsd.CustomFormat = "dd/MM/yyy";
+            this.dtpHsd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHsd.Location = new System.Drawing.Point(766, 207);
+            this.dtpHsd.Name = "dtpHsd";
+            this.dtpHsd.Size = new System.Drawing.Size(156, 20);
+            this.dtpHsd.TabIndex = 61;
+            // 
             // frmPhieunhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(989, 713);
+            this.ClientSize = new System.Drawing.Size(1021, 713);
+            this.Controls.Add(this.dtpHsd);
+            this.Controls.Add(this.txtMalo);
+            this.Controls.Add(this.lblMalo);
+            this.Controls.Add(this.dtpNgaynhap);
+            this.Controls.Add(this.btnSelectMedical);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvThanhtoan);
             this.Controls.Add(this.btnSelectSupplier);
             this.Controls.Add(this.lblNCC);
             this.Controls.Add(this.lblChitietphieunhap);
-            this.Controls.Add(this.dgvPhieunhaphang);
+            this.Controls.Add(this.dgvPhieunhapchitiet);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtHsd);
             this.Controls.Add(this.txtDonvitinh);
             this.Controls.Add(this.txtDongia);
-            this.Controls.Add(this.txtSoluong);
+            this.Controls.Add(this.txtSoluonglo);
             this.Controls.Add(this.txtMathuoc);
-            this.Controls.Add(this.btnTenthuoc);
-            this.Controls.Add(this.txtNgaynhap);
+            this.Controls.Add(this.txtTenthuoc);
             this.Controls.Add(this.txtNhanviennhap);
             this.Controls.Add(this.txtManhap);
             this.Controls.Add(this.lblDongia);
@@ -595,8 +638,9 @@ namespace medical_management
             this.Controls.Add(this.lblThongtinchung);
             this.Controls.Add(this.lblPhieunhap);
             this.Name = "frmPhieunhap";
-            this.Text = "Lưu phiếu nhập";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhaphang)).EndInit();
+            this.Text = "frmPhieunhaphang";
+            this.Load += new System.EventHandler(this.frmPhieunhap_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhapchitiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhtoan)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -619,13 +663,11 @@ namespace medical_management
         private System.Windows.Forms.Label lblDongia;
         private System.Windows.Forms.TextBox txtManhap;
         private System.Windows.Forms.TextBox txtNhanviennhap;
-        private System.Windows.Forms.TextBox txtNgaynhap;
         private System.Windows.Forms.TextBox txtMathuoc;
-        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.TextBox txtSoluonglo;
         private System.Windows.Forms.TextBox txtDongia;
-        private System.Windows.Forms.TextBox txtHsd;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblTongcong;
         private System.Windows.Forms.Label lblTongtienthanhtoan;
@@ -636,26 +678,30 @@ namespace medical_management
         private System.Windows.Forms.TextBox txtTongcong;
         private System.Windows.Forms.TextBox txtThue;
         private System.Windows.Forms.Button btnThanhtoan;
-        private System.Windows.Forms.DataGridView dgvPhieunhaphang;
+        private System.Windows.Forms.DataGridView dgvPhieunhapchitiet;
         private System.Windows.Forms.Label lblChitietphieunhap;
         private System.Windows.Forms.Button btnGhinhan;
         private System.Windows.Forms.Label lblDonvitinh;
         private System.Windows.Forms.TextBox txtDonvitinh;
         private System.Windows.Forms.Label lblTenthuoc;
-        private System.Windows.Forms.TextBox btnTenthuoc;
+        private System.Windows.Forms.TextBox txtTenthuoc;
         private System.Windows.Forms.Label lblNCC;
         private System.Windows.Forms.Button btnSelectSupplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Malo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Donvitinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
         private System.Windows.Forms.DataGridView dgvThanhtoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phuongthucthanhtoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaythanhtoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSelectMedical;
+        private System.Windows.Forms.DateTimePicker dtpNgaynhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Donvitinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
+        private System.Windows.Forms.TextBox txtMalo;
+        private System.Windows.Forms.Label lblMalo;
+        private System.Windows.Forms.DateTimePicker dtpHsd;
     }
 }
