@@ -12,8 +12,8 @@ namespace medical_management
 {
     public partial class frmSelectSupplier : Form
     {
-        public delegate void passCustomerId(string id, string name);
-        public passCustomerId publisher;
+        public delegate void passSupplierId(string id, string name);
+        public passSupplierId publisher;
 
         public frmSelectSupplier()
         {
