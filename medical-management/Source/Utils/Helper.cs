@@ -103,9 +103,18 @@ namespace medical_management
         public static string createId(string prefix, string query, string field)
         {
             DataTable data = Database.Instance.excuteQuery(query);
-            string lastID = data.Rows[0][field].ToString();
-            string index = lastID.Substring(prefix.Length);
-            int key = Convert.ToInt16(index) + 1;
+            int key = 0;
+            if (data.Rows.Count > 0)
+            {
+                string lastID = data.Rows[0][field].ToString();
+                string index = lastID.Substring(prefix.Length);
+                key = Convert.ToInt16(index) + 1;
+            }
+            else
+            {
+                key = 1;
+            }
+           
             return formatStringNumber(key, prefix);
         }
 
