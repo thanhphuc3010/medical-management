@@ -244,7 +244,7 @@ namespace medical_management
             txtDonvi.Text = "";
             txtGianhap.Text = "";
             txtSoluong.Text = "";
-            lblSoluong.Text = "";
+            //lblSoluong.Text = "Số lượng";
             dtpNgayhethan.CustomFormat = "";
 
         }
@@ -282,10 +282,10 @@ namespace medical_management
         private void deletePO()
         {
             string id = txtManhap.Text;
-            string delete = "Delete From tbl_PurchaseOrder Where Manhap=@Manhap";
+            string delete = "Delete From tbl_PurchaseOrder Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete, new object[] { id });
-            //string delete1 = "Delete From tbl_Consignmant Where Manhap= @Manhap";
-            //Database.Instance.excuteNonQuery(delete1, new object[] { id });
+            string delete1 = "Delete From tbl_Consignment Where Manhap= @Manhap";
+            Database.Instance.excuteNonQuery(delete1, new object[] { id });
 
         }
 
@@ -367,8 +367,9 @@ namespace medical_management
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string update = "UPDATE dbo.Consignment SET Soluong = @Soluong WHERE Manhap = @Manhap AND Malo = @Malo ";
+            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Manhap = @Manhap ";
             int quantity;
+            quantity = Convert.ToInt32(txtSoluong.Text);
 
             if (String.IsNullOrWhiteSpace(txtGianhap.Text))
             {
@@ -381,9 +382,7 @@ namespace medical_management
                 Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
             }
-
-            quantity = Convert.ToInt32(txtSoluong.Text);
-            Database.Instance.excuteNonQuery(update, new object[] { quantity, poId, txtMalo.Text });
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , poId, txtMalo.Text });
             loadConsignment();
             resetEditMode();
         }
@@ -445,13 +444,15 @@ namespace medical_management
         private void bindingEditMode(string id)
         {
             object dataSoure = dgvPhieunhapchitiet.DataSource;
-
             txtMathuoc.binding(dataSoure, "Mathuoc");
-            txtTenthuoc.binding(dataSoure, "Tenthuoc");
+            //txtTenthuoc.binding(dataSoure, "Tenthuoc");
+            string query = "Select Tenthuoc From dbo.tbl_Item Where Mathuoc = @Mathuoc ";
+            txtTenthuoc.Text = Database.Instance.ExecuteScalar(query, new object[] { id }).ToString();
+            Database.Instance.excuteQuery(query, new object[] { medicalId });
             txtDonvi.binding(dataSoure, "Donvi");
-            txtGianhap.binding(dataSoure, "Dongia");
-            txtSoluong.binding(dataSoure, "Soluong");
-            loadConsignment();
+          
+
+
 
         }
 
@@ -494,7 +495,7 @@ namespace medical_management
 
         private void delMedicalFromPO()
         {
-            string del = "DELETE FROM dbo.tbl_Consignment WHERE Manhap = @Manhap AND Malo = @Malo";
+            string del = "DELETE FROM dbo.tbl_Consignment WHERE Manhap = @Manhap ";
             try
             {
                 int result = Database.Instance.excuteNonQuery(del, new object[] { poId, selectedMedicalId });
@@ -509,6 +510,33 @@ namespace medical_management
                 if (e.Number == 547)
                 {
                     Helper.showErrorMessage(e.Message);
+                }
+            }
+        }
+
+        private void dgvPhieunhapchitiet_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    dgvPhieunhapchitiet.CurrentCell = dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    // Can leave these here - doesn't hurt
+                    dgvPhieunhapchitiet.Rows[e.RowIndex].Selected = true;
+                    dgvPhieunhapchitiet.Focus();
+                    if (dgvPhieunhapchitiet.Rows[e.RowIndex].IsNewRow)
+                    {
+                        selectedMedicalId = null;
+                    }
+                    else
+                    {
+                        selectedMedicalId = Convert.ToString(dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[0].Value);
+                    }
+
+                }
+                catch (Exception)
+                {
+
                 }
             }
         }

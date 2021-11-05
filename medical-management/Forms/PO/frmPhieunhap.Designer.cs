@@ -382,6 +382,7 @@ namespace medical_management
             this.dgvPhieunhapchitiet.Size = new System.Drawing.Size(980, 215);
             this.dgvPhieunhapchitiet.TabIndex = 48;
             this.dgvPhieunhapchitiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieunhaphang_CellContentClick);
+            this.dgvPhieunhapchitiet.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhieunhapchitiet_CellMouseDown);
             this.dgvPhieunhapchitiet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPhieunhapchitiet_MouseClick);
             // 
             // Mathuoc
