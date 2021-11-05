@@ -244,8 +244,8 @@ namespace medical_management
             txtDonvi.Text = "";
             txtGianhap.Text = "";
             txtSoluong.Text = "";
-            //lblSoluong.Text = "Số lượng";
-            dtpNgayhethan.CustomFormat = "";
+            dtpNgaysanxuat.Value = DateTime.Today;
+            dtpNgayhethan.Value = DateTime.Today;
 
         }
 
@@ -267,7 +267,7 @@ namespace medical_management
 
         private void frmPhieunhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Button btnCompleteInvoice = sender as Button;
+            Button btnCompletePO = sender as Button;
 
             if (isSelectCompletePO)
             {
@@ -282,9 +282,9 @@ namespace medical_management
         private void deletePO()
         {
             string id = txtManhap.Text;
-            string delete = "Delete From tbl_PurchaseOrder Where Manhap= @Manhap";
+            string delete = "Delete From dbo.tbl_PurchaseOrder Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete, new object[] { id });
-            string delete1 = "Delete From tbl_Consignment Where Manhap= @Manhap";
+            string delete1 = "Delete From dbo.tbl_Consignment Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete1, new object[] { id });
 
         }
@@ -434,6 +434,7 @@ namespace medical_management
             Database.Instance.excuteNonQuery(query, param);
 
             Helper.showSuccessMessage("Thêm mới thành công");
+            isSelectCompletePO = true;
             this.Close();
         
             return;
