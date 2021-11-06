@@ -19,12 +19,19 @@ namespace medical_management
         public frmDSHD()
         {
             InitializeComponent();
+            initializeUI();
         }
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            frmPhieubanhang f = new frmPhieubanhang(isCreate: true);
+            frmPhieubanhang f = new frmPhieubanhang(isCreate: true, frmDSHD: this);
+            f.reloadEventHandler += refreshEventHandler;
             f.ShowDialog(this);
+        }
+
+        private void refreshEventHandler(object sender, frmPhieubanhang.ReloadEventArgs args)
+        {
+            loadWhenChildClosing(true);
         }
 
         private void frmDSHD_Load(object sender, EventArgs e)
@@ -36,7 +43,7 @@ namespace medical_management
             loadStatPayment(false);
         }
 
-        public void loadWhenChildClosing()
+        private void loadWhenChildClosing(bool isReload)
         {
             dtpFromDate.Value = getEarliestDate();
             dtpToDate.Value = DateTime.Now;
@@ -250,7 +257,6 @@ namespace medical_management
             try
             {
                 dgvDSHD.CurrentCell = dgvDSHD.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                // Can leave these here - doesn't hurt
                 dgvDSHD.Rows[e.RowIndex].Selected = true;
                 dgvDSHD.Focus();
                 if (dgvDSHD.Rows[e.RowIndex].IsNewRow)
@@ -260,15 +266,22 @@ namespace medical_management
                 else
                 {
                     string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
-                    frmPhieubanhang f = new frmPhieubanhang(isCreate: false, invoiceId);
+                    frmPhieubanhang f = new frmPhieubanhang(isCreate: false, this, invoiceId);
+                    f.reloadEventHandler += refreshEventHandler;
                     f.ShowDialog(this);
                 }
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                Helper.showErrorMessage(err.Message);
             }
+        }
+
+        private void frmDSHD_Shown(object sender, EventArgs e)
+        {
+            // Handle UI when forms shown at the first times
+            initializeUI();
         }
     }
 }

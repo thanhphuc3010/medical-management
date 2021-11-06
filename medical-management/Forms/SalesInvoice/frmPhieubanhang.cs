@@ -17,6 +17,21 @@ namespace medical_management
 {
     public partial class frmPhieubanhang : Form
     {
+        public delegate void RefreshDelegate(object sender, ReloadEventArgs args);
+        public event RefreshDelegate reloadEventHandler;
+
+        public class ReloadEventArgs : EventArgs
+        {
+            public string Data { get; set; }
+        }
+
+        protected void refreshListInvoice()
+        {
+            ReloadEventArgs args = new ReloadEventArgs();
+            reloadEventHandler.Invoke(this, args);
+        }
+
+
         private bool isCreate;
         private string customerId = "WALKINGUEST";
         private decimal subtotal = 0M;
@@ -34,7 +49,7 @@ namespace medical_management
             InitializeComponent();
         }
 
-        public frmPhieubanhang(bool isCreate, string invoiceId = null)
+        public frmPhieubanhang(bool isCreate, frmDSHD frmDSHD, string invoiceId = null)
         {
             InitializeComponent();
             this.isCreate = isCreate;
@@ -293,12 +308,8 @@ namespace medical_management
             loadTotal();
         }
 
-        // Auto genarate id with prefix
-
         private void frmPhieubanhang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Button btnCompleteInvoice = sender as Button;
-
             if (isSelectCompleteInvoice)
             {
                 Helper.showSuccessMessage("Thêm hóa đơn thành công");
@@ -310,10 +321,6 @@ namespace medical_management
                     deleteInvoice();
                 }
             }
-
-            // Refresh list invoice (frmDSHD) when form closing
-            frmDSHD fListInvoice = (frmDSHD)Owner;
-            fListInvoice.loadWhenChildClosing();
         }
 
         private void deleteInvoice()
@@ -348,7 +355,8 @@ namespace medical_management
             if (isCreate)
             {
                 doSoldInvoice(invoiceStatus);
-            } else
+            }
+            else
             {
                 if (status == InvoiceStatus.RESERVE && isFullyPayment())
                 {
@@ -363,6 +371,7 @@ namespace medical_management
 
             doSaveTotalPayment();
             isSelectCompleteInvoice = true;
+            refreshListInvoice();
             this.Close();
         }
 
@@ -648,6 +657,7 @@ namespace medical_management
                             "WHERE MaHD = @MaHD";
             Database.Instance.excuteNonQuery(update, new object[] { invoiceStatus, total, invoiceId });
             isSelectCompleteInvoice = true;
+            refreshListInvoice();
             this.Close();
         }
 
@@ -662,6 +672,11 @@ namespace medical_management
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmPhieubanhang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

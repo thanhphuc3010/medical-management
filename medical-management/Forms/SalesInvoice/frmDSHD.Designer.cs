@@ -29,24 +29,24 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDMHD = new System.Windows.Forms.Label();
             this.dgvDSHD = new System.Windows.Forms.DataGridView();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,14 +106,14 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSHD.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDSHD.ColumnHeadersHeight = 30;
             this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDSHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -125,26 +125,26 @@ namespace medical_management
             this.TenKH,
             this.Sdt,
             this.TenNV});
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle27;
             this.dgvDSHD.Location = new System.Drawing.Point(284, 69);
             this.dgvDSHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSHD.Name = "dgvDSHD";
             this.dgvDSHD.ReadOnly = true;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvDSHD.RowHeadersVisible = false;
             this.dgvDSHD.RowHeadersWidth = 51;
             this.dgvDSHD.RowTemplate.Height = 28;
@@ -159,9 +159,9 @@ namespace medical_management
             // 
             this.MaHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.MaHD.DataPropertyName = "MaHD";
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.MaHD.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.MaHD.DefaultCellStyle = dataGridViewCellStyle20;
             this.MaHD.HeaderText = "Số hóa đơn";
             this.MaHD.MinimumWidth = 6;
             this.MaHD.Name = "MaHD";
@@ -182,12 +182,12 @@ namespace medical_management
             // 
             this.Tongtien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Tongtien.DataPropertyName = "Tongtien";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.Format = "N0";
-            dataGridViewCellStyle39.NullValue = null;
-            dataGridViewCellStyle39.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.Tongtien.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.Format = "N0";
+            dataGridViewCellStyle21.NullValue = null;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.Tongtien.DefaultCellStyle = dataGridViewCellStyle21;
             this.Tongtien.HeaderText = "Tổng tiền";
             this.Tongtien.MinimumWidth = 6;
             this.Tongtien.Name = "Tongtien";
@@ -198,11 +198,11 @@ namespace medical_management
             // 
             this.Conthieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Conthieu.DataPropertyName = "Conthieu";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle40.Format = "N0";
-            dataGridViewCellStyle40.NullValue = null;
-            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.Conthieu.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "N0";
+            dataGridViewCellStyle22.NullValue = null;
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.Conthieu.DefaultCellStyle = dataGridViewCellStyle22;
             this.Conthieu.HeaderText = "Còn thiếu";
             this.Conthieu.MinimumWidth = 6;
             this.Conthieu.Name = "Conthieu";
@@ -212,8 +212,8 @@ namespace medical_management
             // Trangthai
             // 
             this.Trangthai.DataPropertyName = "Trangthaihoadon";
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.Trangthai.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.Trangthai.DefaultCellStyle = dataGridViewCellStyle23;
             this.Trangthai.HeaderText = "Trạng thái";
             this.Trangthai.MinimumWidth = 6;
             this.Trangthai.Name = "Trangthai";
@@ -222,8 +222,8 @@ namespace medical_management
             // TenKH
             // 
             this.TenKH.DataPropertyName = "TenKH";
-            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.TenKH.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.TenKH.DefaultCellStyle = dataGridViewCellStyle24;
             this.TenKH.HeaderText = "Tên Khách hàng";
             this.TenKH.MinimumWidth = 6;
             this.TenKH.Name = "TenKH";
@@ -232,8 +232,8 @@ namespace medical_management
             // Sdt
             // 
             this.Sdt.DataPropertyName = "Sdt";
-            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.Sdt.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.Sdt.DefaultCellStyle = dataGridViewCellStyle25;
             this.Sdt.HeaderText = "Điện thoại";
             this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
@@ -242,8 +242,8 @@ namespace medical_management
             // TenNV
             // 
             this.TenNV.DataPropertyName = "TenNV";
-            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.TenNV.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.TenNV.DefaultCellStyle = dataGridViewCellStyle26;
             this.TenNV.HeaderText = "Người bán";
             this.TenNV.MinimumWidth = 6;
             this.TenNV.Name = "TenNV";
@@ -256,14 +256,14 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHoadonchitiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoadonchitiet.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHoadonchitiet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHoadonchitiet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvHoadonchitiet.ColumnHeadersHeight = 30;
             this.dgvHoadonchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvHoadonchitiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -273,14 +273,14 @@ namespace medical_management
             this.Dongia,
             this.Soluong,
             this.Thanhtien});
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHoadonchitiet.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoadonchitiet.DefaultCellStyle = dataGridViewCellStyle34;
             this.dgvHoadonchitiet.Location = new System.Drawing.Point(284, 373);
             this.dgvHoadonchitiet.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvHoadonchitiet.Name = "dgvHoadonchitiet";
@@ -312,8 +312,8 @@ namespace medical_management
             // Donvi
             // 
             this.Donvi.DataPropertyName = "Donvi";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Donvi.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Donvi.DefaultCellStyle = dataGridViewCellStyle30;
             this.Donvi.FillWeight = 48.12834F;
             this.Donvi.HeaderText = "ĐVT";
             this.Donvi.MinimumWidth = 10;
@@ -324,11 +324,11 @@ namespace medical_management
             // Dongia
             // 
             this.Dongia.DataPropertyName = "Dongia";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle49.Format = "N2";
-            dataGridViewCellStyle49.NullValue = null;
-            this.Dongia.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle31.Format = "N2";
+            dataGridViewCellStyle31.NullValue = null;
+            this.Dongia.DefaultCellStyle = dataGridViewCellStyle31;
             this.Dongia.FillWeight = 66.82219F;
             this.Dongia.HeaderText = "Đơn giá";
             this.Dongia.MinimumWidth = 6;
@@ -338,10 +338,10 @@ namespace medical_management
             // Soluong
             // 
             this.Soluong.DataPropertyName = "Soluong";
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle50.Format = "N2";
-            dataGridViewCellStyle50.NullValue = null;
-            this.Soluong.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.Format = "N2";
+            dataGridViewCellStyle32.NullValue = null;
+            this.Soluong.DefaultCellStyle = dataGridViewCellStyle32;
             this.Soluong.FillWeight = 66.43012F;
             this.Soluong.HeaderText = "Số lượng";
             this.Soluong.MinimumWidth = 6;
@@ -351,11 +351,11 @@ namespace medical_management
             // Thanhtien
             // 
             this.Thanhtien.DataPropertyName = "Thanhtien";
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle51.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle51.Format = "N2";
-            dataGridViewCellStyle51.NullValue = null;
-            this.Thanhtien.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle33.Format = "N2";
+            dataGridViewCellStyle33.NullValue = null;
+            this.Thanhtien.DefaultCellStyle = dataGridViewCellStyle33;
             this.Thanhtien.FillWeight = 99.32957F;
             this.Thanhtien.HeaderText = "Thành tiền";
             this.Thanhtien.MinimumWidth = 6;
@@ -367,14 +367,14 @@ namespace medical_management
             this.dgvInvoiceSummary.AllowUserToAddRows = false;
             this.dgvInvoiceSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInvoiceSummary.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInvoiceSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInvoiceSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvInvoiceSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoiceSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.isChecked,
@@ -411,10 +411,10 @@ namespace medical_management
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Soluong";
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle54.Format = "N0";
-            dataGridViewCellStyle54.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.Format = "N0";
+            dataGridViewCellStyle36.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridViewTextBoxColumn5.FillWeight = 144.3871F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Số lượng";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
@@ -587,6 +587,7 @@ namespace medical_management
             this.Text = "frmDMHD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDSHD_Load);
+            this.Shown += new System.EventHandler(this.frmDSHD_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoadonchitiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceSummary)).EndInit();
