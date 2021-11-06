@@ -79,17 +79,17 @@ namespace medical_management
 
         /**
          * <summary>Hide or show control following visible state of control</summary>
-         * <param name="isVisible">state of control: true if control is visible else false</param>
+         * <param name="visible">state of control: true if control is visible else false</param>
          */
-        public static void visibleOrGone(this Control control, bool isVisible)
+        public static void visibleOrGone(this Control control, bool visible)
         {
-            if (isVisible)
+            if (visible)
             {
-                control.Visible = false;
+                control.Visible = true;
             }
             else
             {
-                control.Visible = true;
+                control.Visible = false;
             }
         }
 

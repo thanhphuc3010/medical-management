@@ -7,14 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using medical_management.BUS;
+using medical_management.DTO;
 
 namespace medical_management
 {
     public partial class frmHTPPharmacy : Form
     {
+        public string staffId;
+        private Staff staff;
         public frmHTPPharmacy()
         {
             InitializeComponent();
+        }
+
+        private void frmHTPPharmacy_Load(object sender, EventArgs e)
+        {
+            showLoginForm();
+            staff = StaffBUS.getStaffById(staffId);
+            tssStaffName.Text = staff.Id + " - " + staff.Name;
+            ttsDatetime.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void showLoginForm()
+        {
+            frmLogin f = new frmLogin();
+            f.ShowDialog(this);
         }
 
         private void mItemReLogin_Click(object sender, EventArgs e)
@@ -27,7 +45,7 @@ namespace medical_management
         {
             frmThuoc f = new frmThuoc();
             f.Show();
-           
+
 
         }
 
@@ -57,9 +75,14 @@ namespace medical_management
 
         private void mItemInvoice_Click(object sender, EventArgs e)
         {
-            frmPhieubanhang f = new frmPhieubanhang();
+            frmDSHD f = new frmDSHD();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void frmHTPPharmacy_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -77,8 +77,12 @@ namespace medical_management
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.statusBar = new System.Windows.Forms.StatusStrip();
+            this.tssStaffName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ttsDatetime = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -92,7 +96,7 @@ namespace medical_management
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -108,7 +112,7 @@ namespace medical_management
             this.toolStripSeparator4,
             this.mItemExit});
             this.tsSystem.Name = "tsSystem";
-            this.tsSystem.Size = new System.Drawing.Size(85, 24);
+            this.tsSystem.Size = new System.Drawing.Size(85, 26);
             this.tsSystem.Text = "Hệ thống";
             // 
             // toolStripSeparator1
@@ -170,7 +174,7 @@ namespace medical_management
             this.toolStripSeparator20,
             this.mItemNV});
             this.tsCategory.Name = "tsCategory";
-            this.tsCategory.Size = new System.Drawing.Size(90, 24);
+            this.tsCategory.Size = new System.Drawing.Size(90, 26);
             this.tsCategory.Text = "Danh mục";
             // 
             // toolStripSeparator16
@@ -241,7 +245,7 @@ namespace medical_management
             this.toolStripSeparator11,
             this.mItemInvoice});
             this.tsSales.Name = "tsSales";
-            this.tsSales.Size = new System.Drawing.Size(172, 24);
+            this.tsSales.Size = new System.Drawing.Size(172, 26);
             this.tsSales.Text = "Nhập hàng - Bán hàng";
             // 
             // toolStripSeparator10
@@ -279,7 +283,7 @@ namespace medical_management
             this.toolStripSeparator15,
             this.mItemInventoryReport});
             this.tsReport.Name = "tsReport";
-            this.tsReport.Size = new System.Drawing.Size(77, 24);
+            this.tsReport.Size = new System.Drawing.Size(77, 26);
             this.tsReport.Text = "Báo cáo";
             // 
             // toolStripSeparator12
@@ -345,7 +349,7 @@ namespace medical_management
             this.toolStripButton4,
             this.toolStripSeparator8,
             this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1284, 42);
             this.toolStrip1.TabIndex = 2;
@@ -416,6 +420,38 @@ namespace medical_management
             this.toolStripButton5.Size = new System.Drawing.Size(39, 39);
             this.toolStripButton5.Text = "toolStripButton5";
             // 
+            // statusBar
+            // 
+            this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssStaffName,
+            this.ttsDatetime});
+            this.statusBar.Location = new System.Drawing.Point(0, 765);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(1284, 28);
+            this.statusBar.TabIndex = 4;
+            this.statusBar.Text = "statusStrip1";
+            // 
+            // tssStaffName
+            // 
+            this.tssStaffName.BackColor = System.Drawing.Color.Transparent;
+            this.tssStaffName.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssStaffName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tssStaffName.Name = "tssStaffName";
+            this.tssStaffName.Padding = new System.Windows.Forms.Padding(4, 2, 2, 2);
+            this.tssStaffName.Size = new System.Drawing.Size(82, 24);
+            this.tssStaffName.Text = "                 ";
+            // 
+            // ttsDatetime
+            // 
+            this.ttsDatetime.BackColor = System.Drawing.Color.Transparent;
+            this.ttsDatetime.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttsDatetime.ForeColor = System.Drawing.Color.Blue;
+            this.ttsDatetime.Name = "ttsDatetime";
+            this.ttsDatetime.Padding = new System.Windows.Forms.Padding(2);
+            this.ttsDatetime.Size = new System.Drawing.Size(128, 22);
+            this.ttsDatetime.Text = "                             ";
+            // 
             // frmHTPPharmacy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -424,18 +460,23 @@ namespace medical_management
             this.BackgroundImage = global::medical_management.Properties.Resources.background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 793);
+            this.Controls.Add(this.statusBar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHTPPharmacy";
             this.Text = "MDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHTPPharmacy_FormClosing);
+            this.Load += new System.EventHandler(this.frmHTPPharmacy_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusBar.ResumeLayout(false);
+            this.statusBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,5 +530,8 @@ namespace medical_management
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.StatusStrip statusBar;
+        private System.Windows.Forms.ToolStripStatusLabel tssStaffName;
+        private System.Windows.Forms.ToolStripStatusLabel ttsDatetime;
     }
 }

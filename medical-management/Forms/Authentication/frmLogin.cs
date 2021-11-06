@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using medical_management.BUS;
+using medical_management.DTO;
 
 namespace medical_management
 {
     public partial class frmLogin : Form
     {
+        private string username;
+        private string password;
+        private bool isLogin = false;
+        private string staffId;
         public frmLogin()
         {
             InitializeComponent();
@@ -19,18 +25,40 @@ namespace medical_management
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string id = txtUserName.Text.ToString().Trim();
-            string phone = txtPassword.Text.ToString().Trim();
-
-            string query = "SELECT MaKH, Sdt, Loaidoituong FROM tbl_Customer WHERE MaKH = @MaKH AND Sdt = @Sdt";
-            DataTable data = Database.Instance.excuteQuery(query, new object[] { id, phone });
-
-            int count = data.Rows.Count;
-            if (count == 1)
+            if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password)) return;
+            User user = UserBUS.getUser(username, password);
+            if (user != null)
             {
-                bool role = Convert.ToBoolean(data.Rows[0]["Loaidoituong"]);
-                
+                isLogin = true;
+                staffId = user.StaffId;
+                this.Close();
+                Helper.showSuccessMessage(username + "-" + password);
+            } else
+            {
+                Helper.showErrorMessage("Tên đăng nhập hoặc mật khẩu không chính xác, vui lòng thử lại!");
             }
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isLogin)
+            {
+                Application.Exit();
+            } else
+            {
+                frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+                f.staffId = this.staffId;
+            }
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+            username = txtUserName.Text.Trim();
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            password = txtPassword.Text.Trim();
         }
     }
 }

@@ -49,8 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\InvoiceBUS.cs" />
+    <Compile Include="BUS\PaymentBUS.cs" />
+    <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DTO\Consignment.cs" />
+    <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\Payment.cs" />
+    <Compile Include="DTO\User.cs" />
     <Compile Include="frmSelectSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
