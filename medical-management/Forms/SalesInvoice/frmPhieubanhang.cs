@@ -17,6 +17,7 @@ namespace medical_management
 {
     public partial class frmPhieubanhang : Form
     {
+        private bool isCreate;
         private string customerId = "WALKINGUEST";
         private decimal subtotal = 0M;
         private decimal total = 0M;
@@ -25,6 +26,7 @@ namespace medical_management
         private string staffId = "NV01";
         private bool isSelectCompleteInvoice = false;
         private bool isEdit = false;
+        private string status;
         string selectedMedicalId;
         private List<Consignment> consignments = new List<Consignment>();
         public frmPhieubanhang()
@@ -32,10 +34,72 @@ namespace medical_management
             InitializeComponent();
         }
 
+        public frmPhieubanhang(bool isCreate, string invoiceId = null)
+        {
+            InitializeComponent();
+            this.isCreate = isCreate;
+            this.invoiceId = invoiceId;
+        }
+
         private void frmPhieubanhang_Load(object sender, EventArgs e)
         {
-            loadData();
-            insertInvoice();
+            if (isCreate)
+            {
+                loadData();
+                insertInvoice();
+            }
+            else
+            {
+                loadExistInvoice();
+            }
+
+            lblKhachHang.visibleOrGone(!isCreate);
+        }
+
+        private void loadExistInvoice()
+        {
+            DataTable data = InvoiceBUS.getInvoiceById(invoiceId);
+            foreach (DataRow row in data.Rows)
+            {
+                txtMaHD.Text = row["MaHD"].ToString();
+                lblKhachHang.Text = row["TenKH"].ToString();
+                lblKhachHang.ForeColor = Color.FromArgb(16, 68, 115);
+                dtpNgayHD.Value = Convert.ToDateTime(row["NgayHD"]);
+                status = row["Trangthaihoadon"].ToString();
+                txtTongcong.Text = Helper.formatCurrencyVN(Convert.ToDecimal(row["Tongtien"]));
+            }
+            btnSelectCustomer.gone();
+            loadInvoiceDetail();
+            bindControlByStatus(status);
+            dgvPayment.DataSource = PaymentBUS.getPayments(invoiceId);
+        }
+
+        private void bindControlByStatus(string status)
+        {
+            switch (status)
+            {
+                case InvoiceStatus.COMPLETE:
+                    {
+                        btnLuuhoadon.gone();
+                        btnHoanthanh.gone();
+                        btnPayment.gone();
+                    }
+                    break;
+                case InvoiceStatus.RESERVE:
+                    {
+                        btnLuuhoadon.gone();
+                    }
+                    break;
+                case InvoiceStatus.PENDING:
+                    {
+
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
         }
 
         private void insertInvoice()
@@ -165,9 +229,9 @@ namespace medical_management
             }
             catch (Exception)
             {
-                
+
             }
-            
+
         }
 
         private bool isDuplicateMedicineInDetail(string medicalId)
@@ -241,8 +305,15 @@ namespace medical_management
             }
             else
             {
-                deleteInvoice();
+                if (isCreate)
+                {
+                    deleteInvoice();
+                }
             }
+
+            // Refresh list invoice (frmDSHD) when form closing
+            frmDSHD fListInvoice = (frmDSHD)Owner;
+            fListInvoice.loadWhenChildClosing();
         }
 
         private void deleteInvoice()
@@ -273,10 +344,34 @@ namespace medical_management
         private void btnHoanthanh_Click(object sender, EventArgs e)
         {
             string invoiceStatus = InvoiceStatus.PENDING;
+
+            if (isCreate)
+            {
+                doSoldInvoice(invoiceStatus);
+            } else
+            {
+                if (status == InvoiceStatus.RESERVE && isFullyPayment())
+                {
+                    InvoiceBUS.setInvoiceStatus(InvoiceStatus.COMPLETE, invoiceId);
+                }
+
+                if (status == InvoiceStatus.PENDING)
+                {
+                    doSoldInvoice(invoiceStatus);
+                }
+            }
+
+            doSaveTotalPayment();
+            isSelectCompleteInvoice = true;
+            this.Close();
+        }
+
+        private void doSoldInvoice(string invoiceStatus)
+        {
             if (!isFullyPayment())
             {
                 DialogResult result = MessageBox.Show("Hóa đơn chưa thanh toán hoặc thanh toán chưa đủ, chọn CÓ nếu bạn muốn BÁN NỢ hóa đơn này!", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
+
                 if (result == DialogResult.Yes)
                 {
                     invoiceStatus = InvoiceStatus.RESERVE;
@@ -285,10 +380,12 @@ namespace medical_management
                 {
                     return;
                 }
-            } else
+            }
+            else
             {
                 invoiceStatus = InvoiceStatus.COMPLETE;
             }
+
             foreach (DataGridViewRow row in dgvHoadonchitiet.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -318,9 +415,6 @@ namespace medical_management
             string update = "UPDATE dbo.tbl_Invoice SET Trangthaihoadon = @Trangthaihoadon , Tongtien = @Tongtien " +
                             "WHERE MaHD = @MaHD";
             Database.Instance.excuteNonQuery(update, new object[] { invoiceStatus, total, invoiceId });
-            doSaveTotalPayment();
-            isSelectCompleteInvoice = true;
-            this.Close();
         }
 
         private bool isFullyPayment()
@@ -466,7 +560,8 @@ namespace medical_management
                 if (isEdit)
                 {
                     cmnuInvoiceDetail.disable();
-                } else
+                }
+                else
                 {
                     cmnuInvoiceDetail.enable();
                 }

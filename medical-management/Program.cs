@@ -1,5 +1,4 @@
-﻿using medical_management.Forms.Category;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +16,7 @@ namespace medical_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPhieunhap());
+            Application.Run(new frmDSHD());
         }
     }
 }

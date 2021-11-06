@@ -23,8 +23,8 @@ namespace medical_management
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            frmPhieubanhang f = new frmPhieubanhang();
-            f.ShowDialog();
+            frmPhieubanhang f = new frmPhieubanhang(isCreate: true);
+            f.ShowDialog(this);
         }
 
         private void frmDSHD_Load(object sender, EventArgs e)
@@ -34,7 +34,18 @@ namespace medical_management
             loadListInvoice();
             loadInvoiceSummary();
             loadStatPayment(false);
+        }
 
+        public void loadWhenChildClosing()
+        {
+            dtpFromDate.Value = getEarliestDate();
+            dtpToDate.Value = DateTime.Now;
+            loadListInvoice();
+            loadInvoiceSummary();
+            loadStatPayment(false);
+            int lastRowIndex = dgvDSHD.Rows.Count - 1;
+            dgvDSHD.FirstDisplayedScrollingRowIndex = lastRowIndex;
+            dgvDSHD.Rows[lastRowIndex].Selected = true;
         }
 
         private void initializeUI()
@@ -128,13 +139,7 @@ namespace medical_management
 
         private void loadInvoiceDetailById(string invoiceId)
         {
-            string query =
-                "SELECT a.Mathuoc, b.Tenthuoc, b.Donvi, a.Soluong, a.Dongia, (a.Soluong * a.Dongia) AS Thanhtien " +
-                "FROM dbo.tbl_InvoiceDetail a, dbo.tbl_Item b " +
-                "WHERE a.Mathuoc = b.Mathuoc " +
-                "AND MaHD = @MaHD ";
-            DataTable data = Database.Instance.excuteQuery(query, new object[] { invoiceId });
-
+            DataTable data = InvoiceBUS.getInvoiceDetailById(invoiceId);
             dgvHoadonchitiet.DataSource = data;
         }
 
@@ -145,55 +150,32 @@ namespace medical_management
 
             List<string> statusFilter = getListStatusFilter();
 
-            string querySummary =
-                "SELECT DISTINCT Trangthaihoadon, COUNT(Trangthaihoadon) AS Soluong " +
-                "FROM dbo.tbl_Invoice " +
-                "WHERE NgayHD BETWEEN @FromDate AND @ToDate " +
-                "GROUP BY Trangthaihoadon";
+            // Load Invoice Summary
 
-            DataTable dataSummary = Database.Instance.excuteQuery(querySummary, new object[] { fromDate, toDate });
+            DataTable dataSummary = InvoiceBUS.getInvoiceSummary(fromDate, toDate);
             dgvInvoiceSummary.DataSource = dataSummary;
 
-            string query =
-                    "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
-                    "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
-                    "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
-                    "AND NgayHD BETWEEN @FromDate AND @ToDate " +
-                    "AND Trangthaihoadon IN (";
+            DataTable data = new DataTable();
 
             if (statusFilter.Count == 0)
             {
-                query = "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
-                    "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
-                    "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
-                    "AND NgayHD BETWEEN @FromDate AND @ToDate ";
-
-                loadStatPayment(false);
-            }
-            else
+                data = InvoiceBUS.getAllInvoiceToNow(fromDate, toDate);
+                loadStatPayment(true);
+            } else
             {
-                var lastItem = statusFilter.Last();
-
-                foreach (string status in statusFilter)
-                {
-                    if (!status.Equals(lastItem))
-                    {
-                        query += "N'" + status + "', ";
-                    }
-                    else
-                    {
-                        query += "N'" + status + "')";
-                    }
-
-                }
-
+                data = InvoiceBUS.getInvoiceWithFilter(fromDate, toDate, statusFilter);
                 loadStatPayment(true);
             }
 
-            DataTable data = Database.Instance.excuteQuery(query, new object[] { fromDate, toDate });
-
             dgvDSHD.DataSource = data;
 
+            initializeUI();
+
+            handleLoadInvoiceDetail(data);
+        }
+
+        private void handleLoadInvoiceDetail(DataTable data)
+        {
             if (dgvDSHD.Rows.Count > 0 && data.Rows.Count != 0)
             {
                 loadInvoiceDetailById(dgvDSHD.Rows[0].Cells["MaHD"].Value.ToString());
@@ -232,48 +214,21 @@ namespace medical_management
                 fromDate = dtpFromDate.Value;
                 toDate = dtpToDate.Value;
 
-                string query =
-                        "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
-                        "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
-                        "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
-                        "AND NgayHD BETWEEN @FromDate AND @ToDate " +
-                        "AND Trangthaihoadon IN (";
-
                 if (statusFilter.Count == 0)
                 {
                     loadListInvoice();
+                    loadStatPayment(true);
                     return;
                 }
-                var lastItem = statusFilter.Last();
 
-                foreach (string status in statusFilter)
-                {
-                    if (!status.Equals(lastItem))
-                    {
-                        query += "N'" + status + "', ";
-                    }
-                    else
-                    {
-                        query += "N'" + status + "')";
-                    }
-
-                }
-
-                DataTable data = Database.Instance.excuteQuery(query, new object[] { fromDate, toDate });
+                DataTable data = InvoiceBUS.getInvoiceWithFilter(fromDate, toDate, statusFilter);
 
                 dgvDSHD.DataSource = data;
 
                 initializeUI();
                 loadStatPayment(true);
 
-                if (dgvDSHD.Rows.Count > 0 && data.Rows.Count != 0)
-                {
-                    loadInvoiceDetailById(dgvDSHD.Rows[0].Cells["MaHD"].Value.ToString());
-                }
-                else
-                {
-                    dgvHoadonchitiet.DataSource = null;
-                }
+                handleLoadInvoiceDetail(data);
             }
         }
 
@@ -288,6 +243,32 @@ namespace medical_management
         private void dgvDSHD_Sorted(object sender, EventArgs e)
         {
             initializeUI();
+        }
+
+        private void dgvDSHD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                dgvDSHD.CurrentCell = dgvDSHD.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                // Can leave these here - doesn't hurt
+                dgvDSHD.Rows[e.RowIndex].Selected = true;
+                dgvDSHD.Focus();
+                if (dgvDSHD.Rows[e.RowIndex].IsNewRow)
+                {
+                    return;
+                }
+                else
+                {
+                    string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
+                    frmPhieubanhang f = new frmPhieubanhang(isCreate: false, invoiceId);
+                    f.ShowDialog(this);
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

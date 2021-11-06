@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\InvoiceBUS.cs" />
+    <Compile Include="BUS\PaymentBUS.cs" />
     <Compile Include="DTO\Consignment.cs" />
+    <Compile Include="DTO\Payment.cs" />
     <Compile Include="frmSelectSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
