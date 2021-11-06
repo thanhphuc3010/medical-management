@@ -17,7 +17,7 @@ namespace medical_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDSPN());
+            Application.Run(new frmDSHD());
         }
     }
 }
