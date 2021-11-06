@@ -29,66 +29,65 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblPhieunhap = new System.Windows.Forms.Label();
             this.lblThongtinchung = new System.Windows.Forms.Label();
-            this.lblDiachi = new System.Windows.Forms.Label();
-            this.lblTenNCC = new System.Windows.Forms.Label();
             this.lblMaNCC = new System.Windows.Forms.Label();
             this.lblNhanviennhap = new System.Windows.Forms.Label();
             this.lblNgaynhap = new System.Windows.Forms.Label();
             this.lblManhap = new System.Windows.Forms.Label();
-            this.lblDonvitinh = new System.Windows.Forms.Label();
-            this.lblHsd = new System.Windows.Forms.Label();
-            this.lblTenthuoc = new System.Windows.Forms.Label();
+            this.lblNgayhethan = new System.Windows.Forms.Label();
             this.lblMathuoc = new System.Windows.Forms.Label();
-            this.lblTongtien = new System.Windows.Forms.Label();
             this.lblSoluong = new System.Windows.Forms.Label();
-            this.lblDongia = new System.Windows.Forms.Label();
+            this.lblGianhap = new System.Windows.Forms.Label();
             this.txtManhap = new System.Windows.Forms.TextBox();
-            this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.txtNhanviennhap = new System.Windows.Forms.TextBox();
-            this.txtNgaynhap = new System.Windows.Forms.TextBox();
-            this.txtTenthuoc = new System.Windows.Forms.TextBox();
             this.txtMathuoc = new System.Windows.Forms.TextBox();
-            this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.txtSoluong = new System.Windows.Forms.TextBox();
-            this.txtDongia = new System.Windows.Forms.TextBox();
-            this.txtDonvitinh = new System.Windows.Forms.TextBox();
-            this.txtHsd = new System.Windows.Forms.TextBox();
-            this.txtTongtien = new System.Windows.Forms.TextBox();
-            this.txtDiachi = new System.Windows.Forms.TextBox();
+            this.txtGianhap = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblTongcong = new System.Windows.Forms.Label();
             this.lblTongtienthanhtoan = new System.Windows.Forms.Label();
             this.lblChietkhau = new System.Windows.Forms.Label();
             this.lblThue = new System.Windows.Forms.Label();
-            this.lblSotienconno = new System.Windows.Forms.Label();
-            this.lblSotienthanhtoan = new System.Windows.Forms.Label();
             this.txtChietkhau = new System.Windows.Forms.TextBox();
             this.txtTongtienthanhtoan = new System.Windows.Forms.TextBox();
-            this.txtSotienthanhtoan = new System.Windows.Forms.TextBox();
-            this.txtSotienconno = new System.Windows.Forms.TextBox();
             this.txtTongcong = new System.Windows.Forms.TextBox();
             this.txtThue = new System.Windows.Forms.TextBox();
-            this.btnThanhtoan = new System.Windows.Forms.Button();
-            this.btnThanhtoanvain = new System.Windows.Forms.Button();
-            this.dgvPhieunhaphang = new System.Windows.Forms.DataGridView();
+            this.dgvPhieunhapchitiet = new System.Windows.Forms.DataGridView();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Datra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Conno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblChitietphieunhap = new System.Windows.Forms.Label();
-            this.btnHoanthanh = new System.Windows.Forms.Button();
-            this.btnLuuphieunhap = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhaphang)).BeginInit();
+            this.btnGhinhan = new System.Windows.Forms.Button();
+            this.lblDonvi = new System.Windows.Forms.Label();
+            this.txtDonvi = new System.Windows.Forms.TextBox();
+            this.lblTenthuoc = new System.Windows.Forms.Label();
+            this.txtTenthuoc = new System.Windows.Forms.TextBox();
+            this.lblNCC = new System.Windows.Forms.Label();
+            this.btnSelectSupplier = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSelectMedical = new System.Windows.Forms.Button();
+            this.dtpNgaynhap = new System.Windows.Forms.DateTimePicker();
+            this.txtMalo = new System.Windows.Forms.TextBox();
+            this.lblMalo = new System.Windows.Forms.Label();
+            this.dtpNgayhethan = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgaysanxuat = new System.Windows.Forms.DateTimePicker();
+            this.lblNgaysanxuat = new System.Windows.Forms.Label();
+            this.cmnuPODetail = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.editItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhapchitiet)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.cmnuPODetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPhieunhap
@@ -115,31 +114,11 @@ namespace medical_management
             this.lblThongtinchung.TabIndex = 1;
             this.lblThongtinchung.Text = "Thông tin chung";
             // 
-            // lblDiachi
-            // 
-            this.lblDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblDiachi.AutoSize = true;
-            this.lblDiachi.Location = new System.Drawing.Point(339, 128);
-            this.lblDiachi.Name = "lblDiachi";
-            this.lblDiachi.Size = new System.Drawing.Size(40, 13);
-            this.lblDiachi.TabIndex = 2;
-            this.lblDiachi.Text = "Địa chỉ";
-            // 
-            // lblTenNCC
-            // 
-            this.lblTenNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTenNCC.AutoSize = true;
-            this.lblTenNCC.Location = new System.Drawing.Point(339, 102);
-            this.lblTenNCC.Name = "lblTenNCC";
-            this.lblTenNCC.Size = new System.Drawing.Size(97, 13);
-            this.lblTenNCC.TabIndex = 3;
-            this.lblTenNCC.Text = "Tên Nhà cung cấp";
-            // 
             // lblMaNCC
             // 
             this.lblMaNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMaNCC.AutoSize = true;
-            this.lblMaNCC.Location = new System.Drawing.Point(339, 76);
+            this.lblMaNCC.Location = new System.Drawing.Point(330, 102);
             this.lblMaNCC.Name = "lblMaNCC";
             this.lblMaNCC.Size = new System.Drawing.Size(93, 13);
             this.lblMaNCC.TabIndex = 4;
@@ -175,75 +154,45 @@ namespace medical_management
             this.lblManhap.TabIndex = 7;
             this.lblManhap.Text = "Mã nhập";
             // 
-            // lblDonvitinh
+            // lblNgayhethan
             // 
-            this.lblDonvitinh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblDonvitinh.AutoSize = true;
-            this.lblDonvitinh.Location = new System.Drawing.Point(695, 151);
-            this.lblDonvitinh.Name = "lblDonvitinh";
-            this.lblDonvitinh.Size = new System.Drawing.Size(60, 13);
-            this.lblDonvitinh.TabIndex = 8;
-            this.lblDonvitinh.Text = "Đơn vị tính";
-            // 
-            // lblHsd
-            // 
-            this.lblHsd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblHsd.AutoSize = true;
-            this.lblHsd.Location = new System.Drawing.Point(695, 125);
-            this.lblHsd.Name = "lblHsd";
-            this.lblHsd.Size = new System.Drawing.Size(68, 13);
-            this.lblHsd.TabIndex = 9;
-            this.lblHsd.Text = "Hạn sử dụng";
-            // 
-            // lblTenthuoc
-            // 
-            this.lblTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTenthuoc.AutoSize = true;
-            this.lblTenthuoc.Location = new System.Drawing.Point(695, 99);
-            this.lblTenthuoc.Name = "lblTenthuoc";
-            this.lblTenthuoc.Size = new System.Drawing.Size(56, 13);
-            this.lblTenthuoc.TabIndex = 10;
-            this.lblTenthuoc.Text = "Tên thuốc";
+            this.lblNgayhethan.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblNgayhethan.AutoSize = true;
+            this.lblNgayhethan.Location = new System.Drawing.Point(676, 238);
+            this.lblNgayhethan.Name = "lblNgayhethan";
+            this.lblNgayhethan.Size = new System.Drawing.Size(71, 13);
+            this.lblNgayhethan.TabIndex = 9;
+            this.lblNgayhethan.Text = "Ngày hết hạn";
             // 
             // lblMathuoc
             // 
             this.lblMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblMathuoc.AutoSize = true;
-            this.lblMathuoc.Location = new System.Drawing.Point(695, 73);
+            this.lblMathuoc.Location = new System.Drawing.Point(676, 80);
             this.lblMathuoc.Name = "lblMathuoc";
             this.lblMathuoc.Size = new System.Drawing.Size(52, 13);
             this.lblMathuoc.TabIndex = 11;
             this.lblMathuoc.Text = "Mã thuốc";
             // 
-            // lblTongtien
-            // 
-            this.lblTongtien.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTongtien.AutoSize = true;
-            this.lblTongtien.Location = new System.Drawing.Point(695, 229);
-            this.lblTongtien.Name = "lblTongtien";
-            this.lblTongtien.Size = new System.Drawing.Size(52, 13);
-            this.lblTongtien.TabIndex = 12;
-            this.lblTongtien.Text = "Tổng tiền";
-            // 
             // lblSoluong
             // 
             this.lblSoluong.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSoluong.AutoSize = true;
-            this.lblSoluong.Location = new System.Drawing.Point(695, 203);
+            this.lblSoluong.Location = new System.Drawing.Point(676, 184);
             this.lblSoluong.Name = "lblSoluong";
-            this.lblSoluong.Size = new System.Drawing.Size(49, 13);
+            this.lblSoluong.Size = new System.Drawing.Size(52, 13);
             this.lblSoluong.TabIndex = 13;
-            this.lblSoluong.Text = "Số lượng";
+            this.lblSoluong.Text = "Số lượng ";
             // 
-            // lblDongia
+            // lblGianhap
             // 
-            this.lblDongia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblDongia.AutoSize = true;
-            this.lblDongia.Location = new System.Drawing.Point(695, 177);
-            this.lblDongia.Name = "lblDongia";
-            this.lblDongia.Size = new System.Drawing.Size(44, 13);
-            this.lblDongia.TabIndex = 14;
-            this.lblDongia.Text = "Đơn giá";
+            this.lblGianhap.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblGianhap.AutoSize = true;
+            this.lblGianhap.Location = new System.Drawing.Point(676, 158);
+            this.lblGianhap.Name = "lblGianhap";
+            this.lblGianhap.Size = new System.Drawing.Size(50, 13);
+            this.lblGianhap.TabIndex = 14;
+            this.lblGianhap.Text = "Giá nhập";
             // 
             // txtManhap
             // 
@@ -253,14 +202,6 @@ namespace medical_management
             this.txtManhap.Size = new System.Drawing.Size(156, 20);
             this.txtManhap.TabIndex = 15;
             // 
-            // txtMaNCC
-            // 
-            this.txtMaNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaNCC.Location = new System.Drawing.Point(465, 73);
-            this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(156, 20);
-            this.txtMaNCC.TabIndex = 16;
-            // 
             // txtNhanviennhap
             // 
             this.txtNhanviennhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -269,133 +210,79 @@ namespace medical_management
             this.txtNhanviennhap.Size = new System.Drawing.Size(156, 20);
             this.txtNhanviennhap.TabIndex = 17;
             // 
-            // txtNgaynhap
-            // 
-            this.txtNgaynhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNgaynhap.Location = new System.Drawing.Point(126, 99);
-            this.txtNgaynhap.Name = "txtNgaynhap";
-            this.txtNgaynhap.Size = new System.Drawing.Size(156, 20);
-            this.txtNgaynhap.TabIndex = 18;
-            // 
-            // txtTenthuoc
-            // 
-            this.txtTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtTenthuoc.Location = new System.Drawing.Point(785, 96);
-            this.txtTenthuoc.Name = "txtTenthuoc";
-            this.txtTenthuoc.Size = new System.Drawing.Size(156, 20);
-            this.txtTenthuoc.TabIndex = 19;
-            // 
             // txtMathuoc
             // 
             this.txtMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtMathuoc.Location = new System.Drawing.Point(785, 70);
+            this.txtMathuoc.Location = new System.Drawing.Point(766, 77);
             this.txtMathuoc.Name = "txtMathuoc";
-            this.txtMathuoc.Size = new System.Drawing.Size(156, 20);
+            this.txtMathuoc.Size = new System.Drawing.Size(125, 20);
             this.txtMathuoc.TabIndex = 20;
-            // 
-            // txtTenNCC
-            // 
-            this.txtTenNCC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTenNCC.Location = new System.Drawing.Point(465, 99);
-            this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(156, 20);
-            this.txtTenNCC.TabIndex = 21;
             // 
             // txtSoluong
             // 
             this.txtSoluong.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtSoluong.Location = new System.Drawing.Point(785, 200);
+            this.txtSoluong.Location = new System.Drawing.Point(766, 181);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(156, 20);
             this.txtSoluong.TabIndex = 22;
+            this.txtSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoluong_KeyPress);
             // 
-            // txtDongia
+            // txtGianhap
             // 
-            this.txtDongia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtDongia.Location = new System.Drawing.Point(785, 174);
-            this.txtDongia.Name = "txtDongia";
-            this.txtDongia.Size = new System.Drawing.Size(156, 20);
-            this.txtDongia.TabIndex = 23;
-            // 
-            // txtDonvitinh
-            // 
-            this.txtDonvitinh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtDonvitinh.Location = new System.Drawing.Point(785, 148);
-            this.txtDonvitinh.Name = "txtDonvitinh";
-            this.txtDonvitinh.Size = new System.Drawing.Size(156, 20);
-            this.txtDonvitinh.TabIndex = 24;
-            // 
-            // txtHsd
-            // 
-            this.txtHsd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtHsd.Location = new System.Drawing.Point(785, 122);
-            this.txtHsd.Name = "txtHsd";
-            this.txtHsd.Size = new System.Drawing.Size(156, 20);
-            this.txtHsd.TabIndex = 25;
-            // 
-            // txtTongtien
-            // 
-            this.txtTongtien.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtTongtien.Location = new System.Drawing.Point(785, 226);
-            this.txtTongtien.Name = "txtTongtien";
-            this.txtTongtien.Size = new System.Drawing.Size(156, 20);
-            this.txtTongtien.TabIndex = 26;
-            // 
-            // txtDiachi
-            // 
-            this.txtDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDiachi.Location = new System.Drawing.Point(465, 125);
-            this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(156, 20);
-            this.txtDiachi.TabIndex = 27;
+            this.txtGianhap.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtGianhap.Location = new System.Drawing.Point(766, 155);
+            this.txtGianhap.Name = "txtGianhap";
+            this.txtGianhap.Size = new System.Drawing.Size(156, 20);
+            this.txtGianhap.TabIndex = 23;
+            this.txtGianhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGianhap_KeyPress);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(790, 251);
+            this.btnAdd.Image = global::medical_management.Properties.Resources.ic_cart;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(945, 102);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(54, 30);
+            this.btnAdd.Size = new System.Drawing.Size(64, 30);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnPrint
+            // btnCancel
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPrint.Location = new System.Drawing.Point(314, 677);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(97, 37);
-            this.btnPrint.TabIndex = 29;
-            this.btnPrint.Text = "In";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Image = global::medical_management.Properties.Resources.ic_close;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(945, 184);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 30);
+            this.btnCancel.TabIndex = 30;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnDel
+            // btnUpdate
             // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(907, 251);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(60, 30);
-            this.btnDel.TabIndex = 30;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(850, 251);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(51, 29);
-            this.btnEdit.TabIndex = 31;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(945, 142);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(64, 29);
+            this.btnUpdate.TabIndex = 31;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblTongcong
             // 
             this.lblTongcong.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblTongcong.AutoSize = true;
-            this.lblTongcong.Location = new System.Drawing.Point(12, 619);
+            this.lblTongcong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongcong.Location = new System.Drawing.Point(65, 26);
             this.lblTongcong.Name = "lblTongcong";
-            this.lblTongcong.Size = new System.Drawing.Size(59, 13);
+            this.lblTongcong.Size = new System.Drawing.Size(73, 16);
             this.lblTongcong.TabIndex = 32;
             this.lblTongcong.Text = "Tổng cộng";
             // 
@@ -403,9 +290,10 @@ namespace medical_management
             // 
             this.lblTongtienthanhtoan.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblTongtienthanhtoan.AutoSize = true;
-            this.lblTongtienthanhtoan.Location = new System.Drawing.Point(339, 645);
+            this.lblTongtienthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongtienthanhtoan.Location = new System.Drawing.Point(65, 101);
             this.lblTongtienthanhtoan.Name = "lblTongtienthanhtoan";
-            this.lblTongtienthanhtoan.Size = new System.Drawing.Size(106, 13);
+            this.lblTongtienthanhtoan.Size = new System.Drawing.Size(128, 16);
             this.lblTongtienthanhtoan.TabIndex = 33;
             this.lblTongtienthanhtoan.Text = "Tổng tiền thanh toán";
             // 
@@ -413,9 +301,10 @@ namespace medical_management
             // 
             this.lblChietkhau.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblChietkhau.AutoSize = true;
-            this.lblChietkhau.Location = new System.Drawing.Point(339, 619);
+            this.lblChietkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChietkhau.Location = new System.Drawing.Point(65, 78);
             this.lblChietkhau.Name = "lblChietkhau";
-            this.lblChietkhau.Size = new System.Drawing.Size(58, 13);
+            this.lblChietkhau.Size = new System.Drawing.Size(70, 16);
             this.lblChietkhau.TabIndex = 34;
             this.lblChietkhau.Text = "Chiết khấu";
             // 
@@ -423,122 +312,82 @@ namespace medical_management
             // 
             this.lblThue.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblThue.AutoSize = true;
-            this.lblThue.Location = new System.Drawing.Point(12, 645);
+            this.lblThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThue.Location = new System.Drawing.Point(65, 52);
             this.lblThue.Name = "lblThue";
-            this.lblThue.Size = new System.Drawing.Size(32, 13);
+            this.lblThue.Size = new System.Drawing.Size(39, 16);
             this.lblThue.TabIndex = 35;
             this.lblThue.Text = "Thuế";
-            // 
-            // lblSotienconno
-            // 
-            this.lblSotienconno.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblSotienconno.AutoSize = true;
-            this.lblSotienconno.Location = new System.Drawing.Point(673, 645);
-            this.lblSotienconno.Name = "lblSotienconno";
-            this.lblSotienconno.Size = new System.Drawing.Size(76, 13);
-            this.lblSotienconno.TabIndex = 36;
-            this.lblSotienconno.Text = "Số tiền còn nợ";
-            // 
-            // lblSotienthanhtoan
-            // 
-            this.lblSotienthanhtoan.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblSotienthanhtoan.AutoSize = true;
-            this.lblSotienthanhtoan.Location = new System.Drawing.Point(673, 619);
-            this.lblSotienthanhtoan.Name = "lblSotienthanhtoan";
-            this.lblSotienthanhtoan.Size = new System.Drawing.Size(94, 13);
-            this.lblSotienthanhtoan.TabIndex = 37;
-            this.lblSotienthanhtoan.Text = "Số tiền thanh toán";
             // 
             // txtChietkhau
             // 
             this.txtChietkhau.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtChietkhau.Location = new System.Drawing.Point(465, 616);
+            this.txtChietkhau.Location = new System.Drawing.Point(236, 75);
             this.txtChietkhau.Name = "txtChietkhau";
-            this.txtChietkhau.Size = new System.Drawing.Size(99, 20);
+            this.txtChietkhau.Size = new System.Drawing.Size(149, 20);
             this.txtChietkhau.TabIndex = 43;
+            this.txtChietkhau.Text = "0";
+            this.txtChietkhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtChietkhau.TextChanged += new System.EventHandler(this.txtChietkhau_TextChanged);
             // 
             // txtTongtienthanhtoan
             // 
             this.txtTongtienthanhtoan.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtTongtienthanhtoan.Location = new System.Drawing.Point(465, 642);
+            this.txtTongtienthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongtienthanhtoan.ForeColor = System.Drawing.Color.Red;
+            this.txtTongtienthanhtoan.Location = new System.Drawing.Point(236, 101);
             this.txtTongtienthanhtoan.Name = "txtTongtienthanhtoan";
-            this.txtTongtienthanhtoan.Size = new System.Drawing.Size(99, 20);
+            this.txtTongtienthanhtoan.Size = new System.Drawing.Size(149, 21);
             this.txtTongtienthanhtoan.TabIndex = 42;
-            // 
-            // txtSotienthanhtoan
-            // 
-            this.txtSotienthanhtoan.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtSotienthanhtoan.Location = new System.Drawing.Point(799, 616);
-            this.txtSotienthanhtoan.Name = "txtSotienthanhtoan";
-            this.txtSotienthanhtoan.Size = new System.Drawing.Size(99, 20);
-            this.txtSotienthanhtoan.TabIndex = 41;
-            // 
-            // txtSotienconno
-            // 
-            this.txtSotienconno.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtSotienconno.Location = new System.Drawing.Point(799, 642);
-            this.txtSotienconno.Name = "txtSotienconno";
-            this.txtSotienconno.Size = new System.Drawing.Size(99, 20);
-            this.txtSotienconno.TabIndex = 40;
+            this.txtTongtienthanhtoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTongcong
             // 
             this.txtTongcong.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtTongcong.Location = new System.Drawing.Point(139, 616);
+            this.txtTongcong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongcong.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtTongcong.Location = new System.Drawing.Point(236, 23);
             this.txtTongcong.Name = "txtTongcong";
-            this.txtTongcong.Size = new System.Drawing.Size(99, 20);
+            this.txtTongcong.Size = new System.Drawing.Size(149, 21);
             this.txtTongcong.TabIndex = 39;
+            this.txtTongcong.Text = "0";
+            this.txtTongcong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtThue
             // 
             this.txtThue.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtThue.Location = new System.Drawing.Point(139, 642);
+            this.txtThue.Location = new System.Drawing.Point(236, 49);
             this.txtThue.Name = "txtThue";
-            this.txtThue.Size = new System.Drawing.Size(99, 20);
+            this.txtThue.Size = new System.Drawing.Size(149, 20);
             this.txtThue.TabIndex = 38;
+            this.txtThue.Text = "0";
+            this.txtThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtThue.TextChanged += new System.EventHandler(this.txtThue_TextChanged);
+            this.txtThue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThue_KeyPress);
             // 
-            // btnThanhtoan
+            // dgvPhieunhapchitiet
             // 
-            this.btnThanhtoan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThanhtoan.Location = new System.Drawing.Point(439, 677);
-            this.btnThanhtoan.Name = "btnThanhtoan";
-            this.btnThanhtoan.Size = new System.Drawing.Size(97, 37);
-            this.btnThanhtoan.TabIndex = 46;
-            this.btnThanhtoan.Text = "Thanh toán";
-            this.btnThanhtoan.UseVisualStyleBackColor = true;
-            // 
-            // btnThanhtoanvain
-            // 
-            this.btnThanhtoanvain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThanhtoanvain.Location = new System.Drawing.Point(742, 676);
-            this.btnThanhtoanvain.Name = "btnThanhtoanvain";
-            this.btnThanhtoanvain.Size = new System.Drawing.Size(187, 36);
-            this.btnThanhtoanvain.TabIndex = 47;
-            this.btnThanhtoanvain.Text = "Thanh toán và In hóa đơn";
-            this.btnThanhtoanvain.UseVisualStyleBackColor = true;
-            // 
-            // dgvPhieunhaphang
-            // 
-            this.dgvPhieunhaphang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPhieunhapchitiet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPhieunhaphang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhieunhaphang.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvPhieunhaphang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhieunhaphang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPhieunhapchitiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhieunhapchitiet.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPhieunhapchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhieunhapchitiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Mathuoc,
-            this.Tenthuoc,
-            this.Hansudung,
-            this.Donvitinh,
-            this.Dongia,
+            this.Donvi,
             this.Soluong,
-            this.Tongtien,
-            this.Datra,
-            this.Conno});
-            this.dgvPhieunhaphang.Location = new System.Drawing.Point(18, 287);
-            this.dgvPhieunhaphang.Name = "dgvPhieunhaphang";
-            this.dgvPhieunhaphang.Size = new System.Drawing.Size(949, 309);
-            this.dgvPhieunhaphang.TabIndex = 48;
+            this.Gianhap,
+            this.Thanhtien,
+            this.Ngaysanxuat,
+            this.Ngayhethan});
+            this.dgvPhieunhapchitiet.Location = new System.Drawing.Point(12, 293);
+            this.dgvPhieunhapchitiet.Name = "dgvPhieunhapchitiet";
+            this.dgvPhieunhapchitiet.Size = new System.Drawing.Size(980, 215);
+            this.dgvPhieunhapchitiet.TabIndex = 48;
+            this.dgvPhieunhapchitiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieunhaphang_CellContentClick);
+            this.dgvPhieunhapchitiet.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhieunhapchitiet_CellMouseDown);
+            this.dgvPhieunhapchitiet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPhieunhapchitiet_MouseClick);
             // 
             // Mathuoc
             // 
@@ -546,29 +395,11 @@ namespace medical_management
             this.Mathuoc.HeaderText = "Mã thuốc";
             this.Mathuoc.Name = "Mathuoc";
             // 
-            // Tenthuoc
+            // Donvi
             // 
-            this.Tenthuoc.DataPropertyName = "Tenthuoc";
-            this.Tenthuoc.HeaderText = "Tên thuốc";
-            this.Tenthuoc.Name = "Tenthuoc";
-            // 
-            // Hansudung
-            // 
-            this.Hansudung.DataPropertyName = "Hansudung";
-            this.Hansudung.HeaderText = "Hạn sử dụng";
-            this.Hansudung.Name = "Hansudung";
-            // 
-            // Donvitinh
-            // 
-            this.Donvitinh.DataPropertyName = "Donvitinh";
-            this.Donvitinh.HeaderText = "Đơn vị tính";
-            this.Donvitinh.Name = "Donvitinh";
-            // 
-            // Dongia
-            // 
-            this.Dongia.DataPropertyName = "Dongia";
-            this.Dongia.HeaderText = "Đơn giá";
-            this.Dongia.Name = "Dongia";
+            this.Donvi.DataPropertyName = "Donvi";
+            this.Donvi.HeaderText = "Đơn vị ";
+            this.Donvi.Name = "Donvi";
             // 
             // Soluong
             // 
@@ -576,23 +407,29 @@ namespace medical_management
             this.Soluong.HeaderText = "Số lượng";
             this.Soluong.Name = "Soluong";
             // 
-            // Tongtien
+            // Gianhap
             // 
-            this.Tongtien.DataPropertyName = "Tongtien";
-            this.Tongtien.HeaderText = "Tổng tiền";
-            this.Tongtien.Name = "Tongtien";
+            this.Gianhap.DataPropertyName = "Gianhap";
+            this.Gianhap.HeaderText = "Giá nhập";
+            this.Gianhap.Name = "Gianhap";
             // 
-            // Datra
+            // Thanhtien
             // 
-            this.Datra.DataPropertyName = "Datra";
-            this.Datra.HeaderText = "Đã trả";
-            this.Datra.Name = "Datra";
+            this.Thanhtien.DataPropertyName = "Thanhtien";
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.Name = "Thanhtien";
             // 
-            // Conno
+            // Ngaysanxuat
             // 
-            this.Conno.DataPropertyName = "Conno";
-            this.Conno.HeaderText = "Còn nợ";
-            this.Conno.Name = "Conno";
+            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
+            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
+            this.Ngaysanxuat.Name = "Ngaysanxuat";
+            // 
+            // Ngayhethan
+            // 
+            this.Ngayhethan.DataPropertyName = "Ngayhethan";
+            this.Ngayhethan.HeaderText = "Ngày hết hạn";
+            this.Ngayhethan.Name = "Ngayhethan";
             // 
             // lblChitietphieunhap
             // 
@@ -604,85 +441,253 @@ namespace medical_management
             this.lblChitietphieunhap.TabIndex = 49;
             this.lblChitietphieunhap.Text = "Chi tiết phiếu nhập";
             // 
-            // btnHoanthanh
+            // btnGhinhan
             // 
-            this.btnHoanthanh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHoanthanh.Location = new System.Drawing.Point(188, 677);
-            this.btnHoanthanh.Name = "btnHoanthanh";
-            this.btnHoanthanh.Size = new System.Drawing.Size(97, 37);
-            this.btnHoanthanh.TabIndex = 51;
-            this.btnHoanthanh.Text = "Hoàn Thành";
-            this.btnHoanthanh.UseVisualStyleBackColor = true;
+            this.btnGhinhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGhinhan.Location = new System.Drawing.Point(321, 134);
+            this.btnGhinhan.Name = "btnGhinhan";
+            this.btnGhinhan.Size = new System.Drawing.Size(97, 37);
+            this.btnGhinhan.TabIndex = 51;
+            this.btnGhinhan.Text = "Ghi nhận";
+            this.btnGhinhan.UseVisualStyleBackColor = true;
+            this.btnGhinhan.Click += new System.EventHandler(this.btnGhinhan_Click);
             // 
-            // btnLuuphieunhap
+            // lblDonvi
             // 
-            this.btnLuuphieunhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLuuphieunhap.Location = new System.Drawing.Point(54, 676);
-            this.btnLuuphieunhap.Name = "btnLuuphieunhap";
-            this.btnLuuphieunhap.Size = new System.Drawing.Size(109, 37);
-            this.btnLuuphieunhap.TabIndex = 52;
-            this.btnLuuphieunhap.Text = "Lưu phiếu nhập";
-            this.btnLuuphieunhap.UseVisualStyleBackColor = true;
+            this.lblDonvi.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDonvi.AutoSize = true;
+            this.lblDonvi.Location = new System.Drawing.Point(676, 132);
+            this.lblDonvi.Name = "lblDonvi";
+            this.lblDonvi.Size = new System.Drawing.Size(41, 13);
+            this.lblDonvi.TabIndex = 8;
+            this.lblDonvi.Text = "Đơn vị ";
+            // 
+            // txtDonvi
+            // 
+            this.txtDonvi.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtDonvi.Location = new System.Drawing.Point(766, 129);
+            this.txtDonvi.Name = "txtDonvi";
+            this.txtDonvi.Size = new System.Drawing.Size(156, 20);
+            this.txtDonvi.TabIndex = 24;
+            // 
+            // lblTenthuoc
+            // 
+            this.lblTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTenthuoc.AutoSize = true;
+            this.lblTenthuoc.Location = new System.Drawing.Point(676, 106);
+            this.lblTenthuoc.Name = "lblTenthuoc";
+            this.lblTenthuoc.Size = new System.Drawing.Size(56, 13);
+            this.lblTenthuoc.TabIndex = 10;
+            this.lblTenthuoc.Text = "Tên thuốc";
+            // 
+            // txtTenthuoc
+            // 
+            this.txtTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtTenthuoc.Location = new System.Drawing.Point(766, 103);
+            this.txtTenthuoc.Name = "txtTenthuoc";
+            this.txtTenthuoc.Size = new System.Drawing.Size(156, 20);
+            this.txtTenthuoc.TabIndex = 19;
+            // 
+            // lblNCC
+            // 
+            this.lblNCC.AutoSize = true;
+            this.lblNCC.BackColor = System.Drawing.Color.Transparent;
+            this.lblNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNCC.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblNCC.Location = new System.Drawing.Point(425, 103);
+            this.lblNCC.Name = "lblNCC";
+            this.lblNCC.Size = new System.Drawing.Size(134, 16);
+            this.lblNCC.TabIndex = 53;
+            this.lblNCC.Text = "Tên Nhà cung cấp";
+            this.lblNCC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnSelectSupplier
+            // 
+            this.btnSelectSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelectSupplier.BackgroundImage = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnSelectSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSelectSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectSupplier.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnSelectSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectSupplier.Location = new System.Drawing.Point(554, 92);
+            this.btnSelectSupplier.Name = "btnSelectSupplier";
+            this.btnSelectSupplier.Size = new System.Drawing.Size(39, 38);
+            this.btnSelectSupplier.TabIndex = 54;
+            this.btnSelectSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSelectSupplier.UseVisualStyleBackColor = false;
+            this.btnSelectSupplier.Click += new System.EventHandler(this.btnSelectSupplier_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txtTongcong);
+            this.panel1.Controls.Add(this.lblTongcong);
+            this.panel1.Controls.Add(this.lblTongtienthanhtoan);
+            this.panel1.Controls.Add(this.lblChietkhau);
+            this.panel1.Controls.Add(this.btnGhinhan);
+            this.panel1.Controls.Add(this.lblThue);
+            this.panel1.Controls.Add(this.txtThue);
+            this.panel1.Controls.Add(this.txtTongtienthanhtoan);
+            this.panel1.Controls.Add(this.txtChietkhau);
+            this.panel1.Location = new System.Drawing.Point(519, 514);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(448, 185);
+            this.panel1.TabIndex = 56;
+            // 
+            // btnSelectMedical
+            // 
+            this.btnSelectMedical.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelectMedical.BackgroundImage = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnSelectMedical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSelectMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectMedical.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnSelectMedical.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectMedical.Location = new System.Drawing.Point(865, 62);
+            this.btnSelectMedical.Name = "btnSelectMedical";
+            this.btnSelectMedical.Size = new System.Drawing.Size(39, 38);
+            this.btnSelectMedical.TabIndex = 57;
+            this.btnSelectMedical.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSelectMedical.UseVisualStyleBackColor = false;
+            this.btnSelectMedical.Click += new System.EventHandler(this.btnSelectMedical_Click);
+            // 
+            // dtpNgaynhap
+            // 
+            this.dtpNgaynhap.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaynhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaynhap.Location = new System.Drawing.Point(126, 102);
+            this.dtpNgaynhap.Name = "dtpNgaynhap";
+            this.dtpNgaynhap.Size = new System.Drawing.Size(156, 20);
+            this.dtpNgaynhap.TabIndex = 58;
+            // 
+            // txtMalo
+            // 
+            this.txtMalo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtMalo.Location = new System.Drawing.Point(418, 69);
+            this.txtMalo.Name = "txtMalo";
+            this.txtMalo.Size = new System.Drawing.Size(156, 20);
+            this.txtMalo.TabIndex = 60;
+            // 
+            // lblMalo
+            // 
+            this.lblMalo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMalo.AutoSize = true;
+            this.lblMalo.Location = new System.Drawing.Point(329, 72);
+            this.lblMalo.Name = "lblMalo";
+            this.lblMalo.Size = new System.Drawing.Size(33, 13);
+            this.lblMalo.TabIndex = 59;
+            this.lblMalo.Text = "Mã lô";
+            // 
+            // dtpNgayhethan
+            // 
+            this.dtpNgayhethan.CustomFormat = "dd/MM/yyy";
+            this.dtpNgayhethan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayhethan.Location = new System.Drawing.Point(766, 235);
+            this.dtpNgayhethan.Name = "dtpNgayhethan";
+            this.dtpNgayhethan.Size = new System.Drawing.Size(156, 20);
+            this.dtpNgayhethan.TabIndex = 61;
+            // 
+            // dtpNgaysanxuat
+            // 
+            this.dtpNgaysanxuat.CustomFormat = "dd/MM/yyy";
+            this.dtpNgaysanxuat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaysanxuat.Location = new System.Drawing.Point(766, 209);
+            this.dtpNgaysanxuat.Name = "dtpNgaysanxuat";
+            this.dtpNgaysanxuat.Size = new System.Drawing.Size(156, 20);
+            this.dtpNgaysanxuat.TabIndex = 63;
+            // 
+            // lblNgaysanxuat
+            // 
+            this.lblNgaysanxuat.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblNgaysanxuat.AutoSize = true;
+            this.lblNgaysanxuat.Location = new System.Drawing.Point(676, 212);
+            this.lblNgaysanxuat.Name = "lblNgaysanxuat";
+            this.lblNgaysanxuat.Size = new System.Drawing.Size(75, 13);
+            this.lblNgaysanxuat.TabIndex = 62;
+            this.lblNgaysanxuat.Text = "Ngày sản xuất";
+            // 
+            // cmnuPODetail
+            // 
+            this.cmnuPODetail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.editItem,
+            this.toolStripSeparator2,
+            this.deleteItem});
+            this.cmnuPODetail.Name = "cmnuPODetail";
+            this.cmnuPODetail.Size = new System.Drawing.Size(95, 60);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(91, 6);
+            // 
+            // editItem
+            // 
+            this.editItem.Image = global::medical_management.Properties.Resources.ic_edit;
+            this.editItem.Name = "editItem";
+            this.editItem.Size = new System.Drawing.Size(94, 22);
+            this.editItem.Text = "Sửa";
+            this.editItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(91, 6);
+            // 
+            // deleteItem
+            // 
+            this.deleteItem.Image = global::medical_management.Properties.Resources.ic_close;
+            this.deleteItem.Name = "deleteItem";
+            this.deleteItem.Size = new System.Drawing.Size(94, 22);
+            this.deleteItem.Text = "Xóa";
+            this.deleteItem.Click += new System.EventHandler(this.deleteItem_Click);
             // 
             // frmPhieunhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(989, 713);
-            this.Controls.Add(this.btnLuuphieunhap);
-            this.Controls.Add(this.btnHoanthanh);
+            this.ClientSize = new System.Drawing.Size(1021, 713);
+            this.Controls.Add(this.dtpNgaysanxuat);
+            this.Controls.Add(this.lblNgaysanxuat);
+            this.Controls.Add(this.dtpNgayhethan);
+            this.Controls.Add(this.txtMalo);
+            this.Controls.Add(this.lblMalo);
+            this.Controls.Add(this.dtpNgaynhap);
+            this.Controls.Add(this.btnSelectMedical);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnSelectSupplier);
+            this.Controls.Add(this.lblNCC);
             this.Controls.Add(this.lblChitietphieunhap);
-            this.Controls.Add(this.dgvPhieunhaphang);
-            this.Controls.Add(this.btnThanhtoanvain);
-            this.Controls.Add(this.btnThanhtoan);
-            this.Controls.Add(this.txtChietkhau);
-            this.Controls.Add(this.txtTongtienthanhtoan);
-            this.Controls.Add(this.txtSotienthanhtoan);
-            this.Controls.Add(this.txtSotienconno);
-            this.Controls.Add(this.txtTongcong);
-            this.Controls.Add(this.txtThue);
-            this.Controls.Add(this.lblSotienthanhtoan);
-            this.Controls.Add(this.lblSotienconno);
-            this.Controls.Add(this.lblThue);
-            this.Controls.Add(this.lblChietkhau);
-            this.Controls.Add(this.lblTongtienthanhtoan);
-            this.Controls.Add(this.lblTongcong);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.dgvPhieunhapchitiet);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtDiachi);
-            this.Controls.Add(this.txtTongtien);
-            this.Controls.Add(this.txtHsd);
-            this.Controls.Add(this.txtDonvitinh);
-            this.Controls.Add(this.txtDongia);
+            this.Controls.Add(this.txtDonvi);
+            this.Controls.Add(this.txtGianhap);
             this.Controls.Add(this.txtSoluong);
-            this.Controls.Add(this.txtTenNCC);
             this.Controls.Add(this.txtMathuoc);
             this.Controls.Add(this.txtTenthuoc);
-            this.Controls.Add(this.txtNgaynhap);
             this.Controls.Add(this.txtNhanviennhap);
-            this.Controls.Add(this.txtMaNCC);
             this.Controls.Add(this.txtManhap);
-            this.Controls.Add(this.lblDongia);
+            this.Controls.Add(this.lblGianhap);
             this.Controls.Add(this.lblSoluong);
-            this.Controls.Add(this.lblTongtien);
             this.Controls.Add(this.lblMathuoc);
             this.Controls.Add(this.lblTenthuoc);
-            this.Controls.Add(this.lblHsd);
-            this.Controls.Add(this.lblDonvitinh);
+            this.Controls.Add(this.lblNgayhethan);
+            this.Controls.Add(this.lblDonvi);
             this.Controls.Add(this.lblManhap);
             this.Controls.Add(this.lblNgaynhap);
             this.Controls.Add(this.lblNhanviennhap);
             this.Controls.Add(this.lblMaNCC);
-            this.Controls.Add(this.lblTenNCC);
-            this.Controls.Add(this.lblDiachi);
             this.Controls.Add(this.lblThongtinchung);
             this.Controls.Add(this.lblPhieunhap);
             this.Name = "frmPhieunhap";
-            this.Text = "Lưu phiếu nhập";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhaphang)).EndInit();
+            this.Text = "frmPhieunhaphang";
+            this.Load += new System.EventHandler(this.frmPhieunhap_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhapchitiet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.cmnuPODetail.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,62 +697,58 @@ namespace medical_management
 
         private System.Windows.Forms.Label lblPhieunhap;
         private System.Windows.Forms.Label lblThongtinchung;
-        private System.Windows.Forms.Label lblDiachi;
-        private System.Windows.Forms.Label lblTenNCC;
         private System.Windows.Forms.Label lblMaNCC;
         private System.Windows.Forms.Label lblNhanviennhap;
         private System.Windows.Forms.Label lblNgaynhap;
         private System.Windows.Forms.Label lblManhap;
-        private System.Windows.Forms.Label lblDonvitinh;
-        private System.Windows.Forms.Label lblHsd;
-        private System.Windows.Forms.Label lblTenthuoc;
+        private System.Windows.Forms.Label lblNgayhethan;
         private System.Windows.Forms.Label lblMathuoc;
-        private System.Windows.Forms.Label lblTongtien;
         private System.Windows.Forms.Label lblSoluong;
-        private System.Windows.Forms.Label lblDongia;
+        private System.Windows.Forms.Label lblGianhap;
         private System.Windows.Forms.TextBox txtManhap;
-        private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.TextBox txtNhanviennhap;
-        private System.Windows.Forms.TextBox txtNgaynhap;
-        private System.Windows.Forms.TextBox txtTenthuoc;
         private System.Windows.Forms.TextBox txtMathuoc;
-        private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.TextBox txtSoluong;
-        private System.Windows.Forms.TextBox txtDongia;
-        private System.Windows.Forms.TextBox txtDonvitinh;
-        private System.Windows.Forms.TextBox txtHsd;
-        private System.Windows.Forms.TextBox txtTongtien;
-        private System.Windows.Forms.TextBox txtDiachi;
+        private System.Windows.Forms.TextBox txtGianhap;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblTongcong;
         private System.Windows.Forms.Label lblTongtienthanhtoan;
         private System.Windows.Forms.Label lblChietkhau;
         private System.Windows.Forms.Label lblThue;
-        private System.Windows.Forms.Label lblSotienconno;
-        private System.Windows.Forms.Label lblSotienthanhtoan;
         private System.Windows.Forms.TextBox txtChietkhau;
         private System.Windows.Forms.TextBox txtTongtienthanhtoan;
-        private System.Windows.Forms.TextBox txtSotienthanhtoan;
-        private System.Windows.Forms.TextBox txtSotienconno;
         private System.Windows.Forms.TextBox txtTongcong;
         private System.Windows.Forms.TextBox txtThue;
-        private System.Windows.Forms.Button btnThanhtoan;
-        private System.Windows.Forms.Button btnThanhtoanvain;
-        private System.Windows.Forms.DataGridView dgvPhieunhaphang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tenthuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hansudung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Donvitinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Datra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Conno;
+        private System.Windows.Forms.DataGridView dgvPhieunhapchitiet;
         private System.Windows.Forms.Label lblChitietphieunhap;
-        private System.Windows.Forms.Button btnHoanthanh;
-        private System.Windows.Forms.Button btnLuuphieunhap;
+        private System.Windows.Forms.Button btnGhinhan;
+        private System.Windows.Forms.Label lblDonvi;
+        private System.Windows.Forms.TextBox txtDonvi;
+        private System.Windows.Forms.Label lblTenthuoc;
+        private System.Windows.Forms.TextBox txtTenthuoc;
+        private System.Windows.Forms.Label lblNCC;
+        private System.Windows.Forms.Button btnSelectSupplier;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSelectMedical;
+        private System.Windows.Forms.DateTimePicker dtpNgaynhap;
+        private System.Windows.Forms.TextBox txtMalo;
+        private System.Windows.Forms.Label lblMalo;
+        private System.Windows.Forms.DateTimePicker dtpNgayhethan;
+        private System.Windows.Forms.DateTimePicker dtpNgaysanxuat;
+        private System.Windows.Forms.Label lblNgaysanxuat;
+        private System.Windows.Forms.ContextMenuStrip cmnuPODetail;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem editItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem deleteItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Donvi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gianhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysanxuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngayhethan;
     }
 }

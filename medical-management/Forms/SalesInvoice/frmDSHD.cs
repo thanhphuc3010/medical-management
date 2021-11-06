@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using medical_management.BUS;
 
 namespace medical_management
 {
@@ -29,13 +30,11 @@ namespace medical_management
         private void frmDSHD_Load(object sender, EventArgs e)
         {
             dtpFromDate.Value = getEarliestDate();
-            dtpToDate.Value = getLatestDate();
+            dtpToDate.Value = DateTime.Now;
             loadListInvoice();
             loadInvoiceSummary();
-            loadInvoiceCount();
-            loadTotal();
-            loadPayment();
-            loadReceivable();
+            loadStatPayment(false);
+
         }
 
         private void initializeUI()
@@ -67,9 +66,10 @@ namespace medical_management
         {
             string query = "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
                            "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
-                           "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV";
+                           "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
+                           "AND NgayHD BETWEEN @FromDate AND @ToDate ";
 
-            DataTable data = Database.Instance.excuteQuery(query);
+            DataTable data = Database.Instance.excuteQuery(query, new object[] { dtpFromDate.Value, dtpToDate.Value });
 
             dgvDSHD.DataSource = data;
 
@@ -92,37 +92,17 @@ namespace medical_management
             dgvInvoiceSummary.DataSource = data;
         }
 
-        private void loadInvoiceCount()
+        private void loadStatPayment(bool byFilter)
         {
-            string query = "SELECT COUNT(*) FROM dbo.tbl_Invoice";
-            lblInvoiceCount.Text = Database.Instance.ExecuteScalar(query).ToString();
-        }
+            var paymentDictionary = byFilter ? InvoiceBUS.getPaymentSataticByFilter(fromDate, toDate, getListStatusFilter()) : InvoiceBUS.getPaymentSatatic();
+            int count = Convert.ToInt32(paymentDictionary["count"]);
+            decimal total = Convert.ToInt32(paymentDictionary["total"]);
+            decimal payment = Convert.ToInt32(paymentDictionary["payment"]);
 
-        private void loadTotal()
-        {
-            string query = "SELECT SUM(Tongtien) FROM dbo.tbl_Invoice";
-            decimal total = Convert.ToDecimal(Database.Instance.ExecuteScalar(query));
-
-            CultureInfo culture = new CultureInfo("vi-VN");
-            lblTotal.Text = total.ToString("c", culture);
-        }
-
-        private void loadPayment()
-        {
-            string query = "SELECT SUM(Dathanhtoan) FROM dbo.tbl_Invoice";
-            decimal total = Convert.ToDecimal(Database.Instance.ExecuteScalar(query));
-
-            CultureInfo culture = new CultureInfo("vi-VN");
-            lblTotalPayment.Text = total.ToString("c", culture);
-        }
-
-        private void loadReceivable()
-        {
-            string query = "SELECT SUM(Tongtien - Dathanhtoan) FROM dbo.tbl_Invoice";
-            decimal total = Convert.ToDecimal(Database.Instance.ExecuteScalar(query));
-
-            CultureInfo culture = new CultureInfo("vi-VN");
-            lblReceivable.Text = total.ToString("c", culture);
+            lblInvoiceCount.Text = count.ToString();
+            lblTotal.Text = Helper.formatCurrencyVN(total);
+            lblTotalPayment.Text = Helper.formatCurrencyVN(payment);
+            lblReceivable.Text = Helper.formatCurrencyVN(total - payment);
         }
 
         private DateTime getEarliestDate()
@@ -130,12 +110,6 @@ namespace medical_management
             string query = "SELECT TOP 1 NgayHD FROM dbo.tbl_Invoice ORDER BY NgayHD ASC";
             return Convert.ToDateTime(Database.Instance.ExecuteScalar(query));
         }
-        private DateTime getLatestDate()
-        {
-            string query = "SELECT TOP 1 NgayHD FROM dbo.tbl_Invoice ORDER BY NgayHD DESC";
-            return Convert.ToDateTime(Database.Instance.ExecuteScalar(query));
-        }
-
 
         private void dgvDSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -144,11 +118,12 @@ namespace medical_management
                 string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
 
                 loadInvoiceDetailById(invoiceId);
-            } else
+            }
+            else
             {
                 initializeUI();
             }
-            
+
         }
 
         private void loadInvoiceDetailById(string invoiceId)
@@ -165,8 +140,8 @@ namespace medical_management
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            DateTime fromDate = dtpFromDate.Value;
-            DateTime toDate = dtpToDate.Value;
+            fromDate = dtpFromDate.Value;
+            toDate = dtpToDate.Value;
 
             List<string> statusFilter = getListStatusFilter();
 
@@ -192,6 +167,8 @@ namespace medical_management
                     "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
                     "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
                     "AND NgayHD BETWEEN @FromDate AND @ToDate ";
+
+                loadStatPayment(false);
             }
             else
             {
@@ -209,15 +186,21 @@ namespace medical_management
                     }
 
                 }
+
+                loadStatPayment(true);
             }
 
             DataTable data = Database.Instance.excuteQuery(query, new object[] { fromDate, toDate });
 
             dgvDSHD.DataSource = data;
 
-            if (!dgvDSHD.Rows[0].IsNewRow)
+            if (dgvDSHD.Rows.Count > 0 && data.Rows.Count != 0)
             {
                 loadInvoiceDetailById(dgvDSHD.Rows[0].Cells["MaHD"].Value.ToString());
+            }
+            else
+            {
+                dgvHoadonchitiet.DataSource = null;
             }
         }
 
@@ -246,10 +229,10 @@ namespace medical_management
 
                 List<string> statusFilter = getListStatusFilter();
 
-                DateTime fromDate = dtpFromDate.Value;
-                DateTime toDate = dtpToDate.Value;
+                fromDate = dtpFromDate.Value;
+                toDate = dtpToDate.Value;
 
-                string query = 
+                string query =
                         "SELECT a.MaHD, a.NgayHD, a.Tongtien, (a.Tongtien - a.Dathanhtoan) AS Conthieu, a.Trangthaihoadon, b.TenKH, b.Sdt, c.TenNV " +
                         "FROM dbo.tbl_Invoice a, dbo.tbl_Customer b, dbo.tbl_Staff c " +
                         "WHERE a.MaKH = b.MaKH AND a.MaNV = c.MaNV " +
@@ -265,24 +248,29 @@ namespace medical_management
 
                 foreach (string status in statusFilter)
                 {
-                    if(!status.Equals(lastItem))
+                    if (!status.Equals(lastItem))
                     {
                         query += "N'" + status + "', ";
-                    } else
+                    }
+                    else
                     {
                         query += "N'" + status + "')";
                     }
-                    
+
                 }
 
                 DataTable data = Database.Instance.excuteQuery(query, new object[] { fromDate, toDate });
 
                 dgvDSHD.DataSource = data;
 
+                initializeUI();
+                loadStatPayment(true);
+
                 if (dgvDSHD.Rows.Count > 0 && data.Rows.Count != 0)
                 {
                     loadInvoiceDetailById(dgvDSHD.Rows[0].Cells["MaHD"].Value.ToString());
-                } else
+                }
+                else
                 {
                     dgvHoadonchitiet.DataSource = null;
                 }
