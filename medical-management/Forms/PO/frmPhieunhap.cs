@@ -376,7 +376,7 @@ namespace medical_management
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo ";
+            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo, Manhap= @Manhap ";
             int quantity;
             quantity = Convert.ToInt32(txtSoluong.Text);
 
@@ -391,7 +391,7 @@ namespace medical_management
                 Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
             }
-            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , malo });
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , malo, poId});
             loadConsignment();
             resetEditMode();
         }
