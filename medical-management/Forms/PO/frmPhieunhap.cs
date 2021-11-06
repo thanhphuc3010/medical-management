@@ -198,7 +198,7 @@ namespace medical_management
 
         private void loadConsignment()
         {
-            string query = "SELECT a.Mathuoc, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien " +
+            string query = "SELECT a.Mathuoc, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien, a.Ngaysanxuat, a.Ngayhethan " +
                            "FROM dbo.tbl_Consignment a INNER JOIN dbo.tbl_Item b " +
                            "ON a.Mathuoc = b.Mathuoc WHERE a.Manhap = @Manhap";
 
@@ -277,6 +277,13 @@ namespace medical_management
             {
                 deletePO();
             }
+
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            deletePO();
         }
 
         private void deletePO()
@@ -284,6 +291,7 @@ namespace medical_management
             string id = txtManhap.Text;
             string delete = "Delete From dbo.tbl_PurchaseOrder Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete, new object[] { id });
+
             string delete1 = "Delete From dbo.tbl_Consignment Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete1, new object[] { id });
 
@@ -433,6 +441,14 @@ namespace medical_management
             var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, Int16.Parse(txtThue.Text), poId };
             Database.Instance.excuteNonQuery(query, param);
 
+
+            var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap =  (i.Gianhap + c.Gianhap) /2 FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
+
+            Database.Instance.excuteNonQuery(updateItemQuery, new object[] { poId }); 
+            var updatePriceQuery = "UPDATE tbl_Item SET tbl_Item.Dongia = tbl_Item.Gianhap * 1.1;";
+
+            Database.Instance.excuteNonQuery(updatePriceQuery);
+            
             Helper.showSuccessMessage("Thêm mới thành công");
             isSelectCompletePO = true;
             this.Close();
@@ -540,6 +556,25 @@ namespace medical_management
 
                 }
             }
+
+        }
+
+        //private void loadQuantity()
+        //{
+        //    string query = "SELECT Malo, (Soluong - Daban) AS Tonkho FROM tbl_Consignment WHERE Mathuoc = @Mathuoc " +
+        //                   "AND Daban < Soluong";
+        //    DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
+
+        //    foreach (DataRow item in data.Rows)
+        //    { 
+        //        int inventory = (int)item["Tonkho"];
+
+        //        string updateQuatity = " Update dbo.Item Set Soluong = Tonkho + ( Select Soluong From tbl_Consignmnet Where Mathuoc = @Mathuoc) " +
+        //            "From tbl_Item Join tbl_Consignment On tbl_Consignment.Mathuoc = tbl_Item.Mathuoc";
+        //        DataTable data = Database.Instance.excuteNonQuery(updateQuatity, new object[] { medicalId });
+        //    }
+
+
         }
     }
-}
+
