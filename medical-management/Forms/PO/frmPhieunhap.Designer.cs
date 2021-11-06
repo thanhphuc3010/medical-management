@@ -57,6 +57,13 @@ namespace medical_management
             this.txtTongcong = new System.Windows.Forms.TextBox();
             this.txtThue = new System.Windows.Forms.TextBox();
             this.dgvPhieunhapchitiet = new System.Windows.Forms.DataGridView();
+            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblChitietphieunhap = new System.Windows.Forms.Label();
             this.btnGhinhan = new System.Windows.Forms.Button();
             this.lblDonvi = new System.Windows.Forms.Label();
@@ -78,13 +85,6 @@ namespace medical_management
             this.editItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhapchitiet)).BeginInit();
             this.panel1.SuspendLayout();
             this.cmnuPODetail.SuspendLayout();
@@ -389,6 +389,48 @@ namespace medical_management
             this.dgvPhieunhapchitiet.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhieunhapchitiet_CellMouseDown);
             this.dgvPhieunhapchitiet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPhieunhapchitiet_MouseClick);
             // 
+            // Mathuoc
+            // 
+            this.Mathuoc.DataPropertyName = "Mathuoc";
+            this.Mathuoc.HeaderText = "Mã thuốc";
+            this.Mathuoc.Name = "Mathuoc";
+            // 
+            // Donvi
+            // 
+            this.Donvi.DataPropertyName = "Donvi";
+            this.Donvi.HeaderText = "Đơn vị ";
+            this.Donvi.Name = "Donvi";
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.Name = "Soluong";
+            // 
+            // Gianhap
+            // 
+            this.Gianhap.DataPropertyName = "Gianhap";
+            this.Gianhap.HeaderText = "Giá nhập";
+            this.Gianhap.Name = "Gianhap";
+            // 
+            // Thanhtien
+            // 
+            this.Thanhtien.DataPropertyName = "Thanhtien";
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.Name = "Thanhtien";
+            // 
+            // Ngaysanxuat
+            // 
+            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
+            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
+            this.Ngaysanxuat.Name = "Ngaysanxuat";
+            // 
+            // Ngayhethan
+            // 
+            this.Ngayhethan.DataPropertyName = "Ngayhethan";
+            this.Ngayhethan.HeaderText = "Ngày hết hạn";
+            this.Ngayhethan.Name = "Ngayhethan";
+            // 
             // lblChitietphieunhap
             // 
             this.lblChitietphieunhap.AutoSize = true;
@@ -598,48 +640,6 @@ namespace medical_management
             this.deleteItem.Size = new System.Drawing.Size(94, 22);
             this.deleteItem.Text = "Xóa";
             this.deleteItem.Click += new System.EventHandler(this.deleteItem_Click);
-            // 
-            // Mathuoc
-            // 
-            this.Mathuoc.DataPropertyName = "Mathuoc";
-            this.Mathuoc.HeaderText = "Mã thuốc";
-            this.Mathuoc.Name = "Mathuoc";
-            // 
-            // Donvi
-            // 
-            this.Donvi.DataPropertyName = "Donvi";
-            this.Donvi.HeaderText = "Đơn vị ";
-            this.Donvi.Name = "Donvi";
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.Name = "Soluong";
-            // 
-            // Gianhap
-            // 
-            this.Gianhap.DataPropertyName = "Gianhap";
-            this.Gianhap.HeaderText = "Giá nhập";
-            this.Gianhap.Name = "Gianhap";
-            // 
-            // Thanhtien
-            // 
-            this.Thanhtien.DataPropertyName = "Thanhtien";
-            this.Thanhtien.HeaderText = "Thành tiền";
-            this.Thanhtien.Name = "Thanhtien";
-            // 
-            // Ngaysanxuat
-            // 
-            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
-            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
-            this.Ngaysanxuat.Name = "Ngaysanxuat";
-            // 
-            // Ngayhethan
-            // 
-            this.Ngayhethan.DataPropertyName = "Ngayhethan";
-            this.Ngayhethan.HeaderText = "Ngày hết hạn";
-            this.Ngayhethan.Name = "Ngayhethan";
             // 
             // frmPhieunhap
             // 

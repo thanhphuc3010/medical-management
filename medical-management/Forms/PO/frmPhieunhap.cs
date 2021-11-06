@@ -26,6 +26,7 @@ namespace medical_management
         private string malo; //Mã lô
         private string supplierId; //Mã nhà cung cấp
         private string medicalId; //Mã thuốc
+        private string maloDuocChon;
         int quantity;
         private string staffId = "NV01";
         private bool isSelectCompletePO = false;
@@ -288,7 +289,7 @@ namespace medical_management
 
         private void deletePO()
         {
-            string id = txtManhap.Text;
+            string id = poId;
             string delete = "Delete From dbo.tbl_PurchaseOrder Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete, new object[] { id });
 
@@ -375,7 +376,7 @@ namespace medical_management
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Manhap = @Manhap ";
+            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo ";
             int quantity;
             quantity = Convert.ToInt32(txtSoluong.Text);
 
@@ -390,7 +391,7 @@ namespace medical_management
                 Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
             }
-            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , poId, txtMalo.Text });
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , malo });
             loadConsignment();
             resetEditMode();
         }
@@ -448,7 +449,9 @@ namespace medical_management
             var updatePriceQuery = "UPDATE tbl_Item SET tbl_Item.Dongia = tbl_Item.Gianhap * 1.1;";
 
             Database.Instance.excuteNonQuery(updatePriceQuery);
-            
+
+            poId =  createPOId();
+
             Helper.showSuccessMessage("Thêm mới thành công");
             isSelectCompletePO = true;
             this.Close();
@@ -467,7 +470,7 @@ namespace medical_management
             txtTenthuoc.Text = Database.Instance.ExecuteScalar(query, new object[] { id }).ToString();
             Database.Instance.excuteQuery(query, new object[] { medicalId });
             txtDonvi.binding(dataSoure, "Donvi");
-          
+
 
 
 
@@ -494,6 +497,7 @@ namespace medical_management
             if (selectedMedicalId != null)
             {
                 bindingEditMode(selectedMedicalId);
+
                 isEdit = true;
                 btnAdd.gone();
                 btnUpdate.visible();
