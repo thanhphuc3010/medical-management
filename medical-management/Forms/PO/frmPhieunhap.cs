@@ -20,11 +20,14 @@ namespace medical_management
         private decimal subtotal = 0M;
         private decimal total = 0M;
         private decimal discount = 0M;
-        private decimal totalInventory = 0M;
+        //private decimal totalInventory = 0M;
         private decimal VAT = 0M;
-        private string poId;
-        private string malo;
-        private string supplierId;
+        private string poId; //Mã phiếu nhập
+        private string malo; //Mã lô
+        private string supplierId; //Mã nhà cung cấp
+        private string medicalId; //Mã thuốc
+        private string maloDuocChon;
+        int quantity;
         private string staffId = "NV01";
         private bool isSelectCompletePO = false;
         private bool isEdit = false;
@@ -44,39 +47,45 @@ namespace medical_management
 
         private void dgvPhieunhaphang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void frmPhieunhap_Load(object sender, EventArgs e)
         {
             loadData();
-            //insertPurchaseOrder();
         }
 
-        //private void insertPurchaseOrder()
-        //{
-        //    string insert = " Insert into tbl_PurchaseOrder ( Manhap , MaNCC, MaNV , Ngaynhap , Soluonglo , Tongtien , Dathanhtoan , Thue )" +
-        //        "Values( @Manhap , @MaNCC , @MaNV , @Ngaynhap , @Soluonglo , @Tongtien , @Dathanhthoan , @Thue )";
-        //    Database.Instance.excuteNonQuery(insert, new object[] { poId, supplierId, staffId, dtpNgaynhap.Value, totalInventory, subtotal, total, VAT });
-        //}
+        private void insertPO()
+        {
+            string query = "SELECT 1 FROM tbl_PurchaseOrder WHERE Manhap = @MaNhap";
+            var res = Database.Instance.excuteQuery(query, new object[] { poId });
+            if (res.Rows.Count != 0)
+            {
+                return;
+            }
+            string insert = "INSERT INTO tbl_PurchaseOrder ( Manhap, MaNCC, MaNV, Ngaynhap, Soluonglo, Tongtien, Thue, Dathanhtoan)" +
+                           " VALUES( @Manhap , @MaNCC , @MaNV , @Ngaynhap , @Soluonglo , @Tongtien , @Thue , @Dathanhtoan )";
+            Database.Instance.excuteNonQuery(insert, new object[] { poId, supplierId, staffId, dtpNgaynhap.Value, txtSoluong.Text, subtotal, total, VAT, 0 });
+        }
+
 
         private void loadData()
         {
-            
+
             DateTime today = DateTime.Now;
             dtpNgaynhap.Value = today;
+            NextId();
+            txtTongcong.BackColor = txtTongcong.BackColor;
+            txtTongtienthanhtoan.BackColor = txtTongtienthanhtoan.BackColor;
+            txtGianhap.BackColor = txtGianhap.BackColor;
+            btnAdd.disable();
+        }
+        private void NextId()
+        {
             this.poId = createPOId();
             txtManhap.Text = this.poId;
             this.malo = createMalo();
             txtMalo.Text = this.malo;
-            txtTongcong.BackColor = txtTongcong.BackColor;
-            txtTongtienthanhtoan.BackColor = txtTongtienthanhtoan.BackColor;
-            txtDongia.BackColor = txtDongia.BackColor;
-        }
-
-        private void loadConsignment(string medicalId)
-        {
-
         }
 
         private string createPOId()
@@ -89,15 +98,16 @@ namespace medical_management
         private string createMalo()
         {
             string query = "Select Top 1 Malo From tbl_Consignment Order by Malo Desc";
-            return Helper.createId("Lo", query, "Malo");
+            return Helper.createId("ML", query, "Malo");
         }
 
-       private void bindSupplier(string id, string name)
+        private void bindSupplier(string id, string name)
         {
             lblNCC.Text = name;
             this.supplierId = id;
             btnSelectSupplier.gone();
             lblNCC.visible();
+            checkingEnableAddBtn();
         }
         private void btnSelectSupplier_Click(object sender, EventArgs e)
         {
@@ -119,23 +129,29 @@ namespace medical_management
             DataTable data = Database.Instance.excuteQuery(query, new object[] { id });
             var medical = data.Rows[0];
             txtMathuoc.Text = medical["MaThuoc"].ToString();
+            medicalId = medical["MaThuoc"].ToString();
             txtTenthuoc.Text = medical["TenThuoc"].ToString();
-            txtDonvitinh.Text = medical["Donvi"].ToString();
+            txtDonvi.Text = medical["Donvi"].ToString();
             CultureInfo culture = new CultureInfo("vi-VN");
             decimal price = Convert.ToDecimal(medical["Dongia"]);
-            //txtDongia.Text = price.ToString();
-            //txtTotalInventory.Text = medical["Soluong"].ToString();
-            loadConsignment(id);
-            btnAdd.enable();
+
+            checkingEnableAddBtn();
         }
 
         private void addMedicall2PO()
         {
-            string medicalId = txtMathuoc.Text;
-            int quantity;
-            decimal price = Convert.ToDecimal(txtDongia.Text);
 
-            if (String.IsNullOrWhiteSpace(txtSoluonglo.Text))
+
+
+            decimal price = Convert.ToDecimal(txtGianhap.Text);
+
+            if (String.IsNullOrWhiteSpace(txtGianhap.Text))
+            {
+                Helper.showErrorMessage("Vui lòng nhập Giá nhập");
+                return;
+            }
+
+            if (String.IsNullOrWhiteSpace(txtSoluong.Text))
             {
                 Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
@@ -146,6 +162,14 @@ namespace medical_management
                 Helper.showErrorMessage("Mặt hàng này đã tồn tại trong đơn thuốc!");
                 return;
             }
+
+
+            insertConsignment();
+            loadConsignment();
+            resetMedical();
+            this.malo = createMalo();
+            txtMalo.Text = this.malo;
+            btnAdd.disable();
         }
 
         private bool isDuplicateMedicineInDetail(string medicalId)
@@ -164,9 +188,33 @@ namespace medical_management
             return false;
         }
 
+        private void insertConsignment()
+        {
+            decimal price = Convert.ToDecimal(txtGianhap.Text);
+            string insert = "INSERT INTO dbo.tbl_Consignment(Manhap, Malo, Mathuoc, Soluong, Gianhap, Ngaysanxuat, Ngayhethan) " +
+                            "VALUES( @Manhap , @Malo , @Mathuoc , @Soluong , @Gianhap , @Ngaysanxuat , @Ngayhethan ) ";
+            Database.Instance.excuteNonQuery(insert, new object[] { poId, malo, medicalId, Int16.Parse(txtSoluong.Text), price, dtpNgaysanxuat.Value, dtpNgayhethan.Value });
+
+        }
+
+        private void loadConsignment()
+        {
+            string query = "SELECT a.Mathuoc, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien, a.Ngaysanxuat, a.Ngayhethan " +
+                           "FROM dbo.tbl_Consignment a INNER JOIN dbo.tbl_Item b " +
+                           "ON a.Mathuoc = b.Mathuoc WHERE a.Manhap = @Manhap";
+
+            DataTable data = Database.Instance.excuteQuery(query, new object[] { poId });
+            dgvPhieunhapchitiet.DataSource = data;
+            loadSubtotal();
+            loadTotal();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addMedicall2PO();
+
+
+
         }
 
         private void loadSubtotal()
@@ -182,8 +230,8 @@ namespace medical_management
 
         private decimal calTotal()
         {
-            return subtotal * (1 - (discount / 100));
-        } 
+            return subtotal * (1 - (discount / 100)) * (1 + VAT / 100);
+        }
         private void loadTotal()
         {
             total = calTotal();
@@ -194,29 +242,33 @@ namespace medical_management
         {
             txtMathuoc.Text = "";
             txtTenthuoc.Text = "";
-            txtDonvitinh.Text = "";
-            txtDongia.Text = "";
-            txtSoluonglo.Text = "";
-            lblSoluong.Text = "Số lượng";
-            dtpHsd.CustomFormat = "";
-          
+            txtDonvi.Text = "";
+            txtGianhap.Text = "";
+            txtSoluong.Text = "";
+            dtpNgaysanxuat.Value = DateTime.Today;
+            dtpNgayhethan.Value = DateTime.Today;
+
         }
 
-        private void loadInvoiceDetail()
+        /// <summary>
+        /// Kiểm tra trạng thái enable nút thêm
+        /// </summary>
+        private void checkingEnableAddBtn()
         {
-            string query = "SELECT b.Mathuoc, b.Tenthuoc, b.Donvi, a.Dongia, a.Soluong, (a.Soluong * a.Dongia) AS Thanhtien " +
-                           "FROM dbo.tbl_PurchaseOrderDetail a INNER JOIN dbo.tbl_Item b " +
-                           "ON a.Mathuoc = b.Mathuoc WHERE a.MaHD = @MaHD";
-
-            DataTable data = Database.Instance.excuteQuery(query, new object[] { poId });
-            dgvPhieunhapchitiet.DataSource = data;
-            loadSubtotal();
-            loadTotal();
+            if (supplierId != null && medicalId != null)
+            {
+                btnAdd.enable();
+                insertPO();
+            }
+            else
+            {
+                btnAdd.disable();
+            }
         }
 
         private void frmPhieunhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Button btnCompleteInvoice = sender as Button;
+            Button btnCompletePO = sender as Button;
 
             if (isSelectCompletePO)
             {
@@ -226,27 +278,26 @@ namespace medical_management
             {
                 deletePO();
             }
+
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            deletePO();
         }
 
         private void deletePO()
         {
-            string id = txtManhap.Text;
-            string delete = "Delete From tbl_PurchaseOrder Where Manhap=@Manhap";
+            string id = poId;
+            string delete = "Delete From dbo.tbl_PurchaseOrder Where Manhap= @Manhap";
             Database.Instance.excuteNonQuery(delete, new object[] { id });
-           
+
+            string delete1 = "Delete From dbo.tbl_Consignment Where Manhap= @Manhap";
+            Database.Instance.excuteNonQuery(delete1, new object[] { id });
+
         }
 
-        private void txtGiamgia_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtChietkhau.Text))
-            {
-                discount = 0M;
-                txtChietkhau.Text = "0";
-            }
-
-            discount = Convert.ToDecimal(txtChietkhau.Text);
-            loadTotal();
-        }
 
         private void txtChietkhau_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -273,5 +324,261 @@ namespace medical_management
             decimal i;
             return decimal.TryParse(str, out i) && i >= 0 && i <= 100;
         }
+
+        private void txtChietkhau_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtChietkhau.Text))
+            {
+                discount = 0M;
+                txtChietkhau.Text = "0";
+            }
+
+            discount = Convert.ToDecimal(txtChietkhau.Text);
+            loadTotal();
+        }
+
+        private void txtThue_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtChietkhau.Text))
+            {
+                VAT = 0M;
+                txtThue.Text = "0";
+            }
+
+            VAT = Convert.ToDecimal(txtThue.Text);
+            loadTotal();
+        }
+
+        public static bool isVATValid(string str)
+        {
+            decimal i;
+            return decimal.TryParse(str, out i) && i >= 0 && i <= 100;
+        }
+
+        private void txtThue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            string value = ((TextBox)sender).Text + e.KeyChar;
+            if (e.KeyChar != '\b')
+            {
+                e.Handled = !isVATValid(value);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo, Manhap= @Manhap ";
+            int quantity;
+            quantity = Convert.ToInt32(txtSoluong.Text);
+
+            if (String.IsNullOrWhiteSpace(txtGianhap.Text))
+            {
+                Helper.showErrorMessage("Vui lòng nhập Giá nhập");
+                return;
+            }
+
+            if (String.IsNullOrWhiteSpace(txtSoluong.Text))
+            {
+                Helper.showErrorMessage("Vui lòng nhập số lượng");
+                return;
+            }
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , malo, poId});
+            loadConsignment();
+            resetEditMode();
+        }
+
+        private void resetEditMode()
+        {
+            resetMedical();
+            isEdit = false;
+            btnAdd.visible();
+            btnUpdate.gone();
+            btnCancel.gone();
+        }
+
+        private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGianhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            resetEditMode();
+        }
+
+        private void btnGhinhan_Click(object sender, EventArgs e)
+        {
+            var query = "UPDATE tbl_PurchaseOrder SET Soluonglo = @Soluonglo , Tongtien = @Tongtien ,Dathanhtoan = @Dathanhtoan , Thue = @Thue WHERE Manhap = @Manhap";
+            var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, Int16.Parse(txtThue.Text), poId };
+            Database.Instance.excuteNonQuery(query, param);
+
+
+            var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap =  (i.Gianhap + c.Gianhap) /2 FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
+
+            Database.Instance.excuteNonQuery(updateItemQuery, new object[] { poId }); 
+            var updatePriceQuery = "UPDATE tbl_Item SET tbl_Item.Dongia = tbl_Item.Gianhap * 1.1;";
+
+            Database.Instance.excuteNonQuery(updatePriceQuery);
+
+            poId =  createPOId();
+
+            Helper.showSuccessMessage("Thêm mới thành công");
+            isSelectCompletePO = true;
+            this.Close();
+        
+            return;
+
+
+        }
+
+        private void bindingEditMode(string id)
+        {
+            object dataSoure = dgvPhieunhapchitiet.DataSource;
+            txtMathuoc.binding(dataSoure, "Mathuoc");
+            //txtTenthuoc.binding(dataSoure, "Tenthuoc");
+            string query = "Select Tenthuoc From dbo.tbl_Item Where Mathuoc = @Mathuoc ";
+            txtTenthuoc.Text = Database.Instance.ExecuteScalar(query, new object[] { id }).ToString();
+            Database.Instance.excuteQuery(query, new object[] { medicalId });
+            txtDonvi.binding(dataSoure, "Donvi");
+
+
+
+
+        }
+
+        private void dgvPhieunhapchitiet_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                cmnuPODetail.Show(Cursor.Position.X, Cursor.Position.Y);
+                if (isEdit)
+                {
+                    cmnuPODetail.disable();
+                }
+                else
+                {
+                    cmnuPODetail.enable();
+                }
+            }
+        }
+
+        private void sửaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (selectedMedicalId != null)
+            {
+                bindingEditMode(selectedMedicalId);
+
+                isEdit = true;
+                btnAdd.gone();
+                btnUpdate.visible();
+                btnCancel.visible();
+            }
+        }
+
+        private void deleteItem_Click(object sender, EventArgs e)
+        {
+            if (selectedMedicalId != null)
+            {
+                Helper.showDialogConfirmDelete("Bạn có chắn chắn muốn xóa sản phẩm này?", delMedicalFromPO);
+
+            }
+        }
+
+        private void delMedicalFromPO()
+        {
+            string del = "DELETE FROM dbo.tbl_Consignment WHERE Manhap = @Manhap ";
+            try
+            {
+                int result = Database.Instance.excuteNonQuery(del, new object[] { poId, selectedMedicalId });
+                if (result > 0)
+                {
+                    loadConsignment();
+                    resetMedical();
+                }
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 547)
+                {
+                    Helper.showErrorMessage(e.Message);
+                }
+            }
+        }
+
+        private void dgvPhieunhapchitiet_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                try
+                {
+                    dgvPhieunhapchitiet.CurrentCell = dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    // Can leave these here - doesn't hurt
+                    dgvPhieunhapchitiet.Rows[e.RowIndex].Selected = true;
+                    dgvPhieunhapchitiet.Focus();
+                    if (dgvPhieunhapchitiet.Rows[e.RowIndex].IsNewRow)
+                    {
+                        selectedMedicalId = null;
+                    }
+                    else
+                    {
+                        selectedMedicalId = Convert.ToString(dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[0].Value);
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
+        }
+
+        //private void loadQuantity()
+        //{
+        //    string query = "SELECT Malo, (Soluong - Daban) AS Tonkho FROM tbl_Consignment WHERE Mathuoc = @Mathuoc " +
+        //                   "AND Daban < Soluong";
+        //    DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
+
+        //    foreach (DataRow item in data.Rows)
+        //    { 
+        //        int inventory = (int)item["Tonkho"];
+
+        //        string updateQuatity = " Update dbo.Item Set Soluong = Tonkho + ( Select Soluong From tbl_Consignmnet Where Mathuoc = @Mathuoc) " +
+        //            "From tbl_Item Join tbl_Consignment On tbl_Consignment.Mathuoc = tbl_Item.Mathuoc";
+        //        DataTable data = Database.Instance.excuteNonQuery(updateQuatity, new object[] { medicalId });
+        //    }
+
+
+        }
     }
-}
+

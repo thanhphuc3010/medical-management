@@ -72,6 +72,7 @@ namespace medical_management
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.Size = new System.Drawing.Size(776, 318);
             this.dgvSupplier.TabIndex = 2;
+            this.dgvSupplier.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellContentDoubleClick_1);
             // 
             // MaNCC
             // 
@@ -97,7 +98,7 @@ namespace medical_management
             this.Sdt.HeaderText = "Số điện thoại";
             this.Sdt.Name = "Sdt";
             // 
-            // Form1
+            // frmSelectSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +106,7 @@ namespace medical_management
             this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblSearch);
-            this.Name = "Form1";
+            this.Name = "frmSelectSupplier";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();

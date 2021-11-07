@@ -46,7 +46,16 @@ namespace medical_management
             initializeUI();
         }
 
-        private void dgvSupplier_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //private void dgvSupplier_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    int index = dgvSupplier.CurrentRow.Index;
+        //    string supplierId = dgvSupplier.Rows[index].Cells["MaNCC"].Value.ToString();
+        //    string supplierName = dgvSupplier.Rows[index].Cells["TenNCC"].Value.ToString();
+        //    publisher?.Invoke(supplierId, supplierName);
+        //    this.Close();
+        //}
+
+        private void dgvSupplier_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int index = dgvSupplier.CurrentRow.Index;
             string supplierId = dgvSupplier.Rows[index].Cells["MaNCC"].Value.ToString();
