@@ -1,6 +1,8 @@
-﻿using System;
+﻿using medical_management.Source.Utils;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -79,26 +81,49 @@ namespace medical_management
 
         /**
          * <summary>Hide or show control following visible state of control</summary>
-         * <param name="isVisible">state of control: true if control is visible else false</param>
+         * <param name="visible">state of control: true if control is visible else false</param>
          */
-        public static void visibleOrGone(this Control control, bool isVisible)
+        public static void visibleOrGone(this Control control, bool visible)
         {
-            if (isVisible)
-            {
-                control.Visible = false;
-            }
-            else
+            if (visible)
             {
                 control.Visible = true;
             }
+            else
+            {
+                control.Visible = false;
+            }
+        }
+
+        public static void SetTextColorReadOnly(this TextBox textBox, Color color)
+        {
+            textBox.ReadOnly = true;    
+            textBox.ForeColor = color;
+            textBox.BackColor = textBox.BackColor;
+        }
+
+        public static string formatCurrencyVN(decimal value)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            string result = value.ToString("c", culture);
+            return result;
         }
 
         public static string createId(string prefix, string query, string field)
         {
             DataTable data = Database.Instance.excuteQuery(query);
-            string lastID = data.Rows[0][field].ToString();
-            string index = lastID.Substring(prefix.Length);
-            int key = Convert.ToInt16(index) + 1;
+            int key = 0;
+            if (data.Rows.Count > 0)
+            {
+                string lastID = data.Rows[0][field].ToString();
+                string index = lastID.Substring(prefix.Length);
+                key = Convert.ToInt16(index) + 1;
+            }
+            else
+            {
+                key = 1;
+            }
+           
             return formatStringNumber(key, prefix);
         }
 

@@ -49,8 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\InvoiceBUS.cs" />
+    <Compile Include="BUS\PaymentBUS.cs" />
+    <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DTO\Consignment.cs" />
+    <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\Payment.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="frmSelectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectSupplier.Designer.cs">
+      <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\SQLConnection\Database.cs" />
     <Compile Include="DTO\Invoice.cs" />
     <Compile Include="DTO\InvoiceDetail.cs" />
@@ -154,6 +166,10 @@
     <Compile Include="Source\Utils\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Utils\MyColor.cs" />
+    <EmbeddedResource Include="frmSelectSupplier.resx">
+      <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesInvoice\frmDSHD.resx">
       <DependentUpon>frmDSHD.cs</DependentUpon>
     </EmbeddedResource>
