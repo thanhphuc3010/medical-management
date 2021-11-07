@@ -166,6 +166,7 @@
     <Compile Include="Source\Utils\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Utils\MyColor.cs" />
     <EmbeddedResource Include="frmSelectSupplier.resx">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
     </EmbeddedResource>

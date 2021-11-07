@@ -14,6 +14,7 @@ namespace medical_management
 {
     public partial class frmHTPPharmacy : Form
     {
+        public bool isLogin = false;
         public string staffId;
         private Staff staff;
         public frmHTPPharmacy()
@@ -24,9 +25,12 @@ namespace medical_management
         private void frmHTPPharmacy_Load(object sender, EventArgs e)
         {
             showLoginForm();
-            staff = StaffBUS.getStaffById(staffId);
-            tssStaffName.Text = staff.Id + " - " + staff.Name;
-            ttsDatetime.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            if (isLogin)
+            {
+                staff = StaffBUS.getStaffById(staffId);
+                tssStaffName.Text = staff.Id + " - " + staff.Name;
+                ttsDatetime.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
         }
 
         private void showLoginForm()

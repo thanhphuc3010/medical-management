@@ -1,6 +1,8 @@
-﻿using System;
+﻿using medical_management.Source.Utils;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -91,6 +93,13 @@ namespace medical_management
             {
                 control.Visible = false;
             }
+        }
+
+        public static void SetTextColorReadOnly(this TextBox textBox, Color color)
+        {
+            textBox.ReadOnly = true;    
+            textBox.ForeColor = color;
+            textBox.BackColor = textBox.BackColor;
         }
 
         public static string formatCurrencyVN(decimal value)

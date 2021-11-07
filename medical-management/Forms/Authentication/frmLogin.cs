@@ -21,9 +21,15 @@ namespace medical_management
         public frmLogin()
         {
             InitializeComponent();
+            this.txtPassword.KeyPress += new KeyPressEventHandler(checkEnterKeyPress);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+            handleLogin();
+        }
+
+        private void handleLogin()
         {
             if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password)) return;
             User user = UserBUS.getUser(username, password);
@@ -32,21 +38,26 @@ namespace medical_management
                 isLogin = true;
                 staffId = user.StaffId;
                 this.Close();
-                Helper.showSuccessMessage(username + "-" + password);
-            } else
+                Helper.showSuccessMessage("Đăng nhập thành công, xin chào " + user.Username);
+            }
+            else
             {
                 Helper.showErrorMessage("Tên đăng nhập hoặc mật khẩu không chính xác, vui lòng thử lại!");
             }
         }
 
+        #region Handle event in control
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isLogin)
             {
+                frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+                f.isLogin = false;
                 Application.Exit();
             } else
             {
                 frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+                f.isLogin = true;
                 f.staffId = this.staffId;
             }
         }
@@ -59,6 +70,15 @@ namespace medical_management
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             password = txtPassword.Text.Trim();
+        }
+        #endregion
+
+        private void checkEnterKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                handleLogin();
+            }
         }
     }
 }

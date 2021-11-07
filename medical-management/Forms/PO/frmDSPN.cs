@@ -20,8 +20,14 @@ namespace medical_management
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmPhieunhap f = new frmPhieunhap();
+            frmPhieunhap f = new frmPhieunhap(this);
+            f.reloadPOEventHandler += refreshEventHandler;
             f.ShowDialog();
+        }
+
+        private void refreshEventHandler(object sender, frmPhieunhap.ReloadPOEventArgs args)
+        {
+            loadlistPO();
         }
 
         private void frmDSPN_Load(object sender, EventArgs e)

@@ -12,11 +12,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using medical_management.BUS;
 using medical_management.DTO;
+using medical_management.Source.Utils;
 
 namespace medical_management
 {
     public partial class frmPhieunhap : Form
     {
+        public delegate void RefreshDelegate(object sender, ReloadPOEventArgs args);
+        public event RefreshDelegate reloadPOEventHandler;
+
+        public class ReloadPOEventArgs : EventArgs
+        {
+            public string Data { get; set; }
+        }
+
+        protected void refreshListPO()
+        {
+            ReloadPOEventArgs args = new ReloadPOEventArgs();
+            reloadPOEventHandler.Invoke(this, args);
+        }
+
         private decimal subtotal = 0M;
         private decimal total = 0M;
         private decimal discount = 0M;
@@ -32,27 +47,16 @@ namespace medical_management
         private bool isSelectCompletePO = false;
         private bool isEdit = false;
         string selectedMedicalId;
-        private List<Consignment> consignments = new List<Consignment>();
-        public frmPhieunhap()
+        public frmPhieunhap(frmDSPN frmDSPN)
         {
             InitializeComponent();
         }
 
-
-
-        private void lblPhieunhap_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvPhieunhaphang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void frmPhieunhap_Load(object sender, EventArgs e)
         {
+            // Alt + Enter
             loadData();
+            this.txtMalo.SetTextColorReadOnly(MyColor.red);
         }
 
         private void insertPO()
@@ -141,8 +145,6 @@ namespace medical_management
         private void addMedicall2PO()
         {
 
-
-
             decimal price = Convert.ToDecimal(txtGianhap.Text);
 
             if (String.IsNullOrWhiteSpace(txtGianhap.Text))
@@ -212,9 +214,6 @@ namespace medical_management
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addMedicall2PO();
-
-
-
         }
 
         private void loadSubtotal()
@@ -454,6 +453,8 @@ namespace medical_management
 
             Helper.showSuccessMessage("Thêm mới thành công");
             isSelectCompletePO = true;
+
+            refreshListPO();
             this.Close();
         
             return;
@@ -563,6 +564,11 @@ namespace medical_management
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         //private void loadQuantity()
         //{
         //    string query = "SELECT Malo, (Soluong - Daban) AS Tonkho FROM tbl_Consignment WHERE Mathuoc = @Mathuoc " +
@@ -579,6 +585,6 @@ namespace medical_management
         //    }
 
 
-        }
+    }
     }
 

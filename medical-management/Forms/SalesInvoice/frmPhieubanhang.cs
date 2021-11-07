@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using medical_management.BUS;
 using medical_management.DTO;
+using medical_management.Source.Utils;
 
 namespace medical_management
 {
@@ -138,6 +139,8 @@ namespace medical_management
             txtTongcong.BackColor = txtTongcong.BackColor;
             txtTongtienhang.BackColor = txtTongtienhang.BackColor;
             txtDongia.BackColor = txtDongia.BackColor;
+
+            txtMaHD.SetTextColorReadOnly(MyColor.invoiceNumber);
 
             frmHTPPharmacy f = (frmHTPPharmacy)Owner;
             this.staffId = f.staffId;
