@@ -88,5 +88,12 @@ namespace medical_management
         {
             Application.Exit();
         }
+
+        private void mItemPO_Click(object sender, EventArgs e)
+        {
+            frmDSPN f = new frmDSPN();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

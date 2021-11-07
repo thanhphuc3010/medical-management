@@ -201,7 +201,7 @@ namespace medical_management
 
         private void loadConsignment()
         {
-            string query = "SELECT a.Mathuoc, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien, a.Ngaysanxuat, a.Ngayhethan " +
+            string query = "SELECT a.Mathuoc, a.Malo, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien, a.Ngaysanxuat, a.Ngayhethan " +
                            "FROM dbo.tbl_Consignment a INNER JOIN dbo.tbl_Item b " +
                            "ON a.Mathuoc = b.Mathuoc WHERE a.Manhap = @Manhap";
 
@@ -375,7 +375,7 @@ namespace medical_management
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo, Manhap= @Manhap ";
+            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo ";
             int quantity;
             quantity = Convert.ToInt32(txtSoluong.Text);
 
@@ -390,7 +390,8 @@ namespace medical_management
                 Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
             }
-            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , malo, poId});
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , maloDuocChon});
+            txtMalo.Text = malo;
             loadConsignment();
             resetEditMode();
         }
@@ -472,6 +473,7 @@ namespace medical_management
             Database.Instance.excuteQuery(query, new object[] { medicalId });
             txtDonvi.binding(dataSoure, "Donvi");
 
+            txtMalo.Text = maloDuocChon;
 
 
 
@@ -517,10 +519,10 @@ namespace medical_management
 
         private void delMedicalFromPO()
         {
-            string del = "DELETE FROM dbo.tbl_Consignment WHERE Manhap = @Manhap ";
+            string del = "DELETE FROM dbo.tbl_Consignment WHERE Malo = @Malo ";
             try
             {
-                int result = Database.Instance.excuteNonQuery(del, new object[] { poId, selectedMedicalId });
+                int result = Database.Instance.excuteNonQuery(del, new object[] { maloDuocChon });
                 if (result > 0)
                 {
                     loadConsignment();
@@ -553,6 +555,7 @@ namespace medical_management
                     else
                     {
                         selectedMedicalId = Convert.ToString(dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[0].Value);
+                        maloDuocChon = Convert.ToString(dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[1].Value);
                     }
 
                 }
@@ -569,20 +572,10 @@ namespace medical_management
 
         }
 
-        //private void loadQuantity()
-        //{
-        //    string query = "SELECT Malo, (Soluong - Daban) AS Tonkho FROM tbl_Consignment WHERE Mathuoc = @Mathuoc " +
-        //                   "AND Daban < Soluong";
-        //    DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
+        private void dgvPhieunhapchitiet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        //    foreach (DataRow item in data.Rows)
-        //    { 
-        //        int inventory = (int)item["Tonkho"];
-
-        //        string updateQuatity = " Update dbo.Item Set Soluong = Tonkho + ( Select Soluong From tbl_Consignmnet Where Mathuoc = @Mathuoc) " +
-        //            "From tbl_Item Join tbl_Consignment On tbl_Consignment.Mathuoc = tbl_Item.Mathuoc";
-        //        DataTable data = Database.Instance.excuteNonQuery(updateQuatity, new object[] { medicalId });
-        //    }
+        }
 
 
     }
