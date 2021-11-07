@@ -83,6 +83,12 @@ namespace medical_management
             txtTongtienthanhtoan.BackColor = txtTongtienthanhtoan.BackColor;
             txtGianhap.BackColor = txtGianhap.BackColor;
             btnAdd.disable();
+
+            frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+            this.staffId = f.staffId;
+            Staff staff = StaffBUS.getStaffById(this.staffId);
+            txtNhanviennhap.Text = staff.Name;
+            txtNhanviennhap.SetTextColorReadOnly(MyColor.red);
         }
         private void NextId()
         {

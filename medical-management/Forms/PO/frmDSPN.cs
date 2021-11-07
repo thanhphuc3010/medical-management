@@ -22,7 +22,7 @@ namespace medical_management
         {
             frmPhieunhap f = new frmPhieunhap(this);
             f.reloadPOEventHandler += refreshEventHandler;
-            f.ShowDialog();
+            f.ShowDialog(this);
         }
 
         private void refreshEventHandler(object sender, frmPhieunhap.ReloadPOEventArgs args)
