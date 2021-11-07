@@ -426,7 +426,7 @@ namespace medical_management
             this.lblKhachHang.ContextMenuStrip = this.cmnuKH;
             this.lblKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHang.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblKhachHang.Location = new System.Drawing.Point(555, 87);
+            this.lblKhachHang.Location = new System.Drawing.Point(571, 90);
             this.lblKhachHang.Name = "lblKhachHang";
             this.lblKhachHang.Size = new System.Drawing.Size(197, 23);
             this.lblKhachHang.TabIndex = 48;

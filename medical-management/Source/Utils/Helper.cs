@@ -79,42 +79,26 @@ namespace medical_management
 
         /**
          * <summary>Hide or show control following visible state of control</summary>
-         * <param name="visible">state of control: true if control is visible else false</param>
+         * <param name="isVisible">state of control: true if control is visible else false</param>
          */
-        public static void visibleOrGone(this Control control, bool visible)
+        public static void visibleOrGone(this Control control, bool isVisible)
         {
-            if (visible)
-            {
-                control.Visible = true;
-            }
-            else
+            if (isVisible)
             {
                 control.Visible = false;
             }
-        }
-
-        public static string formatCurrencyVN(decimal value)
-        {
-            CultureInfo culture = new CultureInfo("vi-VN");
-            string result = value.ToString("c", culture);
-            return result;
+            else
+            {
+                control.Visible = true;
+            }
         }
 
         public static string createId(string prefix, string query, string field)
         {
             DataTable data = Database.Instance.excuteQuery(query);
-            int key = 0;
-            if (data.Rows.Count > 0)
-            {
-                string lastID = data.Rows[0][field].ToString();
-                string index = lastID.Substring(prefix.Length);
-                key = Convert.ToInt16(index) + 1;
-            }
-            else
-            {
-                key = 1;
-            }
-           
+            string lastID = data.Rows[0][field].ToString();
+            string index = lastID.Substring(prefix.Length);
+            int key = Convert.ToInt16(index) + 1;
             return formatStringNumber(key, prefix);
         }
 
