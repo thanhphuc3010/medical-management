@@ -31,14 +31,13 @@ namespace medical_management
             reloadEventHandler.Invoke(this, args);
         }
 
-
         private bool isCreate;
         private string customerId = "WALKINGUEST";
         private decimal subtotal = 0M;
         private decimal total = 0M;
         private decimal discount = 0M;
         private string invoiceId;
-        private string staffId = "NV01";
+        private string staffId;
         private bool isSelectCompleteInvoice = false;
         private bool isEdit = false;
         private string status;
@@ -82,8 +81,14 @@ namespace medical_management
                 dtpNgayHD.Value = Convert.ToDateTime(row["NgayHD"]);
                 status = row["Trangthaihoadon"].ToString();
                 txtTongcong.Text = Helper.formatCurrencyVN(Convert.ToDecimal(row["Tongtien"]));
+
+                string staffId = row["MaNV"].ToString();
+                Staff staff = StaffBUS.getStaffById(staffId);
+                txtTenNV.Text = staff.Name;
+
             }
             btnSelectCustomer.gone();
+            txtTenNV.ReadOnly = true;
             loadInvoiceDetail();
             bindControlByStatus(status);
             dgvPayment.DataSource = PaymentBUS.getPayments(invoiceId);
@@ -133,6 +138,12 @@ namespace medical_management
             txtTongcong.BackColor = txtTongcong.BackColor;
             txtTongtienhang.BackColor = txtTongtienhang.BackColor;
             txtDongia.BackColor = txtDongia.BackColor;
+
+            frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+            this.staffId = f.staffId;
+            Staff staff = StaffBUS.getStaffById(this.staffId);
+            txtTenNV.Text = staff.Name;
+            txtTenNV.ReadOnly = true;
         }
 
         private void loadConsignment(string medicalId)
@@ -672,11 +683,6 @@ namespace medical_management
             {
                 e.Handled = true;
             }
-        }
-
-        private void frmPhieubanhang_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
         }
     }
 }
