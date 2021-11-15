@@ -31,8 +31,6 @@ namespace medical_management
         {
             this.lblDMPN = new System.Windows.Forms.Label();
             this.dgvDSPN = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvPNCT = new System.Windows.Forms.DataGridView();
             this.Manhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngaynhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +38,8 @@ namespace medical_management
             this.Soluonglo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dgvPNCT = new System.Windows.Forms.DataGridView();
             this.Malo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,41 +83,6 @@ namespace medical_management
             this.dgvDSPN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPN_CellClick);
             this.dgvDSPN.Sorted += new System.EventHandler(this.dgvDSPN_Sorted);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::medical_management.Properties.Resources.plus_circle_outline;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(253, 9);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 30);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // dgvPNCT
-            // 
-            this.dgvPNCT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPNCT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPNCT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvPNCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPNCT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Malo,
-            this.Mathuoc,
-            this.Soluong,
-            this.Donvi,
-            this.Gianhap,
-            this.Thanhtien});
-            this.dgvPNCT.Location = new System.Drawing.Point(12, 315);
-            this.dgvPNCT.Name = "dgvPNCT";
-            this.dgvPNCT.Size = new System.Drawing.Size(915, 186);
-            this.dgvPNCT.TabIndex = 3;
-            // 
             // Manhap
             // 
             this.Manhap.DataPropertyName = "Manhap";
@@ -159,6 +124,41 @@ namespace medical_management
             this.Thue.DataPropertyName = "Thue";
             this.Thue.HeaderText = "Thuế";
             this.Thue.Name = "Thue";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.Location = new System.Drawing.Point(253, 9);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 30);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dgvPNCT
+            // 
+            this.dgvPNCT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPNCT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPNCT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPNCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPNCT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Malo,
+            this.Mathuoc,
+            this.Soluong,
+            this.Donvi,
+            this.Gianhap,
+            this.Thanhtien});
+            this.dgvPNCT.Location = new System.Drawing.Point(12, 315);
+            this.dgvPNCT.Name = "dgvPNCT";
+            this.dgvPNCT.Size = new System.Drawing.Size(915, 186);
+            this.dgvPNCT.TabIndex = 3;
             // 
             // Malo
             // 
@@ -207,6 +207,7 @@ namespace medical_management
             this.Controls.Add(this.lblDMPN);
             this.Name = "frmDSPN";
             this.Text = "frmDMPN";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDSPN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPNCT)).EndInit();

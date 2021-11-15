@@ -41,14 +41,12 @@ namespace medical_management
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSđt = new System.Windows.Forms.Label();
             this.lblDiachi = new System.Windows.Forms.Label();
-            this.lblLoaidoituong = new System.Windows.Forms.Label();
             this.lblTenKH = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
-            this.txtLoaidoituong = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.btnDau = new System.Windows.Forms.Button();
             this.btnCuoi = new System.Windows.Forms.Button();
@@ -57,7 +55,6 @@ namespace medical_management
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loaidoituong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,21 +174,11 @@ namespace medical_management
             // 
             this.lblDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDiachi.AutoSize = true;
-            this.lblDiachi.Location = new System.Drawing.Point(84, 157);
+            this.lblDiachi.Location = new System.Drawing.Point(84, 131);
             this.lblDiachi.Name = "lblDiachi";
             this.lblDiachi.Size = new System.Drawing.Size(40, 13);
             this.lblDiachi.TabIndex = 10;
             this.lblDiachi.Text = "Địa chỉ";
-            // 
-            // lblLoaidoituong
-            // 
-            this.lblLoaidoituong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblLoaidoituong.AutoSize = true;
-            this.lblLoaidoituong.Location = new System.Drawing.Point(84, 131);
-            this.lblLoaidoituong.Name = "lblLoaidoituong";
-            this.lblLoaidoituong.Size = new System.Drawing.Size(75, 13);
-            this.lblLoaidoituong.TabIndex = 11;
-            this.lblLoaidoituong.Text = "Loại đối tượng";
             // 
             // lblTenKH
             // 
@@ -238,18 +225,10 @@ namespace medical_management
             // txtDiachi
             // 
             this.txtDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDiachi.Location = new System.Drawing.Point(187, 154);
+            this.txtDiachi.Location = new System.Drawing.Point(187, 128);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(150, 20);
             this.txtDiachi.TabIndex = 18;
-            // 
-            // txtLoaidoituong
-            // 
-            this.txtLoaidoituong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtLoaidoituong.Location = new System.Drawing.Point(187, 128);
-            this.txtLoaidoituong.Name = "txtLoaidoituong";
-            this.txtLoaidoituong.Size = new System.Drawing.Size(150, 20);
-            this.txtLoaidoituong.TabIndex = 19;
             // 
             // txtTenKH
             // 
@@ -313,7 +292,6 @@ namespace medical_management
             this.dgvKhachhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKH,
             this.TenKH,
-            this.Loaidoituong,
             this.Diachi,
             this.Sdt,
             this.Email,
@@ -337,15 +315,6 @@ namespace medical_management
             this.TenKH.HeaderText = "Tên Khách hàng";
             this.TenKH.MinimumWidth = 6;
             this.TenKH.Name = "TenKH";
-            // 
-            // Loaidoituong
-            // 
-            this.Loaidoituong.DataPropertyName = "Loaidoituong";
-            this.Loaidoituong.HeaderText = "Loại đối tượng";
-            this.Loaidoituong.MinimumWidth = 6;
-            this.Loaidoituong.Name = "Loaidoituong";
-            this.Loaidoituong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Loaidoituong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Diachi
             // 
@@ -418,14 +387,12 @@ namespace medical_management
             this.Controls.Add(this.btnCuoi);
             this.Controls.Add(this.btnDau);
             this.Controls.Add(this.txtTenKH);
-            this.Controls.Add(this.txtLoaidoituong);
             this.Controls.Add(this.txtDiachi);
             this.Controls.Add(this.txtSdt);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtGhichu);
             this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.lblTenKH);
-            this.Controls.Add(this.lblLoaidoituong);
             this.Controls.Add(this.lblDiachi);
             this.Controls.Add(this.lblSđt);
             this.Controls.Add(this.lblEmail);
@@ -439,6 +406,7 @@ namespace medical_management
             this.Controls.Add(this.btnAdd);
             this.Name = "frmKhachhang";
             this.Text = "frmKhachhang";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmKhachhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachhang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHTDataSet)).EndInit();
@@ -462,14 +430,12 @@ namespace medical_management
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSđt;
         private System.Windows.Forms.Label lblDiachi;
-        private System.Windows.Forms.Label lblLoaidoituong;
         private System.Windows.Forms.Label lblTenKH;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.TextBox txtGhichu;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtDiachi;
-        private System.Windows.Forms.TextBox txtLoaidoituong;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Button btnDau;
         private System.Windows.Forms.Button btnCuoi;
@@ -483,7 +449,6 @@ namespace medical_management
         private System.Windows.Forms.BindingSource tblCustomerBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Loaidoituong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;

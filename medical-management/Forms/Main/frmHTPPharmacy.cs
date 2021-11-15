@@ -48,6 +48,7 @@ namespace medical_management
         private void mItemThuoc_Click(object sender, EventArgs e)
         {
             frmThuoc f = new frmThuoc();
+            f.MdiParent = this;
             f.Show();
 
 
@@ -56,24 +57,28 @@ namespace medical_management
         private void mItemKH_Click(object sender, EventArgs e)
         {
             frmKhachhang f = new frmKhachhang();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNCC_Click(object sender, EventArgs e)
         {
             frmNhacungcap f = new frmNhacungcap();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNSX_Click(object sender, EventArgs e)
         {
             frmNhasanxuat f = new frmNhasanxuat();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNV_Click(object sender, EventArgs e)
         {
             frmNhanvien f = new frmNhanvien();
+            f.MdiParent = this;
             f.Show();
         }
 

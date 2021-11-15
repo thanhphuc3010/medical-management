@@ -463,6 +463,7 @@ namespace medical_management
             this.Controls.Add(this.btnAdd);
             this.Name = "frmNhanvien";
             this.Text = "frmNhanvien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhanvien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).EndInit();
             this.ResumeLayout(false);

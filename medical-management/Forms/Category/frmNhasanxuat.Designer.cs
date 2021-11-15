@@ -343,6 +343,7 @@ namespace medical_management
             this.Controls.Add(this.btnAdd);
             this.Name = "frmNhasanxuat";
             this.Text = "frmNhasanxuat";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhasanxuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhasanxuat)).EndInit();
             this.ResumeLayout(false);

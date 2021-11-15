@@ -449,6 +449,8 @@ namespace medical_management
             Database.Instance.excuteNonQuery(query, param);
 
 
+
+
             var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap =  (i.Gianhap + c.Gianhap) /2 FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
 
             Database.Instance.excuteNonQuery(updateItemQuery, new object[] { poId }); 

@@ -344,6 +344,7 @@ namespace medical_management
             this.Controls.Add(this.btnAdd);
             this.Name = "frmNhacungcap";
             this.Text = "Nhà Cung Cấp";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhacungcap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacungcap)).EndInit();
             this.ResumeLayout(false);
