@@ -448,10 +448,19 @@ namespace medical_management
             var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, Int16.Parse(txtThue.Text), poId };
             Database.Instance.excuteNonQuery(query, param);
 
+            var sqlMedical = "SELECT * FROM tbl_Item WHERE Mathuoc = @Mathuoc ";
 
+            var medicalResult = Database.Instance.excuteQuery(sqlMedical, new object[] { medicalId });
 
+            if(medicalResult.Rows.Count > 0)
+            {
+                var medical = medicalResult.Rows[0];
 
-            var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap =  (i.Gianhap + c.Gianhap) /2 FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
+            }
+
+           
+
+            var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap = CASE i.Gianhap WHEN 0 THEN c.Gianhap ELSE(i.Gianhap + c.Gianhap) /2 END FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
 
             Database.Instance.excuteNonQuery(updateItemQuery, new object[] { poId }); 
             var updatePriceQuery = "UPDATE tbl_Item SET tbl_Item.Dongia = tbl_Item.Gianhap * 1.1;";

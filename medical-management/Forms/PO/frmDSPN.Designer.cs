@@ -78,7 +78,7 @@ namespace medical_management
             this.Thue});
             this.dgvDSPN.Location = new System.Drawing.Point(12, 57);
             this.dgvDSPN.Name = "dgvDSPN";
-            this.dgvDSPN.Size = new System.Drawing.Size(915, 252);
+            this.dgvDSPN.Size = new System.Drawing.Size(915, 285);
             this.dgvDSPN.TabIndex = 1;
             this.dgvDSPN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPN_CellClick);
             this.dgvDSPN.Sorted += new System.EventHandler(this.dgvDSPN_Sorted);
@@ -155,9 +155,9 @@ namespace medical_management
             this.Donvi,
             this.Gianhap,
             this.Thanhtien});
-            this.dgvPNCT.Location = new System.Drawing.Point(12, 315);
+            this.dgvPNCT.Location = new System.Drawing.Point(12, 348);
             this.dgvPNCT.Name = "dgvPNCT";
-            this.dgvPNCT.Size = new System.Drawing.Size(915, 186);
+            this.dgvPNCT.Size = new System.Drawing.Size(915, 153);
             this.dgvPNCT.TabIndex = 3;
             // 
             // Malo
