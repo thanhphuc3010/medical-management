@@ -13,6 +13,13 @@ namespace medical_management
 {
     public partial class frmThuoc : Form
     {
+        private readonly frmSelectMedical frmSelectMedical;
+        public frmThuoc(frmSelectMedical frmSelectMedical)
+        {
+            InitializeComponent();
+            initializeControl();
+            this.frmSelectMedical = frmSelectMedical;
+        }
         public frmThuoc()
         {
             InitializeComponent();
@@ -67,6 +74,12 @@ namespace medical_management
             string insert = "INSERT INTO tbl_Item (Mathuoc, MaNSX, Tenthuoc, Donvi, Hamluong, Soluong, Donggoi, Thanhphan, Dongia, Gianhap, Ghichu)" + "" +
                 "VALUES ( @Mathuoc , @MaNSX , @Tenthuoc , @Donvi , @Hamluong , @Soluong , @Donggoi , @Thanhphan , @Dongia , @Gianhap , @Ghichu )";
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, manhasanxuat, tenthuoc, donvi, hamluong, soluong, donggoi, thanhphan, dongia, gianhap, ghichu });
+
+            if (frmSelectMedical != null)
+            {
+                frmSelectMedical.refreshGrid();
+                this.Close();
+            }
             if (result > 0)
             {
                 loadData();

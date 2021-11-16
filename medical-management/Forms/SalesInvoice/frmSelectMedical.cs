@@ -48,6 +48,11 @@ namespace medical_management
             initializeUI();
         }
 
+        public void refreshGrid()
+        {
+            loadData();
+        }
+
         private void dgvKhachhang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = dgvThuoc.CurrentRow.Index;
@@ -63,7 +68,8 @@ namespace medical_management
 
         private void btnAddMedical_Click(object sender, EventArgs e)
         {
-            frmThuoc f = new frmThuoc();
+            frmThuoc f = new frmThuoc(this);
+            f.WindowState = FormWindowState.Normal;
             f.ShowDialog();
         }
     }
