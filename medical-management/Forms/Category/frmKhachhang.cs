@@ -1,4 +1,5 @@
-﻿using System;
+﻿using medical_management.Source.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,16 @@ namespace medical_management
 {
     public partial class frmKhachhang : Form
     {
+        private readonly frmSelectCustomer frmSelectCustomer;
         private string customerId;
+
+        public frmKhachhang(frmSelectCustomer frmSelectCustomer)
+        {
+            InitializeComponent();
+            this.frmSelectCustomer = frmSelectCustomer;
+            initializeControl();
+
+        }
         public frmKhachhang()
         {
             InitializeComponent();
@@ -33,14 +43,12 @@ namespace medical_management
             string query = "SELECT MaKH, TenKH, Diachi, Sdt, Email, Ghichu FROM tbl_Customer";
             dgvKhachhang.DataSource = Database.Instance.excuteQuery(query);
             bindingData();
-            this.customerId = createCustomerId();
-            txtMaKH.Text = this.customerId;
         }
 
         private string createCustomerId()
         {
             string query = "SELECT TOP 1 MaKH FROM tbl_Customer ORDER BY MaKH DESC";
-            return Helper.createId("KH", query, "MaKH");
+            return Helper.createCustomerId("KH", query, "MaKH");
         }
 
         private void initializeControl()
@@ -58,19 +66,6 @@ namespace medical_management
             txtSdt.binding(dataSoure, "Sdt");
             txtEmail.binding(dataSoure, "Email");
             txtGhichu.binding(dataSoure, "Ghichu");
-
-            //txtTenKH.DataBindings.Clear();
-            //txtTenKH.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "TenKH"));
-            //txtLoaidoituong.DataBindings.Clear();
-            //txtLoaidoituong.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Loaidoituong"));
-            //txtDiachi.DataBindings.Clear();
-            //txtDiachi.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Diachi"));
-            //txtSdt.DataBindings.Clear();
-            //txtSdt.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Sdt"));
-            //txtEmail.DataBindings.Clear();
-            //txtEmail.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Email"));
-            //txtGhichu.DataBindings.Clear();
-            //txtGhichu.DataBindings.Add(new Binding("Text", dgvKhachhang.DataSource, "Ghichu"));
         }
       
 
@@ -87,6 +82,13 @@ namespace medical_management
                 " VALUES ( @MaKH , @TenKH , @Diachi , @Sdt , @Email , @Ghichu )";
 
             int result = Database.Instance.excuteNonQuery(insert, new object[] { id, name, address, phone, email, note });
+
+            if (frmSelectCustomer != null)
+            {
+                frmSelectCustomer.refreshDataGrid();
+                this.Close();
+            }
+
             if (result > 0)
             {
                 loadData();
@@ -141,6 +143,9 @@ namespace medical_management
         {
             btnAdd.disable();
             resetFields();
+            this.customerId = createCustomerId();
+            txtMaKH.Text = this.customerId;
+            txtMaKH.SetTextColorReadOnly(MyColor.primary);
             btnSave.enable();
             txtMaKH.Focus();
         }

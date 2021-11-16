@@ -127,6 +127,24 @@ namespace medical_management
             return formatStringNumber(key, prefix);
         }
 
+        public static string createCustomerId(string prefix, string query, string field)
+        {
+            DataTable data = Database.Instance.excuteQuery(query);
+            int key = 0;
+            if (data.Rows.Count > 0)
+            {
+                string lastID = data.Rows[0][field].ToString();
+                string index = lastID.Substring(prefix.Length);
+                key = Convert.ToInt16(index) + 1;
+            }
+            else
+            {
+                key = 1;
+            }
+
+            return prefix + String.Format("{0:0000}", key);
+        }
+
         public static string formatStringNumber(int i, string prefix)
         {
             string result;

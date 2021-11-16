@@ -9,7 +9,7 @@ namespace medical_management.Source.Utils
 {
     class MyColor
     {
-        public static Color invoiceNumber = Color.FromArgb(16, 68, 115);  
+        public static Color primary = Color.FromArgb(16, 68, 115);  
         
         public static Color complete = Color.FromArgb(6, 189, 109);
 

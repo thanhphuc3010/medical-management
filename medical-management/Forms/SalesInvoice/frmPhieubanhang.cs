@@ -33,7 +33,7 @@ namespace medical_management
         }
 
         private bool isCreate;
-        private string customerId = "WALKINGUEST";
+        private string customerId = "0AWALKINGUEST";
         private decimal subtotal = 0M;
         private decimal total = 0M;
         private decimal discount = 0M;
@@ -140,7 +140,7 @@ namespace medical_management
             txtTongtienhang.BackColor = txtTongtienhang.BackColor;
             txtDongia.BackColor = txtDongia.BackColor;
 
-            txtMaHD.SetTextColorReadOnly(MyColor.invoiceNumber);
+            txtMaHD.SetTextColorReadOnly(MyColor.primary);
 
             frmHTPPharmacy f = (frmHTPPharmacy)Owner;
             this.staffId = f.staffId;
