@@ -32,8 +32,6 @@ namespace medical_management
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,9 @@ namespace medical_management
             this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAddMedical = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,33 +73,16 @@ namespace medical_management
             this.Hansudung,
             this.Ghichu});
             this.dgvThuoc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvThuoc.Location = new System.Drawing.Point(0, 64);
-            this.dgvThuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvThuoc.Location = new System.Drawing.Point(0, 52);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.RowHeadersVisible = false;
             this.dgvThuoc.RowHeadersWidth = 20;
             this.dgvThuoc.RowTemplate.Height = 30;
             this.dgvThuoc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThuoc.Size = new System.Drawing.Size(800, 386);
+            this.dgvThuoc.Size = new System.Drawing.Size(600, 314);
             this.dgvThuoc.TabIndex = 11;
             this.dgvThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellContentClick);
             this.dgvThuoc.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentDoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Tìm kiếm:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(292, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 22);
-            this.textBox1.TabIndex = 30;
             // 
             // Selected
             // 
@@ -216,14 +200,44 @@ namespace medical_management
             this.Ghichu.Name = "Ghichu";
             this.Ghichu.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Tìm kiếm:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(91, 18);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // btnAddMedical
+            // 
+            this.btnAddMedical.Location = new System.Drawing.Point(471, 16);
+            this.btnAddMedical.Name = "btnAddMedical";
+            this.btnAddMedical.Size = new System.Drawing.Size(75, 23);
+            this.btnAddMedical.TabIndex = 32;
+            this.btnAddMedical.Text = "Thêm thuốc";
+            this.btnAddMedical.UseVisualStyleBackColor = true;
+            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
+            // 
             // frmSelectMedical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnAddMedical);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvThuoc);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSelectMedical";
             this.Text = "frmSelectMedical";
             this.Load += new System.EventHandler(this.frmSelectMedical_Load);
@@ -252,5 +266,6 @@ namespace medical_management
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysanxuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hansudung;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
+        private System.Windows.Forms.Button btnAddMedical;
     }
 }

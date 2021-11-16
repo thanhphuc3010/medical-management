@@ -13,6 +13,7 @@ namespace medical_management
 {
     public partial class frmKhachhang : Form
     {
+        private string customerId;
         public frmKhachhang()
         {
             InitializeComponent();
@@ -32,6 +33,14 @@ namespace medical_management
             string query = "SELECT MaKH, TenKH, Diachi, Sdt, Email, Ghichu FROM tbl_Customer";
             dgvKhachhang.DataSource = Database.Instance.excuteQuery(query);
             bindingData();
+            this.customerId = createCustomerId();
+            txtMaKH.Text = this.customerId;
+        }
+
+        private string createCustomerId()
+        {
+            string query = "SELECT TOP 1 MaKH FROM tbl_Customer ORDER BY MaKH DESC";
+            return Helper.createId("KH", query, "MaKH");
         }
 
         private void initializeControl()

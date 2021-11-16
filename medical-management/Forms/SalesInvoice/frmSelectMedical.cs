@@ -60,5 +60,11 @@ namespace medical_management
         {
            
         }
+
+        private void btnAddMedical_Click(object sender, EventArgs e)
+        {
+            frmThuoc f = new frmThuoc();
+            f.ShowDialog();
+        }
     }
 }
