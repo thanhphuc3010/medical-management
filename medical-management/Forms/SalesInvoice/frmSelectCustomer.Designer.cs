@@ -30,9 +30,6 @@ namespace medical_management
         private void InitializeComponent()
         {
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loaidoituong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +37,9 @@ namespace medical_management
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachhang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,31 +68,6 @@ namespace medical_management
             this.dgvKhachhang.TabIndex = 26;
             this.dgvKhachhang.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentDoubleClick);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(103, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 23);
-            this.textBox1.TabIndex = 27;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(634, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 29);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Thêm mới khách hàng";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Tìm kiếm:";
-            // 
             // MaKH
             // 
             this.MaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -101,7 +76,7 @@ namespace medical_management
             this.MaKH.MinimumWidth = 6;
             this.MaKH.Name = "MaKH";
             this.MaKH.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.MaKH.Width = 125;
+            this.MaKH.Width = 99;
             // 
             // TenKH
             // 
@@ -132,7 +107,7 @@ namespace medical_management
             this.Sdt.HeaderText = "Số điện thoại";
             this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
-            this.Sdt.Width = 110;
+            this.Sdt.Width = 87;
             // 
             // Email
             // 
@@ -150,16 +125,42 @@ namespace medical_management
             this.Ghichu.Name = "Ghichu";
             this.Ghichu.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(103, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(297, 19);
+            this.textBox1.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(634, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 29);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Thêm mới khách hàng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Tìm kiếm:";
+            // 
             // frmSelectCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 423);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvKhachhang);
-            this.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSelectCustomer";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
