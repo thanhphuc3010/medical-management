@@ -45,6 +45,18 @@ namespace medical_management
             this.lblThanhphan = new System.Windows.Forms.Label();
             this.lblGhichu = new System.Windows.Forms.Label();
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
+            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nhomthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhphan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hamluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donggoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMathuoc = new System.Windows.Forms.TextBox();
             this.txtMaNSX = new System.Windows.Forms.TextBox();
             this.txtTenthuoc = new System.Windows.Forms.TextBox();
@@ -58,8 +70,6 @@ namespace medical_management
             this.btnCuoi = new System.Windows.Forms.Button();
             this.btnSau = new System.Windows.Forms.Button();
             this.btnTruoc = new System.Windows.Forms.Button();
-            this.lblTongsothuoc = new System.Windows.Forms.Label();
-            this.txtTongsothuoc = new System.Windows.Forms.TextBox();
             this.txtGianhap = new System.Windows.Forms.TextBox();
             this.txtDongia = new System.Windows.Forms.TextBox();
             this.lblGianhap = new System.Windows.Forms.Label();
@@ -67,18 +77,6 @@ namespace medical_management
             this.btnExit = new System.Windows.Forms.Button();
             this.txtNhomthuoc = new System.Windows.Forms.TextBox();
             this.lblNhomthuoc = new System.Windows.Forms.Label();
-            this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nhomthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhphan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hamluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donggoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,6 +258,87 @@ namespace medical_management
             this.dgvThuoc.Size = new System.Drawing.Size(1000, 196);
             this.dgvThuoc.TabIndex = 10;
             // 
+            // Mathuoc
+            // 
+            this.Mathuoc.DataPropertyName = "Mathuoc";
+            this.Mathuoc.HeaderText = "Mã thuốc";
+            this.Mathuoc.MinimumWidth = 6;
+            this.Mathuoc.Name = "Mathuoc";
+            // 
+            // Nhomthuoc
+            // 
+            this.Nhomthuoc.DataPropertyName = "Nhomthuoc";
+            this.Nhomthuoc.HeaderText = "Nhóm thuốc";
+            this.Nhomthuoc.Name = "Nhomthuoc";
+            // 
+            // MaNSX
+            // 
+            this.MaNSX.DataPropertyName = "MaNSX";
+            this.MaNSX.HeaderText = "Mã Nhà sản xuất";
+            this.MaNSX.MinimumWidth = 6;
+            this.MaNSX.Name = "MaNSX";
+            // 
+            // Tenthuoc
+            // 
+            this.Tenthuoc.DataPropertyName = "Tenthuoc";
+            this.Tenthuoc.HeaderText = "Tên thuốc";
+            this.Tenthuoc.MinimumWidth = 6;
+            this.Tenthuoc.Name = "Tenthuoc";
+            // 
+            // Donvi
+            // 
+            this.Donvi.DataPropertyName = "Donvi";
+            this.Donvi.HeaderText = "Đơn vị";
+            this.Donvi.MinimumWidth = 6;
+            this.Donvi.Name = "Donvi";
+            // 
+            // Thanhphan
+            // 
+            this.Thanhphan.DataPropertyName = "Thanhphan";
+            this.Thanhphan.HeaderText = "Thành phần";
+            this.Thanhphan.MinimumWidth = 6;
+            this.Thanhphan.Name = "Thanhphan";
+            // 
+            // Hamluong
+            // 
+            this.Hamluong.DataPropertyName = "Hamluong";
+            this.Hamluong.HeaderText = "Hàm Lượng";
+            this.Hamluong.MinimumWidth = 6;
+            this.Hamluong.Name = "Hamluong";
+            // 
+            // Donggoi
+            // 
+            this.Donggoi.DataPropertyName = "Donggoi";
+            this.Donggoi.HeaderText = "Đóng gói";
+            this.Donggoi.MinimumWidth = 6;
+            this.Donggoi.Name = "Donggoi";
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.MinimumWidth = 6;
+            this.Soluong.Name = "Soluong";
+            // 
+            // Gianhap
+            // 
+            this.Gianhap.DataPropertyName = "Gianhap";
+            this.Gianhap.HeaderText = "Giá nhập";
+            this.Gianhap.Name = "Gianhap";
+            // 
+            // Dongia
+            // 
+            this.Dongia.DataPropertyName = "Dongia";
+            this.Dongia.HeaderText = "Đơn giá";
+            this.Dongia.Name = "Dongia";
+            // 
+            // Ghichu
+            // 
+            this.Ghichu.DataPropertyName = "Ghichu";
+            this.Ghichu.HeaderText = "Ghi chú";
+            this.Ghichu.MinimumWidth = 6;
+            this.Ghichu.Name = "Ghichu";
+            // 
             // txtMathuoc
             // 
             this.txtMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -376,24 +455,6 @@ namespace medical_management
             this.btnTruoc.UseVisualStyleBackColor = true;
             this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
-            // lblTongsothuoc
-            // 
-            this.lblTongsothuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTongsothuoc.AutoSize = true;
-            this.lblTongsothuoc.Location = new System.Drawing.Point(813, 261);
-            this.lblTongsothuoc.Name = "lblTongsothuoc";
-            this.lblTongsothuoc.Size = new System.Drawing.Size(76, 13);
-            this.lblTongsothuoc.TabIndex = 33;
-            this.lblTongsothuoc.Text = "Tổng số thuốc";
-            // 
-            // txtTongsothuoc
-            // 
-            this.txtTongsothuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTongsothuoc.Location = new System.Drawing.Point(906, 254);
-            this.txtTongsothuoc.Name = "txtTongsothuoc";
-            this.txtTongsothuoc.Size = new System.Drawing.Size(106, 20);
-            this.txtTongsothuoc.TabIndex = 34;
-            // 
             // txtGianhap
             // 
             this.txtGianhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -460,87 +521,6 @@ namespace medical_management
             this.lblNhomthuoc.TabIndex = 40;
             this.lblNhomthuoc.Text = "Nhóm thuốc";
             // 
-            // Mathuoc
-            // 
-            this.Mathuoc.DataPropertyName = "Mathuoc";
-            this.Mathuoc.HeaderText = "Mã thuốc";
-            this.Mathuoc.MinimumWidth = 6;
-            this.Mathuoc.Name = "Mathuoc";
-            // 
-            // Nhomthuoc
-            // 
-            this.Nhomthuoc.DataPropertyName = "Nhomthuoc";
-            this.Nhomthuoc.HeaderText = "Nhóm thuốc";
-            this.Nhomthuoc.Name = "Nhomthuoc";
-            // 
-            // MaNSX
-            // 
-            this.MaNSX.DataPropertyName = "MaNSX";
-            this.MaNSX.HeaderText = "Mã Nhà sản xuất";
-            this.MaNSX.MinimumWidth = 6;
-            this.MaNSX.Name = "MaNSX";
-            // 
-            // Tenthuoc
-            // 
-            this.Tenthuoc.DataPropertyName = "Tenthuoc";
-            this.Tenthuoc.HeaderText = "Tên thuốc";
-            this.Tenthuoc.MinimumWidth = 6;
-            this.Tenthuoc.Name = "Tenthuoc";
-            // 
-            // Donvi
-            // 
-            this.Donvi.DataPropertyName = "Donvi";
-            this.Donvi.HeaderText = "Đơn vị";
-            this.Donvi.MinimumWidth = 6;
-            this.Donvi.Name = "Donvi";
-            // 
-            // Thanhphan
-            // 
-            this.Thanhphan.DataPropertyName = "Thanhphan";
-            this.Thanhphan.HeaderText = "Thành phần";
-            this.Thanhphan.MinimumWidth = 6;
-            this.Thanhphan.Name = "Thanhphan";
-            // 
-            // Hamluong
-            // 
-            this.Hamluong.DataPropertyName = "Hamluong";
-            this.Hamluong.HeaderText = "Hàm Lượng";
-            this.Hamluong.MinimumWidth = 6;
-            this.Hamluong.Name = "Hamluong";
-            // 
-            // Donggoi
-            // 
-            this.Donggoi.DataPropertyName = "Donggoi";
-            this.Donggoi.HeaderText = "Đóng gói";
-            this.Donggoi.MinimumWidth = 6;
-            this.Donggoi.Name = "Donggoi";
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.MinimumWidth = 6;
-            this.Soluong.Name = "Soluong";
-            // 
-            // Gianhap
-            // 
-            this.Gianhap.DataPropertyName = "Gianhap";
-            this.Gianhap.HeaderText = "Giá nhập";
-            this.Gianhap.Name = "Gianhap";
-            // 
-            // Dongia
-            // 
-            this.Dongia.DataPropertyName = "Dongia";
-            this.Dongia.HeaderText = "Đơn giá";
-            this.Dongia.Name = "Dongia";
-            // 
-            // Ghichu
-            // 
-            this.Ghichu.DataPropertyName = "Ghichu";
-            this.Ghichu.HeaderText = "Ghi chú";
-            this.Ghichu.MinimumWidth = 6;
-            this.Ghichu.Name = "Ghichu";
-            // 
             // frmThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,8 +534,6 @@ namespace medical_management
             this.Controls.Add(this.txtDongia);
             this.Controls.Add(this.lblGianhap);
             this.Controls.Add(this.lblDongia);
-            this.Controls.Add(this.txtTongsothuoc);
-            this.Controls.Add(this.lblTongsothuoc);
             this.Controls.Add(this.btnTruoc);
             this.Controls.Add(this.btnSau);
             this.Controls.Add(this.btnCuoi);
@@ -627,8 +605,6 @@ namespace medical_management
         private System.Windows.Forms.Button btnCuoi;
         private System.Windows.Forms.Button btnSau;
         private System.Windows.Forms.Button btnTruoc;
-        private System.Windows.Forms.Label lblTongsothuoc;
-        private System.Windows.Forms.TextBox txtTongsothuoc;
         private System.Windows.Forms.TextBox txtGianhap;
         private System.Windows.Forms.TextBox txtDongia;
         private System.Windows.Forms.Label lblGianhap;

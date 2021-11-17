@@ -31,13 +31,6 @@ namespace medical_management
         {
             this.lblDMPN = new System.Windows.Forms.Label();
             this.dgvDSPN = new System.Windows.Forms.DataGridView();
-            this.Manhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaynhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluonglo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvPNCT = new System.Windows.Forms.DataGridView();
             this.Malo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +39,12 @@ namespace medical_management
             this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaynhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluonglo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPNCT)).BeginInit();
             this.SuspendLayout();
@@ -67,63 +66,21 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSPN.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvDSPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDSPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Manhap,
             this.Ngaynhap,
             this.MaNV,
             this.MaNCC,
             this.Soluonglo,
-            this.Tongtien,
-            this.Thue});
+            this.Tongtien});
             this.dgvDSPN.Location = new System.Drawing.Point(12, 57);
             this.dgvDSPN.Name = "dgvDSPN";
+            this.dgvDSPN.RowHeadersWidth = 51;
             this.dgvDSPN.Size = new System.Drawing.Size(915, 285);
             this.dgvDSPN.TabIndex = 1;
             this.dgvDSPN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPN_CellClick);
             this.dgvDSPN.Sorted += new System.EventHandler(this.dgvDSPN_Sorted);
-            // 
-            // Manhap
-            // 
-            this.Manhap.DataPropertyName = "Manhap";
-            this.Manhap.HeaderText = "Mã phiếu nhập";
-            this.Manhap.Name = "Manhap";
-            // 
-            // Ngaynhap
-            // 
-            this.Ngaynhap.DataPropertyName = "Ngaynhap";
-            this.Ngaynhap.HeaderText = "Ngày nhập";
-            this.Ngaynhap.Name = "Ngaynhap";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã Nhân viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // MaNCC
-            // 
-            this.MaNCC.DataPropertyName = "MaNCC";
-            this.MaNCC.HeaderText = "Mã NCC";
-            this.MaNCC.Name = "MaNCC";
-            // 
-            // Soluonglo
-            // 
-            this.Soluonglo.DataPropertyName = "Soluonglo";
-            this.Soluonglo.HeaderText = "Số lượng lô";
-            this.Soluonglo.Name = "Soluonglo";
-            // 
-            // Tongtien
-            // 
-            this.Tongtien.DataPropertyName = "Tongtien";
-            this.Tongtien.HeaderText = "Tổng tiền";
-            this.Tongtien.Name = "Tongtien";
-            // 
-            // Thue
-            // 
-            this.Thue.DataPropertyName = "Thue";
-            this.Thue.HeaderText = "Thuế";
-            this.Thue.Name = "Thue";
             // 
             // btnAdd
             // 
@@ -196,6 +153,42 @@ namespace medical_management
             this.Thanhtien.HeaderText = "Thành tiền";
             this.Thanhtien.Name = "Thanhtien";
             // 
+            // Manhap
+            // 
+            this.Manhap.DataPropertyName = "Manhap";
+            this.Manhap.HeaderText = "Mã phiếu nhập";
+            this.Manhap.Name = "Manhap";
+            // 
+            // Ngaynhap
+            // 
+            this.Ngaynhap.DataPropertyName = "Ngaynhap";
+            this.Ngaynhap.HeaderText = "Ngày nhập";
+            this.Ngaynhap.Name = "Ngaynhap";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã Nhân viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "MaNCC";
+            this.MaNCC.HeaderText = "Mã NCC";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // Soluonglo
+            // 
+            this.Soluonglo.DataPropertyName = "Soluonglo";
+            this.Soluonglo.HeaderText = "Số lượng lô";
+            this.Soluonglo.Name = "Soluonglo";
+            // 
+            // Tongtien
+            // 
+            this.Tongtien.DataPropertyName = "Tongtien";
+            this.Tongtien.HeaderText = "Tổng tiền";
+            this.Tongtien.Name = "Tongtien";
+            // 
             // frmDSPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,18 +215,17 @@ namespace medical_management
         private System.Windows.Forms.DataGridView dgvDSPN;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvPNCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Manhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaynhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluonglo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Thue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Malo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Donvi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gianhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Manhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaynhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluonglo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
     }
 }

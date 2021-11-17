@@ -52,7 +52,7 @@ namespace medical_management
 
         private void loadlistPO()
         {
-            string query = "SELECT Manhap, Ngaynhap, MaNV, MaNCC, Soluonglo, Tongtien, Thue FROM dbo.tbl_PurchaseOrder";
+            string query = "SELECT Manhap, Ngaynhap, MaNV, MaNCC, Soluonglo, Tongtien FROM dbo.tbl_PurchaseOrder";
             DataTable data = Database.Instance.excuteQuery(query);
             dgvDSPN.DataSource = data;
             initializeUI();
