@@ -134,8 +134,9 @@ namespace medical_management
             // 
             this.lblThuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblThuoc.AutoSize = true;
+            this.lblThuoc.BackColor = System.Drawing.Color.Transparent;
             this.lblThuoc.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThuoc.Location = new System.Drawing.Point(385, 26);
+            this.lblThuoc.Location = new System.Drawing.Point(428, 28);
             this.lblThuoc.Name = "lblThuoc";
             this.lblThuoc.Size = new System.Drawing.Size(169, 29);
             this.lblThuoc.TabIndex = 5;
@@ -145,9 +146,11 @@ namespace medical_management
             // 
             this.lblMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMathuoc.AutoSize = true;
-            this.lblMathuoc.Location = new System.Drawing.Point(41, 99);
+            this.lblMathuoc.BackColor = System.Drawing.Color.Transparent;
+            this.lblMathuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMathuoc.Location = new System.Drawing.Point(28, 97);
             this.lblMathuoc.Name = "lblMathuoc";
-            this.lblMathuoc.Size = new System.Drawing.Size(56, 13);
+            this.lblMathuoc.Size = new System.Drawing.Size(59, 15);
             this.lblMathuoc.TabIndex = 6;
             this.lblMathuoc.Text = "Mã Thuốc";
             // 
@@ -155,9 +158,11 @@ namespace medical_management
             // 
             this.lblManhasanxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblManhasanxuat.AutoSize = true;
-            this.lblManhasanxuat.Location = new System.Drawing.Point(41, 121);
+            this.lblManhasanxuat.BackColor = System.Drawing.Color.Transparent;
+            this.lblManhasanxuat.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManhasanxuat.Location = new System.Drawing.Point(28, 119);
             this.lblManhasanxuat.Name = "lblManhasanxuat";
-            this.lblManhasanxuat.Size = new System.Drawing.Size(88, 13);
+            this.lblManhasanxuat.Size = new System.Drawing.Size(97, 15);
             this.lblManhasanxuat.TabIndex = 7;
             this.lblManhasanxuat.Text = "Mã Nhà sản xuất";
             // 
@@ -165,9 +170,11 @@ namespace medical_management
             // 
             this.lblTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTenthuoc.AutoSize = true;
-            this.lblTenthuoc.Location = new System.Drawing.Point(41, 169);
+            this.lblTenthuoc.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenthuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenthuoc.Location = new System.Drawing.Point(28, 167);
             this.lblTenthuoc.Name = "lblTenthuoc";
-            this.lblTenthuoc.Size = new System.Drawing.Size(56, 13);
+            this.lblTenthuoc.Size = new System.Drawing.Size(60, 15);
             this.lblTenthuoc.TabIndex = 8;
             this.lblTenthuoc.Text = "Tên thuốc";
             // 
@@ -175,9 +182,11 @@ namespace medical_management
             // 
             this.lblHamluong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHamluong.AutoSize = true;
+            this.lblHamluong.BackColor = System.Drawing.Color.Transparent;
+            this.lblHamluong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHamluong.Location = new System.Drawing.Point(386, 121);
             this.lblHamluong.Name = "lblHamluong";
-            this.lblHamluong.Size = new System.Drawing.Size(58, 13);
+            this.lblHamluong.Size = new System.Drawing.Size(67, 15);
             this.lblHamluong.TabIndex = 9;
             this.lblHamluong.Text = "Hàm lượng";
             // 
@@ -185,9 +194,11 @@ namespace medical_management
             // 
             this.lblDonvi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDonvi.AutoSize = true;
+            this.lblDonvi.BackColor = System.Drawing.Color.Transparent;
+            this.lblDonvi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonvi.Location = new System.Drawing.Point(386, 95);
             this.lblDonvi.Name = "lblDonvi";
-            this.lblDonvi.Size = new System.Drawing.Size(38, 13);
+            this.lblDonvi.Size = new System.Drawing.Size(42, 15);
             this.lblDonvi.TabIndex = 10;
             this.lblDonvi.Text = "Đơn vị";
             // 
@@ -195,9 +206,11 @@ namespace medical_management
             // 
             this.lblSoluong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSoluong.AutoSize = true;
-            this.lblSoluong.Location = new System.Drawing.Point(717, 95);
+            this.lblSoluong.BackColor = System.Drawing.Color.Transparent;
+            this.lblSoluong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoluong.Location = new System.Drawing.Point(729, 94);
             this.lblSoluong.Name = "lblSoluong";
-            this.lblSoluong.Size = new System.Drawing.Size(49, 13);
+            this.lblSoluong.Size = new System.Drawing.Size(55, 15);
             this.lblSoluong.TabIndex = 11;
             this.lblSoluong.Text = "Số lượng";
             // 
@@ -205,9 +218,11 @@ namespace medical_management
             // 
             this.lblDonggoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDonggoi.AutoSize = true;
+            this.lblDonggoi.BackColor = System.Drawing.Color.Transparent;
+            this.lblDonggoi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonggoi.Location = new System.Drawing.Point(387, 147);
             this.lblDonggoi.Name = "lblDonggoi";
-            this.lblDonggoi.Size = new System.Drawing.Size(50, 13);
+            this.lblDonggoi.Size = new System.Drawing.Size(54, 15);
             this.lblDonggoi.TabIndex = 12;
             this.lblDonggoi.Text = "Đóng gói";
             // 
@@ -215,9 +230,11 @@ namespace medical_management
             // 
             this.lblThanhphan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblThanhphan.AutoSize = true;
+            this.lblThanhphan.BackColor = System.Drawing.Color.Transparent;
+            this.lblThanhphan.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThanhphan.Location = new System.Drawing.Point(387, 173);
             this.lblThanhphan.Name = "lblThanhphan";
-            this.lblThanhphan.Size = new System.Drawing.Size(65, 13);
+            this.lblThanhphan.Size = new System.Drawing.Size(70, 15);
             this.lblThanhphan.TabIndex = 13;
             this.lblThanhphan.Text = "Thành phần";
             // 
@@ -225,9 +242,11 @@ namespace medical_management
             // 
             this.lblGhichu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGhichu.AutoSize = true;
+            this.lblGhichu.BackColor = System.Drawing.Color.Transparent;
+            this.lblGhichu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGhichu.Location = new System.Drawing.Point(729, 177);
             this.lblGhichu.Name = "lblGhichu";
-            this.lblGhichu.Size = new System.Drawing.Size(44, 13);
+            this.lblGhichu.Size = new System.Drawing.Size(47, 15);
             this.lblGhichu.TabIndex = 16;
             this.lblGhichu.Text = "Ghi chú";
             // 
@@ -476,9 +495,11 @@ namespace medical_management
             // 
             this.lblGianhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGianhap.AutoSize = true;
+            this.lblGianhap.BackColor = System.Drawing.Color.Transparent;
+            this.lblGianhap.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGianhap.Location = new System.Drawing.Point(729, 151);
             this.lblGianhap.Name = "lblGianhap";
-            this.lblGianhap.Size = new System.Drawing.Size(50, 13);
+            this.lblGianhap.Size = new System.Drawing.Size(54, 15);
             this.lblGianhap.TabIndex = 36;
             this.lblGianhap.Text = "Giá nhập";
             // 
@@ -486,9 +507,11 @@ namespace medical_management
             // 
             this.lblDongia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDongia.AutoSize = true;
+            this.lblDongia.BackColor = System.Drawing.Color.Transparent;
+            this.lblDongia.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDongia.Location = new System.Drawing.Point(729, 121);
             this.lblDongia.Name = "lblDongia";
-            this.lblDongia.Size = new System.Drawing.Size(44, 13);
+            this.lblDongia.Size = new System.Drawing.Size(48, 15);
             this.lblDongia.TabIndex = 35;
             this.lblDongia.Text = "Đơn giá";
             // 
@@ -515,9 +538,11 @@ namespace medical_management
             // 
             this.lblNhomthuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNhomthuoc.AutoSize = true;
-            this.lblNhomthuoc.Location = new System.Drawing.Point(41, 147);
+            this.lblNhomthuoc.BackColor = System.Drawing.Color.Transparent;
+            this.lblNhomthuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhomthuoc.Location = new System.Drawing.Point(28, 145);
             this.lblNhomthuoc.Name = "lblNhomthuoc";
-            this.lblNhomthuoc.Size = new System.Drawing.Size(65, 13);
+            this.lblNhomthuoc.Size = new System.Drawing.Size(75, 15);
             this.lblNhomthuoc.TabIndex = 40;
             this.lblNhomthuoc.Text = "Nhóm thuốc";
             // 
