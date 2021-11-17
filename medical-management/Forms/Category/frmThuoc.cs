@@ -13,6 +13,9 @@ namespace medical_management
 {
     public partial class frmThuoc : Form
     {
+        //DataTable comdt = new DataTable();
+        //SqlDataAdapter da = new SqlDataAdapter();
+        string fName, sql;
         private readonly frmSelectMedical frmSelectMedical;
         public frmThuoc(frmSelectMedical frmSelectMedical)
         {
@@ -227,8 +230,32 @@ namespace medical_management
 
         }
 
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            string query = " SELECT * FROM tbl_Item " + "Where " + fName + "=N'" + comFValue.Text + "' order by Mathuoc "; 
+            dgvThuoc.DataSource = Database.Instance.excuteQuery(query);
+            dgvThuoc.Refresh();
+            bindingData();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            string query = " SELECT * FROM tbl_Item " + " order by Mathuoc ";
+            dgvThuoc.DataSource = Database.Instance.excuteQuery(query);
+            dgvThuoc.Refresh();
+            bindingData();
+        }
+
         private void comFName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comFName.Text == "Nhóm thuốc")
+                fName = "Nhomthuoc";
+            if (comFName.Text == "Mã Nhà sản xuất")
+                fName = "MaNSX";
+            sql = " Select Distinct " + fName + " From tbl_Item " + fName ;
+            comFValue.DataSource = Database.Instance.excuteQuery(sql);
+            comFValue.DisplayMember = fName;
+            comFValue.ValueMember = fName;
 
         }
 

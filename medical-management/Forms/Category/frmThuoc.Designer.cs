@@ -595,6 +595,7 @@ namespace medical_management
             this.btnFilter.TabIndex = 45;
             this.btnFilter.Text = "Lọc dữ liệu";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnRefresh
             // 
@@ -605,6 +606,7 @@ namespace medical_management
             this.btnRefresh.TabIndex = 46;
             this.btnRefresh.Text = "Nạp lại";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmThuoc
             // 
