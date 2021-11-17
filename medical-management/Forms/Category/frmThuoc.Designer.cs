@@ -77,12 +77,17 @@ namespace medical_management
             this.btnExit = new System.Windows.Forms.Button();
             this.txtNhomthuoc = new System.Windows.Forms.TextBox();
             this.lblNhomthuoc = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comFName = new System.Windows.Forms.ComboBox();
+            this.comFValue = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(19, 240);
+            this.btnAdd.Location = new System.Drawing.Point(8, 256);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(47, 34);
             this.btnAdd.TabIndex = 0;
@@ -92,7 +97,7 @@ namespace medical_management
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(178, 240);
+            this.btnSave.Location = new System.Drawing.Point(167, 256);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(47, 34);
             this.btnSave.TabIndex = 1;
@@ -102,7 +107,7 @@ namespace medical_management
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(125, 240);
+            this.btnDel.Location = new System.Drawing.Point(114, 256);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(47, 34);
             this.btnDel.TabIndex = 2;
@@ -112,7 +117,7 @@ namespace medical_management
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(72, 240);
+            this.btnEdit.Location = new System.Drawing.Point(61, 256);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(47, 34);
             this.btnEdit.TabIndex = 3;
@@ -122,7 +127,7 @@ namespace medical_management
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(231, 240);
+            this.btnPrint.Location = new System.Drawing.Point(220, 256);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(47, 34);
             this.btnPrint.TabIndex = 4;
@@ -271,10 +276,10 @@ namespace medical_management
             this.Gianhap,
             this.Dongia,
             this.Ghichu});
-            this.dgvThuoc.Location = new System.Drawing.Point(12, 280);
+            this.dgvThuoc.Location = new System.Drawing.Point(12, 304);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.RowHeadersWidth = 20;
-            this.dgvThuoc.Size = new System.Drawing.Size(1000, 196);
+            this.dgvThuoc.Size = new System.Drawing.Size(1000, 182);
             this.dgvThuoc.TabIndex = 10;
             // 
             // Mathuoc
@@ -546,12 +551,72 @@ namespace medical_management
             this.lblNhomthuoc.TabIndex = 40;
             this.lblNhomthuoc.Text = "Nhóm thuốc";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(728, 209);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 19);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Tên trường        =          Giá trị";
+            // 
+            // comFName
+            // 
+            this.comFName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comFName.FormattingEnabled = true;
+            this.comFName.Items.AddRange(new object[] {
+            "Nhóm thuốc",
+            "Mã Nhà sản xuất"});
+            this.comFName.Location = new System.Drawing.Point(710, 231);
+            this.comFName.Name = "comFName";
+            this.comFName.Size = new System.Drawing.Size(121, 21);
+            this.comFName.TabIndex = 43;
+            this.comFName.SelectedIndexChanged += new System.EventHandler(this.comFName_SelectedIndexChanged);
+            // 
+            // comFValue
+            // 
+            this.comFValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comFValue.FormattingEnabled = true;
+            this.comFValue.Location = new System.Drawing.Point(864, 231);
+            this.comFValue.Name = "comFValue";
+            this.comFValue.Size = new System.Drawing.Size(121, 21);
+            this.comFValue.TabIndex = 44;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFilter.Location = new System.Drawing.Point(732, 258);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(78, 31);
+            this.btnFilter.TabIndex = 45;
+            this.btnFilter.Text = "Lọc dữ liệu";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(891, 258);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(71, 31);
+            this.btnRefresh.TabIndex = 46;
+            this.btnRefresh.Text = "Nạp lại";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // frmThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::medical_management.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1028, 538);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.comFValue);
+            this.Controls.Add(this.comFName);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNhomthuoc);
             this.Controls.Add(this.lblNhomthuoc);
             this.Controls.Add(this.btnExit);
@@ -649,5 +714,10 @@ namespace medical_management
         private System.Windows.Forms.DataGridViewTextBoxColumn Gianhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comFName;
+        private System.Windows.Forms.ComboBox comFValue;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
