@@ -79,7 +79,6 @@ namespace medical_management
             DateTime today = DateTime.Now;
             dtpNgaynhap.Value = today;
             NextId();
-            txtTongcong.BackColor = txtTongcong.BackColor;
             txtTongtienthanhtoan.BackColor = txtTongtienthanhtoan.BackColor;
             txtGianhap.BackColor = txtGianhap.BackColor;
             btnAdd.disable();
@@ -230,16 +229,11 @@ namespace medical_management
                 subtotal += Convert.ToDecimal(row.Cells["Thanhtien"].Value);
             }
             CultureInfo culture = new CultureInfo("vi-VN");
-            txtTongcong.Text = subtotal.ToString("c", culture);
         }
 
-        private decimal calTotal()
-        {
-            return subtotal * (1 - (discount / 100)) * (1 + VAT / 100);
-        }
         private void loadTotal()
         {
-            total = calTotal();
+            total = subtotal;
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTongtienthanhtoan.Text = total.ToString("c", culture);
         }
@@ -304,80 +298,6 @@ namespace medical_management
         }
 
 
-        private void txtChietkhau_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-
-            string value = ((TextBox)sender).Text + e.KeyChar;
-            if (e.KeyChar != '\b')
-            {
-                e.Handled = !isDiscountValid(value);
-            }
-
-        }
-
-        public static bool isDiscountValid(string str)
-        {
-            decimal i;
-            return decimal.TryParse(str, out i) && i >= 0 && i <= 100;
-        }
-
-        private void txtChietkhau_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtChietkhau.Text))
-            {
-                discount = 0M;
-                txtChietkhau.Text = "0";
-            }
-
-            discount = Convert.ToDecimal(txtChietkhau.Text);
-            loadTotal();
-        }
-
-        private void txtThue_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtChietkhau.Text))
-            {
-                VAT = 0M;
-                txtThue.Text = "0";
-            }
-
-            VAT = Convert.ToDecimal(txtThue.Text);
-            loadTotal();
-        }
-
-        public static bool isVATValid(string str)
-        {
-            decimal i;
-            return decimal.TryParse(str, out i) && i >= 0 && i <= 100;
-        }
-
-        private void txtThue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-
-            string value = ((TextBox)sender).Text + e.KeyChar;
-            if (e.KeyChar != '\b')
-            {
-                e.Handled = !isVATValid(value);
-            }
-        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -444,8 +364,8 @@ namespace medical_management
 
         private void btnGhinhan_Click(object sender, EventArgs e)
         {
-            var query = "UPDATE tbl_PurchaseOrder SET Soluonglo = @Soluonglo , Tongtien = @Tongtien ,Dathanhtoan = @Dathanhtoan , Thue = @Thue WHERE Manhap = @Manhap";
-            var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, Int16.Parse(txtThue.Text), poId };
+            var query = "UPDATE tbl_PurchaseOrder SET Soluonglo = @Soluonglo , Tongtien = @Tongtien ,Dathanhtoan = @Dathanhtoan WHERE Manhap = @Manhap";
+            var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, poId };
             Database.Instance.excuteNonQuery(query, param);
 
             var sqlMedical = "SELECT * FROM tbl_Item WHERE Mathuoc = @Mathuoc ";
