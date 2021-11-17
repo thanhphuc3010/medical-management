@@ -71,7 +71,7 @@ namespace medical_management
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmNhacungcap f = new frmNhacungcap();
+            frmNhacungcap f = new frmNhacungcap(this);
             f.WindowState = FormWindowState.Normal;
             f.ShowDialog();
         }
