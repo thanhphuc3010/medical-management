@@ -254,6 +254,7 @@ namespace medical_management
             this.btnCancel.Text = "Hủy";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
@@ -265,6 +266,7 @@ namespace medical_management
             this.btnUpdate.TabIndex = 31;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblTongtienthanhtoan

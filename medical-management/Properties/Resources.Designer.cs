@@ -179,5 +179,15 @@ namespace medical_management.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2943987126847_17745481a68469183927d79fdd4fa271 {
+            get {
+                object obj = ResourceManager.GetObject("z2943987126847_17745481a68469183927d79fdd4fa271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

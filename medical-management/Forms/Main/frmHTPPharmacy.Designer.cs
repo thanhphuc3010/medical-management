@@ -459,12 +459,13 @@ namespace medical_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BackgroundImage = global::medical_management.Properties.Resources.background_1;
+            this.BackgroundImage = global::medical_management.Properties.Resources.z2943987126847_17745481a68469183927d79fdd4fa271;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(963, 609);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmHTPPharmacy";
