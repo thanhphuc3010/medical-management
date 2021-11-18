@@ -180,6 +180,8 @@ namespace medical_management
             this.customerId = id;
             btnSelectCustomer.gone();
             lblKhachHang.visible();
+            string update = "Update tbl_Invoice Set MaKH= @MaKH Where MaHD= @MaHD ";
+            Database.Instance.excuteNonQuery(update, new object[]{this.customerId,this.invoiceId });
         }
 
         private void btnSelectCustomer_Click(object sender, EventArgs e)
