@@ -198,9 +198,9 @@ namespace medical_management
         private void insertConsignment()
         {
             decimal price = Convert.ToDecimal(txtGianhap.Text);
-            string insert = "INSERT INTO dbo.tbl_Consignment(Manhap, Malo, Mathuoc, Soluong, Gianhap, Ngaysanxuat, Ngayhethan) " +
-                            "VALUES( @Manhap , @Malo , @Mathuoc , @Soluong , @Gianhap , @Ngaysanxuat , @Ngayhethan ) ";
-            Database.Instance.excuteNonQuery(insert, new object[] { poId, malo, medicalId, Int16.Parse(txtSoluong.Text), price, dtpNgaysanxuat.Value, dtpNgayhethan.Value });
+            string insert = "INSERT INTO dbo.tbl_Consignment(Manhap, Malo, Mathuoc, Soluong, Gianhap, Daban, Ngaysanxuat, Ngayhethan) " +
+                            "VALUES( @Manhap , @Malo , @Mathuoc , @Soluong , @Gianhap , @Daban , @Ngaysanxuat , @Ngayhethan ) ";
+            Database.Instance.excuteNonQuery(insert, new object[] { poId, malo, medicalId, Int16.Parse(txtSoluong.Text), price, 0 , dtpNgaysanxuat.Value, dtpNgayhethan.Value });
 
         }
 
