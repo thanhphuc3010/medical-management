@@ -109,8 +109,8 @@ namespace medical_management
                 " tbl_Item ON tbl_Consignment.Mathuoc = tbl_Item.Mathuoc " +
                 " WHERE MONTH(tbl_PurchaseOrder.Ngaynhap)= '11' and YEAR(tbl_PurchaseOrder.Ngaynhap)= '2021' " +
                 " GROUP BY tbl_Item.Nhomthuoc, tbl_Item.Mathuoc, tbl_Item.Tenthuoc, tbl_Item.Donvi ";
-            Database.Instance.excuteQuery(sql);
-            //rpt.SetDataSource(sql);
+           
+            rpt.SetDataSource(Database.Instance.excuteQuery(sql));
             rptNhapthuocprv rp = new rptNhapthuocprv(rpt);
             rp.Show();
 

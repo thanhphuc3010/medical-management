@@ -423,13 +423,13 @@ namespace medical_management
                     int inventory = item.Inventory;
                     if (quantity <= inventory)
                     {
-                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @SoLuong";
+                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @soldQuantity";
                         Database.Instance.excuteNonQuery(proUpdateQuantity, new object[] { medicineId, consignmentId, quantity });
                         break;
                     }
                     else
                     {
-                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @SoLuong";
+                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @soldQuantity";
                         Database.Instance.excuteNonQuery(proUpdateQuantity, new object[] { medicineId, consignmentId, inventory });
                         quantity = quantity - inventory;
                     }
