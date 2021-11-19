@@ -308,6 +308,7 @@ namespace medical_management
             this.mItemPOReport.Name = "mItemPOReport";
             this.mItemPOReport.Size = new System.Drawing.Size(193, 22);
             this.mItemPOReport.Text = "Báo cáo nhập hàng";
+            this.mItemPOReport.Click += new System.EventHandler(this.mItemPOReport_Click);
             // 
             // toolStripSeparator14
             // 

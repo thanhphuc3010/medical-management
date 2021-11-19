@@ -100,5 +100,21 @@ namespace medical_management
             f.MdiParent = this;
             f.Show();
         }
+
+        private void mItemPOReport_Click(object sender, EventArgs e)
+        {
+            rptNhaphang rpt = new rptNhaphang();
+            string sql = " SELECT tbl_Item.Nhomthuoc, tbl_Item.Mathuoc, tbl_Item.Tenthuoc, tbl_Item.Donvi, sum( tbl_Consignment.Soluong * tbl_Consignment.Gianhap) as Thanhtien " +
+                " FROM tbl_Consignment INNER JOIN tbl_PurchaseOrder ON tbl_Consignment.Manhap = tbl_PurchaseOrder.Manhap INNER JOIN " +
+                " tbl_Item ON tbl_Consignment.Mathuoc = tbl_Item.Mathuoc " +
+                " WHERE MONTH(tbl_PurchaseOrder.Ngaynhap)= '11' and YEAR(tbl_PurchaseOrder.Ngaynhap)= '2021' " +
+                " GROUP BY tbl_Item.Nhomthuoc, tbl_Item.Mathuoc, tbl_Item.Tenthuoc, tbl_Item.Donvi ";
+            Database.Instance.excuteQuery(sql);
+            rpt.SetDataSource(sql);
+            rptNhapthuocprv rp = new rptNhapthuocprv(rpt);
+            rp.Show();
+
+
+        }
     }
 }
