@@ -331,6 +331,7 @@ namespace medical_management
             this.mItemInventoryReport.Name = "mItemInventoryReport";
             this.mItemInventoryReport.Size = new System.Drawing.Size(193, 22);
             this.mItemInventoryReport.Text = "Báo cáo tồn kho";
+            this.mItemInventoryReport.Click += new System.EventHandler(this.mItemInventoryReport_Click);
             // 
             // contextMenuStrip1
             // 

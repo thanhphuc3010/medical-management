@@ -110,10 +110,21 @@ namespace medical_management
                 " WHERE MONTH(tbl_PurchaseOrder.Ngaynhap)= '11' and YEAR(tbl_PurchaseOrder.Ngaynhap)= '2021' " +
                 " GROUP BY tbl_Item.Nhomthuoc, tbl_Item.Mathuoc, tbl_Item.Tenthuoc, tbl_Item.Donvi ";
             Database.Instance.excuteQuery(sql);
-            rpt.SetDataSource(sql);
+            //rpt.SetDataSource(sql);
             rptNhapthuocprv rp = new rptNhapthuocprv(rpt);
             rp.Show();
 
+
+        }
+
+        private void mItemInventoryReport_Click(object sender, EventArgs e)
+        {
+            rptTonkho rpt = new rptTonkho();
+            string sql = " SELECT Mathuoc, Tenthuoc, Donvi, Soluong " + " FROM tbl_Item ";
+            Database.Instance.excuteQuery(sql);
+            //rpt.SetDataSource(sql);
+            rptTonkhoprv rp = new rptTonkhoprv(rpt);
+            rp.Show();
 
         }
     }
