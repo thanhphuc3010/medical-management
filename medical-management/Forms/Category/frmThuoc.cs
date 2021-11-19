@@ -227,7 +227,15 @@ namespace medical_management
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            if(comFName.Text=="Nhóm thuốc")
+            {
+                rptThuoc rpt = new rptThuoc();
+                string sql = " Select Mathuoc, Tenthuoc, Thanhphan, Donvi, Dongia From tbl_Item Where " + " Nhomthuoc='" + comFValue.Text + "'";
+                rpt.SetDataSource(Database.Instance.excuteQuery(sql));
+                rpt.DataDefinition.FormulaFields["Nhomthuoc"].Text = "'" + comFValue.Text + "'";
+                rptThuoctheonhomprv rp = new rptThuoctheonhomprv(rpt);
+                rp.Show();
+            }    
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

@@ -60,6 +60,42 @@
     <Compile Include="BUS\InvoiceBUS.cs" />
     <Compile Include="BUS\PaymentBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="rptThuoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThuoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDoanhthu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDoanhthu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDoanhthuprv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDoanhthuprv.Designer.cs">
+      <DependentUpon>rptDoanhthuprv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptThuochethan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThuochethan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptThuochethanprv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptThuochethanprv.Designer.cs">
+      <DependentUpon>rptThuochethanprv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptThuoctheonhomprv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptThuoctheonhomprv.Designer.cs">
+      <DependentUpon>rptThuoctheonhomprv.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptTonkho.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,6 +234,27 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Utils\MyColor.cs" />
+    <EmbeddedResource Include="rptThuoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThuoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDoanhthu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDoanhthu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDoanhthuprv.resx">
+      <DependentUpon>rptDoanhthuprv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThuochethan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThuochethan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThuochethanprv.resx">
+      <DependentUpon>rptThuochethanprv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThuoctheonhomprv.resx">
+      <DependentUpon>rptThuoctheonhomprv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptTonkho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTonkho.cs</LastGenOutput>

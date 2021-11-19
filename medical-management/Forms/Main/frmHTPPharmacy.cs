@@ -120,10 +120,33 @@ namespace medical_management
         private void mItemInventoryReport_Click(object sender, EventArgs e)
         {
             rptTonkho rpt = new rptTonkho();
-            string sql = " SELECT Mathuoc, Tenthuoc, Donvi, Soluong " + " FROM tbl_Item ";
-            Database.Instance.excuteQuery(sql);
-            //rpt.SetDataSource(sql);
+            string sql = " SELECT Mathuoc, Tenthuoc, Donvi, Soluong " + " FROM tbl_Item ";        
+            rpt.SetDataSource(Database.Instance.excuteQuery(sql));
             rptTonkhoprv rp = new rptTonkhoprv(rpt);
+            rp.Show();
+
+        }
+
+        private void mItemMedicalExpired_Click(object sender, EventArgs e)
+        {
+            rptThuochethan rpt = new rptThuochethan();
+            string sql = " SELECT tbl_Consignment.Malo , tbl_Item.Mathuoc , tbl_Item.Tenthuoc , tbl_Consignment.Ngayhethan , tbl_Consignment.Soluong - tbl_Consignment.Daban AS Soluongcon , tbl_Consignment.Gianhap , ( tbl_Consignment.Soluong - tbl_Consignment.Daban ) * tbl_Consignment.Gianhap AS Giatri "
+                       + " FROM tbl_Consignment INNER JOIN  tbl_Item ON tbl_Consignment.Mathuoc = tbl_Item.Mathuoc "
+                       + " where DATEDIFF(DAY , GETDATE() , tbl_Consignment.Ngayhethan ) < 0 "
+                       + " GROUP BY tbl_Consignment.Malo , tbl_Consignment.Gianhap , tbl_Consignment.Ngayhethan , tbl_Item.Mathuoc , tbl_Item.Tenthuoc , ( tbl_Consignment.Soluong - tbl_Consignment.Daban) ";
+            rpt.SetDataSource(Database.Instance.excuteQuery(sql));
+            rptThuochethanprv rp = new rptThuochethanprv(rpt);
+            rp.Show();
+        }
+
+        private void mItemDT_Click(object sender, EventArgs e)
+        {
+            rptDoanhthu rpt = new rptDoanhthu();
+            string sql = " SELECT tbl_Item.Tenthuoc, tbl_Item.Donvi, tbl_Item.Dongia, SUM( tbl_InvoiceDetail.Soluong ) as Soluong, SUM( dbo.tbl_InvoiceDetail.Dongia * dbo.tbl_InvoiceDetail.Soluong ) as Thanhtien "
+                        + " FROM tbl_Item INNER JOIN tbl_InvoiceDetail ON tbl_Item.Mathuoc = tbl_InvoiceDetail.Mathuoc "
+                        + " GROUP BY tbl_Item.Tenthuoc, tbl_Item.Donvi, tbl_Item.Dongia ";
+            rpt.SetDataSource(Database.Instance.excuteQuery(sql));
+            rptDoanhthuprv rp = new rptDoanhthuprv(rpt);
             rp.Show();
 
         }

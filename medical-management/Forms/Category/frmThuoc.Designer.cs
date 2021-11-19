@@ -129,9 +129,9 @@ namespace medical_management
             // 
             this.btnPrint.Location = new System.Drawing.Point(220, 256);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(47, 34);
+            this.btnPrint.Size = new System.Drawing.Size(96, 34);
             this.btnPrint.TabIndex = 4;
-            this.btnPrint.Text = "In";
+            this.btnPrint.Text = "In Danh sách thuốc theo nhóm thuốc";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 

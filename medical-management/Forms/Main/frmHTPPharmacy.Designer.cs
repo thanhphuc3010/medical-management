@@ -297,6 +297,7 @@ namespace medical_management
             this.mItemDT.Name = "mItemDT";
             this.mItemDT.Size = new System.Drawing.Size(193, 22);
             this.mItemDT.Text = "Báo cáo doanh thu";
+            this.mItemDT.Click += new System.EventHandler(this.mItemDT_Click);
             // 
             // toolStripSeparator13
             // 
@@ -320,6 +321,7 @@ namespace medical_management
             this.mItemMedicalExpired.Name = "mItemMedicalExpired";
             this.mItemMedicalExpired.Size = new System.Drawing.Size(193, 22);
             this.mItemMedicalExpired.Text = "Báo cáo thuốc hết hạn";
+            this.mItemMedicalExpired.Click += new System.EventHandler(this.mItemMedicalExpired_Click);
             // 
             // toolStripSeparator15
             // 
