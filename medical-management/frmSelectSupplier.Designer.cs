@@ -105,6 +105,7 @@ namespace medical_management
             this.Controls.Add(this.dgvSupplier);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelectSupplier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn Nhà cung cấp";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();

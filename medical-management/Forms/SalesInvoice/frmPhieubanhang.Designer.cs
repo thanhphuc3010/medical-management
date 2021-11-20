@@ -442,7 +442,7 @@ namespace medical_management
             this.btnSelectCustomer.Image = global::medical_management.Properties.Resources.plus_circle_outline;
             this.btnSelectCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelectCustomer.Location = new System.Drawing.Point(398, 67);
-            this.btnSelectCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectCustomer.Name = "btnSelectCustomer";
             this.btnSelectCustomer.Size = new System.Drawing.Size(128, 30);
             this.btnSelectCustomer.TabIndex = 47;
@@ -501,7 +501,7 @@ namespace medical_management
             this.btnSelectMedical.FlatAppearance.BorderSize = 0;
             this.btnSelectMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectMedical.Location = new System.Drawing.Point(790, 54);
-            this.btnSelectMedical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectMedical.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectMedical.Name = "btnSelectMedical";
             this.btnSelectMedical.Size = new System.Drawing.Size(24, 26);
             this.btnSelectMedical.TabIndex = 47;
@@ -525,7 +525,7 @@ namespace medical_management
             this.dtpNgayHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayHD.Location = new System.Drawing.Point(125, 96);
-            this.dtpNgayHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayHD.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayHD.Name = "dtpNgayHD";
             this.dtpNgayHD.Size = new System.Drawing.Size(182, 21);
             this.dtpNgayHD.TabIndex = 49;
@@ -544,7 +544,7 @@ namespace medical_management
             this.panel1.Controls.Add(this.lblGiamgia);
             this.panel1.Controls.Add(this.lblTongtienhang);
             this.panel1.Location = new System.Drawing.Point(494, 489);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 156);
             this.panel1.TabIndex = 50;
@@ -747,7 +747,7 @@ namespace medical_management
             // 
             this.cbLoThuoc.FormattingEnabled = true;
             this.cbLoThuoc.Location = new System.Drawing.Point(340, 188);
-            this.cbLoThuoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLoThuoc.Margin = new System.Windows.Forms.Padding(2);
             this.cbLoThuoc.Name = "cbLoThuoc";
             this.cbLoThuoc.Size = new System.Drawing.Size(83, 21);
             this.cbLoThuoc.TabIndex = 52;
@@ -870,7 +870,7 @@ namespace medical_management
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmPhieubanhang";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hóa đơn bán hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPhieubanhang_FormClosing);
             this.Load += new System.EventHandler(this.frmPhieubanhang_Load);

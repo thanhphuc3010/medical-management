@@ -664,6 +664,7 @@ namespace medical_management
             this.Controls.Add(this.lblPhieunhap);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPhieunhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Phiếu nhập hàng";
             this.Load += new System.EventHandler(this.frmPhieunhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieunhapchitiet)).EndInit();
