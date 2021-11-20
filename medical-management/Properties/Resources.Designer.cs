@@ -63,6 +63,16 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _635203f6dfa214fc4db3 {
+            get {
+                object obj = ResourceManager.GetObject("635203f6dfa214fc4db3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -186,6 +196,16 @@ namespace medical_management.Properties {
         internal static System.Drawing.Bitmap z2943987126847_17745481a68469183927d79fdd4fa271 {
             get {
                 object obj = ResourceManager.GetObject("z2943987126847_17745481a68469183927d79fdd4fa271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2950882660625_5abedac77a91292390fd4ec60b643def {
+            get {
+                object obj = ResourceManager.GetObject("z2950882660625_5abedac77a91292390fd4ec60b643def", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
