@@ -63,6 +63,16 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _19 {
+            get {
+                object obj = ResourceManager.GetObject("19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _635203f6dfa214fc4db3 {
             get {
                 object obj = ResourceManager.GetObject("635203f6dfa214fc4db3", resourceCulture);
@@ -203,6 +213,18 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap white_pink_gradient_soft_abstract_background_scene_realistic_illustration_concept_light_flowing_lines_up_bubbles_base_advertising_poster_banner_magazine_brochure_web_page_213110_172 {
+            get {
+                object obj = ResourceManager.GetObject("white-pink-gradient-soft-abstract-background-scene-realistic-illustration-concept" +
+                        "-light-flowing-lines-up-bubbles-base-advertising-poster-banner-magazine-brochure" +
+                        "-web-page_213110-172", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap winter_background_with_pastel_color_brushes_leaves_220290_42 {
             get {
                 object obj = ResourceManager.GetObject("winter-background-with-pastel-color-brushes-leaves_220290-42", resourceCulture);
@@ -216,6 +238,16 @@ namespace medical_management.Properties {
         internal static System.Drawing.Bitmap z2943987126847_17745481a68469183927d79fdd4fa271 {
             get {
                 object obj = ResourceManager.GetObject("z2943987126847_17745481a68469183927d79fdd4fa271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2944018125209_c5d8675eafbc353e51dd97bb4cb9b6a1 {
+            get {
+                object obj = ResourceManager.GetObject("z2944018125209_c5d8675eafbc353e51dd97bb4cb9b6a1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
