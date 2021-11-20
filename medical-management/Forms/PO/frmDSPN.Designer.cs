@@ -29,6 +29,7 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSPN));
             this.lblDMPN = new System.Windows.Forms.Label();
             this.dgvDSPN = new System.Windows.Forms.DataGridView();
             this.Manhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,8 +53,9 @@ namespace medical_management
             // lblDMPN
             // 
             this.lblDMPN.AutoSize = true;
+            this.lblDMPN.BackColor = System.Drawing.Color.Transparent;
             this.lblDMPN.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDMPN.Location = new System.Drawing.Point(23, 9);
+            this.lblDMPN.Location = new System.Drawing.Point(12, 16);
             this.lblDMPN.Name = "lblDMPN";
             this.lblDMPN.Size = new System.Drawing.Size(202, 26);
             this.lblDMPN.TabIndex = 0;
@@ -65,7 +67,7 @@ namespace medical_management
             this.dgvDSPN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDSPN.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvDSPN.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvDSPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDSPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Manhap,
@@ -89,46 +91,53 @@ namespace medical_management
             this.Manhap.DataPropertyName = "Manhap";
             this.Manhap.HeaderText = "Mã phiếu nhập";
             this.Manhap.Name = "Manhap";
+            this.Manhap.ReadOnly = true;
             // 
             // Ngaynhap
             // 
             this.Ngaynhap.DataPropertyName = "Ngaynhap";
             this.Ngaynhap.HeaderText = "Ngày nhập";
             this.Ngaynhap.Name = "Ngaynhap";
+            this.Ngaynhap.ReadOnly = true;
             // 
             // MaNV
             // 
             this.MaNV.DataPropertyName = "MaNV";
             this.MaNV.HeaderText = "Mã Nhân viên";
             this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
             // 
             // MaNCC
             // 
             this.MaNCC.DataPropertyName = "MaNCC";
             this.MaNCC.HeaderText = "Mã NCC";
             this.MaNCC.Name = "MaNCC";
+            this.MaNCC.ReadOnly = true;
             // 
             // Soluonglo
             // 
             this.Soluonglo.DataPropertyName = "Soluonglo";
             this.Soluonglo.HeaderText = "Số lượng lô";
             this.Soluonglo.Name = "Soluonglo";
+            this.Soluonglo.ReadOnly = true;
             // 
             // Tongtien
             // 
             this.Tongtien.DataPropertyName = "Tongtien";
             this.Tongtien.HeaderText = "Tổng tiền";
             this.Tongtien.Name = "Tongtien";
+            this.Tongtien.ReadOnly = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Navy;
             this.btnAdd.Image = global::medical_management.Properties.Resources.plus_circle_outline;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(253, 9);
+            this.btnAdd.Location = new System.Drawing.Point(231, 9);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 30);
+            this.btnAdd.Size = new System.Drawing.Size(87, 42);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,7 +150,7 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPNCT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPNCT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPNCT.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvPNCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPNCT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Malo,
@@ -195,13 +204,15 @@ namespace medical_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::medical_management.Properties.Resources._635203f6dfa214fc4db3;
             this.ClientSize = new System.Drawing.Size(953, 513);
             this.Controls.Add(this.dgvPNCT);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvDSPN);
             this.Controls.Add(this.lblDMPN);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDSPN";
-            this.Text = "frmDMPN";
+            this.Text = "Danh sách Phiếu nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDSPN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPN)).EndInit();

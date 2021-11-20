@@ -76,7 +76,6 @@ namespace medical_management
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.tssStaffName = new System.Windows.Forms.ToolStripStatusLabel();
             this.ttsDatetime = new System.Windows.Forms.ToolStripStatusLabel();
@@ -87,7 +86,9 @@ namespace medical_management
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(60, 60);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsSystem,
             this.tsCategory,
@@ -96,7 +97,7 @@ namespace medical_management
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(963, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(963, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,52 +113,52 @@ namespace medical_management
             this.toolStripSeparator4,
             this.mItemExit});
             this.tsSystem.Name = "tsSystem";
-            this.tsSystem.Size = new System.Drawing.Size(69, 20);
+            this.tsSystem.Size = new System.Drawing.Size(93, 25);
             this.tsSystem.Text = "Hệ thống";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
             // 
             // mItemReLogin
             // 
             this.mItemReLogin.Name = "mItemReLogin";
-            this.mItemReLogin.Size = new System.Drawing.Size(147, 22);
+            this.mItemReLogin.Size = new System.Drawing.Size(187, 26);
             this.mItemReLogin.Text = "Đăng nhập lại";
             this.mItemReLogin.Click += new System.EventHandler(this.mItemReLogin_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(184, 6);
             // 
             // mItemChangePassword
             // 
             this.mItemChangePassword.Name = "mItemChangePassword";
-            this.mItemChangePassword.Size = new System.Drawing.Size(147, 22);
+            this.mItemChangePassword.Size = new System.Drawing.Size(187, 26);
             this.mItemChangePassword.Text = "Đổi mật khẩu";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(184, 6);
             // 
             // mItemHelp
             // 
             this.mItemHelp.Name = "mItemHelp";
-            this.mItemHelp.Size = new System.Drawing.Size(147, 22);
+            this.mItemHelp.Size = new System.Drawing.Size(187, 26);
             this.mItemHelp.Text = "Trợ giúp";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(184, 6);
             // 
             // mItemExit
             // 
             this.mItemExit.Name = "mItemExit";
-            this.mItemExit.Size = new System.Drawing.Size(147, 22);
+            this.mItemExit.Size = new System.Drawing.Size(187, 26);
             this.mItemExit.Text = "Thoát";
             // 
             // tsCategory
@@ -174,66 +175,67 @@ namespace medical_management
             this.toolStripSeparator20,
             this.mItemNV});
             this.tsCategory.Name = "tsCategory";
-            this.tsCategory.Size = new System.Drawing.Size(74, 20);
+            this.tsCategory.Size = new System.Drawing.Size(100, 25);
             this.tsCategory.Text = "Danh mục";
             // 
             // toolStripSeparator16
             // 
+            this.toolStripSeparator16.BackColor = System.Drawing.Color.White;
             this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator16.Size = new System.Drawing.Size(264, 6);
             // 
             // mItemThuoc
             // 
             this.mItemThuoc.Name = "mItemThuoc";
-            this.mItemThuoc.Size = new System.Drawing.Size(206, 22);
+            this.mItemThuoc.Size = new System.Drawing.Size(267, 26);
             this.mItemThuoc.Text = "Danh mục Thuốc";
             this.mItemThuoc.Click += new System.EventHandler(this.mItemThuoc_Click);
             // 
             // toolStripSeparator17
             // 
             this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator17.Size = new System.Drawing.Size(264, 6);
             // 
             // mItemKH
             // 
             this.mItemKH.Name = "mItemKH";
-            this.mItemKH.Size = new System.Drawing.Size(206, 22);
+            this.mItemKH.Size = new System.Drawing.Size(267, 26);
             this.mItemKH.Text = "Danh mục Khách hàng";
             this.mItemKH.Click += new System.EventHandler(this.mItemKH_Click);
             // 
             // toolStripSeparator18
             // 
             this.toolStripSeparator18.Name = "toolStripSeparator18";
-            this.toolStripSeparator18.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator18.Size = new System.Drawing.Size(264, 6);
             // 
             // mItemNCC
             // 
             this.mItemNCC.Name = "mItemNCC";
-            this.mItemNCC.Size = new System.Drawing.Size(206, 22);
+            this.mItemNCC.Size = new System.Drawing.Size(267, 26);
             this.mItemNCC.Text = "Danh mục Nhà cung cấp";
             this.mItemNCC.Click += new System.EventHandler(this.mItemNCC_Click);
             // 
             // toolStripSeparator19
             // 
             this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator19.Size = new System.Drawing.Size(264, 6);
             // 
             // mItemNSX
             // 
             this.mItemNSX.Name = "mItemNSX";
-            this.mItemNSX.Size = new System.Drawing.Size(206, 22);
+            this.mItemNSX.Size = new System.Drawing.Size(267, 26);
             this.mItemNSX.Text = "Danh mục Nhà sản xuất";
             this.mItemNSX.Click += new System.EventHandler(this.mItemNSX_Click);
             // 
             // toolStripSeparator20
             // 
             this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator20.Size = new System.Drawing.Size(264, 6);
             // 
             // mItemNV
             // 
             this.mItemNV.Name = "mItemNV";
-            this.mItemNV.Size = new System.Drawing.Size(206, 22);
+            this.mItemNV.Size = new System.Drawing.Size(267, 26);
             this.mItemNV.Text = "Danh mục Nhân viên";
             this.mItemNV.Click += new System.EventHandler(this.mItemNV_Click);
             // 
@@ -245,30 +247,30 @@ namespace medical_management
             this.toolStripSeparator11,
             this.mItemInvoice});
             this.tsSales.Name = "tsSales";
-            this.tsSales.Size = new System.Drawing.Size(139, 20);
+            this.tsSales.Size = new System.Drawing.Size(193, 25);
             this.tsSales.Text = "Nhập hàng - Bán hàng";
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(228, 6);
             // 
             // mItemPO
             // 
             this.mItemPO.Name = "mItemPO";
-            this.mItemPO.Size = new System.Drawing.Size(180, 22);
+            this.mItemPO.Size = new System.Drawing.Size(231, 26);
             this.mItemPO.Text = "Hóa đơn nhập hàng";
             this.mItemPO.Click += new System.EventHandler(this.mItemPO_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(228, 6);
             // 
             // mItemInvoice
             // 
             this.mItemInvoice.Name = "mItemInvoice";
-            this.mItemInvoice.Size = new System.Drawing.Size(180, 22);
+            this.mItemInvoice.Size = new System.Drawing.Size(231, 26);
             this.mItemInvoice.Text = "Hóa đơn bán hàng";
             this.mItemInvoice.Click += new System.EventHandler(this.mItemInvoice_Click);
             // 
@@ -284,54 +286,54 @@ namespace medical_management
             this.toolStripSeparator15,
             this.mItemInventoryReport});
             this.tsReport.Name = "tsReport";
-            this.tsReport.Size = new System.Drawing.Size(61, 20);
+            this.tsReport.Size = new System.Drawing.Size(82, 25);
             this.tsReport.Text = "Báo cáo";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(190, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(247, 6);
             // 
             // mItemDT
             // 
             this.mItemDT.Name = "mItemDT";
-            this.mItemDT.Size = new System.Drawing.Size(193, 22);
+            this.mItemDT.Size = new System.Drawing.Size(250, 26);
             this.mItemDT.Text = "Báo cáo doanh thu";
             this.mItemDT.Click += new System.EventHandler(this.mItemDT_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(190, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(247, 6);
             // 
             // mItemPOReport
             // 
             this.mItemPOReport.Name = "mItemPOReport";
-            this.mItemPOReport.Size = new System.Drawing.Size(193, 22);
+            this.mItemPOReport.Size = new System.Drawing.Size(250, 26);
             this.mItemPOReport.Text = "Báo cáo nhập hàng";
             this.mItemPOReport.Click += new System.EventHandler(this.mItemPOReport_Click);
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(190, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(247, 6);
             // 
             // mItemMedicalExpired
             // 
             this.mItemMedicalExpired.Name = "mItemMedicalExpired";
-            this.mItemMedicalExpired.Size = new System.Drawing.Size(193, 22);
+            this.mItemMedicalExpired.Size = new System.Drawing.Size(250, 26);
             this.mItemMedicalExpired.Text = "Báo cáo thuốc hết hạn";
             this.mItemMedicalExpired.Click += new System.EventHandler(this.mItemMedicalExpired_Click);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(190, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(247, 6);
             // 
             // mItemInventoryReport
             // 
             this.mItemInventoryReport.Name = "mItemInventoryReport";
-            this.mItemInventoryReport.Size = new System.Drawing.Size(193, 22);
+            this.mItemInventoryReport.Size = new System.Drawing.Size(250, 26);
             this.mItemInventoryReport.Text = "Báo cáo tồn kho";
             this.mItemInventoryReport.Click += new System.EventHandler(this.mItemInventoryReport_Click);
             // 
@@ -343,7 +345,8 @@ namespace medical_management
             // 
             // toolStrip1
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator5,
@@ -352,11 +355,10 @@ namespace medical_management
             this.toolStripButton3,
             this.toolStripSeparator7,
             this.toolStripButton4,
-            this.toolStripSeparator8,
-            this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStripSeparator8});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(963, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(963, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -366,13 +368,13 @@ namespace medical_management
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(39, 39);
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton2
             // 
@@ -380,13 +382,13 @@ namespace medical_management
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(39, 39);
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton3
             // 
@@ -394,36 +396,27 @@ namespace medical_management
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(39, 39);
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Image = global::medical_management.Properties.Resources.ic_edit;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(39, 39);
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 42);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(39, 39);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
             // 
             // statusBar
             // 
@@ -473,7 +466,7 @@ namespace medical_management
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmHTPPharmacy";
-            this.Text = "MDI";
+            this.Text = "HTP Pharmacy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHTPPharmacy_FormClosing);
             this.Load += new System.EventHandler(this.frmHTPPharmacy_Load);
@@ -535,7 +528,6 @@ namespace medical_management
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel tssStaffName;
         private System.Windows.Forms.ToolStripStatusLabel ttsDatetime;

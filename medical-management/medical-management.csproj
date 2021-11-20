@@ -387,5 +387,20 @@
   <ItemGroup>
     <None Include="Resources\635203f6dfa214fc4db3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2950903711843_360fe4c41f42a6de7414741737906182.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2950903570829_4a06c2d22ab1654c77aec8484de40fe9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2950882330382_b67ff0afae15e7b8f93c588a95cf6d46.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winter-background-with-pastel-color-brushes-leaves_220290-42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\97cea7e15201dc807d266908c4d911b1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

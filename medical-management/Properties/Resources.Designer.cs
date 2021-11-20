@@ -73,6 +73,16 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _97cea7e15201dc807d266908c4d911b1 {
+            get {
+                object obj = ResourceManager.GetObject("97cea7e15201dc807d266908c4d911b1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -193,6 +203,16 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap winter_background_with_pastel_color_brushes_leaves_220290_42 {
+            get {
+                object obj = ResourceManager.GetObject("winter-background-with-pastel-color-brushes-leaves_220290-42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap z2943987126847_17745481a68469183927d79fdd4fa271 {
             get {
                 object obj = ResourceManager.GetObject("z2943987126847_17745481a68469183927d79fdd4fa271", resourceCulture);
@@ -203,9 +223,39 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap z2950882330382_b67ff0afae15e7b8f93c588a95cf6d46 {
+            get {
+                object obj = ResourceManager.GetObject("z2950882330382_b67ff0afae15e7b8f93c588a95cf6d46", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap z2950882660625_5abedac77a91292390fd4ec60b643def {
             get {
                 object obj = ResourceManager.GetObject("z2950882660625_5abedac77a91292390fd4ec60b643def", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2950903570829_4a06c2d22ab1654c77aec8484de40fe9 {
+            get {
+                object obj = ResourceManager.GetObject("z2950903570829_4a06c2d22ab1654c77aec8484de40fe9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2950903711843_360fe4c41f42a6de7414741737906182 {
+            get {
+                object obj = ResourceManager.GetObject("z2950903711843_360fe4c41f42a6de7414741737906182", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
