@@ -455,7 +455,7 @@ namespace medical_management
             // 
             this.lblKhachHang.BackColor = System.Drawing.Color.Transparent;
             this.lblKhachHang.ContextMenuStrip = this.cmnuKH;
-            this.lblKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKhachHang.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhachHang.ForeColor = System.Drawing.Color.DarkBlue;
             this.lblKhachHang.Location = new System.Drawing.Point(400, 72);
             this.lblKhachHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
