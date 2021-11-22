@@ -160,6 +160,7 @@ namespace medical_management
             this.mItemExit.Name = "mItemExit";
             this.mItemExit.Size = new System.Drawing.Size(187, 26);
             this.mItemExit.Text = "Thoát";
+            this.mItemExit.Click += new System.EventHandler(this.mItemExit_Click);
             // 
             // tsCategory
             // 
@@ -370,6 +371,7 @@ namespace medical_management
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(34, 34);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator5
             // 
@@ -384,6 +386,7 @@ namespace medical_management
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(34, 34);
             this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator6
             // 
@@ -398,6 +401,7 @@ namespace medical_management
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(34, 34);
             this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripSeparator7
             // 

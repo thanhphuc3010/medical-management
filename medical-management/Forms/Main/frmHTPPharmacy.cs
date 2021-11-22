@@ -43,6 +43,8 @@ namespace medical_management
         {
             // DEMO GIT & GITHUB
             // Change source from github website
+            showLoginForm();
+
         }
 
         private void mItemThuoc_Click(object sender, EventArgs e)
@@ -149,6 +151,28 @@ namespace medical_management
             rptDoanhthuprv rp = new rptDoanhthuprv(rpt);
             rp.Show();
 
+        }
+
+        private void mItemExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            showLoginForm();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmNhanvien f = new frmNhanvien();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }
