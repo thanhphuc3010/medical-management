@@ -60,7 +60,7 @@ namespace medical_management
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLogin.BackColor = System.Drawing.Color.Aqua;
             this.btnLogin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Navy;
             this.btnLogin.Location = new System.Drawing.Point(352, 177);
@@ -76,7 +76,7 @@ namespace medical_management
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.Crimson;
+            this.lblUsername.ForeColor = System.Drawing.Color.Navy;
             this.lblUsername.Location = new System.Drawing.Point(12, 78);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(114, 19);
@@ -88,7 +88,7 @@ namespace medical_management
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.Crimson;
+            this.lblPassword.ForeColor = System.Drawing.Color.Navy;
             this.lblPassword.Location = new System.Drawing.Point(12, 126);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(79, 19);
@@ -100,7 +100,7 @@ namespace medical_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.BackgroundImage = global::medical_management.Properties.Resources.white_pink_gradient_soft_abstract_background_scene_realistic_illustration_concept_light_flowing_lines_up_bubbles_base_advertising_poster_banner_magazine_brochure_web_page_213110_172;
+            this.BackgroundImage = global::medical_management.Properties.Resources.e896ae89f5e23ebc67f3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(522, 226);
             this.Controls.Add(this.lblPassword);

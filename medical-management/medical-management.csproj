@@ -411,5 +411,14 @@
   <ItemGroup>
     <None Include="Resources\white-pink-gradient-soft-abstract-background-scene-realistic-illustration-concept-light-flowing-lines-up-bubbles-base-advertising-poster-banner-magazine-brochure-web-page_213110-172.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2959031132238_d60b6a1d0415c98945c106f3e0da9af5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e896ae89f5e23ebc67f3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e896ae89f5e23ebc67f31.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -460,7 +460,7 @@ namespace medical_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BackgroundImage = global::medical_management.Properties.Resources.z2943987126847_17745481a68469183927d79fdd4fa271;
+            this.BackgroundImage = global::medical_management.Properties.Resources.z2959031132238_d60b6a1d0415c98945c106f3e0da9af5;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(963, 609);
             this.Controls.Add(this.statusBar);

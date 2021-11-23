@@ -163,6 +163,26 @@ namespace medical_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap e896ae89f5e23ebc67f3 {
+            get {
+                object obj = ResourceManager.GetObject("e896ae89f5e23ebc67f3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e896ae89f5e23ebc67f31 {
+            get {
+                object obj = ResourceManager.GetObject("e896ae89f5e23ebc67f31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_cart {
             get {
                 object obj = ResourceManager.GetObject("ic_cart", resourceCulture);
@@ -288,6 +308,16 @@ namespace medical_management.Properties {
         internal static System.Drawing.Bitmap z2950903711843_360fe4c41f42a6de7414741737906182 {
             get {
                 object obj = ResourceManager.GetObject("z2950903711843_360fe4c41f42a6de7414741737906182", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z2959031132238_d60b6a1d0415c98945c106f3e0da9af5 {
+            get {
+                object obj = ResourceManager.GetObject("z2959031132238_d60b6a1d0415c98945c106f3e0da9af5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
