@@ -60,6 +60,24 @@
     <Compile Include="BUS\InvoiceBUS.cs" />
     <Compile Include="BUS\PaymentBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="frmBCDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCDT.Designer.cs">
+      <DependentUpon>frmBCDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCNhaphang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCNhaphang.Designer.cs">
+      <DependentUpon>frmBCNhaphang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDT.Designer.cs">
+      <DependentUpon>rptDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptThuoc.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +252,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Utils\MyColor.cs" />
+    <EmbeddedResource Include="frmBCDT.resx">
+      <DependentUpon>frmBCDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCNhaphang.resx">
+      <DependentUpon>frmBCNhaphang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDT.resx">
+      <DependentUpon>rptDT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptThuoc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptThuoc.cs</LastGenOutput>
@@ -419,6 +446,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\e896ae89f5e23ebc67f31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e896ae89f5e23ebc67f32.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
