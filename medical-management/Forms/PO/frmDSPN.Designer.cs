@@ -46,6 +46,8 @@ namespace medical_management
             this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPNCT)).BeginInit();
             this.SuspendLayout();
@@ -158,7 +160,9 @@ namespace medical_management
             this.Soluong,
             this.Donvi,
             this.Gianhap,
-            this.Thanhtien});
+            this.Thanhtien,
+            this.Ngaysanxuat,
+            this.Ngayhethan});
             this.dgvPNCT.Location = new System.Drawing.Point(12, 348);
             this.dgvPNCT.Name = "dgvPNCT";
             this.dgvPNCT.Size = new System.Drawing.Size(915, 141);
@@ -200,6 +204,18 @@ namespace medical_management
             this.Thanhtien.HeaderText = "Thành tiền";
             this.Thanhtien.Name = "Thanhtien";
             // 
+            // Ngaysanxuat
+            // 
+            this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
+            this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
+            this.Ngaysanxuat.Name = "Ngaysanxuat";
+            // 
+            // Ngayhethan
+            // 
+            this.Ngayhethan.DataPropertyName = "Ngayhethan";
+            this.Ngayhethan.HeaderText = "Ngày hết hạn";
+            this.Ngayhethan.Name = "Ngayhethan";
+            // 
             // frmDSPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,17 +244,19 @@ namespace medical_management
         private System.Windows.Forms.DataGridView dgvDSPN;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvPNCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Malo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Donvi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gianhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Manhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaynhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluonglo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tongtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Malo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Donvi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gianhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysanxuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngayhethan;
     }
 }

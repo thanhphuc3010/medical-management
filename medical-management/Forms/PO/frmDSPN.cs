@@ -66,7 +66,7 @@ namespace medical_management
         private void loadPODetailById(string poId)
         {
             string query =
-                "SELECT a.Malo, b.Mathuoc, b.Donvi, a.Soluong, a.Gianhap , (a.Soluong * a.Gianhap) AS Thanhtien " +
+                "SELECT a.Malo, b.Mathuoc, b.Donvi, a.Soluong, a.Gianhap , (a.Soluong * a.Gianhap) AS Thanhtien , a.Ngaysanxuat , a.Ngayhethan " +
                 "FROM dbo.tbl_Consignment a Inner Join dbo.tbl_Item b " +
                 "ON a.Mathuoc = b.Mathuoc Where Manhap = @Manhap ";
             DataTable data = Database.Instance.excuteQuery(query, new object[] { poId });
