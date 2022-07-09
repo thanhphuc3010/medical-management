@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class frmNhacungcap : Form
+    public partial class frmSupplier : Form
     {
         private readonly frmSelectSupplier frmSelectSupplier;
         private string supplierId;
-        public frmNhacungcap(frmSelectSupplier frmSelectSupplier)
+        public frmSupplier(frmSelectSupplier frmSelectSupplier)
         {
             InitializeComponent();
             this.frmSelectSupplier = frmSelectSupplier;
             initializeControl();
 
         }
-        public frmNhacungcap()
+        public frmSupplier()
         {
             InitializeComponent();           
             initializeControl();

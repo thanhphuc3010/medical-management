@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class frmNhasanxuat : Form
+    public partial class frmManufacturer : Form
     {
-        public frmNhasanxuat()
+        public frmManufacturer()
         {
             InitializeComponent();
             initializeControl();

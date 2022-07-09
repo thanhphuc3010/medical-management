@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class frmThuoc : Form
+    public partial class frmMedicine : Form
     {
         //DataTable comdt = new DataTable();
         //SqlDataAdapter da = new SqlDataAdapter();
         string fName, sql;
         private readonly frmSelectMedical frmSelectMedical;
-        public frmThuoc(frmSelectMedical frmSelectMedical)
+        public frmMedicine(frmSelectMedical frmSelectMedical)
         {
             InitializeComponent();
             initializeControl();
             this.frmSelectMedical = frmSelectMedical;
         }
-        public frmThuoc()
+        public frmMedicine()
         {
             InitializeComponent();
             initializeControl();

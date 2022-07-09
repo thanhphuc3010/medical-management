@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace medical_management {
+namespace medical_management.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace medical_management {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptDoanhthu : ReportClass {
+    public class rptNhaphang : ReportClass {
         
-        public rptDoanhthu() {
+        public rptNhaphang() {
         }
         
         public override string ResourceName {
             get {
-                return "rptDoanhthu.rpt";
+                return "rptNhaphang.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace medical_management {
         
         public override string FullResourceName {
             get {
-                return "medical_management.rptDoanhthu.rpt";
+                return "medical_management.Reports.rptNhaphang.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace medical_management {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptDoanhthu : Component, ICachedReport {
+    public class CachedrptNhaphang : Component, ICachedReport {
         
-        public CachedrptDoanhthu() {
+        public CachedrptNhaphang() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace medical_management {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptDoanhthu rpt = new rptDoanhthu();
+            rptNhaphang rpt = new rptNhaphang();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -16,7 +16,7 @@ using medical_management.Source.Utils;
 
 namespace medical_management
 {
-    public partial class frmPhieunhap : Form
+    public partial class frmPO : Form
     {
         public delegate void RefreshDelegate(object sender, ReloadPOEventArgs args);
         public event RefreshDelegate reloadPOEventHandler;
@@ -47,7 +47,7 @@ namespace medical_management
         private bool isSelectCompletePO = false;
         private bool isEdit = false;
         string selectedMedicalId;
-        public frmPhieunhap(frmDSPN frmDSPN)
+        public frmPO(frmPOList frmDSPN)
         {
             InitializeComponent();
         }

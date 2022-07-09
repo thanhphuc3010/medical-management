@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class frmThuoc
+    partial class frmMedicine
     {
         /// <summary>
         /// Required designer variable.

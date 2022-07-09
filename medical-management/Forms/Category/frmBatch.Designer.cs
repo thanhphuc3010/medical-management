@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class frmLothuoc
+    partial class frmBatch
     {
         /// <summary>
         /// Required designer variable.

@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class frmPhieunhap
+    partial class frmPO
     {
         /// <summary>
         /// Required designer variable.

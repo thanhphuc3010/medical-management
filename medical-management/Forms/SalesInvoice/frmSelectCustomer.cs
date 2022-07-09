@@ -63,7 +63,7 @@ namespace medical_management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmKhachhang f = new frmKhachhang(this);
+            frmCustomer f = new frmCustomer(this);
             f.WindowState = FormWindowState.Normal;
             f.ShowDialog();
         }

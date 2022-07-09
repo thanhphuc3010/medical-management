@@ -49,7 +49,7 @@ namespace medical_management
 
         private void mItemThuoc_Click(object sender, EventArgs e)
         {
-            frmThuoc f = new frmThuoc();
+            frmMedicine f = new frmMedicine();
             f.MdiParent = this;
             f.Show();
 
@@ -58,28 +58,28 @@ namespace medical_management
 
         private void mItemKH_Click(object sender, EventArgs e)
         {
-            frmKhachhang f = new frmKhachhang();
+            frmCustomer f = new frmCustomer();
             f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNCC_Click(object sender, EventArgs e)
         {
-            frmNhacungcap f = new frmNhacungcap();
+            frmSupplier f = new frmSupplier();
             f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNSX_Click(object sender, EventArgs e)
         {
-            frmNhasanxuat f = new frmNhasanxuat();
+            frmManufacturer f = new frmManufacturer();
             f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNV_Click(object sender, EventArgs e)
         {
-            frmNhanvien f = new frmNhanvien();
+            frmStaff f = new frmStaff();
             f.MdiParent = this;
             f.Show();
         }
@@ -98,7 +98,7 @@ namespace medical_management
 
         private void mItemPO_Click(object sender, EventArgs e)
         {
-            frmDSPN f = new frmDSPN();
+            frmPOList f = new frmPOList();
             f.MdiParent = this;
             f.Show();
         }
@@ -158,7 +158,7 @@ namespace medical_management
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            frmNhanvien f = new frmNhanvien();
+            frmStaff f = new frmStaff();
             f.MdiParent = this;
             f.Show();
         }

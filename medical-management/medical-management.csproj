@@ -60,73 +60,73 @@
     <Compile Include="BUS\InvoiceBUS.cs" />
     <Compile Include="BUS\PaymentBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
-    <Compile Include="Forms\PO\frmPhieunhap.cs">
+    <Compile Include="Forms\PO\frmPO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PO\frmPhieunhap.Designer.cs">
-      <DependentUpon>frmPhieunhap.cs</DependentUpon>
+    <Compile Include="Forms\PO\frmPO.Designer.cs">
+      <DependentUpon>frmPO.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBCDT.cs">
+    <Compile Include="Reports\frmBCDT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBCDT.Designer.cs">
+    <Compile Include="Reports\frmBCDT.Designer.cs">
       <DependentUpon>frmBCDT.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBCNhaphang.cs">
+    <Compile Include="Reports\frmBCNhaphang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBCNhaphang.Designer.cs">
+    <Compile Include="Reports\frmBCNhaphang.Designer.cs">
       <DependentUpon>frmBCNhaphang.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptDT.cs">
+    <Compile Include="Reports\rptDT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptDT.Designer.cs">
+    <Compile Include="Reports\rptDT.Designer.cs">
       <DependentUpon>rptDT.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptThuoc.cs">
+    <Compile Include="Reports\rptThuoc.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptThuoc.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptDoanhthu.cs">
+    <Compile Include="Reports\rptDoanhthu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptDoanhthu.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptDoanhthuprv.cs">
+    <Compile Include="Reports\rptDoanhthuprv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptDoanhthuprv.Designer.cs">
+    <Compile Include="Reports\rptDoanhthuprv.Designer.cs">
       <DependentUpon>rptDoanhthuprv.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptThuochethan.cs">
+    <Compile Include="Reports\rptThuochethan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptThuochethan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptThuochethanprv.cs">
+    <Compile Include="Reports\rptThuochethanprv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptThuochethanprv.Designer.cs">
+    <Compile Include="Reports\rptThuochethanprv.Designer.cs">
       <DependentUpon>rptThuochethanprv.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptThuoctheonhomprv.cs">
+    <Compile Include="Reports\rptThuoctheonhomprv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptThuoctheonhomprv.Designer.cs">
+    <Compile Include="Reports\rptThuoctheonhomprv.Designer.cs">
       <DependentUpon>rptThuoctheonhomprv.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptTonkho.cs">
+    <Compile Include="Reports\rptTonkho.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptTonkho.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptNhaphang.cs">
+    <Compile Include="Reports\rptNhaphang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptNhaphang.rpt</DependentUpon>
@@ -136,22 +136,22 @@
     <Compile Include="Model\Staff.cs" />
     <Compile Include="Model\Payment.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="frmSelectSupplier.cs">
+    <Compile Include="Forms\PO\frmSelectSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSelectSupplier.Designer.cs">
+    <Compile Include="Forms\PO\frmSelectSupplier.Designer.cs">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptNhapthuocprv.cs">
+    <Compile Include="Reports\rptNhapthuocprv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptNhapthuocprv.Designer.cs">
+    <Compile Include="Reports\rptNhapthuocprv.Designer.cs">
       <DependentUpon>rptNhapthuocprv.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptTonkhoprv.cs">
+    <Compile Include="Reports\rptTonkhoprv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rptTonkhoprv.Designer.cs">
+    <Compile Include="Reports\rptTonkhoprv.Designer.cs">
       <DependentUpon>rptTonkhoprv.cs</DependentUpon>
     </Compile>
     <Compile Include="Src\DBConnection\Database.cs" />
@@ -181,17 +181,17 @@
     <Compile Include="Forms\SalesInvoice\frmInvoiceList.Designer.cs">
       <DependentUpon>frmInvoiceList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PO\frmDSPN.cs">
+    <Compile Include="Forms\PO\frmPOList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PO\frmDSPN.Designer.cs">
-      <DependentUpon>frmDSPN.cs</DependentUpon>
+    <Compile Include="Forms\PO\frmPOList.Designer.cs">
+      <DependentUpon>frmPOList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Category\frmLothuoc.cs">
+    <Compile Include="Forms\Category\frmBatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmLothuoc.Designer.cs">
-      <DependentUpon>frmLothuoc.cs</DependentUpon>
+    <Compile Include="Forms\Category\frmBatch.Designer.cs">
+      <DependentUpon>frmBatch.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\InvoiceStatus.cs" />
     <Compile Include="QLHTDataSet.Designer.cs">
@@ -206,35 +206,35 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Category\frmKhachhang.cs">
+    <Compile Include="Forms\Category\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmKhachhang.Designer.cs">
-      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    <Compile Include="Forms\Category\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Authentication\frmLogin.cs">
+    <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Authentication\frmLogin.Designer.cs">
+    <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Category\frmNhacungcap.cs">
+    <Compile Include="Forms\Category\frmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmNhacungcap.Designer.cs">
-      <DependentUpon>frmNhacungcap.cs</DependentUpon>
+    <Compile Include="Forms\Category\frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Category\frmNhanvien.cs">
+    <Compile Include="Forms\Category\frmStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmNhanvien.Designer.cs">
-      <DependentUpon>frmNhanvien.cs</DependentUpon>
+    <Compile Include="Forms\Category\frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Category\frmNhasanxuat.cs">
+    <Compile Include="Forms\Category\frmManufacturer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmNhasanxuat.Designer.cs">
-      <DependentUpon>frmNhasanxuat.cs</DependentUpon>
+    <Compile Include="Forms\Category\frmManufacturer.Designer.cs">
+      <DependentUpon>frmManufacturer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SalesInvoice\frmInvoices.cs">
       <SubType>Form</SubType>
@@ -242,86 +242,86 @@
     <Compile Include="Forms\SalesInvoice\frmInvoices.Designer.cs">
       <DependentUpon>frmInvoices.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Category\frmThuoc.cs">
+    <Compile Include="Forms\Category\frmMedicine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Category\frmThuoc.Designer.cs">
-      <DependentUpon>frmThuoc.cs</DependentUpon>
+    <Compile Include="Forms\Category\frmMedicine.Designer.cs">
+      <DependentUpon>frmMedicine.cs</DependentUpon>
     </Compile>
     <Compile Include="Src\Helper\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Src\Helper\MyColor.cs" />
-    <EmbeddedResource Include="Forms\PO\frmPhieunhap.resx">
-      <DependentUpon>frmPhieunhap.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PO\frmPO.resx">
+      <DependentUpon>frmPO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBCDT.resx">
+    <EmbeddedResource Include="Reports\frmBCDT.resx">
       <DependentUpon>frmBCDT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBCNhaphang.resx">
+    <EmbeddedResource Include="Reports\frmBCNhaphang.resx">
       <DependentUpon>frmBCNhaphang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDT.resx">
+    <EmbeddedResource Include="Reports\rptDT.resx">
       <DependentUpon>rptDT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptThuoc.rpt">
+    <EmbeddedResource Include="Reports\rptThuoc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptThuoc.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDoanhthu.rpt">
+    <EmbeddedResource Include="Reports\rptDoanhthu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDoanhthu.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDoanhthuprv.resx">
+    <EmbeddedResource Include="Reports\rptDoanhthuprv.resx">
       <DependentUpon>rptDoanhthuprv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptThuochethan.rpt">
+    <EmbeddedResource Include="Reports\rptThuochethan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptThuochethan.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptThuochethanprv.resx">
+    <EmbeddedResource Include="Reports\rptThuochethanprv.resx">
       <DependentUpon>rptThuochethanprv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptThuoctheonhomprv.resx">
+    <EmbeddedResource Include="Reports\rptThuoctheonhomprv.resx">
       <DependentUpon>rptThuoctheonhomprv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptTonkho.rpt">
+    <EmbeddedResource Include="Reports\rptTonkho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTonkho.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptNhaphang.rpt">
+    <EmbeddedResource Include="Reports\rptNhaphang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptNhaphang.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSelectSupplier.resx">
+    <EmbeddedResource Include="Forms\PO\frmSelectSupplier.resx">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesInvoice\frmInvoiceList.resx">
       <DependentUpon>frmInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PO\frmDSPN.resx">
-      <DependentUpon>frmDSPN.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PO\frmPOList.resx">
+      <DependentUpon>frmPOList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Category\frmKhachhang.resx">
-      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Category\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Authentication\frmLogin.resx">
+    <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Category\frmLothuoc.resx">
-      <DependentUpon>frmLothuoc.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Category\frmBatch.resx">
+      <DependentUpon>frmBatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Category\frmNhacungcap.resx">
-      <DependentUpon>frmNhacungcap.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Category\frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Category\frmNhanvien.resx">
-      <DependentUpon>frmNhanvien.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Category\frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Category\frmNhasanxuat.resx">
-      <DependentUpon>frmNhasanxuat.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Category\frmManufacturer.resx">
+      <DependentUpon>frmManufacturer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesInvoice\frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
@@ -335,8 +335,8 @@
     <EmbeddedResource Include="Forms\SalesInvoice\frmSelectMedical.resx">
       <DependentUpon>frmSelectMedical.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Category\frmThuoc.resx">
-      <DependentUpon>frmThuoc.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Category\frmMedicine.resx">
+      <DependentUpon>frmMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -348,10 +348,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="rptNhapthuocprv.resx">
+    <EmbeddedResource Include="Reports\rptNhapthuocprv.resx">
       <DependentUpon>rptNhapthuocprv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptTonkhoprv.resx">
+    <EmbeddedResource Include="Reports\rptTonkhoprv.resx">
       <DependentUpon>rptTonkhoprv.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -456,8 +456,6 @@
   <ItemGroup>
     <None Include="Resources\plus_circle_outline1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Main\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

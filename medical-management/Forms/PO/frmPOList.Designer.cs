@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class frmDSPN
+    partial class frmPOList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSPN));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOList));
             this.lblDMPN = new System.Windows.Forms.Label();
             this.dgvDSPN = new System.Windows.Forms.DataGridView();
             this.Manhap = new System.Windows.Forms.DataGridViewTextBoxColumn();

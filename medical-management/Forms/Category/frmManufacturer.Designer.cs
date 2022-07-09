@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class frmNhasanxuat
+    partial class frmManufacturer
     {
         /// <summary>
         /// Required designer variable.

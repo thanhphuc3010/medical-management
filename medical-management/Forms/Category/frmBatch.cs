@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class frmLothuoc : Form
+    public partial class frmBatch : Form
     {
-        public frmLothuoc()
+        public frmBatch()
         {
             InitializeComponent();
         }

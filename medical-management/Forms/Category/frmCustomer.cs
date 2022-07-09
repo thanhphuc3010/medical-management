@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class frmKhachhang : Form
+    public partial class frmCustomer : Form
     {
         private readonly frmSelectCustomer frmSelectCustomer;
         private string customerId;
 
-        public frmKhachhang(frmSelectCustomer frmSelectCustomer)
+        public frmCustomer(frmSelectCustomer frmSelectCustomer)
         {
             InitializeComponent();
             this.frmSelectCustomer = frmSelectCustomer;
             initializeControl();
 
         }
-        public frmKhachhang()
+        public frmCustomer()
         {
             InitializeComponent();
             initializeControl();

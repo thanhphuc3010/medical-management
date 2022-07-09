@@ -68,7 +68,7 @@ namespace medical_management
 
         private void btnAddMedical_Click(object sender, EventArgs e)
         {
-            frmThuoc f = new frmThuoc(this);
+            frmMedicine f = new frmMedicine(this);
             f.WindowState = FormWindowState.Normal;
             f.ShowDialog();
         }

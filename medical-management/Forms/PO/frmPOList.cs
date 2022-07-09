@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace medical_management
 {
-    public partial class frmDSPN : Form
+    public partial class frmPOList : Form
     {
-        public frmDSPN()
+        public frmPOList()
         {
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmPhieunhap f = new frmPhieunhap(this);
+            frmPO f = new frmPO(this);
             f.reloadPOEventHandler += refreshEventHandler;
             f.ShowDialog(this);
         }
 
-        private void refreshEventHandler(object sender, frmPhieunhap.ReloadPOEventArgs args)
+        private void refreshEventHandler(object sender, frmPO.ReloadPOEventArgs args)
         {
             loadlistPO();
         }
