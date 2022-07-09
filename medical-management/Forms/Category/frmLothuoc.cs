@@ -27,6 +27,10 @@ namespace medical_management
             dgvLothuoc.DataSource = Database.Instance.excuteQuery(query);
             
         }
-        
+
+        private void dgvLothuoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

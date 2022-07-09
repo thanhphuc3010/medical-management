@@ -57,9 +57,10 @@ namespace medical_management
             this.lblDMPN.AutoSize = true;
             this.lblDMPN.BackColor = System.Drawing.Color.Transparent;
             this.lblDMPN.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDMPN.Location = new System.Drawing.Point(12, 16);
+            this.lblDMPN.Location = new System.Drawing.Point(16, 20);
+            this.lblDMPN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDMPN.Name = "lblDMPN";
-            this.lblDMPN.Size = new System.Drawing.Size(202, 26);
+            this.lblDMPN.Size = new System.Drawing.Size(258, 33);
             this.lblDMPN.TabIndex = 0;
             this.lblDMPN.Text = "Danh sách Phiếu nhập";
             // 
@@ -70,6 +71,7 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSPN.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvDSPN.ColumnHeadersHeight = 29;
             this.dgvDSPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDSPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Manhap,
@@ -78,12 +80,13 @@ namespace medical_management
             this.MaNCC,
             this.Soluonglo,
             this.Tongtien});
-            this.dgvDSPN.Location = new System.Drawing.Point(12, 57);
+            this.dgvDSPN.Location = new System.Drawing.Point(16, 70);
+            this.dgvDSPN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDSPN.Name = "dgvDSPN";
             this.dgvDSPN.ReadOnly = true;
             this.dgvDSPN.RowHeadersVisible = false;
             this.dgvDSPN.RowHeadersWidth = 51;
-            this.dgvDSPN.Size = new System.Drawing.Size(915, 272);
+            this.dgvDSPN.Size = new System.Drawing.Size(1220, 335);
             this.dgvDSPN.TabIndex = 1;
             this.dgvDSPN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPN_CellClick);
             this.dgvDSPN.Sorted += new System.EventHandler(this.dgvDSPN_Sorted);
@@ -92,6 +95,7 @@ namespace medical_management
             // 
             this.Manhap.DataPropertyName = "Manhap";
             this.Manhap.HeaderText = "Mã phiếu nhập";
+            this.Manhap.MinimumWidth = 6;
             this.Manhap.Name = "Manhap";
             this.Manhap.ReadOnly = true;
             // 
@@ -99,6 +103,7 @@ namespace medical_management
             // 
             this.Ngaynhap.DataPropertyName = "Ngaynhap";
             this.Ngaynhap.HeaderText = "Ngày nhập";
+            this.Ngaynhap.MinimumWidth = 6;
             this.Ngaynhap.Name = "Ngaynhap";
             this.Ngaynhap.ReadOnly = true;
             // 
@@ -106,6 +111,7 @@ namespace medical_management
             // 
             this.MaNV.DataPropertyName = "MaNV";
             this.MaNV.HeaderText = "Mã Nhân viên";
+            this.MaNV.MinimumWidth = 6;
             this.MaNV.Name = "MaNV";
             this.MaNV.ReadOnly = true;
             // 
@@ -113,6 +119,7 @@ namespace medical_management
             // 
             this.MaNCC.DataPropertyName = "MaNCC";
             this.MaNCC.HeaderText = "Mã NCC";
+            this.MaNCC.MinimumWidth = 6;
             this.MaNCC.Name = "MaNCC";
             this.MaNCC.ReadOnly = true;
             // 
@@ -120,6 +127,7 @@ namespace medical_management
             // 
             this.Soluonglo.DataPropertyName = "Soluonglo";
             this.Soluonglo.HeaderText = "Số lượng lô";
+            this.Soluonglo.MinimumWidth = 6;
             this.Soluonglo.Name = "Soluonglo";
             this.Soluonglo.ReadOnly = true;
             // 
@@ -127,19 +135,20 @@ namespace medical_management
             // 
             this.Tongtien.DataPropertyName = "Tongtien";
             this.Tongtien.HeaderText = "Tổng tiền";
+            this.Tongtien.MinimumWidth = 6;
             this.Tongtien.Name = "Tongtien";
             this.Tongtien.ReadOnly = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Navy;
             this.btnAdd.Image = global::medical_management.Properties.Resources.plus_circle_outline;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(231, 9);
+            this.btnAdd.Location = new System.Drawing.Point(308, 11);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 42);
+            this.btnAdd.Size = new System.Drawing.Size(116, 52);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,70 +172,80 @@ namespace medical_management
             this.Thanhtien,
             this.Ngaysanxuat,
             this.Ngayhethan});
-            this.dgvPNCT.Location = new System.Drawing.Point(12, 348);
+            this.dgvPNCT.Location = new System.Drawing.Point(16, 428);
+            this.dgvPNCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPNCT.Name = "dgvPNCT";
-            this.dgvPNCT.Size = new System.Drawing.Size(915, 141);
+            this.dgvPNCT.RowHeadersWidth = 51;
+            this.dgvPNCT.Size = new System.Drawing.Size(1220, 174);
             this.dgvPNCT.TabIndex = 3;
             // 
             // Malo
             // 
             this.Malo.DataPropertyName = "Malo";
             this.Malo.HeaderText = "Mã lô";
+            this.Malo.MinimumWidth = 6;
             this.Malo.Name = "Malo";
             // 
             // Mathuoc
             // 
             this.Mathuoc.DataPropertyName = "Mathuoc";
             this.Mathuoc.HeaderText = "Mã thuốc";
+            this.Mathuoc.MinimumWidth = 6;
             this.Mathuoc.Name = "Mathuoc";
             // 
             // Soluong
             // 
             this.Soluong.DataPropertyName = "Soluong";
             this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.MinimumWidth = 6;
             this.Soluong.Name = "Soluong";
             // 
             // Donvi
             // 
             this.Donvi.DataPropertyName = "Donvi";
             this.Donvi.HeaderText = "Đơn vị";
+            this.Donvi.MinimumWidth = 6;
             this.Donvi.Name = "Donvi";
             // 
             // Gianhap
             // 
             this.Gianhap.DataPropertyName = "Gianhap";
             this.Gianhap.HeaderText = "Giá nhập";
+            this.Gianhap.MinimumWidth = 6;
             this.Gianhap.Name = "Gianhap";
             // 
             // Thanhtien
             // 
             this.Thanhtien.DataPropertyName = "Thanhtien";
             this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.MinimumWidth = 6;
             this.Thanhtien.Name = "Thanhtien";
             // 
             // Ngaysanxuat
             // 
             this.Ngaysanxuat.DataPropertyName = "Ngaysanxuat";
             this.Ngaysanxuat.HeaderText = "Ngày sản xuất";
+            this.Ngaysanxuat.MinimumWidth = 6;
             this.Ngaysanxuat.Name = "Ngaysanxuat";
             // 
             // Ngayhethan
             // 
             this.Ngayhethan.DataPropertyName = "Ngayhethan";
             this.Ngayhethan.HeaderText = "Ngày hết hạn";
+            this.Ngayhethan.MinimumWidth = 6;
             this.Ngayhethan.Name = "Ngayhethan";
             // 
             // frmDSPN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._635203f6dfa214fc4db3;
-            this.ClientSize = new System.Drawing.Size(953, 513);
+            this.ClientSize = new System.Drawing.Size(1271, 631);
             this.Controls.Add(this.dgvPNCT);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvDSPN);
             this.Controls.Add(this.lblDMPN);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDSPN";
             this.Text = "Danh sách Phiếu nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

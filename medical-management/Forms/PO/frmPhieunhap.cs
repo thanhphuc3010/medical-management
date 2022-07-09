@@ -83,7 +83,7 @@ namespace medical_management
             txtGianhap.BackColor = txtGianhap.BackColor;
             btnAdd.disable();
 
-            frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+            frmMain f = (frmMain)Owner;
             this.staffId = f.staffId;
             Staff staff = StaffBUS.getStaffById(this.staffId);
             txtNhanviennhap.Text = staff.Name;

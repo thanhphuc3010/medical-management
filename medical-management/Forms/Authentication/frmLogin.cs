@@ -51,12 +51,12 @@ namespace medical_management
         {
             if (!isLogin)
             {
-                frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+                frmMain f = (frmMain)Owner;
                 f.isLogin = false;
                 Application.Exit();
             } else
             {
-                frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+                frmMain f = (frmMain)Owner;
                 f.isLogin = true;
                 f.staffId = this.staffId;
             }

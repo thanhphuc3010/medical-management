@@ -29,7 +29,6 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThuoc));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -83,17 +82,21 @@ namespace medical_management
             this.comFValue = new System.Windows.Forms.ComboBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Navy;
-            this.btnAdd.Location = new System.Drawing.Point(8, 256);
+            this.btnAdd.ForeColor = System.Drawing.Color.Blue;
+            this.btnAdd.Location = new System.Drawing.Point(923, 607);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(47, 34);
+            this.btnAdd.Size = new System.Drawing.Size(63, 42);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -101,12 +104,14 @@ namespace medical_management
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Navy;
-            this.btnSave.Location = new System.Drawing.Point(167, 256);
+            this.btnSave.ForeColor = System.Drawing.Color.Blue;
+            this.btnSave.Location = new System.Drawing.Point(1135, 607);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(47, 34);
+            this.btnSave.Size = new System.Drawing.Size(63, 42);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -114,12 +119,14 @@ namespace medical_management
             // 
             // btnDel
             // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.ForeColor = System.Drawing.Color.Navy;
-            this.btnDel.Location = new System.Drawing.Point(114, 256);
+            this.btnDel.ForeColor = System.Drawing.Color.Blue;
+            this.btnDel.Location = new System.Drawing.Point(1064, 607);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(47, 34);
+            this.btnDel.Size = new System.Drawing.Size(63, 42);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = false;
@@ -127,12 +134,14 @@ namespace medical_management
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Navy;
-            this.btnEdit.Location = new System.Drawing.Point(61, 256);
+            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
+            this.btnEdit.Location = new System.Drawing.Point(993, 607);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(47, 34);
+            this.btnEdit.Size = new System.Drawing.Size(63, 42);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -140,12 +149,14 @@ namespace medical_management
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.Red;
-            this.btnPrint.Location = new System.Drawing.Point(220, 256);
+            this.btnPrint.ForeColor = System.Drawing.Color.Blue;
+            this.btnPrint.Location = new System.Drawing.Point(1163, 297);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(96, 34);
+            this.btnPrint.Size = new System.Drawing.Size(186, 42);
             this.btnPrint.TabIndex = 4;
             this.btnPrint.Text = "In Danh sách thuốc theo nhóm thuốc";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -157,9 +168,10 @@ namespace medical_management
             this.lblThuoc.AutoSize = true;
             this.lblThuoc.BackColor = System.Drawing.Color.Transparent;
             this.lblThuoc.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThuoc.Location = new System.Drawing.Point(466, 24);
+            this.lblThuoc.Location = new System.Drawing.Point(546, 33);
+            this.lblThuoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblThuoc.Name = "lblThuoc";
-            this.lblThuoc.Size = new System.Drawing.Size(169, 29);
+            this.lblThuoc.Size = new System.Drawing.Size(213, 37);
             this.lblThuoc.TabIndex = 5;
             this.lblThuoc.Text = "Thông tin thuốc";
             // 
@@ -169,9 +181,10 @@ namespace medical_management
             this.lblMathuoc.AutoSize = true;
             this.lblMathuoc.BackColor = System.Drawing.Color.Transparent;
             this.lblMathuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMathuoc.Location = new System.Drawing.Point(29, 94);
+            this.lblMathuoc.Location = new System.Drawing.Point(39, 116);
+            this.lblMathuoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMathuoc.Name = "lblMathuoc";
-            this.lblMathuoc.Size = new System.Drawing.Size(59, 15);
+            this.lblMathuoc.Size = new System.Drawing.Size(79, 21);
             this.lblMathuoc.TabIndex = 6;
             this.lblMathuoc.Text = "Mã Thuốc";
             // 
@@ -181,9 +194,10 @@ namespace medical_management
             this.lblManhasanxuat.AutoSize = true;
             this.lblManhasanxuat.BackColor = System.Drawing.Color.Transparent;
             this.lblManhasanxuat.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManhasanxuat.Location = new System.Drawing.Point(29, 121);
+            this.lblManhasanxuat.Location = new System.Drawing.Point(39, 149);
+            this.lblManhasanxuat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManhasanxuat.Name = "lblManhasanxuat";
-            this.lblManhasanxuat.Size = new System.Drawing.Size(97, 15);
+            this.lblManhasanxuat.Size = new System.Drawing.Size(128, 21);
             this.lblManhasanxuat.TabIndex = 7;
             this.lblManhasanxuat.Text = "Mã Nhà sản xuất";
             // 
@@ -193,9 +207,10 @@ namespace medical_management
             this.lblTenthuoc.AutoSize = true;
             this.lblTenthuoc.BackColor = System.Drawing.Color.Transparent;
             this.lblTenthuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenthuoc.Location = new System.Drawing.Point(29, 170);
+            this.lblTenthuoc.Location = new System.Drawing.Point(39, 209);
+            this.lblTenthuoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenthuoc.Name = "lblTenthuoc";
-            this.lblTenthuoc.Size = new System.Drawing.Size(60, 15);
+            this.lblTenthuoc.Size = new System.Drawing.Size(79, 21);
             this.lblTenthuoc.TabIndex = 8;
             this.lblTenthuoc.Text = "Tên thuốc";
             // 
@@ -205,9 +220,10 @@ namespace medical_management
             this.lblHamluong.AutoSize = true;
             this.lblHamluong.BackColor = System.Drawing.Color.Transparent;
             this.lblHamluong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHamluong.Location = new System.Drawing.Point(387, 120);
+            this.lblHamluong.Location = new System.Drawing.Point(516, 148);
+            this.lblHamluong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHamluong.Name = "lblHamluong";
-            this.lblHamluong.Size = new System.Drawing.Size(67, 15);
+            this.lblHamluong.Size = new System.Drawing.Size(90, 21);
             this.lblHamluong.TabIndex = 9;
             this.lblHamluong.Text = "Hàm lượng";
             // 
@@ -217,9 +233,10 @@ namespace medical_management
             this.lblDonvi.AutoSize = true;
             this.lblDonvi.BackColor = System.Drawing.Color.Transparent;
             this.lblDonvi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDonvi.Location = new System.Drawing.Point(387, 94);
+            this.lblDonvi.Location = new System.Drawing.Point(516, 116);
+            this.lblDonvi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDonvi.Name = "lblDonvi";
-            this.lblDonvi.Size = new System.Drawing.Size(42, 15);
+            this.lblDonvi.Size = new System.Drawing.Size(57, 21);
             this.lblDonvi.TabIndex = 10;
             this.lblDonvi.Text = "Đơn vị";
             // 
@@ -229,9 +246,10 @@ namespace medical_management
             this.lblSoluong.AutoSize = true;
             this.lblSoluong.BackColor = System.Drawing.Color.Transparent;
             this.lblSoluong.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoluong.Location = new System.Drawing.Point(729, 94);
+            this.lblSoluong.Location = new System.Drawing.Point(972, 116);
+            this.lblSoluong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSoluong.Name = "lblSoluong";
-            this.lblSoluong.Size = new System.Drawing.Size(55, 15);
+            this.lblSoluong.Size = new System.Drawing.Size(74, 21);
             this.lblSoluong.TabIndex = 11;
             this.lblSoluong.Text = "Số lượng";
             // 
@@ -241,9 +259,10 @@ namespace medical_management
             this.lblDonggoi.AutoSize = true;
             this.lblDonggoi.BackColor = System.Drawing.Color.Transparent;
             this.lblDonggoi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDonggoi.Location = new System.Drawing.Point(387, 146);
+            this.lblDonggoi.Location = new System.Drawing.Point(516, 180);
+            this.lblDonggoi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDonggoi.Name = "lblDonggoi";
-            this.lblDonggoi.Size = new System.Drawing.Size(54, 15);
+            this.lblDonggoi.Size = new System.Drawing.Size(72, 21);
             this.lblDonggoi.TabIndex = 12;
             this.lblDonggoi.Text = "Đóng gói";
             // 
@@ -253,9 +272,10 @@ namespace medical_management
             this.lblThanhphan.AutoSize = true;
             this.lblThanhphan.BackColor = System.Drawing.Color.Transparent;
             this.lblThanhphan.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThanhphan.Location = new System.Drawing.Point(387, 173);
+            this.lblThanhphan.Location = new System.Drawing.Point(516, 213);
+            this.lblThanhphan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblThanhphan.Name = "lblThanhphan";
-            this.lblThanhphan.Size = new System.Drawing.Size(70, 15);
+            this.lblThanhphan.Size = new System.Drawing.Size(92, 21);
             this.lblThanhphan.TabIndex = 13;
             this.lblThanhphan.Text = "Thành phần";
             // 
@@ -265,9 +285,10 @@ namespace medical_management
             this.lblGhichu.AutoSize = true;
             this.lblGhichu.BackColor = System.Drawing.Color.Transparent;
             this.lblGhichu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGhichu.Location = new System.Drawing.Point(730, 175);
+            this.lblGhichu.Location = new System.Drawing.Point(973, 215);
+            this.lblGhichu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGhichu.Name = "lblGhichu";
-            this.lblGhichu.Size = new System.Drawing.Size(47, 15);
+            this.lblGhichu.Size = new System.Drawing.Size(63, 21);
             this.lblGhichu.TabIndex = 16;
             this.lblGhichu.Text = "Ghi chú";
             // 
@@ -293,10 +314,11 @@ namespace medical_management
             this.Dongia,
             this.Ghichu});
             this.dgvThuoc.GridColor = System.Drawing.Color.Silver;
-            this.dgvThuoc.Location = new System.Drawing.Point(12, 304);
+            this.dgvThuoc.Location = new System.Drawing.Point(16, 374);
+            this.dgvThuoc.Margin = new System.Windows.Forms.Padding(4);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.RowHeadersWidth = 20;
-            this.dgvThuoc.Size = new System.Drawing.Size(1000, 182);
+            this.dgvThuoc.Size = new System.Drawing.Size(1333, 224);
             this.dgvThuoc.TabIndex = 10;
             // 
             // Mathuoc
@@ -310,6 +332,7 @@ namespace medical_management
             // 
             this.Nhomthuoc.DataPropertyName = "Nhomthuoc";
             this.Nhomthuoc.HeaderText = "Nhóm thuốc";
+            this.Nhomthuoc.MinimumWidth = 6;
             this.Nhomthuoc.Name = "Nhomthuoc";
             // 
             // MaNSX
@@ -365,12 +388,14 @@ namespace medical_management
             // 
             this.Gianhap.DataPropertyName = "Gianhap";
             this.Gianhap.HeaderText = "Giá nhập";
+            this.Gianhap.MinimumWidth = 6;
             this.Gianhap.Name = "Gianhap";
             // 
             // Dongia
             // 
             this.Dongia.DataPropertyName = "Dongia";
             this.Dongia.HeaderText = "Đơn giá";
+            this.Dongia.MinimumWidth = 6;
             this.Dongia.Name = "Dongia";
             // 
             // Ghichu
@@ -383,93 +408,103 @@ namespace medical_management
             // txtMathuoc
             // 
             this.txtMathuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMathuoc.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtMathuoc.Location = new System.Drawing.Point(136, 92);
+            this.txtMathuoc.BackColor = System.Drawing.Color.White;
+            this.txtMathuoc.Location = new System.Drawing.Point(181, 113);
+            this.txtMathuoc.Margin = new System.Windows.Forms.Padding(4);
             this.txtMathuoc.Name = "txtMathuoc";
-            this.txtMathuoc.Size = new System.Drawing.Size(188, 20);
+            this.txtMathuoc.Size = new System.Drawing.Size(249, 22);
             this.txtMathuoc.TabIndex = 18;
             // 
             // txtMaNSX
             // 
             this.txtMaNSX.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaNSX.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtMaNSX.Location = new System.Drawing.Point(136, 117);
+            this.txtMaNSX.BackColor = System.Drawing.Color.White;
+            this.txtMaNSX.Location = new System.Drawing.Point(181, 144);
+            this.txtMaNSX.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNSX.Name = "txtMaNSX";
-            this.txtMaNSX.Size = new System.Drawing.Size(188, 20);
+            this.txtMaNSX.Size = new System.Drawing.Size(249, 22);
             this.txtMaNSX.TabIndex = 19;
             // 
             // txtTenthuoc
             // 
             this.txtTenthuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTenthuoc.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTenthuoc.Location = new System.Drawing.Point(136, 168);
+            this.txtTenthuoc.BackColor = System.Drawing.Color.White;
+            this.txtTenthuoc.Location = new System.Drawing.Point(181, 207);
+            this.txtTenthuoc.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenthuoc.Name = "txtTenthuoc";
-            this.txtTenthuoc.Size = new System.Drawing.Size(188, 20);
+            this.txtTenthuoc.Size = new System.Drawing.Size(249, 22);
             this.txtTenthuoc.TabIndex = 20;
             // 
             // txtDonvi
             // 
             this.txtDonvi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDonvi.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDonvi.Location = new System.Drawing.Point(481, 92);
+            this.txtDonvi.BackColor = System.Drawing.Color.White;
+            this.txtDonvi.Location = new System.Drawing.Point(641, 113);
+            this.txtDonvi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonvi.Name = "txtDonvi";
-            this.txtDonvi.Size = new System.Drawing.Size(188, 20);
+            this.txtDonvi.Size = new System.Drawing.Size(249, 22);
             this.txtDonvi.TabIndex = 21;
             // 
             // txtHamluong
             // 
             this.txtHamluong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtHamluong.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtHamluong.Location = new System.Drawing.Point(481, 118);
+            this.txtHamluong.BackColor = System.Drawing.Color.White;
+            this.txtHamluong.Location = new System.Drawing.Point(641, 145);
+            this.txtHamluong.Margin = new System.Windows.Forms.Padding(4);
             this.txtHamluong.Name = "txtHamluong";
-            this.txtHamluong.Size = new System.Drawing.Size(188, 20);
+            this.txtHamluong.Size = new System.Drawing.Size(249, 22);
             this.txtHamluong.TabIndex = 22;
             // 
             // txtSoluong
             // 
             this.txtSoluong.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSoluong.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSoluong.Location = new System.Drawing.Point(812, 92);
+            this.txtSoluong.BackColor = System.Drawing.Color.White;
+            this.txtSoluong.Location = new System.Drawing.Point(1083, 113);
+            this.txtSoluong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(188, 20);
+            this.txtSoluong.Size = new System.Drawing.Size(249, 22);
             this.txtSoluong.TabIndex = 23;
             // 
             // txtDonggoi
             // 
             this.txtDonggoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDonggoi.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDonggoi.Location = new System.Drawing.Point(481, 144);
+            this.txtDonggoi.BackColor = System.Drawing.Color.White;
+            this.txtDonggoi.Location = new System.Drawing.Point(641, 177);
+            this.txtDonggoi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonggoi.Name = "txtDonggoi";
-            this.txtDonggoi.Size = new System.Drawing.Size(188, 20);
+            this.txtDonggoi.Size = new System.Drawing.Size(249, 22);
             this.txtDonggoi.TabIndex = 24;
             // 
             // txtThanhphan
             // 
             this.txtThanhphan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtThanhphan.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtThanhphan.Location = new System.Drawing.Point(481, 170);
+            this.txtThanhphan.BackColor = System.Drawing.Color.White;
+            this.txtThanhphan.Location = new System.Drawing.Point(641, 209);
+            this.txtThanhphan.Margin = new System.Windows.Forms.Padding(4);
             this.txtThanhphan.Name = "txtThanhphan";
-            this.txtThanhphan.Size = new System.Drawing.Size(188, 20);
+            this.txtThanhphan.Size = new System.Drawing.Size(249, 22);
             this.txtThanhphan.TabIndex = 25;
             // 
             // txtGhichu
             // 
             this.txtGhichu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtGhichu.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtGhichu.Location = new System.Drawing.Point(812, 170);
+            this.txtGhichu.BackColor = System.Drawing.Color.White;
+            this.txtGhichu.Location = new System.Drawing.Point(1083, 209);
+            this.txtGhichu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhichu.Name = "txtGhichu";
-            this.txtGhichu.Size = new System.Drawing.Size(188, 20);
+            this.txtGhichu.Size = new System.Drawing.Size(249, 22);
             this.txtGhichu.TabIndex = 28;
             // 
             // btnDau
             // 
             this.btnDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDau.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDau.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnDau.Location = new System.Drawing.Point(9, 492);
+            this.btnDau.Location = new System.Drawing.Point(43, 608);
+            this.btnDau.Margin = new System.Windows.Forms.Padding(4);
             this.btnDau.Name = "btnDau";
-            this.btnDau.Size = new System.Drawing.Size(68, 34);
+            this.btnDau.Size = new System.Drawing.Size(78, 41);
             this.btnDau.TabIndex = 29;
             this.btnDau.Text = "Đầu";
             this.btnDau.UseVisualStyleBackColor = false;
@@ -478,12 +513,13 @@ namespace medical_management
             // btnCuoi
             // 
             this.btnCuoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCuoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCuoi.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnCuoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCuoi.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnCuoi.Location = new System.Drawing.Point(231, 492);
+            this.btnCuoi.Location = new System.Drawing.Point(339, 608);
+            this.btnCuoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnCuoi.Name = "btnCuoi";
-            this.btnCuoi.Size = new System.Drawing.Size(68, 34);
+            this.btnCuoi.Size = new System.Drawing.Size(78, 41);
             this.btnCuoi.TabIndex = 30;
             this.btnCuoi.Text = "Cuối";
             this.btnCuoi.UseVisualStyleBackColor = false;
@@ -492,12 +528,13 @@ namespace medical_management
             // btnSau
             // 
             this.btnSau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSau.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnSau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSau.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnSau.Location = new System.Drawing.Point(157, 492);
+            this.btnSau.Location = new System.Drawing.Point(240, 608);
+            this.btnSau.Margin = new System.Windows.Forms.Padding(4);
             this.btnSau.Name = "btnSau";
-            this.btnSau.Size = new System.Drawing.Size(68, 34);
+            this.btnSau.Size = new System.Drawing.Size(78, 41);
             this.btnSau.TabIndex = 31;
             this.btnSau.Text = "Sau";
             this.btnSau.UseVisualStyleBackColor = false;
@@ -506,12 +543,13 @@ namespace medical_management
             // btnTruoc
             // 
             this.btnTruoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTruoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnTruoc.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnTruoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTruoc.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnTruoc.Location = new System.Drawing.Point(83, 492);
+            this.btnTruoc.Location = new System.Drawing.Point(142, 608);
+            this.btnTruoc.Margin = new System.Windows.Forms.Padding(4);
             this.btnTruoc.Name = "btnTruoc";
-            this.btnTruoc.Size = new System.Drawing.Size(68, 34);
+            this.btnTruoc.Size = new System.Drawing.Size(78, 41);
             this.btnTruoc.TabIndex = 32;
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = false;
@@ -520,20 +558,22 @@ namespace medical_management
             // txtGianhap
             // 
             this.txtGianhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtGianhap.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtGianhap.BackColor = System.Drawing.Color.White;
             this.txtGianhap.HideSelection = false;
-            this.txtGianhap.Location = new System.Drawing.Point(812, 144);
+            this.txtGianhap.Location = new System.Drawing.Point(1083, 177);
+            this.txtGianhap.Margin = new System.Windows.Forms.Padding(4);
             this.txtGianhap.Name = "txtGianhap";
-            this.txtGianhap.Size = new System.Drawing.Size(188, 20);
+            this.txtGianhap.Size = new System.Drawing.Size(249, 22);
             this.txtGianhap.TabIndex = 38;
             // 
             // txtDongia
             // 
             this.txtDongia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDongia.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDongia.Location = new System.Drawing.Point(812, 118);
+            this.txtDongia.BackColor = System.Drawing.Color.White;
+            this.txtDongia.Location = new System.Drawing.Point(1083, 145);
+            this.txtDongia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDongia.Name = "txtDongia";
-            this.txtDongia.Size = new System.Drawing.Size(188, 20);
+            this.txtDongia.Size = new System.Drawing.Size(249, 22);
             this.txtDongia.TabIndex = 37;
             // 
             // lblGianhap
@@ -542,9 +582,10 @@ namespace medical_management
             this.lblGianhap.AutoSize = true;
             this.lblGianhap.BackColor = System.Drawing.Color.Transparent;
             this.lblGianhap.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGianhap.Location = new System.Drawing.Point(730, 147);
+            this.lblGianhap.Location = new System.Drawing.Point(973, 181);
+            this.lblGianhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGianhap.Name = "lblGianhap";
-            this.lblGianhap.Size = new System.Drawing.Size(54, 15);
+            this.lblGianhap.Size = new System.Drawing.Size(72, 21);
             this.lblGianhap.TabIndex = 36;
             this.lblGianhap.Text = "Giá nhập";
             // 
@@ -554,21 +595,23 @@ namespace medical_management
             this.lblDongia.AutoSize = true;
             this.lblDongia.BackColor = System.Drawing.Color.Transparent;
             this.lblDongia.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDongia.Location = new System.Drawing.Point(729, 120);
+            this.lblDongia.Location = new System.Drawing.Point(972, 148);
+            this.lblDongia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDongia.Name = "lblDongia";
-            this.lblDongia.Size = new System.Drawing.Size(48, 15);
+            this.lblDongia.Size = new System.Drawing.Size(65, 21);
             this.lblDongia.TabIndex = 35;
             this.lblDongia.Text = "Đơn giá";
             // 
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnExit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnExit.Location = new System.Drawing.Point(931, 492);
+            this.btnExit.ForeColor = System.Drawing.Color.Blue;
+            this.btnExit.Location = new System.Drawing.Point(1241, 606);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 34);
+            this.btnExit.Size = new System.Drawing.Size(113, 42);
             this.btnExit.TabIndex = 39;
             this.btnExit.Text = "Kết thúc";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -577,10 +620,11 @@ namespace medical_management
             // txtNhomthuoc
             // 
             this.txtNhomthuoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNhomthuoc.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNhomthuoc.Location = new System.Drawing.Point(136, 142);
+            this.txtNhomthuoc.BackColor = System.Drawing.Color.White;
+            this.txtNhomthuoc.Location = new System.Drawing.Point(181, 175);
+            this.txtNhomthuoc.Margin = new System.Windows.Forms.Padding(4);
             this.txtNhomthuoc.Name = "txtNhomthuoc";
-            this.txtNhomthuoc.Size = new System.Drawing.Size(188, 20);
+            this.txtNhomthuoc.Size = new System.Drawing.Size(249, 22);
             this.txtNhomthuoc.TabIndex = 41;
             // 
             // lblNhomthuoc
@@ -589,83 +633,111 @@ namespace medical_management
             this.lblNhomthuoc.AutoSize = true;
             this.lblNhomthuoc.BackColor = System.Drawing.Color.Transparent;
             this.lblNhomthuoc.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhomthuoc.Location = new System.Drawing.Point(29, 146);
+            this.lblNhomthuoc.Location = new System.Drawing.Point(39, 180);
+            this.lblNhomthuoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNhomthuoc.Name = "lblNhomthuoc";
-            this.lblNhomthuoc.Size = new System.Drawing.Size(75, 15);
+            this.lblNhomthuoc.Size = new System.Drawing.Size(97, 21);
             this.lblNhomthuoc.TabIndex = 40;
             this.lblNhomthuoc.Text = "Nhóm thuốc";
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(728, 209);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(39, 269);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 19);
+            this.label1.Size = new System.Drawing.Size(81, 24);
             this.label1.TabIndex = 42;
-            this.label1.Text = "Tên trường        =          Giá trị";
+            this.label1.Text = "Lọc theo";
             // 
             // comFName
             // 
-            this.comFName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comFName.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.comFName.BackColor = System.Drawing.Color.White;
             this.comFName.FormattingEnabled = true;
             this.comFName.Items.AddRange(new object[] {
             "Nhóm thuốc",
             "Mã Nhà sản xuất"});
-            this.comFName.Location = new System.Drawing.Point(710, 231);
+            this.comFName.Location = new System.Drawing.Point(42, 297);
+            this.comFName.Margin = new System.Windows.Forms.Padding(4);
             this.comFName.Name = "comFName";
-            this.comFName.Size = new System.Drawing.Size(121, 21);
+            this.comFName.Size = new System.Drawing.Size(160, 24);
             this.comFName.TabIndex = 43;
             this.comFName.SelectedIndexChanged += new System.EventHandler(this.comFName_SelectedIndexChanged);
             // 
             // comFValue
             // 
-            this.comFValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comFValue.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.comFValue.BackColor = System.Drawing.Color.White;
             this.comFValue.FormattingEnabled = true;
-            this.comFValue.Location = new System.Drawing.Point(864, 231);
+            this.comFValue.Location = new System.Drawing.Point(280, 299);
+            this.comFValue.Margin = new System.Windows.Forms.Padding(4);
             this.comFValue.Name = "comFValue";
-            this.comFValue.Size = new System.Drawing.Size(121, 21);
+            this.comFValue.Size = new System.Drawing.Size(160, 24);
             this.comFValue.TabIndex = 44;
             // 
             // btnFilter
             // 
-            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnFilter.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilter.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnFilter.Location = new System.Drawing.Point(732, 258);
+            this.btnFilter.Location = new System.Drawing.Point(469, 293);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(78, 31);
+            this.btnFilter.Size = new System.Drawing.Size(73, 38);
             this.btnFilter.TabIndex = 45;
-            this.btnFilter.Text = "Lọc dữ liệu";
+            this.btnFilter.Text = "Lọc";
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnRefresh.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnRefresh.Location = new System.Drawing.Point(891, 258);
+            this.btnRefresh.Location = new System.Drawing.Point(564, 293);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(71, 31);
+            this.btnRefresh.Size = new System.Drawing.Size(95, 38);
             this.btnRefresh.TabIndex = 46;
             this.btnRefresh.Text = "Nạp lại";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(276, 271);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 24);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Giá trị lọc";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(230, 297);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 27);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "=";
+            // 
             // frmThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._635203f6dfa214fc4db3;
-            this.ClientSize = new System.Drawing.Size(1028, 538);
+            this.ClientSize = new System.Drawing.Size(1371, 662);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.comFValue);
@@ -707,7 +779,7 @@ namespace medical_management
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh mục Thuốc";
@@ -774,5 +846,7 @@ namespace medical_management
         private System.Windows.Forms.ComboBox comFValue;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -39,14 +39,13 @@ namespace medical_management
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(316, 281);
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(128, 346);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 34);
+            this.button1.Size = new System.Drawing.Size(193, 42);
             this.button1.TabIndex = 20;
             this.button1.Text = "In Báo Cáo";
             this.button1.UseVisualStyleBackColor = false;
@@ -54,26 +53,22 @@ namespace medical_management
             // 
             // dtpTo
             // 
-            this.dtpTo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpTo.CustomFormat = "dd/MM/yyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(383, 221);
+            this.dtpTo.Location = new System.Drawing.Point(218, 272);
+            this.dtpTo.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(127, 20);
+            this.dtpTo.Size = new System.Drawing.Size(168, 22);
             this.dtpTo.TabIndex = 19;
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFrom.CustomFormat = "dd/MM/yyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(383, 191);
+            this.dtpFrom.Location = new System.Drawing.Point(218, 235);
+            this.dtpFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(127, 20);
+            this.dtpFrom.Size = new System.Drawing.Size(168, 22);
             this.dtpFrom.TabIndex = 18;
             // 
             // label2
@@ -83,9 +78,10 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(268, 221);
+            this.label2.Location = new System.Drawing.Point(64, 272);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 19);
+            this.label2.Size = new System.Drawing.Size(88, 24);
             this.label2.TabIndex = 17;
             this.label2.Text = "Đến ngày";
             // 
@@ -96,9 +92,10 @@ namespace medical_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(268, 191);
+            this.label3.Location = new System.Drawing.Point(64, 235);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 19);
+            this.label3.Size = new System.Drawing.Size(76, 24);
             this.label3.TabIndex = 16;
             this.label3.Text = "Từ ngày";
             // 
@@ -110,27 +107,29 @@ namespace medical_management
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(282, 115);
+            this.label1.Location = new System.Drawing.Point(83, 142);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 33);
+            this.label1.Size = new System.Drawing.Size(289, 41);
             this.label1.TabIndex = 15;
             this.label1.Text = "Báo cáo Nhập hàng";
             // 
             // frmBCNhaphang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._97cea7e15201dc807d266908c4d911b1;
-            this.ClientSize = new System.Drawing.Size(759, 448);
+            this.ClientSize = new System.Drawing.Size(471, 551);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBCNhaphang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBCNhaphang";
+            this.Load += new System.EventHandler(this.frmBCNhaphang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,8 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectCustomer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,14 @@ namespace medical_management
             // 
             this.dgvKhachhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachhang.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKhachhang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKH,
@@ -55,15 +64,23 @@ namespace medical_management
             this.Sdt,
             this.Email,
             this.Ghichu});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKhachhang.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvKhachhang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvKhachhang.Location = new System.Drawing.Point(0, 51);
-            this.dgvKhachhang.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvKhachhang.Location = new System.Drawing.Point(0, 63);
+            this.dgvKhachhang.Margin = new System.Windows.Forms.Padding(5);
             this.dgvKhachhang.Name = "dgvKhachhang";
             this.dgvKhachhang.RowHeadersVisible = false;
             this.dgvKhachhang.RowHeadersWidth = 70;
             this.dgvKhachhang.RowTemplate.Height = 30;
             this.dgvKhachhang.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKhachhang.Size = new System.Drawing.Size(793, 372);
+            this.dgvKhachhang.Size = new System.Drawing.Size(1057, 458);
             this.dgvKhachhang.TabIndex = 26;
             this.dgvKhachhang.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentDoubleClick);
             // 
@@ -75,7 +92,7 @@ namespace medical_management
             this.MaKH.MinimumWidth = 6;
             this.MaKH.Name = "MaKH";
             this.MaKH.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.MaKH.Width = 99;
+            this.MaKH.Width = 118;
             // 
             // TenKH
             // 
@@ -106,7 +123,7 @@ namespace medical_management
             this.Sdt.HeaderText = "Số điện thoại";
             this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
-            this.Sdt.Width = 87;
+            this.Sdt.Width = 105;
             // 
             // Email
             // 
@@ -126,12 +143,13 @@ namespace medical_management
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(634, 14);
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(845, 17);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 29);
+            this.button1.Size = new System.Drawing.Size(196, 36);
             this.button1.TabIndex = 28;
             this.button1.Text = "Thêm mới khách hàng";
             this.button1.UseVisualStyleBackColor = false;
@@ -139,14 +157,13 @@ namespace medical_management
             // 
             // frmSelectCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._97cea7e15201dc807d266908c4d911b1;
-            this.ClientSize = new System.Drawing.Size(793, 423);
+            this.ClientSize = new System.Drawing.Size(1057, 521);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvKhachhang);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSelectCustomer";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

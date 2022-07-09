@@ -31,9 +31,7 @@ namespace medical_management
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectMedical));
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
-            this.btnAddMedical = new System.Windows.Forms.Button();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Nhomthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,7 @@ namespace medical_management
             this.Ngaysanxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hansudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddMedical = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,30 +73,17 @@ namespace medical_management
             this.Hansudung,
             this.Ghichu});
             this.dgvThuoc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvThuoc.Location = new System.Drawing.Point(0, 52);
+            this.dgvThuoc.Location = new System.Drawing.Point(0, 64);
+            this.dgvThuoc.Margin = new System.Windows.Forms.Padding(4);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.RowHeadersVisible = false;
             this.dgvThuoc.RowHeadersWidth = 20;
             this.dgvThuoc.RowTemplate.Height = 30;
             this.dgvThuoc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThuoc.Size = new System.Drawing.Size(600, 314);
+            this.dgvThuoc.Size = new System.Drawing.Size(800, 386);
             this.dgvThuoc.TabIndex = 11;
             this.dgvThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellContentClick);
             this.dgvThuoc.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentDoubleClick);
-            // 
-            // btnAddMedical
-            // 
-            this.btnAddMedical.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAddMedical.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMedical.ForeColor = System.Drawing.Color.Navy;
-            this.btnAddMedical.Location = new System.Drawing.Point(461, 12);
-            this.btnAddMedical.Name = "btnAddMedical";
-            this.btnAddMedical.Size = new System.Drawing.Size(102, 30);
-            this.btnAddMedical.TabIndex = 32;
-            this.btnAddMedical.Text = "Thêm thuốc";
-            this.btnAddMedical.UseVisualStyleBackColor = false;
-            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
             // 
             // Selected
             // 
@@ -110,6 +96,7 @@ namespace medical_management
             // 
             this.Nhomthuoc.DataPropertyName = "Nhomthuoc";
             this.Nhomthuoc.HeaderText = "Nhóm thuốc";
+            this.Nhomthuoc.MinimumWidth = 6;
             this.Nhomthuoc.Name = "Nhomthuoc";
             // 
             // Mathuoc
@@ -221,16 +208,29 @@ namespace medical_management
             this.Ghichu.Name = "Ghichu";
             this.Ghichu.Visible = false;
             // 
+            // btnAddMedical
+            // 
+            this.btnAddMedical.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddMedical.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnAddMedical.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMedical.ForeColor = System.Drawing.Color.Blue;
+            this.btnAddMedical.Location = new System.Drawing.Point(615, 15);
+            this.btnAddMedical.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddMedical.Name = "btnAddMedical";
+            this.btnAddMedical.Size = new System.Drawing.Size(136, 37);
+            this.btnAddMedical.TabIndex = 32;
+            this.btnAddMedical.Text = "Thêm thuốc";
+            this.btnAddMedical.UseVisualStyleBackColor = false;
+            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
+            // 
             // frmSelectMedical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._97cea7e15201dc807d266908c4d911b1;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAddMedical);
             this.Controls.Add(this.dgvThuoc);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSelectMedical";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn thuốc";

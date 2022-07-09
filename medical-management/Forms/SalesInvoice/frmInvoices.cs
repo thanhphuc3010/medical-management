@@ -16,7 +16,7 @@ using medical_management.Source.Utils;
 
 namespace medical_management
 {
-    public partial class frmPhieubanhang : Form
+    public partial class frmInvoices : Form
     {
         public delegate void RefreshDelegate(object sender, ReloadEventArgs args);
         public event RefreshDelegate reloadEventHandler;
@@ -44,12 +44,12 @@ namespace medical_management
         private string status;
         string selectedMedicalId;
         private List<Consignment> consignments = new List<Consignment>();
-        public frmPhieubanhang()
+        public frmInvoices()
         {
             InitializeComponent();
         }
 
-        public frmPhieubanhang(bool isCreate, frmDSHD frmDSHD, string invoiceId = null)
+        public frmInvoices(bool isCreate, frmInvoiceList frmDSHD, string invoiceId = null)
         {
             InitializeComponent();
             this.isCreate = isCreate;
@@ -142,7 +142,7 @@ namespace medical_management
 
             txtMaHD.SetTextColorReadOnly(MyColor.primary);
 
-            frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+            frmMain f = (frmMain)Owner;
             this.staffId = f.staffId;
             Staff staff = StaffBUS.getStaffById(this.staffId);
             txtTenNV.Text = staff.Name;

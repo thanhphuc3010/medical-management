@@ -1,7 +1,7 @@
 ﻿
 namespace medical_management
 {
-    partial class frmDSHD
+    partial class frmInvoiceList
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,6 @@ namespace medical_management
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSHD));
             this.lblDMHD = new System.Windows.Forms.Label();
             this.dgvDSHD = new System.Windows.Forms.DataGridView();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,9 +92,10 @@ namespace medical_management
             this.lblDMHD.AutoSize = true;
             this.lblDMHD.BackColor = System.Drawing.Color.Transparent;
             this.lblDMHD.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDMHD.Location = new System.Drawing.Point(14, 7);
+            this.lblDMHD.Location = new System.Drawing.Point(19, 9);
+            this.lblDMHD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDMHD.Name = "lblDMHD";
-            this.lblDMHD.Size = new System.Drawing.Size(178, 26);
+            this.lblDMHD.Size = new System.Drawing.Size(228, 33);
             this.lblDMHD.TabIndex = 0;
             this.lblDMHD.Text = "Danh sách hóa đơn";
             // 
@@ -134,7 +134,8 @@ namespace medical_management
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSHD.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDSHD.Location = new System.Drawing.Point(213, 56);
+            this.dgvDSHD.Location = new System.Drawing.Point(284, 69);
+            this.dgvDSHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSHD.Name = "dgvDSHD";
             this.dgvDSHD.ReadOnly = true;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -149,7 +150,7 @@ namespace medical_management
             this.dgvDSHD.RowHeadersWidth = 51;
             this.dgvDSHD.RowTemplate.Height = 28;
             this.dgvDSHD.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSHD.Size = new System.Drawing.Size(758, 240);
+            this.dgvDSHD.Size = new System.Drawing.Size(1011, 295);
             this.dgvDSHD.TabIndex = 4;
             this.dgvDSHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellClick);
             this.dgvDSHD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellDoubleClick);
@@ -166,7 +167,7 @@ namespace medical_management
             this.MaHD.MinimumWidth = 6;
             this.MaHD.Name = "MaHD";
             this.MaHD.ReadOnly = true;
-            this.MaHD.Width = 95;
+            this.MaHD.Width = 114;
             // 
             // NgayHD
             // 
@@ -176,7 +177,7 @@ namespace medical_management
             this.NgayHD.MinimumWidth = 6;
             this.NgayHD.Name = "NgayHD";
             this.NgayHD.ReadOnly = true;
-            this.NgayHD.Width = 108;
+            this.NgayHD.Width = 129;
             // 
             // Tongtien
             // 
@@ -192,7 +193,7 @@ namespace medical_management
             this.Tongtien.MinimumWidth = 6;
             this.Tongtien.Name = "Tongtien";
             this.Tongtien.ReadOnly = true;
-            this.Tongtien.Width = 83;
+            this.Tongtien.Width = 98;
             // 
             // Conthieu
             // 
@@ -207,7 +208,6 @@ namespace medical_management
             this.Conthieu.MinimumWidth = 6;
             this.Conthieu.Name = "Conthieu";
             this.Conthieu.ReadOnly = true;
-            this.Conthieu.Width = 84;
             // 
             // Trangthai
             // 
@@ -281,14 +281,14 @@ namespace medical_management
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHoadonchitiet.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvHoadonchitiet.Location = new System.Drawing.Point(213, 303);
-            this.dgvHoadonchitiet.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvHoadonchitiet.Location = new System.Drawing.Point(284, 373);
+            this.dgvHoadonchitiet.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvHoadonchitiet.Name = "dgvHoadonchitiet";
             this.dgvHoadonchitiet.ReadOnly = true;
             this.dgvHoadonchitiet.RowHeadersWidth = 51;
             this.dgvHoadonchitiet.RowTemplate.Height = 28;
             this.dgvHoadonchitiet.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHoadonchitiet.Size = new System.Drawing.Size(758, 275);
+            this.dgvHoadonchitiet.Size = new System.Drawing.Size(1011, 338);
             this.dgvHoadonchitiet.TabIndex = 3;
             // 
             // Mathuoc
@@ -366,7 +366,7 @@ namespace medical_management
             // 
             this.dgvInvoiceSummary.AllowUserToAddRows = false;
             this.dgvInvoiceSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvInvoiceSummary.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvInvoiceSummary.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -380,13 +380,13 @@ namespace medical_management
             this.isChecked,
             this.Trangthaihoadon,
             this.dataGridViewTextBoxColumn5});
-            this.dgvInvoiceSummary.Location = new System.Drawing.Point(6, 56);
-            this.dgvInvoiceSummary.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvInvoiceSummary.Location = new System.Drawing.Point(8, 69);
+            this.dgvInvoiceSummary.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvInvoiceSummary.Name = "dgvInvoiceSummary";
             this.dgvInvoiceSummary.RowHeadersVisible = false;
             this.dgvInvoiceSummary.RowHeadersWidth = 51;
             this.dgvInvoiceSummary.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInvoiceSummary.Size = new System.Drawing.Size(196, 206);
+            this.dgvInvoiceSummary.Size = new System.Drawing.Size(261, 295);
             this.dgvInvoiceSummary.TabIndex = 2;
             this.dgvInvoiceSummary.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInvoiceSummary_CellMouseUp);
             this.dgvInvoiceSummary.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvoiceSummary_CellValueChanged);
@@ -422,7 +422,7 @@ namespace medical_management
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblReceivable);
@@ -434,20 +434,19 @@ namespace medical_management
             this.panel1.Controls.Add(this.btnFilter);
             this.panel1.Controls.Add(this.dtpToDate);
             this.panel1.Controls.Add(this.dtpFromDate);
-            this.panel1.Location = new System.Drawing.Point(6, 268);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(8, 373);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(196, 145);
+            this.panel1.Size = new System.Drawing.Size(261, 162);
             this.panel1.TabIndex = 5;
             // 
             // label
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(10, 111);
-            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label.Location = new System.Drawing.Point(13, 137);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(62, 15);
+            this.label.Size = new System.Drawing.Size(75, 18);
             this.label.TabIndex = 52;
             this.label.Text = "Còn thiếu:";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -456,10 +455,9 @@ namespace medical_management
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(13, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 15);
+            this.label3.Size = new System.Drawing.Size(52, 18);
             this.label3.TabIndex = 53;
             this.label3.Text = "Đã trả:";
             // 
@@ -467,11 +465,10 @@ namespace medical_management
             // 
             this.lblReceivable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblReceivable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReceivable.Location = new System.Drawing.Point(70, 111);
-            this.lblReceivable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReceivable.Location = new System.Drawing.Point(93, 129);
             this.lblReceivable.Name = "lblReceivable";
             this.lblReceivable.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReceivable.Size = new System.Drawing.Size(109, 15);
+            this.lblReceivable.Size = new System.Drawing.Size(145, 18);
             this.lblReceivable.TabIndex = 54;
             this.lblReceivable.Text = "500.000";
             this.lblReceivable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -480,11 +477,10 @@ namespace medical_management
             // 
             this.lblTotalPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotalPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPayment.Location = new System.Drawing.Point(70, 87);
-            this.lblTotalPayment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalPayment.Location = new System.Drawing.Point(93, 99);
             this.lblTotalPayment.Name = "lblTotalPayment";
             this.lblTotalPayment.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotalPayment.Size = new System.Drawing.Size(109, 15);
+            this.lblTotalPayment.Size = new System.Drawing.Size(145, 18);
             this.lblTotalPayment.TabIndex = 55;
             this.lblTotalPayment.Text = "1.500.000";
             this.lblTotalPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -495,10 +491,9 @@ namespace medical_management
             this.lblInvoiceCount.AutoSize = true;
             this.lblInvoiceCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvoiceCount.ForeColor = System.Drawing.Color.Navy;
-            this.lblInvoiceCount.Location = new System.Drawing.Point(166, 33);
-            this.lblInvoiceCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInvoiceCount.Location = new System.Drawing.Point(221, 41);
             this.lblInvoiceCount.Name = "lblInvoiceCount";
-            this.lblInvoiceCount.Size = new System.Drawing.Size(26, 17);
+            this.lblInvoiceCount.Size = new System.Drawing.Size(29, 20);
             this.lblInvoiceCount.TabIndex = 56;
             this.lblInvoiceCount.Text = "20";
             this.lblInvoiceCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -507,11 +502,10 @@ namespace medical_management
             // 
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(70, 63);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Location = new System.Drawing.Point(93, 70);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotal.Size = new System.Drawing.Size(109, 15);
+            this.lblTotal.Size = new System.Drawing.Size(145, 18);
             this.lblTotal.TabIndex = 56;
             this.lblTotal.Text = "2.500.000";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -520,10 +514,9 @@ namespace medical_management
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(13, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
+            this.label2.Size = new System.Drawing.Size(73, 18);
             this.label2.TabIndex = 57;
             this.label2.Text = "Tổng tiền:";
             // 
@@ -531,19 +524,18 @@ namespace medical_management
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 15);
+            this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 51;
             this.label1.Text = "Số hóa đơn: ";
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(169, 1);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFilter.Location = new System.Drawing.Point(225, 1);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(22, 19);
+            this.btnFilter.Size = new System.Drawing.Size(29, 23);
             this.btnFilter.TabIndex = 4;
             this.btnFilter.Text = "button1";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -553,53 +545,50 @@ namespace medical_management
             // 
             this.dtpToDate.CustomFormat = "dd/MM/yyyy";
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(91, 1);
-            this.dtpToDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpToDate.Location = new System.Drawing.Point(121, 1);
+            this.dtpToDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(66, 20);
+            this.dtpToDate.Size = new System.Drawing.Size(87, 22);
             this.dtpToDate.TabIndex = 48;
             // 
             // dtpFromDate
             // 
             this.dtpFromDate.CustomFormat = "dd/MM/yyyy";
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFromDate.Location = new System.Drawing.Point(6, 1);
-            this.dtpFromDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFromDate.Location = new System.Drawing.Point(16, 0);
+            this.dtpFromDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(66, 20);
+            this.dtpFromDate.Size = new System.Drawing.Size(87, 22);
             this.dtpFromDate.TabIndex = 3;
             // 
             // btnAddInvoice
             // 
-            this.btnAddInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnAddInvoice.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnAddInvoice.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddInvoice.ForeColor = System.Drawing.Color.Navy;
-            this.btnAddInvoice.Image = global::medical_management.Properties.Resources.plus_circle_outline;
+            this.btnAddInvoice.ForeColor = System.Drawing.Color.Blue;
             this.btnAddInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddInvoice.Location = new System.Drawing.Point(213, 10);
-            this.btnAddInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddInvoice.Location = new System.Drawing.Point(284, 31);
+            this.btnAddInvoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddInvoice.Name = "btnAddInvoice";
-            this.btnAddInvoice.Size = new System.Drawing.Size(88, 41);
+            this.btnAddInvoice.Size = new System.Drawing.Size(83, 32);
             this.btnAddInvoice.TabIndex = 1;
             this.btnAddInvoice.Text = "Thêm ";
-            this.btnAddInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddInvoice.UseVisualStyleBackColor = false;
             this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
             // frmDSHD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._635203f6dfa214fc4db3;
-            this.ClientSize = new System.Drawing.Size(980, 588);
+            this.ClientSize = new System.Drawing.Size(1307, 724);
             this.Controls.Add(this.btnAddInvoice);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvInvoiceSummary);
             this.Controls.Add(this.dgvHoadonchitiet);
             this.Controls.Add(this.dgvDSHD);
             this.Controls.Add(this.lblDMHD);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDSHD";
             this.Text = "Danh sách hóa đơn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

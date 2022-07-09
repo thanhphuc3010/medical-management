@@ -12,11 +12,11 @@ using medical_management.BUS;
 
 namespace medical_management
 {
-    public partial class frmDSHD : Form
+    public partial class frmInvoiceList : Form
     {
         private DateTime fromDate = DateTime.Now;
         private DateTime toDate = DateTime.Now;
-        public frmDSHD()
+        public frmInvoiceList()
         {
             InitializeComponent();
             initializeUI();
@@ -24,12 +24,12 @@ namespace medical_management
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            frmPhieubanhang f = new frmPhieubanhang(isCreate: true, frmDSHD: this);
+            frmInvoices f = new frmInvoices(isCreate: true, frmDSHD: this);
             f.reloadEventHandler += refreshEventHandler;
             f.ShowDialog(this);
         }
 
-        private void refreshEventHandler(object sender, frmPhieubanhang.ReloadEventArgs args)
+        private void refreshEventHandler(object sender, frmInvoices.ReloadEventArgs args)
         {
             loadWhenChildClosing(true);
         }
@@ -266,7 +266,7 @@ namespace medical_management
                 else
                 {
                     string invoiceId = Convert.ToString(dgvDSHD.Rows[e.RowIndex].Cells[0].Value);
-                    frmPhieubanhang f = new frmPhieubanhang(isCreate: false, this, invoiceId);
+                    frmInvoices f = new frmInvoices(isCreate: false, this, invoiceId);
                     f.reloadEventHandler += refreshEventHandler;
                     f.ShowDialog(this);
                 }

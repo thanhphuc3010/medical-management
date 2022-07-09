@@ -29,5 +29,10 @@ namespace medical_management
             rptNhapthuocprv rp = new rptNhapthuocprv(rpt);
             rp.Show();
         }
+
+        private void frmBCNhaphang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

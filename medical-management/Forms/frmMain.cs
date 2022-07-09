@@ -12,12 +12,12 @@ using medical_management.DTO;
 
 namespace medical_management
 {
-    public partial class frmHTPPharmacy : Form
+    public partial class frmMain : Form
     {
         public bool isLogin = false;
         public string staffId;
         private Staff staff;
-        public frmHTPPharmacy()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -86,7 +86,7 @@ namespace medical_management
 
         private void mItemInvoice_Click(object sender, EventArgs e)
         {
-            frmDSHD f = new frmDSHD();
+            frmInvoiceList f = new frmInvoiceList();
             f.MdiParent = this;
             f.Show();
         }

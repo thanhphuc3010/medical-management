@@ -29,7 +29,6 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectSupplier));
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,9 +51,11 @@ namespace medical_management
             this.TenNCC,
             this.Diachi,
             this.Sdt});
-            this.dgvSupplier.Location = new System.Drawing.Point(12, 84);
+            this.dgvSupplier.Location = new System.Drawing.Point(16, 103);
+            this.dgvSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSupplier.Name = "dgvSupplier";
-            this.dgvSupplier.Size = new System.Drawing.Size(776, 318);
+            this.dgvSupplier.RowHeadersWidth = 51;
+            this.dgvSupplier.Size = new System.Drawing.Size(1035, 391);
             this.dgvSupplier.TabIndex = 2;
             this.dgvSupplier.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellContentDoubleClick_1);
             // 
@@ -62,48 +63,52 @@ namespace medical_management
             // 
             this.MaNCC.DataPropertyName = "MaNCC";
             this.MaNCC.HeaderText = "Mã Nhà cung cấp";
+            this.MaNCC.MinimumWidth = 6;
             this.MaNCC.Name = "MaNCC";
             // 
             // TenNCC
             // 
             this.TenNCC.DataPropertyName = "TenNCC";
             this.TenNCC.HeaderText = "Tên Nhà cung cấp";
+            this.TenNCC.MinimumWidth = 6;
             this.TenNCC.Name = "TenNCC";
             // 
             // Diachi
             // 
             this.Diachi.DataPropertyName = "Diachi";
             this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.MinimumWidth = 6;
             this.Diachi.Name = "Diachi";
             // 
             // Sdt
             // 
             this.Sdt.DataPropertyName = "Sdt";
             this.Sdt.HeaderText = "Số điện thoại";
+            this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Navy;
-            this.btnAdd.Location = new System.Drawing.Point(620, 25);
+            this.btnAdd.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Blue;
+            this.btnAdd.Location = new System.Drawing.Point(950, 44);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(140, 34);
+            this.btnAdd.Size = new System.Drawing.Size(101, 38);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Thêm Nhà cung cấp";
+            this.btnAdd.Text = "Thêm ";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmSelectSupplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources._97cea7e15201dc807d266908c4d911b1;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvSupplier);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSelectSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn Nhà cung cấp";
