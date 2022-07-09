@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using medical_management.Reports;
 
 namespace medical_management
 {
@@ -266,9 +267,6 @@ namespace medical_management
             comFValue.ValueMember = fName;
 
         }
-
-
-        // Demo create pull request
     }
 }
 

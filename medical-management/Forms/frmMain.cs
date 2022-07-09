@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using medical_management.BUS;
 using medical_management.DTO;
+using medical_management.Reports;
+using medical_management.Forms;
 
 namespace medical_management
 {
@@ -161,6 +163,13 @@ namespace medical_management
             frmStaff f = new frmStaff();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void mItemChangePassword_Click(object sender, EventArgs e)
+        {
+            frmResetPassword f = new frmResetPassword();
+            f.MdiParent = this;
+            f.Show(this);
         }
     }
 }
