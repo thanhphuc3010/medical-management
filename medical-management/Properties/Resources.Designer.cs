@@ -19,7 +19,7 @@ namespace medical_management.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -226,18 +226,6 @@ namespace medical_management.Properties {
         internal static System.Drawing.Bitmap Untitled_Diagram_drawio {
             get {
                 object obj = ResourceManager.GetObject("Untitled Diagram.drawio", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap white_pink_gradient_soft_abstract_background_scene_realistic_illustration_concept_light_flowing_lines_up_bubbles_base_advertising_poster_banner_magazine_brochure_web_page_213110_172 {
-            get {
-                object obj = ResourceManager.GetObject("white-pink-gradient-soft-abstract-background-scene-realistic-illustration-concept" +
-                        "-light-flowing-lines-up-bubbles-base-advertising-poster-banner-magazine-brochure" +
-                        "-web-page_213110-172", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
