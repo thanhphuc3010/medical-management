@@ -79,10 +79,15 @@ namespace medical_management
             DateTime today = DateTime.Now;
             dtpNgaynhap.Value = today;
             NextId();
-            txtTongcong.BackColor = txtTongcong.BackColor;
             txtTongtienthanhtoan.BackColor = txtTongtienthanhtoan.BackColor;
             txtGianhap.BackColor = txtGianhap.BackColor;
             btnAdd.disable();
+
+            frmHTPPharmacy f = (frmHTPPharmacy)Owner;
+            this.staffId = f.staffId;
+            Staff staff = StaffBUS.getStaffById(this.staffId);
+            txtNhanviennhap.Text = staff.Name;
+            txtNhanviennhap.SetTextColorReadOnly(MyColor.red);
         }
         private void NextId()
         {
@@ -193,15 +198,15 @@ namespace medical_management
         private void insertConsignment()
         {
             decimal price = Convert.ToDecimal(txtGianhap.Text);
-            string insert = "INSERT INTO dbo.tbl_Consignment(Manhap, Malo, Mathuoc, Soluong, Gianhap, Ngaysanxuat, Ngayhethan) " +
-                            "VALUES( @Manhap , @Malo , @Mathuoc , @Soluong , @Gianhap , @Ngaysanxuat , @Ngayhethan ) ";
-            Database.Instance.excuteNonQuery(insert, new object[] { poId, malo, medicalId, Int16.Parse(txtSoluong.Text), price, dtpNgaysanxuat.Value, dtpNgayhethan.Value });
+            string insert = "INSERT INTO dbo.tbl_Consignment(Manhap, Malo, Mathuoc, Soluong, Gianhap, Daban, Ngaysanxuat, Ngayhethan) " +
+                            "VALUES( @Manhap , @Malo , @Mathuoc , @Soluong , @Gianhap , @Daban , @Ngaysanxuat , @Ngayhethan ) ";
+            Database.Instance.excuteNonQuery(insert, new object[] { poId, malo, medicalId, Int16.Parse(txtSoluong.Text), price, 0 , dtpNgaysanxuat.Value, dtpNgayhethan.Value });
 
         }
 
         private void loadConsignment()
         {
-            string query = "SELECT a.Mathuoc, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien, a.Ngaysanxuat, a.Ngayhethan " +
+            string query = "SELECT a.Mathuoc, a.Malo, a.Soluong, a.Gianhap ,b.Donvi, (a.Soluong * a.Gianhap) AS Thanhtien, a.Ngaysanxuat, a.Ngayhethan " +
                            "FROM dbo.tbl_Consignment a INNER JOIN dbo.tbl_Item b " +
                            "ON a.Mathuoc = b.Mathuoc WHERE a.Manhap = @Manhap";
 
@@ -224,16 +229,11 @@ namespace medical_management
                 subtotal += Convert.ToDecimal(row.Cells["Thanhtien"].Value);
             }
             CultureInfo culture = new CultureInfo("vi-VN");
-            txtTongcong.Text = subtotal.ToString("c", culture);
         }
 
-        private decimal calTotal()
-        {
-            return subtotal * (1 - (discount / 100)) * (1 + VAT / 100);
-        }
         private void loadTotal()
         {
-            total = calTotal();
+            total = subtotal;
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTongtienthanhtoan.Text = total.ToString("c", culture);
         }
@@ -298,84 +298,10 @@ namespace medical_management
         }
 
 
-        private void txtChietkhau_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-
-            string value = ((TextBox)sender).Text + e.KeyChar;
-            if (e.KeyChar != '\b')
-            {
-                e.Handled = !isDiscountValid(value);
-            }
-
-        }
-
-        public static bool isDiscountValid(string str)
-        {
-            decimal i;
-            return decimal.TryParse(str, out i) && i >= 0 && i <= 100;
-        }
-
-        private void txtChietkhau_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtChietkhau.Text))
-            {
-                discount = 0M;
-                txtChietkhau.Text = "0";
-            }
-
-            discount = Convert.ToDecimal(txtChietkhau.Text);
-            loadTotal();
-        }
-
-        private void txtThue_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtChietkhau.Text))
-            {
-                VAT = 0M;
-                txtThue.Text = "0";
-            }
-
-            VAT = Convert.ToDecimal(txtThue.Text);
-            loadTotal();
-        }
-
-        public static bool isVATValid(string str)
-        {
-            decimal i;
-            return decimal.TryParse(str, out i) && i >= 0 && i <= 100;
-        }
-
-        private void txtThue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-
-            string value = ((TextBox)sender).Text + e.KeyChar;
-            if (e.KeyChar != '\b')
-            {
-                e.Handled = !isVATValid(value);
-            }
-        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo, Manhap= @Manhap ";
+            string update = "UPDATE dbo.tbl_Consignment SET Soluong = @Soluong , Gianhap = @Gianhap WHERE Malo = @Malo ";
             int quantity;
             quantity = Convert.ToInt32(txtSoluong.Text);
 
@@ -390,7 +316,8 @@ namespace medical_management
                 Helper.showErrorMessage("Vui lòng nhập số lượng");
                 return;
             }
-            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , malo, poId});
+            Database.Instance.excuteNonQuery(update, new object[] { quantity, txtGianhap.Text , maloDuocChon});
+            txtMalo.Text = malo;
             loadConsignment();
             resetEditMode();
         }
@@ -437,12 +364,23 @@ namespace medical_management
 
         private void btnGhinhan_Click(object sender, EventArgs e)
         {
-            var query = "UPDATE tbl_PurchaseOrder SET Soluonglo = @Soluonglo , Tongtien = @Tongtien ,Dathanhtoan = @Dathanhtoan , Thue = @Thue WHERE Manhap = @Manhap";
-            var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, Int16.Parse(txtThue.Text), poId };
+            var query = "UPDATE tbl_PurchaseOrder SET Soluonglo = @Soluonglo , Tongtien = @Tongtien ,Dathanhtoan = @Dathanhtoan WHERE Manhap = @Manhap";
+            var param = new object[] { dgvPhieunhapchitiet.Rows.Count - 1, subtotal, subtotal, poId };
             Database.Instance.excuteNonQuery(query, param);
 
+            var sqlMedical = "SELECT * FROM tbl_Item WHERE Mathuoc = @Mathuoc ";
 
-            var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap =  (i.Gianhap + c.Gianhap) /2 FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
+            var medicalResult = Database.Instance.excuteQuery(sqlMedical, new object[] { medicalId });
+
+            if(medicalResult.Rows.Count > 0)
+            {
+                var medical = medicalResult.Rows[0];
+
+            }
+
+           
+
+            var updateItemQuery = "UPDATE tbl_Item SET tbl_Item.Soluong = (i.Soluong + c.Soluong), Gianhap = CASE i.Gianhap WHEN 0 THEN c.Gianhap ELSE(i.Gianhap + c.Gianhap) /2 END FROM tbl_Item i JOIN tbl_Consignment c ON i.Mathuoc = c.Mathuoc WHERE c.Manhap = @Manhap";
 
             Database.Instance.excuteNonQuery(updateItemQuery, new object[] { poId }); 
             var updatePriceQuery = "UPDATE tbl_Item SET tbl_Item.Dongia = tbl_Item.Gianhap * 1.1;";
@@ -472,6 +410,7 @@ namespace medical_management
             Database.Instance.excuteQuery(query, new object[] { medicalId });
             txtDonvi.binding(dataSoure, "Donvi");
 
+            txtMalo.Text = maloDuocChon;
 
 
 
@@ -517,10 +456,10 @@ namespace medical_management
 
         private void delMedicalFromPO()
         {
-            string del = "DELETE FROM dbo.tbl_Consignment WHERE Manhap = @Manhap ";
+            string del = "DELETE FROM dbo.tbl_Consignment WHERE Malo = @Malo ";
             try
             {
-                int result = Database.Instance.excuteNonQuery(del, new object[] { poId, selectedMedicalId });
+                int result = Database.Instance.excuteNonQuery(del, new object[] { maloDuocChon });
                 if (result > 0)
                 {
                     loadConsignment();
@@ -553,6 +492,7 @@ namespace medical_management
                     else
                     {
                         selectedMedicalId = Convert.ToString(dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[0].Value);
+                        maloDuocChon = Convert.ToString(dgvPhieunhapchitiet.Rows[e.RowIndex].Cells[1].Value);
                     }
 
                 }
@@ -569,20 +509,10 @@ namespace medical_management
 
         }
 
-        //private void loadQuantity()
-        //{
-        //    string query = "SELECT Malo, (Soluong - Daban) AS Tonkho FROM tbl_Consignment WHERE Mathuoc = @Mathuoc " +
-        //                   "AND Daban < Soluong";
-        //    DataTable data = Database.Instance.excuteQuery(query, new object[] { medicalId });
+        private void dgvPhieunhapchitiet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        //    foreach (DataRow item in data.Rows)
-        //    { 
-        //        int inventory = (int)item["Tonkho"];
-
-        //        string updateQuatity = " Update dbo.Item Set Soluong = Tonkho + ( Select Soluong From tbl_Consignmnet Where Mathuoc = @Mathuoc) " +
-        //            "From tbl_Item Join tbl_Consignment On tbl_Consignment.Mathuoc = tbl_Item.Mathuoc";
-        //        DataTable data = Database.Instance.excuteNonQuery(updateQuatity, new object[] { medicalId });
-        //    }
+        }
 
 
     }

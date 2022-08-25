@@ -46,6 +46,11 @@ namespace medical_management
             initializeUI();
         }
 
+         public void refreshGrid()
+        {
+            loadData();
+        }
+
         //private void dgvSupplier_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    int index = dgvSupplier.CurrentRow.Index;
@@ -62,6 +67,13 @@ namespace medical_management
             string supplierName = dgvSupplier.Rows[index].Cells["TenNCC"].Value.ToString();
             publisher?.Invoke(supplierId, supplierName);
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmNhacungcap f = new frmNhacungcap(this);
+            f.WindowState = FormWindowState.Normal;
+            f.ShowDialog();
         }
     }
 

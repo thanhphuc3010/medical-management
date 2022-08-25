@@ -31,13 +31,14 @@ namespace medical_management
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectMedical));
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAddMedical = new System.Windows.Forms.Button();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Nhomthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hamluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +59,10 @@ namespace medical_management
             this.dgvThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Selected,
+            this.Nhomthuoc,
             this.Mathuoc,
-            this.MaNSX,
             this.Tenthuoc,
+            this.MaNSX,
             this.Donvi,
             this.Hamluong,
             this.Soluong,
@@ -72,33 +74,30 @@ namespace medical_management
             this.Hansudung,
             this.Ghichu});
             this.dgvThuoc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvThuoc.Location = new System.Drawing.Point(0, 64);
-            this.dgvThuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvThuoc.Location = new System.Drawing.Point(0, 52);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.RowHeadersVisible = false;
             this.dgvThuoc.RowHeadersWidth = 20;
             this.dgvThuoc.RowTemplate.Height = 30;
             this.dgvThuoc.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThuoc.Size = new System.Drawing.Size(800, 386);
+            this.dgvThuoc.Size = new System.Drawing.Size(600, 314);
             this.dgvThuoc.TabIndex = 11;
             this.dgvThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellContentClick);
             this.dgvThuoc.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentDoubleClick);
             // 
-            // label1
+            // btnAddMedical
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Tìm kiếm:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(292, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 22);
-            this.textBox1.TabIndex = 30;
+            this.btnAddMedical.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnAddMedical.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMedical.ForeColor = System.Drawing.Color.Navy;
+            this.btnAddMedical.Location = new System.Drawing.Point(461, 12);
+            this.btnAddMedical.Name = "btnAddMedical";
+            this.btnAddMedical.Size = new System.Drawing.Size(102, 30);
+            this.btnAddMedical.TabIndex = 32;
+            this.btnAddMedical.Text = "Thêm thuốc";
+            this.btnAddMedical.UseVisualStyleBackColor = false;
+            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
             // 
             // Selected
             // 
@@ -106,6 +105,12 @@ namespace medical_management
             this.Selected.HeaderText = "";
             this.Selected.MinimumWidth = 6;
             this.Selected.Name = "Selected";
+            // 
+            // Nhomthuoc
+            // 
+            this.Nhomthuoc.DataPropertyName = "Nhomthuoc";
+            this.Nhomthuoc.HeaderText = "Nhóm thuốc";
+            this.Nhomthuoc.Name = "Nhomthuoc";
             // 
             // Mathuoc
             // 
@@ -115,14 +120,6 @@ namespace medical_management
             this.Mathuoc.MinimumWidth = 6;
             this.Mathuoc.Name = "Mathuoc";
             // 
-            // MaNSX
-            // 
-            this.MaNSX.DataPropertyName = "MaNSX";
-            this.MaNSX.FillWeight = 110.4278F;
-            this.MaNSX.HeaderText = "Mã Nhà sản xuất";
-            this.MaNSX.MinimumWidth = 6;
-            this.MaNSX.Name = "MaNSX";
-            // 
             // Tenthuoc
             // 
             this.Tenthuoc.DataPropertyName = "Tenthuoc";
@@ -130,6 +127,14 @@ namespace medical_management
             this.Tenthuoc.HeaderText = "Tên thuốc";
             this.Tenthuoc.MinimumWidth = 6;
             this.Tenthuoc.Name = "Tenthuoc";
+            // 
+            // MaNSX
+            // 
+            this.MaNSX.DataPropertyName = "MaNSX";
+            this.MaNSX.FillWeight = 110.4278F;
+            this.MaNSX.HeaderText = "Mã Nhà sản xuất";
+            this.MaNSX.MinimumWidth = 6;
+            this.MaNSX.Name = "MaNSX";
             // 
             // Donvi
             // 
@@ -218,30 +223,32 @@ namespace medical_management
             // 
             // frmSelectMedical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.BackgroundImage = global::medical_management.Properties.Resources._97cea7e15201dc807d266908c4d911b1;
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnAddMedical);
             this.Controls.Add(this.dgvThuoc);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSelectMedical";
-            this.Text = "frmSelectMedical";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Chọn thuốc";
             this.Load += new System.EventHandler(this.frmSelectMedical_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvThuoc;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnAddMedical;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nhomthuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mathuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tenthuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn Donvi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hamluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;

@@ -29,11 +29,11 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanvien));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnDau = new System.Windows.Forms.Button();
             this.btnCuoi = new System.Windows.Forms.Button();
             this.btnSau = new System.Windows.Forms.Button();
@@ -73,105 +73,121 @@ namespace medical_management
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAdd.Location = new System.Drawing.Point(27, 207);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(51, 40);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSave.Location = new System.Drawing.Point(198, 207);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(51, 40);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDel
             // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDel.Location = new System.Drawing.Point(141, 207);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(51, 40);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnEdit.Location = new System.Drawing.Point(84, 207);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(51, 40);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(255, 207);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(51, 40);
-            this.btnPrint.TabIndex = 4;
-            this.btnPrint.Text = "In";
-            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // btnDau
             // 
             this.btnDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDau.Location = new System.Drawing.Point(12, 470);
             this.btnDau.Name = "btnDau";
             this.btnDau.Size = new System.Drawing.Size(75, 28);
             this.btnDau.TabIndex = 5;
             this.btnDau.Text = "Đầu";
-            this.btnDau.UseVisualStyleBackColor = true;
+            this.btnDau.UseVisualStyleBackColor = false;
             this.btnDau.Click += new System.EventHandler(this.btnDau_Click);
             // 
             // btnCuoi
             // 
             this.btnCuoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCuoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCuoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCuoi.Location = new System.Drawing.Point(255, 470);
             this.btnCuoi.Name = "btnCuoi";
             this.btnCuoi.Size = new System.Drawing.Size(75, 28);
             this.btnCuoi.TabIndex = 6;
             this.btnCuoi.Text = "Cuối";
-            this.btnCuoi.UseVisualStyleBackColor = true;
+            this.btnCuoi.UseVisualStyleBackColor = false;
             this.btnCuoi.Click += new System.EventHandler(this.btnCuoi_Click);
             // 
             // btnSau
             // 
             this.btnSau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnSau.Location = new System.Drawing.Point(174, 470);
             this.btnSau.Name = "btnSau";
             this.btnSau.Size = new System.Drawing.Size(75, 28);
             this.btnSau.TabIndex = 7;
             this.btnSau.Text = "Sau";
-            this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.UseVisualStyleBackColor = false;
             this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
             // btnTruoc
             // 
             this.btnTruoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTruoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnTruoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTruoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnTruoc.Location = new System.Drawing.Point(93, 470);
             this.btnTruoc.Name = "btnTruoc";
             this.btnTruoc.Size = new System.Drawing.Size(75, 28);
             this.btnTruoc.TabIndex = 8;
             this.btnTruoc.Text = "Trước";
-            this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.UseVisualStyleBackColor = false;
             this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
             // lblNhanvien
             // 
             this.lblNhanvien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNhanvien.AutoSize = true;
-            this.lblNhanvien.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhanvien.BackColor = System.Drawing.Color.Transparent;
+            this.lblNhanvien.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhanvien.Location = new System.Drawing.Point(430, 30);
             this.lblNhanvien.Name = "lblNhanvien";
-            this.lblNhanvien.Size = new System.Drawing.Size(164, 23);
+            this.lblNhanvien.Size = new System.Drawing.Size(210, 29);
             this.lblNhanvien.TabIndex = 9;
             this.lblNhanvien.Text = "Thông tin nhân viên";
             // 
@@ -179,9 +195,11 @@ namespace medical_management
             // 
             this.lblDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDiachi.AutoSize = true;
+            this.lblDiachi.BackColor = System.Drawing.Color.Transparent;
+            this.lblDiachi.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiachi.Location = new System.Drawing.Point(689, 89);
             this.lblDiachi.Name = "lblDiachi";
-            this.lblDiachi.Size = new System.Drawing.Size(40, 13);
+            this.lblDiachi.Size = new System.Drawing.Size(42, 15);
             this.lblDiachi.TabIndex = 10;
             this.lblDiachi.Text = "Địa chỉ";
             // 
@@ -189,9 +207,11 @@ namespace medical_management
             // 
             this.lblSdt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSdt.AutoSize = true;
+            this.lblSdt.BackColor = System.Drawing.Color.Transparent;
+            this.lblSdt.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSdt.Location = new System.Drawing.Point(689, 119);
             this.lblSdt.Name = "lblSdt";
-            this.lblSdt.Size = new System.Drawing.Size(70, 13);
+            this.lblSdt.Size = new System.Drawing.Size(78, 15);
             this.lblSdt.TabIndex = 11;
             this.lblSdt.Text = "Số điện thoại";
             // 
@@ -199,9 +219,11 @@ namespace medical_management
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(689, 145);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(36, 15);
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "Email";
             // 
@@ -209,9 +231,11 @@ namespace medical_management
             // 
             this.lblGioitinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGioitinh.AutoSize = true;
+            this.lblGioitinh.BackColor = System.Drawing.Color.Transparent;
+            this.lblGioitinh.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGioitinh.Location = new System.Drawing.Point(353, 145);
             this.lblGioitinh.Name = "lblGioitinh";
-            this.lblGioitinh.Size = new System.Drawing.Size(47, 13);
+            this.lblGioitinh.Size = new System.Drawing.Size(54, 15);
             this.lblGioitinh.TabIndex = 13;
             this.lblGioitinh.Text = "Giới tính";
             // 
@@ -219,9 +243,11 @@ namespace medical_management
             // 
             this.lblNgaysinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNgaysinh.AutoSize = true;
+            this.lblNgaysinh.BackColor = System.Drawing.Color.Transparent;
+            this.lblNgaysinh.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgaysinh.Location = new System.Drawing.Point(353, 119);
             this.lblNgaysinh.Name = "lblNgaysinh";
-            this.lblNgaysinh.Size = new System.Drawing.Size(54, 13);
+            this.lblNgaysinh.Size = new System.Drawing.Size(59, 15);
             this.lblNgaysinh.TabIndex = 14;
             this.lblNgaysinh.Text = "Ngày sinh";
             // 
@@ -229,9 +255,11 @@ namespace medical_management
             // 
             this.lblChucvu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblChucvu.AutoSize = true;
+            this.lblChucvu.BackColor = System.Drawing.Color.Transparent;
+            this.lblChucvu.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChucvu.Location = new System.Drawing.Point(37, 145);
             this.lblChucvu.Name = "lblChucvu";
-            this.lblChucvu.Size = new System.Drawing.Size(47, 13);
+            this.lblChucvu.Size = new System.Drawing.Size(50, 15);
             this.lblChucvu.TabIndex = 15;
             this.lblChucvu.Text = "Chức vụ";
             // 
@@ -239,9 +267,11 @@ namespace medical_management
             // 
             this.lblTenNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTenNV.AutoSize = true;
+            this.lblTenNV.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenNV.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNV.Location = new System.Drawing.Point(37, 121);
             this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(78, 13);
+            this.lblTenNV.Size = new System.Drawing.Size(84, 15);
             this.lblTenNV.TabIndex = 16;
             this.lblTenNV.Text = "Tên Nhân viên";
             // 
@@ -249,9 +279,11 @@ namespace medical_management
             // 
             this.lblMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMaNV.AutoSize = true;
+            this.lblMaNV.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaNV.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaNV.Location = new System.Drawing.Point(37, 93);
             this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(74, 13);
+            this.lblMaNV.Size = new System.Drawing.Size(82, 15);
             this.lblMaNV.TabIndex = 17;
             this.lblMaNV.Text = "Mã Nhân viên";
             // 
@@ -259,15 +291,18 @@ namespace medical_management
             // 
             this.lblChungchihanhnghe.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblChungchihanhnghe.AutoSize = true;
+            this.lblChungchihanhnghe.BackColor = System.Drawing.Color.Transparent;
+            this.lblChungchihanhnghe.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChungchihanhnghe.Location = new System.Drawing.Point(353, 90);
             this.lblChungchihanhnghe.Name = "lblChungchihanhnghe";
-            this.lblChungchihanhnghe.Size = new System.Drawing.Size(109, 13);
+            this.lblChungchihanhnghe.Size = new System.Drawing.Size(120, 15);
             this.lblChungchihanhnghe.TabIndex = 18;
             this.lblChungchihanhnghe.Text = "Chứng chỉ hành nghề";
             // 
             // txtMaNV
             // 
             this.txtMaNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaNV.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtMaNV.Location = new System.Drawing.Point(162, 90);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(145, 20);
@@ -276,6 +311,7 @@ namespace medical_management
             // txtGioitinh
             // 
             this.txtGioitinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGioitinh.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtGioitinh.Location = new System.Drawing.Point(492, 142);
             this.txtGioitinh.Name = "txtGioitinh";
             this.txtGioitinh.Size = new System.Drawing.Size(145, 20);
@@ -284,6 +320,7 @@ namespace medical_management
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtEmail.Location = new System.Drawing.Point(794, 138);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(146, 20);
@@ -292,6 +329,7 @@ namespace medical_management
             // txtSodienthoai
             // 
             this.txtSodienthoai.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSodienthoai.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtSodienthoai.Location = new System.Drawing.Point(794, 112);
             this.txtSodienthoai.Name = "txtSodienthoai";
             this.txtSodienthoai.Size = new System.Drawing.Size(146, 20);
@@ -300,6 +338,7 @@ namespace medical_management
             // txtDiachi
             // 
             this.txtDiachi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDiachi.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtDiachi.Location = new System.Drawing.Point(794, 86);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(146, 20);
@@ -308,6 +347,7 @@ namespace medical_management
             // txtChungchihanhnghe
             // 
             this.txtChungchihanhnghe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtChungchihanhnghe.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtChungchihanhnghe.Location = new System.Drawing.Point(492, 90);
             this.txtChungchihanhnghe.Name = "txtChungchihanhnghe";
             this.txtChungchihanhnghe.Size = new System.Drawing.Size(146, 20);
@@ -316,6 +356,7 @@ namespace medical_management
             // txtNgaysinh
             // 
             this.txtNgaysinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNgaysinh.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtNgaysinh.Location = new System.Drawing.Point(492, 116);
             this.txtNgaysinh.Name = "txtNgaysinh";
             this.txtNgaysinh.Size = new System.Drawing.Size(145, 20);
@@ -324,6 +365,7 @@ namespace medical_management
             // txtChucvu
             // 
             this.txtChucvu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtChucvu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtChucvu.Location = new System.Drawing.Point(162, 142);
             this.txtChucvu.Name = "txtChucvu";
             this.txtChucvu.Size = new System.Drawing.Size(145, 20);
@@ -332,6 +374,7 @@ namespace medical_management
             // txtTenNV
             // 
             this.txtTenNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTenNV.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtTenNV.Location = new System.Drawing.Point(162, 116);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(145, 20);
@@ -417,19 +460,22 @@ namespace medical_management
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnExit.Location = new System.Drawing.Point(872, 470);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(89, 28);
             this.btnExit.TabIndex = 29;
             this.btnExit.Text = "Kết thúc";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmNhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::medical_management.Properties.Resources.background;
+            this.BackgroundImage = global::medical_management.Properties.Resources._635203f6dfa214fc4db3;
             this.ClientSize = new System.Drawing.Size(973, 510);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dgvNhanvien);
@@ -456,13 +502,14 @@ namespace medical_management
             this.Controls.Add(this.btnSau);
             this.Controls.Add(this.btnCuoi);
             this.Controls.Add(this.btnDau);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhanvien";
-            this.Text = "frmNhanvien";
+            this.Text = "Danh mục Nhân viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhanvien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).EndInit();
             this.ResumeLayout(false);
@@ -476,7 +523,6 @@ namespace medical_management
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnDau;
         private System.Windows.Forms.Button btnCuoi;
         private System.Windows.Forms.Button btnSau;

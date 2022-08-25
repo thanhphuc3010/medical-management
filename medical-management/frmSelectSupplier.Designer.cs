@@ -29,31 +29,15 @@ namespace medical_management
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectSupplier));
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(144, 29);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(49, 13);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "Tìm kiếm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(251, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // dgvSupplier
             // 
@@ -68,7 +52,7 @@ namespace medical_management
             this.TenNCC,
             this.Diachi,
             this.Sdt});
-            this.dgvSupplier.Location = new System.Drawing.Point(12, 108);
+            this.dgvSupplier.Location = new System.Drawing.Point(12, 84);
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.Size = new System.Drawing.Size(776, 318);
             this.dgvSupplier.TabIndex = 2;
@@ -98,31 +82,43 @@ namespace medical_management
             this.Sdt.HeaderText = "Số điện thoại";
             this.Sdt.Name = "Sdt";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Navy;
+            this.btnAdd.Location = new System.Drawing.Point(620, 25);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(140, 34);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Thêm Nhà cung cấp";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // frmSelectSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::medical_management.Properties.Resources._97cea7e15201dc807d266908c4d911b1;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvSupplier);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelectSupplier";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Chọn Nhà cung cấp";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgvSupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

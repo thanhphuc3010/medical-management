@@ -13,14 +13,24 @@ namespace medical_management
 {
     public partial class frmNhacungcap : Form
     {
-        public frmNhacungcap()
+        private readonly frmSelectSupplier frmSelectSupplier;
+        private string supplierId;
+        public frmNhacungcap(frmSelectSupplier frmSelectSupplier)
         {
             InitializeComponent();
+            this.frmSelectSupplier = frmSelectSupplier;
+            initializeControl();
+
+        }
+        public frmNhacungcap()
+        {
+            InitializeComponent();           
             initializeControl();
         }
 
         private void frmNhacungcap_Load(object sender, EventArgs e)
         {
+            //this.tbl_SupplierTableAdapter.Fill(this.qLHTDataSet.tbl_Supplier);
             loadData();
         }
 

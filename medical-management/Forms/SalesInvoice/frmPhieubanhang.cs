@@ -33,7 +33,7 @@ namespace medical_management
         }
 
         private bool isCreate;
-        private string customerId = "WALKINGUEST";
+        private string customerId = "0AWALKINGUEST";
         private decimal subtotal = 0M;
         private decimal total = 0M;
         private decimal discount = 0M;
@@ -140,7 +140,7 @@ namespace medical_management
             txtTongtienhang.BackColor = txtTongtienhang.BackColor;
             txtDongia.BackColor = txtDongia.BackColor;
 
-            txtMaHD.SetTextColorReadOnly(MyColor.invoiceNumber);
+            txtMaHD.SetTextColorReadOnly(MyColor.primary);
 
             frmHTPPharmacy f = (frmHTPPharmacy)Owner;
             this.staffId = f.staffId;
@@ -180,6 +180,8 @@ namespace medical_management
             this.customerId = id;
             btnSelectCustomer.gone();
             lblKhachHang.visible();
+            string update = "Update tbl_Invoice Set MaKH= @MaKH Where MaHD= @MaHD ";
+            Database.Instance.excuteNonQuery(update, new object[]{this.customerId,this.invoiceId });
         }
 
         private void btnSelectCustomer_Click(object sender, EventArgs e)
@@ -421,13 +423,13 @@ namespace medical_management
                     int inventory = item.Inventory;
                     if (quantity <= inventory)
                     {
-                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @SoLuong";
+                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @soldQuantity";
                         Database.Instance.excuteNonQuery(proUpdateQuantity, new object[] { medicineId, consignmentId, quantity });
                         break;
                     }
                     else
                     {
-                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @SoLuong";
+                        string proUpdateQuantity = "EXEC dbo.USP_Update_Quantity @idItem , @idConsignment , @soldQuantity";
                         Database.Instance.excuteNonQuery(proUpdateQuantity, new object[] { medicineId, consignmentId, inventory });
                         quantity = quantity - inventory;
                     }

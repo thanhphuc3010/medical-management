@@ -43,11 +43,14 @@ namespace medical_management
         {
             // DEMO GIT & GITHUB
             // Change source from github website
+            showLoginForm();
+
         }
 
         private void mItemThuoc_Click(object sender, EventArgs e)
         {
             frmThuoc f = new frmThuoc();
+            f.MdiParent = this;
             f.Show();
 
 
@@ -56,24 +59,28 @@ namespace medical_management
         private void mItemKH_Click(object sender, EventArgs e)
         {
             frmKhachhang f = new frmKhachhang();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNCC_Click(object sender, EventArgs e)
         {
             frmNhacungcap f = new frmNhacungcap();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNSX_Click(object sender, EventArgs e)
         {
             frmNhasanxuat f = new frmNhasanxuat();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void mItemNV_Click(object sender, EventArgs e)
         {
             frmNhanvien f = new frmNhanvien();
+            f.MdiParent = this;
             f.Show();
         }
 
@@ -87,6 +94,73 @@ namespace medical_management
         private void frmHTPPharmacy_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mItemPO_Click(object sender, EventArgs e)
+        {
+            frmDSPN f = new frmDSPN();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void mItemPOReport_Click(object sender, EventArgs e)
+        {
+          
+            frmBCNhaphang f = new frmBCNhaphang();
+            f.Show();
+
+
+        }
+
+        private void mItemInventoryReport_Click(object sender, EventArgs e)
+        {
+            rptTonkho rpt = new rptTonkho();
+            string sql = " SELECT Mathuoc, Tenthuoc, Donvi, Soluong " + " FROM tbl_Item ";        
+            rpt.SetDataSource(Database.Instance.excuteQuery(sql));
+            rptTonkhoprv rp = new rptTonkhoprv(rpt);
+            rp.Show();
+
+        }
+
+        private void mItemMedicalExpired_Click(object sender, EventArgs e)
+        {
+            rptThuochethan rpt = new rptThuochethan();
+            string sql = " SELECT tbl_Consignment.Malo , tbl_Item.Mathuoc , tbl_Item.Tenthuoc , tbl_Consignment.Ngayhethan , tbl_Consignment.Soluong - tbl_Consignment.Daban AS Soluongcon , tbl_Consignment.Gianhap , ( tbl_Consignment.Soluong - tbl_Consignment.Daban ) * tbl_Consignment.Gianhap AS Giatri "
+                       + " FROM tbl_Consignment INNER JOIN  tbl_Item ON tbl_Consignment.Mathuoc = tbl_Item.Mathuoc "
+                       + " where DATEDIFF(DAY , GETDATE() , tbl_Consignment.Ngayhethan ) < 0 "
+                       + " GROUP BY tbl_Consignment.Malo , tbl_Consignment.Gianhap , tbl_Consignment.Ngayhethan , tbl_Item.Mathuoc , tbl_Item.Tenthuoc , ( tbl_Consignment.Soluong - tbl_Consignment.Daban) ";
+            rpt.SetDataSource(Database.Instance.excuteQuery(sql));
+            rptThuochethanprv rp = new rptThuochethanprv(rpt);
+            rp.Show();
+        }
+
+        private void mItemDT_Click(object sender, EventArgs e)
+        {
+            frmBCDT f = new frmBCDT();
+            f.Show();
+
+        }
+
+        private void mItemExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            showLoginForm();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmNhanvien f = new frmNhanvien();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

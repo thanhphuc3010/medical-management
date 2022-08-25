@@ -55,5 +55,17 @@ namespace medical_management
             publisher?.Invoke(customerId, customerName);
             this.Close();
         }
+
+        public void refreshDataGrid()
+        {
+            loadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmKhachhang f = new frmKhachhang(this);
+            f.WindowState = FormWindowState.Normal;
+            f.ShowDialog();
+        }
     }
 }
